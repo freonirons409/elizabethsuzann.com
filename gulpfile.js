@@ -15,7 +15,6 @@ var fontName = 'Icons';
 var spritesmith = require('gulp.spritesmith');
 var fs = require('fs');
 var fileinclude = require('gulp-file-include');
-var changed = require('gulp-changed');
 
 // var newer = require('gulp-newer');
 // var imagemin = require('gulp-imagemin');
