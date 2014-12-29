@@ -1,0 +1,95 @@
+@import "settings";
+@import "normalize";
+
+//@import "foundation";
+
+@function font-url($url) {
+  @return url("../fonts/" + $url);
+}
+@function image-url($url, $nada, $nada2) {
+  @return url("../img/" + $url);
+}
+
+
+
+// selectively include foundation components 
+  @import "foundation/components/accordion";
+//  @import "foundation/components/alert-boxes";
+ @import "foundation/components/block-grid";
+//  @import "foundation/components/breadcrumbs";
+//  @import "foundation/components/button-groups";
+//  @import "foundation/components/buttons";
+  @import "foundation/components/clearing";
+//  @import "foundation/components/dropdown";
+//  @import "foundation/components/dropdown-buttons";
+  @import "foundation/components/flex-video";
+@import "foundation/components/forms";
+@import "foundation/components/grid";
+
+//  @import "foundation/components/inline-lists";
+//  @import "foundation/components/joyride";
+//  @import "foundation/components/keystrokes";
+//  @import "foundation/components/labels";
+//  @import "foundation/components/magellan";
+//  @import "foundation/components/orbit";
+//  @import "foundation/components/pagination";
+//  @import "foundation/components/panels";
+//  @import "foundation/components/pricing-tables
+//  @import "foundation/components/progress-bars";
+  @import "foundation/components/reveal";
+//  @import "foundation/components/side-nav";
+//  @import "foundation/components/split-buttons";
+//  @import "foundation/components/sub-nav";
+//  @import "foundation/components/switch";
+  @import "foundation/components/tables";
+  @import "foundation/components/tabs";
+//  @import "foundation/components/thumbs";
+//  @import "foundation/components/tooltips";
+//  @import "foundation/components/top-bar";
+@import "foundation/components/type";
+
+//  @import "foundation/components/offcanvas";
+@import "foundation/components/visibility";
+@import "slick";
+@import "main-nav";
+// @import "_icons";
+//Uncomment @import "_icons" when using the iconfont generater. 
+//This file will be overwritten every time the iconfont generator is used, so make any style changes on main.scss
+
+
+@media #{$small-up} {
+  //wrap this around a row if you need a background to go 100% width of screen
+  .full-width {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: initial;
+  }
+  .slick-prev:before, .slick-next:before{
+    color: #222;
+  }
+  .slick-prev {
+  	left:0;
+  }
+  .slick-next{
+  	right:0;
+  }
+}
+
+@media #{$small-only} {}
+
+@media #{$medium-up} {}
+
+@media #{$medium-only} {}
+
+@media #{$large-up} {}
+
+@media #{$large-only} {}
+
+@media #{$xlarge-up} {}
+
+@media #{$xlarge-only} {}
+
+@media #{$xxlarge-up} {}
+
+@media #{$xxlarge-only} {}

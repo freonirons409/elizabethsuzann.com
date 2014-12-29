@@ -1,0 +1,11 @@
+{
+    "name": "foundation-gulp-template",
+    "dependencies": {
+        "foundation": "5.4.0",
+        "slick-carousel": "latest",
+        "jquery": "~1.x"
+    },
+    "resolutions": {
+        "jquery": "1.11.1"
+    }
+}

@@ -1,0 +1,129 @@
+$background-color: #444444;
+$background-color-toggle: #222222;
+$background-color-secondary: #555555;
+$background-color-hover: #666666;
+$text-color: white;
+$text-hover: white;
+$menu-direction: left;
+
+
+@media #{$small-up} {
+  nav {
+    background-color: $background-color;
+  }
+  .main-nav {
+    margin: 0;
+    a {
+      color: $text-color;
+    }
+    li {
+      list-style: none;
+    }
+    >li {
+      a {
+        background-color: $background-color;
+        display: block;
+        padding: .5rem;
+        &:hover {
+          background-color: $background-color-hover;
+          color: $text-hover;
+        }
+      }
+      >ul {
+        display: none;
+        margin: 0;
+        >li {
+          >a {
+            background-color: $background-color-secondary;
+            display: block;
+            padding: .5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+//small only
+@media #{$small-only} {
+  nav > .row > .columns {
+    padding: 0;
+  }
+  .small-menu-toggle {
+    background-color: $background-color-toggle;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    display: block;
+    padding: 1rem;
+  }
+  .main-nav-wrap {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+  }
+  .main-nav {
+    top: 0;
+    float: none;
+    position: relative;
+    margin: 0;
+    width: 100%;
+    @if $menu-direction == left {
+      left: -100%;
+    }
+    @else {
+      right: -100%;
+    }
+    transition: $menu-direction .3s ease-in-out;
+    z-index: 1;
+    ul.active {
+      display: block;
+    }
+    >li {
+      >ul {
+        display: none;
+        overflow: hidden;
+      }
+      > ul > li a {
+        background-color: $background-color-secondary;
+        color: $text-color;
+        padding-left: 1.5rem;
+      }
+    }
+    &.show-small-menu {
+      @if $menu-direction == left {
+        left: 0;
+      }
+      @else {
+        right: 0;
+      }
+    }
+  }
+}
+
+//medium up
+@media #{$medium-up} {
+  .main-nav {
+    background-color: $background-color;
+    >li {
+      width: 20%;
+      float: left;
+      position: relative;
+      >ul {
+        position: absolute;
+        width: 100%;
+        margin: 0;
+        z-index: 9;
+        >li {
+          a:hover {
+            background-color: $background-color-hover;
+            color: $text-hover;
+          }
+        }
+      }
+      &:hover ul {
+        display: block;
+      }
+    }
+  }
+}

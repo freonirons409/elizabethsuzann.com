@@ -14,8 +14,8 @@ var iconfontCss = require('gulp-iconfont-css');
 var fontName = 'Icons';
 var spritesmith = require('gulp.spritesmith');
 var fs = require('fs');
-var gulpTfs = require('gulp-tfs-commander');
 var fileinclude = require('gulp-file-include');
+var changed = require('gulp-changed');
 
 // var newer = require('gulp-newer');
 // var imagemin = require('gulp-imagemin');
@@ -69,10 +69,11 @@ gulp.task('default', function() {
     });
 
     //reload on html or js change
-    gulp.watch(['build/*.html','build/css/*.css', 'build/js/*.js'], browserSync.reload);
+    
     gulp.watch(['*.html', 'includes/*.html'], ['fileinclude']);
 
     gulp.watch(['build/scss/*.scss'], ["build-css"]);
+    gulp.watch(['build/css/*.css', 'build/js/*.js'], browserSync.reload);
 
     //need to figure out cert issue
     //gulp.watch(["img/*.jpg", "img/*.png", "img/*.gif", "img/*.jpeg"], ["compress-images"]);
@@ -80,12 +81,13 @@ gulp.task('default', function() {
 
 
 gulp.task('fileinclude', function() {
-  gulp.src(['*.html'])
+  gulp.src('*.html')
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(gulp.dest('./build'));
+    .pipe(gulp.dest('./build'))
+    .pipe(browserSync.reload({stream:true}));
 });
 
 // gulp.task('compress-images', function() {

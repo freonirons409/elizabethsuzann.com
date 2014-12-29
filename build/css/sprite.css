@@ -1,0 +1,55 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<i class="icon-home"></i>
+```
+*/
+.sprite-before-facebook:before, .sprite-after-facebook:after {
+  background-image: url(../img/sprite.png);
+  background-position: -164px -50px;
+  width: 32px;
+  height: 32px;
+}
+.sprite-before-fb-recent-post:before, .sprite-after-fb-recent-post:after {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -210px;
+  width: 36px;
+  height: 36px;
+}
+.sprite-before-linkdn:before, .sprite-after-linkdn:after {
+  background-image: url(../img/sprite.png);
+  background-position: -132px -82px;
+  width: 32px;
+  height: 32px;
+}
+.sprite-before-phone:before, .sprite-after-phone:after {
+  background-image: url(../img/sprite.png);
+  background-position: -228px 0px;
+  width: 24px;
+  height: 24px;
+}
+.sprite-before-twitter-recent-post:before, .sprite-after-twitter-recent-post:after {
+  background-image: url(../img/sprite.png);
+  background-position: -196px -24px;
+  width: 32px;
+  height: 26px;
+}
+.sprite-before-twitter:before, .sprite-after-twitter:after {
+  background-image: url(../img/sprite.png);
+  background-position: -100px -114px;
+  width: 32px;
+  height: 32px;
+}
+.sprite-before-yelp:before, .sprite-after-yelp:after {
+  background-image: url(../img/sprite.png);
+  background-position: -68px -146px;
+  width: 32px;
+  height: 32px;
+}
+.sprite-before-youtube:before, .sprite-after-youtube:after {
+  background-image: url(../img/sprite.png);
+  background-position: -36px -178px;
+  width: 32px;
+  height: 32px;
+}

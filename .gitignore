@@ -57,3 +57,4 @@ $RECYCLE.BIN/
 
 ### Bower ###
 bower_components
+build/bower_components

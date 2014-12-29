@@ -13,12 +13,8 @@
     "gulp-notify": "~1.3.x",
     "gulp-rename": "~1.2.x",
     "gulp-sass": "0.7.1",
-    "gulp-tfs-commander": "0.0.5",
     "gulp-uglify": "~0.3.x",
     "gulp-usemin": "~0.3.x",
     "tiny-lr": "0.0.x"
-  },
-  "dependencies": {
-    "gulp-tfs": "0.0.8"
   }
 }
