@@ -143,15 +143,15 @@ gulp.task('minify-css', ['move-to-dist'], function() {
 gulp.task('init', function() {
     //move slick from bower components into project
     gulp.src('./bower_components/slick-carousel/slick/slick.scss')
-        .pipe(gulp.dest('./build/scss'));
+        .pipe(gulp.dest('build/scss'));
 });
 
 gulp.task('make-iconfont', function() {
-    gulp.src(['.build/svg/*.svg'])
+    gulp.src(['svg/*.svg'])
         .pipe(iconfontCss({
             fontName: fontName,
-            fontPath: '..build/fonts/',
-            targetPath: '..build/scss/_icons.scss'
+            fontPath: '../fonts/',
+            targetPath: '../scss/_icons.scss'
         }))
             .pipe(iconfont({
             fontName: fontName,
@@ -159,7 +159,7 @@ gulp.task('make-iconfont', function() {
             appendCodepoints: true,
             normalize:true
         }))
-        .pipe(gulp.dest('.build/fonts/'));
+        .pipe(gulp.dest('build/fonts/'));
 
 });
 
@@ -174,7 +174,7 @@ var generateIconImport = function(inputfile) {
             html += "<div class='icon " + item + "'> " + item + "</div>";
         });
         console.log(html);
-        fs.writeFile('fonts/icons.html', html + '</div></div>', function(err) {});
+        fs.writeFile('build/fonts/icons.html', html + '</div></div>', function(err) {});
     });
        
 }
@@ -184,7 +184,7 @@ gulp.task('view-iconfont', function() {
 });
 
 gulp.task('sprite', function () {
-  var spriteData = gulp.src('buid/img/sprite/*.png').pipe(spritesmith({
+  var spriteData = gulp.src('build/img/sprite/*.png').pipe(spritesmith({
     imgName: 'sprite.png',
     cssName: 'sprite.css',
     imgPath: '..build/img/sprite.png',
