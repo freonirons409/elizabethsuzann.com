@@ -16,7 +16,7 @@ $(document).ready(function() {
     });
     //toggle small device menu
     $(".small-menu-toggle").on("click", function() {
-        $(".main-nav-wrap").toggleClass("show-small-menu");
+        $(".main-nav").toggleClass("show-small-menu");
     });
     //add main nav clicks/touches for when the small menu toggle is showing
     $(".main-nav").on("click", "li", function(e) {
