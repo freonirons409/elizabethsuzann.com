@@ -69,7 +69,7 @@ gulp.task('default', function() {
     gulp.watch(['*.html', 'includes/*.html'], ['fileinclude']);
 
     gulp.watch(['src/scss/*.scss'], ["build-css"]);
-    gulp.watch(['src/css/*.css', 'src/js/*.js'], browserSync.reload);
+    gulp.watch(['src/css/*.css','src/*.html', 'src/js/*.js'], browserSync.reload);
 
     //need to figure out cert issue
     //gulp.watch(["img/*.jpg", "img/*.png", "img/*.gif", "img/*.jpeg"], ["compress-images"]);
@@ -83,7 +83,7 @@ gulp.task('fileinclude', function() {
       basepath: '@file'
     }))
     .pipe(gulp.dest('./src'))
-    .pipe(browserSync.reload({stream:true}));
+    .pipe(browserSync.reload({stream:true,reloadDelay: 200}));
 });
 
 // gulp.task('compress-images', function() {
