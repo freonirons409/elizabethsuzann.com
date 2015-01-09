@@ -29,41 +29,41 @@ var processWinPath = function(file) {
 };
 
 gulp.task("build-css", function() {
-    return gulp.src('build/scss/main.scss')
+    return gulp.src('src/scss/main.scss')
         .on('data', processWinPath)
         .pipe(sass({
             errLogToConsole: false,
             sourceMap: 'sass',
             sourceComments: 'map',
-            includePaths: ['build/bower_components/foundation/scss/'],
+            includePaths: ['src/bower_components/foundation/scss/'],
             onError: function(err) {
                 return notify().write(err);
             }
         }))
-        .pipe(gulp.dest('build/css/'))
-        .pipe(filter('build/**/*.css')) // Filtering stream to only css files
+        .pipe(gulp.dest('src/css/'))
+        .pipe(filter('src/**/*.css')) // Filtering stream to only css files
         .pipe(browserSync.reload({stream:true}));
 });
 
 gulp.task("build-css-no-source", function() {
-    return gulp.src('build/scss/main.scss')
+    return gulp.src('src/scss/main.scss')
         .on('data', processWinPath)
         .pipe(sass({
             errLogToConsole: false,
-            includePaths: ['build/bower_components/foundation/scss/', 'build/bower_components/compass-mixins/lib/', 'slick/'],
+            includePaths: ['src/bower_components/foundation/scss/', 'src/bower_components/compass-mixins/lib/', 'slick/'],
             onError: function(err) {
                 return notify().write(err);
             }
         }))
         .pipe(prefix())
-        .pipe(gulp.dest('build/css/'));
+        .pipe(gulp.dest('src/css/'));
 });
 
 
 gulp.task('default', function() {
      browserSync({
         server: {
-            baseDir: "./build/"
+            baseDir: "./src/"
         }
     });
 
@@ -71,8 +71,8 @@ gulp.task('default', function() {
     
     gulp.watch(['*.html', 'includes/*.html'], ['fileinclude']);
 
-    gulp.watch(['build/scss/*.scss'], ["build-css"]);
-    gulp.watch(['build/css/*.css', 'build/js/*.js'], browserSync.reload);
+    gulp.watch(['src/scss/*.scss'], ["build-css"]);
+    gulp.watch(['src/css/*.css', 'src/js/*.js'], browserSync.reload);
 
     //need to figure out cert issue
     //gulp.watch(["img/*.jpg", "img/*.png", "img/*.gif", "img/*.jpeg"], ["compress-images"]);
@@ -85,7 +85,7 @@ gulp.task('fileinclude', function() {
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(gulp.dest('./build'))
+    .pipe(gulp.dest('./src'))
     .pipe(browserSync.reload({stream:true}));
 });
 
@@ -113,19 +113,19 @@ gulp.task('unlock-dist',function(){
 gulp.task('move-to-dist', ['build-css-no-source'], function() {
     
 
-    var stream = gulp.src('build/*.html')
+    var stream = gulp.src('src/*.html')
         .pipe(usemin({
-          //  assetsDir:"./build/",
+          //  assetsDir:"./src/",
             css: ['concat'],
             js: [uglify()]
         }))
         .pipe(gulp.dest('dist/'));
 
-    gulp.src('./build/fonts/**')
+    gulp.src('./src/fonts/**')
         .pipe(gulp.dest('dist/fonts/'));
-    gulp.src('./build/img/**')
+    gulp.src('./src/img/**')
         .pipe(gulp.dest('dist/img/'));
-    gulp.src('./build/js/main.js')
+    gulp.src('./src/js/main.js')
         .pipe(gulp.dest('dist/js/'));
 
     return stream;
@@ -143,7 +143,7 @@ gulp.task('minify-css', ['move-to-dist'], function() {
 gulp.task('init', function() {
     //move slick from bower components into project
     gulp.src('./bower_components/slick-carousel/slick/slick.scss')
-        .pipe(gulp.dest('build/scss'));
+        .pipe(gulp.dest('src/scss'));
 });
 
 gulp.task('make-iconfont', function() {
@@ -159,7 +159,7 @@ gulp.task('make-iconfont', function() {
             appendCodepoints: true,
             normalize:true
         }))
-        .pipe(gulp.dest('build/fonts/'));
+        .pipe(gulp.dest('src/fonts/'));
 
 });
 
@@ -174,20 +174,20 @@ var generateIconImport = function(inputfile) {
             html += "<div class='icon " + item + "'> " + item + "</div>";
         });
         console.log(html);
-        fs.writeFile('build/fonts/icons.html', html + '</div></div>', function(err) {});
+        fs.writeFile('src/fonts/icons.html', html + '</div></div>', function(err) {});
     });
        
 }
 
 gulp.task('view-iconfont', function() {
-    generateIconImport("build/scss/_icons.scss");    
+    generateIconImport("src/scss/_icons.scss");    
 });
 
 gulp.task('sprite', function () {
-  var spriteData = gulp.src('build/img/sprite/*.png').pipe(spritesmith({
+  var spriteData = gulp.src('src/img/sprite/*.png').pipe(spritesmith({
     imgName: 'sprite.png',
     cssName: 'sprite.css',
-    imgPath: '..build/img/sprite.png',
+    imgPath: '..src/img/sprite.png',
     algorithm: 'alt-diagonal',
     cssOpts: {
       cssClass: function (item) {
@@ -197,6 +197,6 @@ gulp.task('sprite', function () {
       }
   }
   }));
-  spriteData.img.pipe(gulp.dest('build/img/'));
-  spriteData.css.pipe(gulp.dest('build/css/'));
+  spriteData.img.pipe(gulp.dest('src/img/'));
+  spriteData.css.pipe(gulp.dest('src/css/'));
 });

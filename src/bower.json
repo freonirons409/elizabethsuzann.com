@@ -1,7 +1,7 @@
 {
     "name": "foundation-gulp-template",
     "dependencies": {
-        "foundation": "5.4.0",
+        "foundation": "5.5.x",
         "slick-carousel": "latest",
         "jquery": "~1.x"
     },

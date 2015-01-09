@@ -3,23 +3,15 @@
 @@include('./includes/nav.html')
 
 <div class="row">
-        <div class="small-12 columns">
-            <div class="hero">
-                <div>
-                    <img src="http://placehold.it/1000x350/434add/ffffff">
-                    <div class="caption">Caption goes here</div>
-                </div>
-                <div>
-                    <img src="http://placehold.it/1000x350/ffffff/20d9d2">
-                    <div class="caption">Caption goes here</div>
-                </div>
-                <div>
-                    <img src="http://placehold.it/1000x350/e4711d/ffffff">
-                    <div class="caption">Caption goes here</div>
-                </div>
+    <div class="small-12 columns">
+        <div class="hero">
+            @@include('./includes/slide.html',{"img":"http://placehold.it/1000x350/434add/ffffff","caption":"Caption goes meow"})
+            <!-- sep -->
+            @@include('./includes/slide.html',{"img":"http://placehold.it/1000x350/ffffff/20d9d2","caption":"Caption goes here"})
+            <!-- sep -->
+            @@include('./includes/slide.html',{"img":"http://placehold.it/1000x350/e4711d/ffffff","caption":"Caption goes meow"})
 
-
-            </div>
         </div>
     </div>
+</div>
 @@include('./includes/bottom.html')
