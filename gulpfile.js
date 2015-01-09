@@ -139,7 +139,9 @@ gulp.task('minify-css', ['move-to-dist'], function() {
 //run once after project has been created
 gulp.task('init', function() {
     //move slick from bower components into project
-    gulp.src('./bower_components/slick-carousel/slick/slick.scss')
+    gulp.src('.src/bower_components/slick-carousel/slick/slick.scss')
+        .pipe(gulp.dest('src/scss'));
+    gulp.src('.src/bower_components/foundation/scss/foundation/_settings.scss')
         .pipe(gulp.dest('src/scss'));
 });
 
