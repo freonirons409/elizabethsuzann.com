@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
-var filter = require('gulp-filter');
 var notify = require('gulp-notify');
 var prefix = require('gulp-autoprefixer');
 var usemin = require('gulp-usemin');
@@ -15,6 +14,7 @@ var fontName = 'Icons';
 var spritesmith = require('gulp.spritesmith');
 var fs = require('fs');
 var fileinclude = require('gulp-file-include');
+// var sourcemaps = require('gulp-sourcemaps');
 
 // var newer = require('gulp-newer');
 // var imagemin = require('gulp-imagemin');
@@ -30,19 +30,16 @@ var processWinPath = function(file) {
 
 gulp.task("build-css", function() {
     return gulp.src('src/scss/main.scss')
-        .on('data', processWinPath)
         .pipe(sass({
             errLogToConsole: false,
             sourceMap: 'sass',
             sourceComments: 'map',
             includePaths: ['src/bower_components/foundation/scss/'],
-            onError: function(err) {
-                return notify().write(err);
+            onError: function callback(err){
+               return notify().write(err);
             }
         }))
-        .pipe(gulp.dest('src/css/'))
-        .pipe(filter('src/**/*.css')) // Filtering stream to only css files
-        .pipe(browserSync.reload({stream:true}));
+        .pipe(gulp.dest('src/css/'));
 });
 
 gulp.task("build-css-no-source", function() {

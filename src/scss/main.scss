@@ -52,9 +52,7 @@
 @import "foundation/components/visibility";
 @import "slick";
 @import "main-nav";
-// @import "_icons";
-//Uncomment @import "_icons" when using the iconfont generater. 
-//This file will be overwritten every time the iconfont generator is used, so make any style changes on main.scss
+@import "_icons";
 
 
 @media #{$small-up} {
