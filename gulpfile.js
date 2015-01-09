@@ -11,7 +11,7 @@ var rename = require("gulp-rename");
 var iconfont = require('gulp-iconfont');
 var iconfontCss = require('gulp-iconfont-css');
 var fontName = 'Icons';
-var spritesmith = require('gulp.spritesmith');
+// var spritesmith = require('gulp.spritesmith');
 var fs = require('fs');
 var fileinclude = require('gulp-file-include');
 // var sourcemaps = require('gulp-sourcemaps');
@@ -182,20 +182,20 @@ gulp.task('view-iconfont', function() {
     generateIconImport("src/scss/_icons.scss");    
 });
 
-gulp.task('sprite', function () {
-  var spriteData = gulp.src('src/img/sprite/*.png').pipe(spritesmith({
-    imgName: 'sprite.png',
-    cssName: 'sprite.css',
-    imgPath: '..src/img/sprite.png',
-    algorithm: 'alt-diagonal',
-    cssOpts: {
-      cssClass: function (item) {
-        // `item` has `x`, `y`, `width`, `height`, `name`, `image`, and more
-        // It is suggested to `console.log` output
-        return '.sprite-before-' + item.name + ':before, .sprite-after-' + item.name + ':after';
-      }
-  }
-  }));
-  spriteData.img.pipe(gulp.dest('src/img/'));
-  spriteData.css.pipe(gulp.dest('src/css/'));
-});
+// gulp.task('sprite', function () {
+//   var spriteData = gulp.src('src/img/sprite/*.png').pipe(spritesmith({
+//     imgName: 'sprite.png',
+//     cssName: 'sprite.css',
+//     imgPath: '..src/img/sprite.png',
+//     algorithm: 'alt-diagonal',
+//     cssOpts: {
+//       cssClass: function (item) {
+//         // `item` has `x`, `y`, `width`, `height`, `name`, `image`, and more
+//         // It is suggested to `console.log` output
+//         return '.sprite-before-' + item.name + ':before, .sprite-after-' + item.name + ':after';
+//       }
+//   }
+//   }));
+//   spriteData.img.pipe(gulp.dest('src/img/'));
+//   spriteData.css.pipe(gulp.dest('src/css/'));
+// });
