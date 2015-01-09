@@ -47,7 +47,7 @@ gulp.task("build-css-no-source", function() {
         .on('data', processWinPath)
         .pipe(sass({
             errLogToConsole: false,
-            includePaths: ['src/bower_components/foundation/scss/', 'src/bower_components/compass-mixins/lib/', 'slick/'],
+            includePaths: ['src/bower_components/foundation/scss/'],
             onError: function(err) {
                 return notify().write(err);
             }
