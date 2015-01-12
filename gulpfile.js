@@ -19,15 +19,6 @@ var fileinclude = require('gulp-file-include');
 // var newer = require('gulp-newer');
 // var imagemin = require('gulp-imagemin');
 
-//needed because current gulp-sass errors with source maps on windows
-var processWinPath = function(file) {
-    var path = require('path');
-    if (process.platform === 'win32') {
-        file.path = path.relative('.', file.path);
-        file.path = file.path.replace(/\\/g, '/');
-    }
-};
-
 gulp.task("build-css", function() {
     return gulp.src('src/scss/main.scss')
         .pipe(sass({
@@ -44,7 +35,6 @@ gulp.task("build-css", function() {
 
 gulp.task("build-css-no-source", function() {
     return gulp.src('src/scss/main.scss')
-        .on('data', processWinPath)
         .pipe(sass({
             errLogToConsole: false,
             includePaths: ['src/bower_components/foundation/scss/'],
@@ -52,7 +42,7 @@ gulp.task("build-css-no-source", function() {
                 return notify().write(err);
             }
         }))
-        .pipe(prefix())
+      //  .pipe(prefix())
         .pipe(gulp.dest('src/css/'));
 });
 
@@ -101,12 +91,6 @@ gulp.task('fileinclude', function() {
 
 gulp.task('build', ['build-css-no-source', 'move-to-dist', 'minify-css']);
 
-gulp.task('unlock-dist',function(){
- return gulp.src(['dist/index.html'])
-        .pipe(gulpTfs({ command: 'edit', params: { lock: 'none' } }))
-        .pipe(gulp.dest('./'));
-});
-
 gulp.task('move-to-dist', ['build-css-no-source'], function() {
     
 
@@ -118,11 +102,11 @@ gulp.task('move-to-dist', ['build-css-no-source'], function() {
         }))
         .pipe(gulp.dest('dist/'));
 
-    gulp.src('./src/fonts/**')
+    gulp.src('src/fonts/**')
         .pipe(gulp.dest('dist/fonts/'));
-    gulp.src('./src/img/**')
+    gulp.src('src/img/**')
         .pipe(gulp.dest('dist/img/'));
-    gulp.src('./src/js/main.js')
+    gulp.src('src/js/main.js')
         .pipe(gulp.dest('dist/js/'));
 
     return stream;
@@ -131,7 +115,7 @@ gulp.task('move-to-dist', ['build-css-no-source'], function() {
 
 gulp.task('minify-css', ['move-to-dist'], function() {
     return gulp.src('./dist/css/styles.css')
-        .pipe(minifyCSS())
+   //     .pipe(minifyCSS())
         .pipe(rename("dist/css/styles-min.css"))
         .pipe(gulp.dest('./'));
 });
