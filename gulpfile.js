@@ -107,6 +107,8 @@ gulp.task('move-to-dist', ['build-css-no-source'], function() {
         .pipe(gulp.dest('dist/fonts/'));
     gulp.src('src/img/**')
         .pipe(gulp.dest('dist/img/'));
+        gulp.src('src/js/main.js')
+        .pipe(gulp.dest('dist/js/'));
 
     return stream;
 
