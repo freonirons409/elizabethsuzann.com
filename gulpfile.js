@@ -36,13 +36,13 @@ gulp.task("build-css", function() {
 gulp.task("build-css-no-source", function() {
     return gulp.src('src/scss/main.scss')
         .pipe(sass({
-            errLogToConsole: false,
+            errLogToConsole: true,
             includePaths: ['src/bower_components/foundation/scss/'],
             onError: function(err) {
                 return notify().write(err);
             }
         }))
-      //  .pipe(prefix())
+        .pipe(prefix())
         .pipe(gulp.dest('src/css/'));
 });
 
@@ -98,7 +98,8 @@ gulp.task('move-to-dist', ['build-css-no-source'], function() {
         .pipe(usemin({
           //  assetsDir:"./src/",
             css: ['concat'],
-            js: [uglify()]
+            js: [uglify()],
+            jsmain:[]
         }))
         .pipe(gulp.dest('dist/'));
 
@@ -106,8 +107,6 @@ gulp.task('move-to-dist', ['build-css-no-source'], function() {
         .pipe(gulp.dest('dist/fonts/'));
     gulp.src('src/img/**')
         .pipe(gulp.dest('dist/img/'));
-    gulp.src('src/js/main.js')
-        .pipe(gulp.dest('dist/js/'));
 
     return stream;
 
