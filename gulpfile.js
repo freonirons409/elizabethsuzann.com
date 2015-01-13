@@ -26,8 +26,8 @@ gulp.task("build-css", function() {
             sourceMap: 'sass',
             sourceComments: 'map',
             includePaths: ['src/bower_components/foundation/scss/'],
-            onError: function callback(err){
-               return notify().write(err);
+            onError: function callback(err) {
+                return notify().write(err);
             }
         }))
         .pipe(gulp.dest('src/css/'));
@@ -48,18 +48,18 @@ gulp.task("build-css-no-source", function() {
 
 
 gulp.task('default', function() {
-     browserSync({
+    browserSync({
         server: {
             baseDir: "./src/"
         }
     });
 
     //reload on html or js change
-    
+
     gulp.watch(['*.html', 'includes/*.html'], ['fileinclude']);
 
     gulp.watch(['src/scss/*.scss'], ["build-css"]);
-    gulp.watch(['src/css/*.css','src/*.html', 'src/js/*.js'], browserSync.reload);
+    gulp.watch(['src/css/*.css', 'src/*.html', 'src/js/*.js'], browserSync.reload);
 
     //need to figure out cert issue
     //gulp.watch(["img/*.jpg", "img/*.png", "img/*.gif", "img/*.jpeg"], ["compress-images"]);
@@ -67,13 +67,16 @@ gulp.task('default', function() {
 
 
 gulp.task('fileinclude', function() {
-  gulp.src('*.html')
-    .pipe(fileinclude({
-      prefix: '@@',
-      basepath: '@file'
-    }))
-    .pipe(gulp.dest('./src'))
-    .pipe(browserSync.reload({stream:true,reloadDelay: 200}));
+    gulp.src('*.html')
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(gulp.dest('./src'))
+        .pipe(browserSync.reload({
+            stream: true,
+            reloadDelay: 200
+        }));
 });
 
 // gulp.task('compress-images', function() {
@@ -92,14 +95,14 @@ gulp.task('fileinclude', function() {
 gulp.task('build', ['build-css-no-source', 'move-to-dist', 'minify-css']);
 
 gulp.task('move-to-dist', ['build-css-no-source'], function() {
-    
+
 
     var stream = gulp.src('src/*.html')
         .pipe(usemin({
-          //  assetsDir:"./src/",
+            //  assetsDir:"./src/",
             css: ['concat'],
             js: [uglify()],
-            jsmain:[]
+            jsmain: []
         }))
         .pipe(gulp.dest('dist/'));
 
@@ -107,18 +110,38 @@ gulp.task('move-to-dist', ['build-css-no-source'], function() {
         .pipe(gulp.dest('dist/fonts/'));
     gulp.src('src/img/**')
         .pipe(gulp.dest('dist/img/'));
-        gulp.src('src/js/main.js')
+    gulp.src('src/js/main.js')
         .pipe(gulp.dest('dist/js/'));
 
     return stream;
 
 });
 
+gulp.task('split-css', function() {
+
+});
 gulp.task('minify-css', ['move-to-dist'], function() {
-    return gulp.src('./dist/css/styles.css')
-   //     .pipe(minifyCSS())
-        .pipe(rename("dist/css/styles-min.css"))
-        .pipe(gulp.dest('./'));
+    fs.readFile('./dist/css/styles.css', function(err, data) {
+        if (err) throw err;
+        var content = data.toString();
+        var index = content.indexOf("/* split file here */");
+        var vendor = content.slice(0, index);
+        var main = content.slice(index);
+        fs.writeFile('./dist/css/styles.css', main, function(err) {
+            if (err) throw err;
+            console.log('main is saved!');
+        });
+        fs.writeFile('./dist/css/vendor.min.css', vendor, function(err) {
+            if (err) throw err;
+            console.log('vendor is saved!');
+            return gulp.src('./dist/css/vendor.min.css')
+                .pipe(minifyCSS())
+                .pipe(gulp.dest('./dist/css/'));
+        });
+
+    });
+
+
 });
 
 //run once after project has been created
@@ -137,11 +160,11 @@ gulp.task('make-iconfont', function() {
             fontPath: '../fonts/',
             targetPath: '../scss/_icons.scss'
         }))
-            .pipe(iconfont({
+        .pipe(iconfont({
             fontName: fontName,
-            fontHeight:1000,
+            fontHeight: 1000,
             appendCodepoints: true,
-            normalize:true
+            normalize: true
         }))
         .pipe(gulp.dest('src/fonts/'));
 
@@ -160,11 +183,11 @@ var generateIconImport = function(inputfile) {
         console.log(html);
         fs.writeFile('src/fonts/icons.html', html + '</div></div>', function(err) {});
     });
-       
+
 }
 
 gulp.task('view-iconfont', function() {
-    generateIconImport("src/scss/_icons.scss");    
+    generateIconImport("src/scss/_icons.scss");
 });
 
 // gulp.task('sprite', function () {

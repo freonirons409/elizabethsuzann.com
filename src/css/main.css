@@ -3811,6 +3811,7 @@ th.hide-for-touch {
 .icon-search:before {
   content: "\E008"; }
 
+/* split file here */
 @media only screen {
   .full-width {
     width: 100%;
