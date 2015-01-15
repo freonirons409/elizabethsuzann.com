@@ -4683,36 +4683,124 @@ th.hide-for-touch {
   text-transform: none; }
 
 /* line 23, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
-.icon-hamburger:before {
+.icon-bullet:before {
   content: "\E001"; }
 
 /* line 27, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
-.icon-left-arrow:before {
+.icon-calculators:before {
   content: "\E002"; }
 
 /* line 31, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
-.icon-minus:before {
+.icon-checkreorder:before {
   content: "\E003"; }
 
 /* line 35, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
-.icon-plus:before {
+.icon-circle:before {
   content: "\E004"; }
 
 /* line 39, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
-.icon-print:before {
+.icon-contact:before {
   content: "\E005"; }
 
 /* line 43, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
-.icon-right-arrow:before {
+.icon-deposit:before {
   content: "\E006"; }
 
 /* line 47, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
-.icon-search-x:before {
+.icon-ehl:before {
   content: "\E007"; }
 
 /* line 51, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
-.icon-search:before {
+.icon-facebook:before {
   content: "\E008"; }
+
+/* line 55, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-fb:before {
+  content: "\E009"; }
+
+/* line 59, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-hamburger:before {
+  content: "\E00A"; }
+
+/* line 63, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-home:before {
+  content: "\E00B"; }
+
+/* line 67, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-left-arrow:before {
+  content: "\E00C"; }
+
+/* line 71, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-linked:before {
+  content: "\E00D"; }
+
+/* line 75, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-linkedin:before {
+  content: "\E00E"; }
+
+/* line 79, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-lock:before {
+  content: "\E00F"; }
+
+/* line 83, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-menu:before {
+  content: "\E010"; }
+
+/* line 87, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-minus:before {
+  content: "\E011"; }
+
+/* line 91, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-online:before {
+  content: "\E012"; }
+
+/* line 95, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-percent:before {
+  content: "\E013"; }
+
+/* line 99, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-plus:before {
+  content: "\E014"; }
+
+/* line 103, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-print:before {
+  content: "\E015"; }
+
+/* line 107, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-print2:before {
+  content: "\E016"; }
+
+/* line 111, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-right-arrow:before {
+  content: "\E017"; }
+
+/* line 115, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-rightarrow:before {
+  content: "\E018"; }
+
+/* line 119, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-search-x:before {
+  content: "\E019"; }
+
+/* line 123, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-search:before {
+  content: "\E01A"; }
+
+/* line 127, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-stolencard:before {
+  content: "\E01B"; }
+
+/* line 131, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-switchkit:before {
+  content: "\E01C"; }
+
+/* line 135, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-twitter:before {
+  content: "\E01D"; }
+
+/* line 139, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
+.icon-youube:before {
+  content: "\E01E"; }
 
 /* split file here */
 @media only screen {
