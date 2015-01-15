@@ -4333,7 +4333,7 @@ th.hide-for-touch {
  }
 
 /* Slider */
-/* line 40, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+/* line 40, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
 .slick-slider {
   position: relative;
   display: block;
@@ -4349,25 +4349,25 @@ th.hide-for-touch {
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent; }
 
-/* line 55, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+/* line 55, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
 .slick-list {
   position: relative;
   overflow: hidden;
   display: block;
   margin: 0;
   padding: 0; }
-  /* line 62, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 62, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   .slick-list:focus {
     outline: none; }
-  /* line 66, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 66, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   .slick-loading .slick-list {
     background: #fff url("../img/ajax-loader.gif") center center no-repeat; }
-  /* line 70, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 70, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   .slick-list.dragging {
     cursor: pointer;
     cursor: hand; }
 
-/* line 75, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+/* line 75, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
 .slick-slider .slick-track {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
@@ -4375,48 +4375,48 @@ th.hide-for-touch {
   -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
-/* line 83, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+/* line 83, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
 .slick-track {
   position: relative;
   left: 0;
   top: 0;
   display: block; }
-  /* line 90, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 90, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   .slick-track:before, .slick-track:after {
     content: "";
     display: table; }
-  /* line 95, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 95, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   .slick-track:after {
     clear: both; }
-  /* line 99, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 99, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   .slick-loading .slick-track {
     visibility: hidden; }
 
-/* line 103, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+/* line 103, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
 .slick-slide {
   float: left;
   height: 100%;
   min-height: 1px;
   display: none; }
-  /* line 107, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 107, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   [dir="rtl"] .slick-slide {
     float: right; }
-  /* line 110, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 110, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   .slick-slide img {
     display: block; }
-  /* line 113, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 113, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   .slick-slide.slick-loading img {
     display: none; }
-  /* line 119, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 119, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   .slick-slide.dragging img {
     pointer-events: none; }
-  /* line 123, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 123, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   .slick-initialized .slick-slide {
     display: block; }
-  /* line 127, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 127, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   .slick-loading .slick-slide {
     visibility: hidden; }
-  /* line 131, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 131, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   .slick-vertical .slick-slide {
     display: block;
     height: auto;
@@ -4431,7 +4431,7 @@ th.hide-for-touch {
   font-style: normal; }
 
 /* Arrows */
-/* line 155, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+/* line 155, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
 .slick-prev, .slick-next {
   position: absolute;
   display: block;
@@ -4447,19 +4447,19 @@ th.hide-for-touch {
   padding: 0;
   border: none;
   outline: none; }
-  /* line 170, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 170, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   .slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
     outline: none;
     background: transparent;
     color: transparent; }
-    /* line 174, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+    /* line 174, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
     .slick-prev:hover:before, .slick-prev:focus:before, .slick-next:hover:before, .slick-next:focus:before {
       opacity: 1; }
-  /* line 178, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 178, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   .slick-prev.slick-disabled:before, .slick-next.slick-disabled:before {
     opacity: 0.25; }
 
-/* line 182, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+/* line 182, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
 .slick-prev:before, .slick-next:before {
   font-family: "slick";
   font-size: 20px;
@@ -4469,40 +4469,40 @@ th.hide-for-touch {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-/* line 191, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+/* line 191, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
 .slick-prev {
   left: -25px; }
-  /* line 193, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 193, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   [dir="rtl"] .slick-prev {
     left: auto;
     right: -25px; }
-  /* line 197, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 197, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   .slick-prev:before {
     content: '\2190'; }
-    /* line 199, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+    /* line 199, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
     [dir="rtl"] .slick-prev:before {
       content: '\2192'; }
 
-/* line 204, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+/* line 204, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
 .slick-next {
   right: -25px; }
-  /* line 206, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 206, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   [dir="rtl"] .slick-next {
     left: -25px;
     right: auto; }
-  /* line 210, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 210, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   .slick-next:before {
     content: '\2192'; }
-    /* line 212, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+    /* line 212, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
     [dir="rtl"] .slick-next:before {
       content: '\2190'; }
 
 /* Dots */
-/* line 220, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+/* line 220, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
 .slick-slider {
   margin-bottom: 30px; }
 
-/* line 223, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+/* line 223, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
 .slick-dots {
   position: absolute;
   bottom: -45px;
@@ -4511,7 +4511,7 @@ th.hide-for-touch {
   text-align: center;
   padding: 0;
   width: 100%; }
-  /* line 232, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+  /* line 232, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
   .slick-dots li {
     position: relative;
     display: inline-block;
@@ -4520,7 +4520,7 @@ th.hide-for-touch {
     margin: 0 5px;
     padding: 0;
     cursor: pointer; }
-    /* line 241, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+    /* line 241, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
     .slick-dots li button {
       border: 0;
       background: transparent;
@@ -4533,13 +4533,13 @@ th.hide-for-touch {
       color: transparent;
       padding: 5px;
       cursor: pointer; }
-      /* line 253, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+      /* line 253, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
       .slick-dots li button:hover, .slick-dots li button:focus {
         outline: none; }
-        /* line 255, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+        /* line 255, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
         .slick-dots li button:hover:before, .slick-dots li button:focus:before {
           opacity: 1; }
-      /* line 260, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+      /* line 260, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
       .slick-dots li button:before {
         position: absolute;
         top: 0;
@@ -4555,39 +4555,39 @@ th.hide-for-touch {
         opacity: 0.25;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale; }
-    /* line 279, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/slick */
+    /* line 279, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/slick */
     .slick-dots li.slick-active button:before {
       color: black;
       opacity: 0.75; }
 
 @media only screen {
-  /* line 10, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+  /* line 10, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
   nav {
     background-color: #444444; }
 
-  /* line 13, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+  /* line 13, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
   .main-nav {
     margin: 0; }
-    /* line 15, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+    /* line 15, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
     .main-nav a {
       color: white; }
-    /* line 18, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+    /* line 18, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
     .main-nav li {
       list-style: none; }
-    /* line 22, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+    /* line 22, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
     .main-nav > li a {
       background-color: #444444;
       display: block;
       padding: 0.5rem; }
-      /* line 26, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+      /* line 26, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
       .main-nav > li a:hover {
         background-color: #666666;
         color: white; }
-    /* line 31, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+    /* line 31, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
     .main-nav > li > ul {
       display: none;
       margin: 0; }
-      /* line 35, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+      /* line 35, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
       .main-nav > li > ul > li > a {
         background-color: #555555;
         display: block;
@@ -4595,11 +4595,11 @@ th.hide-for-touch {
  }
 
 @media only screen and (max-width: 40em) {
-  /* line 48, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+  /* line 48, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
   nav > .row > .columns {
     padding: 0; }
 
-  /* line 51, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+  /* line 51, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
   .small-menu-toggle {
     background-color: #222222;
     cursor: pointer;
@@ -4608,16 +4608,16 @@ th.hide-for-touch {
     display: block;
     padding: 1rem; }
 
-  /* line 59, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+  /* line 59, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
   .main-nav-wrap {
     position: absolute;
     overflow: hidden;
     width: 100%; }
-    /* line 63, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+    /* line 63, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
     .main-nav-wrap.show-small-menu .main-nav {
       left: 0; }
 
-  /* line 72, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+  /* line 72, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
   .main-nav {
     top: 0;
     float: none;
@@ -4627,14 +4627,14 @@ th.hide-for-touch {
     left: -100%;
     transition: left 0.3s ease-in-out;
     z-index: 1; }
-    /* line 86, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+    /* line 86, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
     .main-nav ul.active {
       display: block; }
-    /* line 90, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+    /* line 90, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
     .main-nav > li > ul {
       display: none;
       overflow: hidden; }
-    /* line 94, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+    /* line 94, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
     .main-nav > li > ul > li a {
       background-color: #555555;
       color: white;
@@ -4642,25 +4642,25 @@ th.hide-for-touch {
  }
 
 @media only screen and (min-width:40.063em) {
-  /* line 105, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+  /* line 105, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
   .main-nav {
     background-color: #444444; }
-    /* line 107, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+    /* line 107, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
     .main-nav > li {
       width: 20%;
       float: left;
       position: relative; }
-      /* line 111, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+      /* line 111, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
       .main-nav > li > ul {
         position: absolute;
         width: 100%;
         margin: 0;
         z-index: 9; }
-        /* line 117, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+        /* line 117, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
         .main-nav > li > ul > li a:hover {
           background-color: #666666;
           color: white; }
-      /* line 123, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main-nav */
+      /* line 123, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main-nav */
       .main-nav > li:hover ul {
         display: block; }
  }
@@ -4670,7 +4670,7 @@ th.hide-for-touch {
   src: url('../fonts/Icons.eot');
   src: url('../fonts/Icons.eot?#iefix') format('eot'), url('../fonts/Icons.woff') format('woff'), url('../fonts/Icons.ttf') format('truetype'), url('../fonts/Icons.svg#Icons') format('svg'); }
 
-/* line 10, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/_icons */
+/* line 10, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
 .icon:before {
   font-family: "Icons";
   -webkit-font-smoothing: antialiased;
@@ -4682,56 +4682,56 @@ th.hide-for-touch {
   text-decoration: none;
   text-transform: none; }
 
-/* line 23, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/_icons */
+/* line 23, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
 .icon-hamburger:before {
   content: "\E001"; }
 
-/* line 27, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/_icons */
+/* line 27, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
 .icon-left-arrow:before {
   content: "\E002"; }
 
-/* line 31, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/_icons */
+/* line 31, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
 .icon-minus:before {
   content: "\E003"; }
 
-/* line 35, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/_icons */
+/* line 35, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
 .icon-plus:before {
   content: "\E004"; }
 
-/* line 39, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/_icons */
+/* line 39, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
 .icon-print:before {
   content: "\E005"; }
 
-/* line 43, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/_icons */
+/* line 43, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
 .icon-right-arrow:before {
   content: "\E006"; }
 
-/* line 47, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/_icons */
+/* line 47, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
 .icon-search-x:before {
   content: "\E007"; }
 
-/* line 51, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/_icons */
+/* line 51, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/_icons */
 .icon-search:before {
   content: "\E008"; }
 
 /* split file here */
 @media only screen {
-  /* line 61, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main.scss */
+  /* line 61, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main.scss */
   .full-width {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     max-width: initial; }
 
-  /* line 67, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main.scss */
+  /* line 67, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main.scss */
   .slick-prev:before, .slick-next:before {
     color: #222; }
 
-  /* line 70, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main.scss */
+  /* line 70, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main.scss */
   .slick-prev {
     left: 0; }
 
-  /* line 73, C:/Users/kwynns/Documents/web/foundation-projects/final-test/src/scss/main.scss */
+  /* line 73, C:/Users/kwynns/Documents/web/foundation-projects/template-pres/src/scss/main.scss */
   .slick-next {
     right: 0; }
  }
