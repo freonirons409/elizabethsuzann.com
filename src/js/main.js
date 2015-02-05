@@ -1,14 +1,22 @@
 $(document).foundation();
 $(document).ready(function() {
-    $('.hero').slick({
-        responsive: [{
-            breakpoint: 640,
-            settings: {
-                arrows: false
-            }
-        }]
-    });
+    
+    $('.hero').slick();
 
+    //placeholder
+    if (!Modernizr.input.placeholder) {
+        $("input").each(function() {
+            if ($(this).val() == "" && $(this).attr("placeholder") != "") {
+                $(this).val($(this).attr("placeholder"));
+                $(this).focus(function() {
+                    if ($(this).val() == $(this).attr("placeholder")) $(this).val("");
+                });
+                $(this).blur(function() {
+                    if ($(this).val() == "") $(this).val($(this).attr("placeholder"));
+                });
+            }
+        });
+    }
     //toggle small device menu
     $(".small-menu-toggle").on("click", function() {
         $(".main-nav-wrap").toggleClass("show-small-menu");
