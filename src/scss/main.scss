@@ -1,3 +1,4 @@
+
 @import "settings";
 @import "normalize";
 
@@ -57,7 +58,7 @@
 /* split file here */
 
 @media #{$small-up} {
-
+  //stuff here
   //wrap this around a row if you need a background to go 100% width of screen
   .full-width {
     width: 100%;

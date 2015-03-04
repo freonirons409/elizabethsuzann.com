@@ -6,6 +6,7 @@ var notify = require('gulp-notify');
 var prefix = require('gulp-autoprefixer');
 var usemin = require('gulp-usemin');
 var uglify = require('gulp-uglify');
+var sourcemaps = require('gulp-sourcemaps');
 var minifyCSS = require('gulp-minify-css');
 var rename = require("gulp-rename");
 var iconfont = require('gulp-iconfont');
@@ -19,17 +20,27 @@ var fileinclude = require('gulp-file-include');
 // var newer = require('gulp-newer');
 // var imagemin = require('gulp-imagemin');
 
+//needed becaues current gulp-sass errors with source maps on windows
+var processWinPath = function(file) {
+    var path = require('path');
+    if (process.platform === 'win32') {
+        file.path = path.relative('.', file.path);
+        file.path = file.path.replace(/\\/g, '/');
+    }
+};
+
 gulp.task("build-css", function() {
     return gulp.src('src/scss/main.scss')
+        .on('data', processWinPath)
+        .pipe(sourcemaps.init())
         .pipe(sass({
             errLogToConsole: false,
-            sourceMap: 'sass',
-            sourceComments: 'map',
             includePaths: ['src/bower_components/foundation/scss/'],
             onError: function callback(err) {
                 return notify().write(err);
             }
         }))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('src/css/'));
 });
 
@@ -52,13 +63,13 @@ gulp.task('default', function() {
         server: {
             baseDir: "./src/"
         },
-        files: ['src/*.html','src/css/*.css', 'src/js/*.js']
+        files: ['src/*.html', 'src/css/*.css', 'src/js/*.js']
     });
 
-    //reload on html or js change
-
+    //run fileinclude on html changes
     gulp.watch(['*.html', 'includes/*.html'], ['fileinclude']);
 
+    //compile css on sass changes
     gulp.watch(['src/scss/*.scss'], ["build-css"]);
 
     //need to figure out cert issue
@@ -92,7 +103,6 @@ gulp.task('build', ['build-css-no-source', 'move-to-dist', 'minify-css']);
 
 gulp.task('move-to-dist', ['build-css-no-source'], function() {
 
-
     var stream = gulp.src('src/*.html')
         .pipe(usemin({
             //  assetsDir:"./src/",
@@ -113,9 +123,7 @@ gulp.task('move-to-dist', ['build-css-no-source'], function() {
 
 });
 
-gulp.task('split-css', function() {
 
-});
 gulp.task('minify-css', ['move-to-dist'], function() {
     fs.readFile('./dist/css/styles.css', function(err, data) {
         if (err) throw err;
