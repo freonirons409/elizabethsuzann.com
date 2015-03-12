@@ -60,12 +60,16 @@ $menu-direction: left;
     position: absolute;
     overflow: hidden;
     width: 100%;
-    &.show-small-menu .main-nav {
-      @if $menu-direction == left {
-        left: 0;
-      }
-      @else {
-        right: 0;
+    height: 0;
+    &.show-small-menu {
+      height: auto;
+      .main-nav {
+        @if $menu-direction == left {
+          left: 0;
+        }
+        @else {
+          right: 0;
+        }
       }
     }
   }
