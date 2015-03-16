@@ -42,11 +42,6 @@ $(document).ready(function() {
     });
     
     //FOR EPISERVER
-
-    //ELD whitelist
-    if (typeof whiteList === 'undefined') {
-        var whiteList = [];
-    }
     $(document).on("click", "a", function(e) {
         var link = $(this).attr("href");
         //only care if the link actually has an href and we don't need to check the eld modal
