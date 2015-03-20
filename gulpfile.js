@@ -15,7 +15,7 @@ var fontName = 'Icons';
 // var spritesmith = require('gulp.spritesmith');
 var fs = require('fs');
 var fileinclude = require('gulp-file-include');
-var sourcemaps = require('gulp-sourcemaps');
+//var sourcemaps = require('gulp-sourcemaps');
 
 // var newer = require('gulp-newer');
 // var imagemin = require('gulp-imagemin');
@@ -32,7 +32,7 @@ var processWinPath = function(file) {
 gulp.task("build-css", function() {
     return gulp.src('src/scss/main.scss')
         .on('data', processWinPath)
-        .pipe(sourcemaps.init())
+//        .pipe(sourcemaps.init())
         .pipe(sass({
             errLogToConsole: false,
             includePaths: ['src/bower_components/foundation/scss/'],
@@ -40,7 +40,7 @@ gulp.task("build-css", function() {
                 return notify().write(err);
             }
         }))
-        .pipe(sourcemaps.write())
+ //       .pipe(sourcemaps.write())
         .pipe(gulp.dest('src/css/'));
 });
 
