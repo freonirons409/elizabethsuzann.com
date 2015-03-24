@@ -6,7 +6,6 @@ var notify = require('gulp-notify');
 var prefix = require('gulp-autoprefixer');
 var usemin = require('gulp-usemin');
 var uglify = require('gulp-uglify');
-var sourcemaps = require('gulp-sourcemaps');
 var minifyCSS = require('gulp-minify-css');
 var rename = require("gulp-rename");
 var iconfont = require('gulp-iconfont');
