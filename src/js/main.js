@@ -1,6 +1,17 @@
-$(document).foundation();
+$(document).foundation({
+    accordion: {
+        callback: function(accordion) {
+            if (accordion.hasClass("active")) {
+                $('html,body').animate({
+                    scrollTop: (accordion.offset().top - accordion.siblings("a[href=#" + accordion.attr("id") + "]").outerHeight())
+                }, 800);
+            }
+        }
+    }
+});
+
 $(document).ready(function() {
-    
+
     $('.hero').slick();
 
     //placeholder
@@ -40,7 +51,7 @@ $(document).ready(function() {
             }
         }
     });
-    
+
     //FOR EPISERVER
     $(document).on("click", "a", function(e) {
         var link = $(this).attr("href");
