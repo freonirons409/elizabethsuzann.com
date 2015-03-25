@@ -3,7 +3,7 @@ $(document).foundation({
         callback: function(accordion) {
             if (accordion.hasClass("active")) {
                 $('html,body').animate({
-                    scrollTop: (accordion.offset().top - accordion.siblings("a[href=#" + accordion.attr("id") + "]").outerHeight())
+                    scrollTop: (accordion.siblings("a[href=#" + accordion.attr("id") + "]").offset().top)
                 }, 800);
             }
         }
