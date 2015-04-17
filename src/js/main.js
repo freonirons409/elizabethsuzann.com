@@ -38,6 +38,7 @@ $(document).ready(function() {
             e.stopPropagation();
             if ($(this).children("ul:hidden").length) {
                 e.preventDefault();
+                $(".main-nav").children("li").removeClass("active");
                 $(this).addClass('active');
                 $(this).siblings("li").children("ul").slideUp(function() {
                     $(this).removeClass('active');
