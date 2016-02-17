@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Template Site
 ===========
 
@@ -12,3 +13,6 @@ Add the svgs you want to use in your font to the svg folder. Then, open run.bat 
 
 For more information on making svgs, consult the README in the svg folder.
 
+=======
+# template-site
+>>>>>>> 02fcf9a608c6e9521c072ec37c02d0a87741dcac
