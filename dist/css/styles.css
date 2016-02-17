@@ -1,0 +1,18 @@
+/* split file here */
+@media only screen {
+  .full-width {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: initial; }
+
+  .slick-prev:before, .slick-next:before {
+    color: #222; }
+
+  .slick-prev {
+    left: 0; }
+
+  .slick-next {
+    right: 0; }
+ }
+

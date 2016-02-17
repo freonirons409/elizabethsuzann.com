@@ -6,73 +6,84 @@ var notify = require('gulp-notify');
 var prefix = require('gulp-autoprefixer');
 var usemin = require('gulp-usemin');
 var uglify = require('gulp-uglify');
-var minifyCSS = require('gulp-minify-css');
 var rename = require("gulp-rename");
 var iconfont = require('gulp-iconfont');
+var sourcemaps = require('gulp-sourcemaps');
 var iconfontCss = require('gulp-iconfont-css');
 var fontName = 'Icons';
+var minifyHtml = require('gulp-minify-html');
+var minifyCss = require('gulp-minify-css');
 // var spritesmith = require('gulp.spritesmith');
 var fs = require('fs');
 var fileinclude = require('gulp-file-include');
+var path = require('path');
+var rev = require('gulp-rev');
+var del = del = require('del');
+var cache = require('gulp-cache');
+
 //var sourcemaps = require('gulp-sourcemaps');
 
 // var newer = require('gulp-newer');
-// var imagemin = require('gulp-imagemin');
+var imagemin = require('gulp-imagemin');
 
 //needed becaues current gulp-sass errors with source maps on windows
 var processWinPath = function(file) {
-    var path = require('path');
+    
     if (process.platform === 'win32') {
         file.path = path.relative('.', file.path);
         file.path = file.path.replace(/\\/g, '/');
     }
 };
+gulp.task("name", function() {
+    console.log(path.basename(__dirname));
+});
+//clean out that mothafuckin' dist folder
+gulp.task('clean', function() {
+    return del(['dist/css', 'dist/js', 'dist/img']);
+});
 
+// Image compression
+gulp.task('images', function() {
+  return gulp.src('src/img/*')
+    .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
+    .pipe(gulp.dest('dist/img'));
+});
+
+//build bower/foundation scss files
 gulp.task("build-css", function() {
     return gulp.src('src/scss/main.scss')
         .on('data', processWinPath)
-//        .pipe(sourcemaps.init())
+        .pipe(sourcemaps.init())
         .pipe(sass({
-            errLogToConsole: false,
-            includePaths: ['src/bower_components/foundation/scss/'],
-            onError: function callback(err) {
-                return notify().write(err);
-            }
+            includePaths: ['src/bower_components/foundation/scss/']
+        }).on('error', function logError(error) {
+            notify().write(error);
+            this.emit('end');
         }))
- //       .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('src/css/'));
 });
 
 gulp.task("build-css-no-source", function() {
     return gulp.src('src/scss/main.scss')
         .pipe(sass({
-            errLogToConsole: true,
             includePaths: ['src/bower_components/foundation/scss/'],
-            onError: function(err) {
-                return notify().write(err);
+            outputStyle: 'compressed'
             }
-        }))
+        ).on('error', sass.logError))
         .pipe(prefix())
         .pipe(gulp.dest('src/css/'));
 });
 
-
 gulp.task('default', function() {
     browserSync({
-        server: {
-            baseDir: "./src/"
-        },
+        server: { baseDir: "./src/" },
         files: ['src/*.html', 'src/css/*.css', 'src/js/*.js']
     });
-
     //run fileinclude on html changes
     gulp.watch(['*.html', 'includes/*.html'], ['fileinclude']);
-
     //compile css on sass changes
     gulp.watch(['src/scss/*.scss'], ["build-css"]);
-
-    //need to figure out cert issue
-    //gulp.watch(["img/*.jpg", "img/*.png", "img/*.gif", "img/*.jpeg"], ["compress-images"]);
 });
 
 
@@ -85,67 +96,27 @@ gulp.task('fileinclude', function() {
         .pipe(gulp.dest('./src'));
 });
 
-// gulp.task('compress-images', function() {
-//     var imgSrc = ["img/*.jpg", "img/*.png", "img/*.gif", "img/*.jpeg"],
-//         imgDest = 'img/comp';
+gulp.task('build', ['fileinclude','build-css-no-source', 'move-to-dist','clean']);
 
-//     // Add the newer pipe to pass through newer images only
-//     return gulp.src(imgSrc)
-//         .pipe(newer(imgDest))
-//         .pipe(imagemin({
-//             optimizationLevel: 4
-//         }))
-//         .pipe(gulp.dest(imgDest));
-// });
-
-gulp.task('build', ['build-css-no-source', 'move-to-dist', 'minify-css']);
-
-gulp.task('move-to-dist', ['build-css-no-source'], function() {
-
-    var stream = gulp.src('src/*.html')
+gulp.task('move-to-dist', ['build-css-no-source', 'fileinclude', 'fontsImages'], function() {
+    return gulp.src('src/*.html')
         .pipe(usemin({
-            //  assetsDir:"./src/",
-            css: ['concat'],
-            js: [uglify()],
-            jsmain: []
+            css: [ rev ],
+            /*html: [ function () {return minifyHtml({ empty: true });} ],*/
+            js: [ uglify, rev ],
+            jsmain: [],
+            inlinejs: [ uglify ],
+            inlinecss: [ minifyCss, 'concat' ]
         }))
         .pipe(gulp.dest('dist/'));
-
+});
+gulp.task('fontsImages', ['images'], function(){
     gulp.src('src/fonts/**')
         .pipe(gulp.dest('dist/fonts/'));
     gulp.src('src/img/**')
         .pipe(gulp.dest('dist/img/'));
-    gulp.src('src/js/main.js')
-        .pipe(gulp.dest('dist/js/'));
-
-    return stream;
-
 });
 
-
-gulp.task('minify-css', ['move-to-dist'], function() {
-    fs.readFile('./dist/css/styles.css', function(err, data) {
-        if (err) throw err;
-        var content = data.toString();
-        var index = content.indexOf("/* split file here */");
-        var vendor = content.slice(0, index);
-        var main = content.slice(index);
-        fs.writeFile('./dist/css/styles.css', main, function(err) {
-            if (err) throw err;
-            console.log('main is saved!');
-        });
-        fs.writeFile('./dist/css/vendor.min.css', vendor, function(err) {
-            if (err) throw err;
-            console.log('vendor is saved!');
-            return gulp.src('./dist/css/vendor.min.css')
-                .pipe(minifyCSS())
-                .pipe(gulp.dest('./dist/css/'));
-        });
-
-    });
-
-
-});
 
 //run once after project has been created
 gulp.task('init', function() {
@@ -192,21 +163,3 @@ var generateIconImport = function(inputfile) {
 gulp.task('view-iconfont', function() {
     generateIconImport("src/scss/_icons.scss");
 });
-
-// gulp.task('sprite', function () {
-//   var spriteData = gulp.src('src/img/sprite/*.png').pipe(spritesmith({
-//     imgName: 'sprite.png',
-//     cssName: 'sprite.css',
-//     imgPath: '..src/img/sprite.png',
-//     algorithm: 'alt-diagonal',
-//     cssOpts: {
-//       cssClass: function (item) {
-//         // `item` has `x`, `y`, `width`, `height`, `name`, `image`, and more
-//         // It is suggested to `console.log` output
-//         return '.sprite-before-' + item.name + ':before, .sprite-after-' + item.name + ':after';
-//       }
-//   }
-//   }));
-//   spriteData.img.pipe(gulp.dest('src/img/'));
-//   spriteData.css.pipe(gulp.dest('src/css/'));
-// });
