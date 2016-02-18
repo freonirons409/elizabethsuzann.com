@@ -136,7 +136,8 @@ gulp.task('make-iconfont', function() {
         }))
         .pipe(iconfont({
             fontName: fontName,
-            fontHeight: 1000,
+            fontHeight: 500,
+            prependUnicode: true,
             appendCodepoints: true,
             normalize: true
         }))

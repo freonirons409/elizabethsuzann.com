@@ -3,9 +3,23 @@
 	footer {
 		padding:rem-calc(20);
 		background:#333;
-		p,h1,h2,h3,h4,h5,h6 {
+		p,h1,h2,h3,h4,h5,h6,.icon {
 			color:$footer-font-color;
+			margin-bottom:0;
 		}
+		.icon {
+			font-size:rem-calc(30);
+		}
+		.copyright {
+			margin-top:rem-calc(20);
+			p {
+				font-size:rem-calc(14);
+			}
+		}
+		#footerSocial {
+			margin-bottom:0;
+		}
+
 	}
 
 }
