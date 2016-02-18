@@ -12,7 +12,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var iconfontCss = require('gulp-iconfont-css');
 var fontName = 'Icons';
 var minifyHtml = require('gulp-minify-html');
-var minifyCss = require('gulp-minify-css');
+var minifyCss = require('gulp-cssnano');
 // var spritesmith = require('gulp.spritesmith');
 var fs = require('fs');
 var fileinclude = require('gulp-file-include');
@@ -21,7 +21,7 @@ var rev = require('gulp-rev');
 var del = del = require('del');
 var cache = require('gulp-cache');
 
-//var sourcemaps = require('gulp-sourcemaps');
+var sourcemaps = require('gulp-sourcemaps');
 
 // var newer = require('gulp-newer');
 var imagemin = require('gulp-imagemin');

@@ -1,11 +1,12 @@
 {
-    "name": "foundation-gulp-template",
-    "dependencies": {
-        "foundation": "5.5.x",
-        "slick-carousel": "latest",
-        "jquery": "~1.x"
-    },
-    "resolutions": {
-        "jquery": "1.11.1"
-    }
+  "name": "foundation-gulp-template",
+  "dependencies": {
+    "foundation": "5.5.x",
+    "slick-carousel": "latest",
+    "jquery": "~1.x",
+    "parsleyjs": "^2.3.3"
+  },
+  "resolutions": {
+    "jquery": "1.11.1"
+  }
 }

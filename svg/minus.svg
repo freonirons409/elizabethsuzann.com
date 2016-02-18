@@ -1,14 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="1000px" height="1000px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 508.827 508.827" style="enable-background:new 0 0 508.827 508.827;" xml:space="preserve" width="512px" height="512px">
 <g>
-	<path display="none" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M1.95,498.858
-		C1.95,223.125,225.408-0.333,501.142-0.333c275.734,0,499.191,223.458,499.191,499.191c0,275.734-223.457,499.191-499.191,499.191
-		C225.408,998.05,1.95,774.593,1.95,498.858z"/>
-	
-		<rect x="429.826" y="237.379" display="none" fill-rule="evenodd" clip-rule="evenodd" fill="#F09720" width="142.625" height="522.965"/>
-	<rect y="362.81" fill-rule="evenodd" clip-rule="evenodd" width="1000" height="272.725"/>
+	<g>
+		<path d="M254.414,508.827c-140.032,0-254.41-114.378-254.41-254.41S114.381,0.007,254.414,0.007    c140.032-1.069,254.41,113.309,254.41,253.341S394.446,508.827,254.414,508.827z M254.414,31.007    c-122.929,0-222.342,99.412-222.342,222.342S131.485,475.69,254.414,475.69s222.342-99.412,222.342-222.342    S377.343,31.007,254.414,31.007z" fill="#000000"/>
+		<g>
+			<path d="M360.24,269.383H254.414c-8.552,0-16.034-7.483-16.034-16.034s7.483-16.034,16.034-16.034H360.24     c8.552,0,16.034,7.483,16.034,16.034C376.274,262.969,368.791,269.383,360.24,269.383z" fill="#000000"/>
+			<path d="M254.414,269.383H148.588c-8.552,0-16.034-7.483-16.034-16.034s7.483-16.034,16.034-16.034     h105.826c8.552,0,16.034,7.483,16.034,16.034C270.448,262.969,262.965,269.383,254.414,269.383z" fill="#000000"/>
+		</g>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
 </g>
 </svg>

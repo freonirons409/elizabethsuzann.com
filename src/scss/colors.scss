@@ -1,0 +1,35 @@
+$white       : #FFFFFF;
+$ghost       : #efefed;
+$snow        : #F0F0F0;
+$vapor       : #F6F6F6;
+$white-smoke : #F5F5F5;
+$silver      : #E5E6E1;
+$smoke       : #EEEEEE;
+$gainsboro   : #DDDDDD;
+$iron        : #CCCCCC;
+$base        : #5b5b41;
+$aluminum    : #999999;
+$jumbo       : #888888;
+$monsoon     : #777777;
+$steel       : #666666;
+$charcoal    : #555555;
+$tuatara     : #444444;
+$oil         : #333333;
+$jet         : #383637;
+$black       : #000000;
+
+//We use these as default colors throughout
+$primary-color: #247bb1;
+$secondary-color: #48a54c;
+$secondary-brown: #6d6e53;
+$alert-color: #cc0000;
+$success-color: #43AC6A;
+$warning-color: #f08a24;
+$info-color: #a0d3e8;
+$banno-blue: #247bb1;
+
+$hero-caption-background: $ghost;
+$hero-caption-text: scale-color($hero-caption-background, $lightness: -35%);
+
+
+$footer-font-color: #fff;

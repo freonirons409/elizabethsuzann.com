@@ -1,0 +1,63 @@
+$hero-caption-radius: rem-calc(20);
+$hero-margin-bottom: rem-calc(0) !default;
+
+@media #{$small-up} {
+	.hero {
+		margin-bottom:$hero-margin-bottom;
+		.slick-slide {
+			position:relative;
+		}
+		.caption {
+			position:absolute;
+			top:40%;
+			padding:rem-calc(20);
+			left:10%;
+			z-index:999;
+			background:rgba($hero-caption-background, 0.8);
+			border-radius:$hero-caption-radius;
+			font-size:rem-calc(60);
+			&, h1,h2,h3,h4,h5,h6,p {
+				color:$hero-caption-text;
+			}
+			h1 {
+				font-size:rem-calc(60);
+			}
+			h2 {
+				font-size:rem-calc(50);
+			}
+			h3 {
+				font-size:rem-calc(40);
+			}
+			h4 {
+				font-size:rem-calc(30);
+			}
+			h5 {
+				font-size:rem-calc(20);
+			}
+			h6 {
+				font-size:rem-calc(16);
+			}
+			p {
+				font-size:rem-calc(30);
+			}
+		}
+	}
+}
+
+@media #{$small-only} {}
+
+@media #{$medium-up} {}
+
+@media #{$medium-only} {}
+
+@media #{$large-up} {}
+
+@media #{$large-only} {}
+
+@media #{$xlarge-up} {}
+
+@media #{$xlarge-only} {}
+
+@media #{$xxlarge-up} {}
+
+@media #{$xxlarge-only} {}
