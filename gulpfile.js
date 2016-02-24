@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
-var notify = require('gulp-notify');
+//var notify = require('gulp-notify');
 var prefix = require('gulp-autoprefixer');
 var usemin = require('gulp-usemin');
 var uglify = require('gulp-uglify');
@@ -11,7 +11,7 @@ var iconfont = require('gulp-iconfont');
 var sourcemaps = require('gulp-sourcemaps');
 var iconfontCss = require('gulp-iconfont-css');
 var fontName = 'Icons';
-var minifyHtml = require('gulp-minify-html');
+var minifyHtml = require('gulp-htmlnano');
 var minifyCss = require('gulp-cssnano');
 // var spritesmith = require('gulp.spritesmith');
 var fs = require('fs');
@@ -57,7 +57,7 @@ gulp.task("build-css", function() {
         .pipe(sass({
             includePaths: ['src/bower_components/foundation/scss/']
         }).on('error', function logError(error) {
-            notify().write(error);
+            //notify().write(error);
             this.emit('end');
         }))
         .pipe(sourcemaps.write())
