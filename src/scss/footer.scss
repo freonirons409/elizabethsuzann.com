@@ -21,6 +21,20 @@
 		}
 
 	}
+	.topper {
+		position:fixed;
+		right:2%;
+		z-index:10;
+		bottom:rem-calc(20);
+		&,a,.icon {
+			font-size:rem-calc(50)
+			color:$primary-color;
+			text-decoration:none!important;
+		}
+		.icon:hover {
+			color:scale-color($primary-color, $lightness: 35%);
+		}
+	}
 
 }
 
