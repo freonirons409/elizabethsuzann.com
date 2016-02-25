@@ -127,7 +127,7 @@ gulp.task('init', function() {
         .pipe(gulp.dest('src/scss'));
 });
 
-gulp.task('make-iconfont', function() {
+gulp.task('make-iconfont', ['build-css-no-source'], function() {
     gulp.src(['svg/*.svg'])
         .pipe(iconfontCss({
             fontName: fontName,

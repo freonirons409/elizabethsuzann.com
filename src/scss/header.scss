@@ -1,0 +1,24 @@
+
+@media #{$small-up} {
+	header {
+		padding:rem-calc(20);
+	}
+}
+
+@media #{$small-only} {}
+
+@media #{$medium-up} {}
+
+@media #{$medium-only} {}
+
+@media #{$large-up} {}
+
+@media #{$large-only} {}
+
+@media #{$xlarge-up} {}
+
+@media #{$xlarge-only} {}
+
+@media #{$xxlarge-up} {}
+
+@media #{$xxlarge-only} {}

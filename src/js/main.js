@@ -12,7 +12,22 @@ $(document).foundation({
 
 $(document).ready(function() {
 
-    $('.hero').slick();
+    $('.hero').slick({
+        dots: true
+    });
+
+    /* ALL THIS SCROLLING MESS */
+    $(window).scroll(function(){
+      var h = $('body').height();
+      var y = $(window).scrollTop();
+      if( y > (h*.05) ){ $(".topper").fadeIn("slow"); } else { $('.topper').fadeOut('slow'); }
+    });
+    
+    $(".topper a").click(function(event){
+         event.preventDefault();
+         $('html,body').animate({scrollTop:0}, 800,'swing');
+    });
+    /*===================================*/
 
     //placeholder
     if (!Modernizr.input.placeholder) {

@@ -68,14 +68,21 @@
     margin-right: auto;
     max-width: initial;
   }
-  .slick-prev:before, .slick-next:before{
-    color: #222;
+  .master-container {
+    overflow:hidden;
   }
-  .slick-prev {
-  	left:0;
+  .content-col {
+    padding:rem-calc(30 20 30 10);
   }
-  .slick-next{
-  	right:0;
+  .right-col {
+    padding-top:rem-calc(30);
+    img {
+      margin-top:rem-calc(15);
+      margin-bottom: rem-calc(15);
+    }
+  }
+  p.small {
+    font-size:75%;
   }
 }
 

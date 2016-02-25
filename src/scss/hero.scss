@@ -1,11 +1,14 @@
 $hero-caption-radius: rem-calc(20);
 $hero-margin-bottom: rem-calc(0) !default;
+$hero-caption-background: scale-color($primary-color, $lightness: 75%);
+$hero-caption-text: scale-color($hero-caption-background, $lightness: -65%);
 
 @media #{$small-up} {
 	.hero {
 		margin-bottom:$hero-margin-bottom;
 		.slick-slide {
 			position:relative;
+			overflow:hidden;
 		}
 		.caption {
 			position:absolute;
@@ -44,7 +47,49 @@ $hero-margin-bottom: rem-calc(0) !default;
 	}
 }
 
-@media #{$small-only} {}
+@media #{$small-only} {
+	.hero {
+		.slick-slide {
+			img {
+				min-height:rem-calc(300);
+				max-width:none;
+				max-height:400px;
+				position:relative;
+				left:50%;
+				margin-left:-100%;
+			}
+		}
+	}
+	.hero {
+		.caption {
+			position:static;
+			width:100%;
+			border-radius:0;
+			font-size:rem-calc(40);
+			h1 {
+				font-size:rem-calc(40);
+			}
+			h2 {
+				font-size:rem-calc(30);
+			}
+			h3 {
+				font-size:rem-calc(20);
+			}
+			h4 {
+				font-size:rem-calc(17);
+			}
+			h5 {
+				font-size:rem-calc(16);
+			}
+			h6 {
+				font-size:rem-calc(14);
+			}
+			p {
+				font-size:rem-calc(14);
+			}
+		}
+	}
+}
 
 @media #{$medium-up} {}
 

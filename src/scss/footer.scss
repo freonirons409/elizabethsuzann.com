@@ -3,6 +3,7 @@
 	footer {
 		padding:rem-calc(20);
 		background:#333;
+		position:relative;
 		p,h1,h2,h3,h4,h5,h6,.icon {
 			color:$footer-font-color;
 			margin-bottom:0;
@@ -23,11 +24,12 @@
 	}
 	.topper {
 		position:fixed;
+		display:none;
 		right:2%;
 		z-index:10;
-		bottom:rem-calc(20);
+		bottom:15%;
 		&,a,.icon {
-			font-size:rem-calc(50)
+			font-size:rem-calc(50);
 			color:$primary-color;
 			text-decoration:none!important;
 		}

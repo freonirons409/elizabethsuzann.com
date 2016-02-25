@@ -1,23 +1,203 @@
-@@include('./includes/head.html',{"class":"interior"})
+@@include('./includes/head.html', {"class":"interior"})
+<!-- sep -->
+<div class="master-container">
+@@include('./includes/header.html')
 <!-- sep -->
 @@include('./includes/nav.html')
 
 <!-- 2 col start -->
 <div class="row">
     <div class="medium-8 large-9 columns content-col">
-        <h1>Checking accounts designed for your needs</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac lorem libero. Nulla placerat libero ante, quis suscipit erat dignissim id. Proin sed elit nec ligula iaculis tristique. Vestibulum turpis elit, volutpat non velit id, dignissim posuere metus. Nulla pulvinar iaculis ipsum, sit amet vestibulum leo scelerisque ut. Maecenas at ex quis odio pellentesque tristique ut non lorem. Vestibulum gravida tristique neque, eget laoreet nisi laoreet sed. Fusce viverra tincidunt turpis, in varius enim. Morbi quis posuere diam. Nunc nulla lacus, blandit lobortis arcu at, consectetur fringilla metus. Nullam a viverra nulla, vel rhoncus ipsum. Vivamus iaculis ex nec iaculis cursus.</p>
+                <h2>Headlines</h2>
+                    <ul class="inline-list">
+                        <li><h2>&lt;h2&gt;</h2></li>
+                        <li><h3>&lt;h3&gt;</h3></li>
+                        <li><h4>&lt;h4&gt;</h4></li>
+                        <li><h5>&lt;h5&gt;</h5></li>
+                        <li><h6>&lt;h6&gt;</h6></li>
+                    </ul>
+                    <hr/>
 
-        @@include('./includes/tabs.html')
-        <!-- comment -->
-        @@include('./includes/accordion.html')
+                <h2>Paragraph Text &lt;p&gt;</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#">Omnis ut dolor est impedit</a>, odio ad adipisci corporis enim quibusdam voluptas sapiente, doloremque deserunt ex magnam, earum inventore voluptate nisi non.</p>
+                    <p>Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing</a> elit. Unde voluptates, nihil officiis veritatis eos tempore dicta recusandae voluptate voluptatum praesentium optio alias omnis impedit ab nobis molestias cupiditate, voluptatibus ea fugit assumenda magni temporibus. Sit a ab accusantium voluptatum tenetur.</p>
+                    <p><strong>Small Text</strong>: <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, illo, culpa! Possimus magni nihil, velit eius optio quisquam ut quo rerum, vero officia autem officiis. Non laudantium aperiam magnam! Ducimus.</small></p>
+                    <p><strong>Disclaimer Text </strong><small>.disclaimer</small>: <span class="disclaimer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis repellat rerum assumenda, facere. Alias deserunt pariatur magnam rerum quod voluptates, quidem id labore quam. Illum nemo minus repellat veritatis aliquid consequatur dolorem.</span></p>
+
+                    <p><span class="top-link"><a href="#top">Return to Top</a></span></p>
+
+            
+                <h2>Tables <small>(scale for responsive)</small></h2>
+    
+                    <table class="responsive2 large-only">
+                        <thead>
+                            <th>&nbsp;</th>
+                            <th>FirstStep Checking</th>
+                            <th>Free Checking</th>
+                            <th>Relationship Checking</th>
+                            <th>Plu$ Checking</th>
+                        </thead>
+                        <tr>
+                            <td><strong>Perfect For</strong></td>
+                            <td>You’re 23 or younger and are just getting started managing your personal finances.</td>
+                            <td>You don’t have access to direct deposit.</td>
+                            <td>You have direct deposit or $25,000 in combined deposit and loan balances with us.</td>
+                            <td>You want your money to earn money and can maintain a $7,500 average monthly balance.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Minimum Balance Requirement</strong></td>
+                            <td>$0</td>
+                            <td>$0</td>
+                            <td>$0</td>
+                            <td>$7,500</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Monthly service fee</strong></td>
+                            <td>None</td>
+                            <td>None</td>
+                            <td>None if requirements are met; otherwise $10</td>
+                            <td>None if requirements are met; otherwise $10</td>
+                        </tr>
+                    </table>
+            
+                    <hr/>
+
+                <h2>Forms</h2>
+                    <form>
+                        <div class="row">
+                            <div class="medium-6 column">
+                                <label>Text Field</label><input type="text" name=""/>
+                            </div>
+                            <div class="medium-6 column">
+                                <label>Password Field</label><input type="password" name=""/>
+                            </div>
+                            <div class="medium-6 column">
+                                <label>Select Box</label>
+                                    <select>
+                                        <option value="">Option 1</option>
+                                        <option value="">Option 2</option>
+                                        <option value="">Option 3</option>
+                                        <option value="">Option 4</option>
+                                    </select>
+                            </div>
+                            <div class="medium-6 column">
+                                <div class="row">
+                                    <div class="medium-6 column">
+                                        <label for="">Check Box</label>
+                                        <input type="checkbox"/>
+                                    </div>
+                                    <div class="medium-6 column">
+                                        <label for="">Radio</label>
+                                        <input type="radio"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <label for="">Text Area</label>
+                                <textarea></textarea>
+                            </div>
+                            <div class="column">
+                                <h6>Form Buttons</h6>
+                                <input type="submit" class="button" value=".button"/>
+                                <input type="submit" class="button secondary" value=".button .secondary"/>
+                                <input type="submit" class="button expand" value=".button .expand"/>
+                                <input type="submit" class="button small" value=".button .small"/>
+                            </div>
+                        </div>
+                    </form>
+            
+                <hr/>
+            
+                <h2>Lists</h2>
+                    <div class="row">
+                        <div class="column medium-4">
+                            <h3>Ordered List</h3>
+                                <ol>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, temporibus.</li>
+                                    <li>Lorem ipsum dolor sit.</li>
+                                    <li>Lorem ipsum dolor sit amet.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+                                </ol>
+                        </div>
+                        <div class="column medium-4">
+                            <h3>Bulleted List <small>(default)</small></h3>
+                                <ul>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        <ul>
+                                            <li>Lorem ipsum dolor sit.</li>
+                                            <li>Lorem ipsum dolor sit amet.</li>
+                                            <li>Lorem ipsum dolor.</li>
+                                        </ul>
+                                    </li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, dicta.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, iste accusantium natus, exercitationem quibusdam minima!</li>
+                                </ul>
+                        </div>
+                        <div class="column medium-4">
+                            <h3>No Bullet List <small>class="no-bullet"</small></h3>
+                                <ul class="no-bullet">
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        <ul>
+                                            <li>Lorem ipsum dolor sit.</li>
+                                            <li>Lorem ipsum dolor sit amet.</li>
+                                            <li>Lorem ipsum dolor.</li>
+                                        </ul>
+                                    </li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, dicta.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, iste accusantium natus, exercitationem quibusdam minima!</li>
+                                </ul>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <h3>Inline List <small>class="inline-list"</small></h3>
+                            <ul class="inline-list">
+                                <li>Item #1</li>
+                                <li>Another item</li>
+                                <li><a href="#">A Linked item</a></li>
+                                <li>Something else</li>
+                            </ul>
+                        </div>
+                    </div>
+                <hr/>
+
+                <h2>Accordions</h2>
+                    <p><strong>Note:</strong> Accordions will be added individually as a content class element in the CMS, NOT within the text editor.</p>
+
+                    @@include('./includes/accordion.html')
+                    
+                    <p><span class="top-link"><a href="#top">Return to Top</a></span></p>
+            
+                <h2>Content Tabs</h2>
+                     @@include('./includes/tabs.html')
+        <!-- End INTERIOR Style -->
+
+       
 
 
 
     </div>
     <div class="medium-4 large-3 columns right-col">
+        <h1> Headline 1</h1>
+        <h2> Headline 2</h2>
+        <h3> Headline 3</h3>
+        <h4> Headline 4</h4>
+        <h5> Headline 5</h5>
+
+        <img src="http://placehold.it/300x140"/>
         <p>right column text</p>
+
+        <p class="small">Small text - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, temporibus.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, temporibus.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, temporibus.</p>
     </div>
 </div>
 <!-- 2 col end -->
 @@include('./includes/footer.html')
+<!-- sep -->
+</div>
+@@include('./includes/scripts.html')
+
+</body>
+</html>
