@@ -1,7 +1,7 @@
 {
   "name": "foundation-gulp-template",
   "dependencies": {
-    "foundation": "5.5.x",
+    "foundation": "latest",
     "slick-carousel": "latest",
     "jquery": "~1.x",
     "parsleyjs": "^2.3.3"
