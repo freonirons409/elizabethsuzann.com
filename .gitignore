@@ -1,7 +1,7 @@
 # Created by http://www.gitignore.io 
 
 ### Slick ###
-slick
+# slick
 
 ### Node ###
 # Logs
@@ -56,5 +56,5 @@ $RECYCLE.BIN/
 
 
 ### Bower ###
-bower_components
-build/bower_components
+build/
+build/*

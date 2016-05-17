@@ -3,8 +3,8 @@
   "dependencies": {
     "foundation": "latest",
     "slick-carousel": "latest",
-    "jquery": "~1.x",
-    "parsleyjs": "^2.3.3"
+    "jquery": "latest",
+    "parsleyjs": "latest"
   },
   "resolutions": {
     "jquery": "1.11.1"
