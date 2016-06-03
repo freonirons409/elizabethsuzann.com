@@ -1,7 +1,24 @@
 
 @media #{$small-up} {
 	header {
-		padding:rem-calc(20);
+		padding:rem-calc(0);
+		.notice {
+			font-weight:300;
+			font-size:rem-calc(13);
+			line-height:1.6;
+			text-align:center;
+		}
+		.top-header {
+			background:$ghost;
+			padding:rem-calc(10 0);
+			ul {
+				margin:0;
+			}
+		}
+		.sub-header {
+			background:$white;
+			padding:rem-calc(30 0 20 0)
+		}
 	}
 }
 

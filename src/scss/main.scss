@@ -1,4 +1,4 @@
-
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300,100);
 @import "settings";
 @import "normalize";
 @import "colors";
@@ -57,11 +57,22 @@
 @import "_icons";
 
 /* split file here */
+@import "header";
 @import "hero";
 
 @media #{$small-up} {
   //stuff here
   //wrap this around a row if you need a background to go 100% width of screen
+  .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+  }
   .full-width {
     width: 100%;
     margin-left: auto;
