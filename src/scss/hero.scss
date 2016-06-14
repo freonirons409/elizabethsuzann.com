@@ -51,12 +51,12 @@ $hero-caption-text: scale-color($hero-caption-background, $lightness: -65%);
 	.hero {
 		.slick-slide {
 			img {
-				min-height:rem-calc(300);
-				max-width:none;
-				max-height:400px;
-				position:relative;
-				left:50%;
-				margin-left:-100%;
+				// min-height:rem-calc(300);
+				// max-width:none;
+				// max-height:400px;
+				// position:relative;
+				// left:50%;
+				// margin-left:-100%;
 			}
 		}
 	}

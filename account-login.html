@@ -1,0 +1,99 @@
+@@include('./includes/head.html', {"class":"interior"})
+<!-- sep -->
+<div class="master-container">
+@@include('./includes/header.html')
+<!-- sep -->
+
+<!-- 2 col start -->
+<div id="page" class="row" id="customerForms" data-equalizer>
+    <div class="medium-6 columns" data-equalizer-watch>
+        <div class="flipper">
+            <div id="customer" class="front">
+                <div class="template_header">
+                    <h2 class="title">Customer Login</h2>
+                </div>
+                <form method="post" action="https://elizabethsuzann.com/account/login" id="customer_login" accept-charset="UTF-8"><input type="hidden" value="customer_login" name="form_type"><input type="hidden" name="utf8" value="✓">
+                    <div id="login_email" class="clearfix large_form">
+                        <label for="customer_email" class="login">Email Address</label>
+                        <input type="email" value="" name="customer[email]" id="customer_email" class="large" size="30">
+                    </div>
+                    
+                    
+                    <div id="login_password" class="clearfix large_form">
+                        <label for="customer_password" class="login">Password</label>
+                        <input type="password" value="" name="customer[password]" id="customer_password" class="large password" size="16">
+                        <div id="forgot_password">
+                            <a href="#">Forgot your password?</a>
+                        </div>
+                    </div>
+                    
+                    <div class="action_bottom">
+                        <input class="secondary button" type="submit" value="SIGN IN">
+                    </div>
+                </form>
+            </div>
+            <div id="recover-password" class="back">
+                <div class="template_header">
+                    <h2 class="title">Reset Password</h2>
+                    <p class="note">We will send you an email to reset your password.</p>
+                </div>
+                <form method="post" action="/account/recover" accept-charset="UTF-8"><input type="hidden" value="recover_customer_password" name="form_type"><input type="hidden" name="utf8" value="✓">
+                
+                <div id="recover_email" class="clearfix large_form">
+                    <input type="email" value="" placeholder="Email Address" size="30" name="email" id="recover-email" class="large">
+                </div>
+                <div class="action_bottom">
+                    <input class="secondary button" type="submit" value="SUBMIT">
+                    <span class="note">or <a href="#" id="cancel_password">Cancel</a></span>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="medium-6 columns" data-equalizer-watch>
+        <div id="create-customer">
+            <div class="template_header">
+              <h2 class="title">Create Account</h2>
+            </div>
+
+            <form method="post" action="https://elizabethsuzann.com/account" id="create_customer" accept-charset="UTF-8"><input type="hidden" value="create_customer" name="form_type"><input type="hidden" name="utf8" value="✓">
+                  <div id="first_name" class="clearfix large_form">
+                    <label for="first_name" class="login">First Name</label>
+                    <input type="text" value="" name="customer[first_name]" id="first_name" class="large" size="30">
+                  </div>
+
+                  <div id="last_name" class="clearfix large_form">
+                    <label for="last_name" class="login">Last Name</label>
+                    <input type="text" value="" name="customer[last_name]" id="last_name" class="large" size="30">
+                  </div>
+
+                  <div id="dob" class="clearfix large_form">
+                    <label for="dob" class="login">Date of Birth</label>
+                     <input type="text" name="customer[note][DOB]" id="dob" class="large" size="30" placeholder="mm/dd/yyyy">
+                  </div>
+                
+                  <div id="email" class="clearfix large_form">
+                    <label for="email" class="login">Email Address</label>
+                    <input type="email" value="" name="customer[email]" id="email" class="large" size="30">
+                  </div>
+                
+                  <div id="password" class="clearfix large_form">
+                    <label for="password" class="login">Password</label>
+                    <input type="password" value="" name="customer[password]" id="password" class="large password" size="30">
+                  </div>
+
+                  <div class="action_bottom">
+                    <input class="secondary button" type="submit" value="CREATE">
+                  </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- 2 col end -->
+@@include('./includes/footer.html')
+<!-- sep -->
+</div>
+@@include('./includes/scripts.html')
+
+</body>
+</html>

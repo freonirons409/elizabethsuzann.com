@@ -5,7 +5,9 @@
 		.notice {
 			font-weight:300;
 			font-size:rem-calc(13);
-			line-height:1.6;
+			line-height:2;
+			line-height:1.2;
+			padding-top:rem-calc(7);
 			text-align:center;
 		}
 		.top-header {
@@ -15,14 +17,127 @@
 				margin:0;
 			}
 		}
+		.right-header {
+			padding-top:rem-calc(12);
+		}
 		.sub-header {
 			background:$white;
-			padding:rem-calc(30 0 20 0)
+			padding: rem-calc(12 0 0 0);
+		}
+		.header-icons {
+			margin-bottom:0;
+			.icon {
+				font-size: rem-calc(26);
+				opacity:0.5;
+				@include transition-all(0.5s);
+				&:hover {
+					opacity:0.8;
+				}
+			}
+			.icon-cart.active {
+				color:$bold-blue;
+			}
+		}
+	}
+	body.interior {
+		header {
+
+		}
+	}
+	#adminList {
+
+	}
+	#subHeader {
+		max-width:rem-calc(1700);
+		padding:rem-calc(10 50 0 50);
+		position:relative;
+		.column,.columns {
+			position:static!important;
+		}
+	}
+	#searchBar {
+		position:absolute;
+		display:none;
+		&.toggled {
+			display:block;
+		}
+		width:100%;
+		padding:0;
+		margin:0;
+		background:rgba(0,0,0,0.8);
+		z-index:906;
+		padding:rem-calc(20)!important;
+		input {
+			margin:0;
+			border:0;
+			background:transparent;
+			font-size:rem-calc(35);
+			font-weight:300;
+			text-align:center;
+			color:$white;
+		}
+		.closer {
+			cursor: pointer;
+			position:absolute;
+			right:rem-calc(20);
+			top:rem-calc(15);
+			&:hover {
+				.icon {
+					color:$white;
+				}
+			}
+			&:active {
+				.icon {
+					color:$secondary-color;
+				}
+			}
+			.icon {
+				font-size:rem-calc(35);
+			}
+		}
+	}
+	.quick-login-window {
+		display:none;
+		-webkit-box-shadow: 0px 5px 10px 0px rgba(50, 50, 50, 0.25);
+		-moz-box-shadow:    0px 5px 10px 0px rgba(50, 50, 50, 0.25);
+		box-shadow:         0px 5px 10px 0px rgba(50, 50, 50, 0.25);
+		&.toggled {
+			display:block;
+		}
+		position:absolute;
+		z-index:9;
+		max-width:rem-calc(320);
+		right:rem-calc(30);
+		top:75px;
+		background:$white;
+		padding:rem-calc(15);
+		#forgot_password {
+			font-size:rem-calc(13);
+			margin-bottom:5px;
+		}
+		.button {
+			width:100%;
+			margin:0;
+		}
+		.inline-list {
+			margin:0;
+			li {
+				width:50%;
+				margin:0;	
+				padding:rem-calc(0 4);
+			}
 		}
 	}
 }
 
-@media #{$small-only} {}
+@media #{$small-only} {
+	.sub-header {
+		margin:rem-calc(20 0);
+	}
+	header .right-header {
+		padding-right: 0;
+	}
+}
 
 @media #{$medium-up} {}
 

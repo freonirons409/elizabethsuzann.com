@@ -1,0 +1,15 @@
+body.interior {
+	table {
+		width:100%;
+		border:1px solid $oil;
+		thead {
+			background:$steel;
+			th {
+				color:$white;
+			}
+		}
+		th,td {
+			border:1px solid $oil;
+		}
+	}
+}

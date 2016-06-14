@@ -1,28 +1,29 @@
 	<header class="full-width">
-		<div class="top-header">
-			<div class="row">
-				<div class="column small-12 medium-3 clearfix">
-					<ul class="inline-list medium-left" id="socialList">
-						<li><a href="#"><span class="icon icon-facebook"><span class="sr-only">Facebook</span></span></a></li>
-						<li><a href="#"><span class="icon icon-twitter"><span class="sr-only">Facebook</span></span></a></li>
-						<li><a href="#"><span class="icon icon-pinterest"><span class="sr-only">Facebook</span></span></a></li>
-						<li><a href="#"><span class="icon icon-instagram"><span class="sr-only">Facebook</span></span></a></li>
-					</ul>
-				</div>
-				<div class="column small-12 medium-6">
-					<div class="notice">FREE SHIPPING ON ALL ORDERS, ANYWHERE IN THE WORLD</div>
-				</div>
-				<div class="column small-12 medium-3 clearfix">
-					<ul class="inline-list right" id="adminList">
-						<li><a href="#"><span class="icon icon-facebook"><span class="sr-only">Facebook</span></span></a></li>
-						<li><a href="#"><span class="icon icon-twitter"><span class="sr-only">Facebook</span></span></a></li>
-						<li><a href="#"><span class="icon icon-pinterest"><span class="sr-only">Facebook</span></span></a></li>
-						<li><a href="#"><span class="icon icon-instagram"><span class="sr-only">Facebook</span></span></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-        <div class="small-12 columns text-center sub-header">
-            <a href="#"><img src="img/logo.png" alt="Elizabeth Suzann"/></a>
+		<div class="full-width clearfix" id="subHeader">
+			<div class="medium-3 large-2 column right-header right">
+	        	<ul class="inline-list right header-icons" id="adminList">
+					<li><a href="#"><span class="icon icon-search"><span class="sr-only">Search</span></span></a></li>
+					<li><a href="#"><span class="icon icon-account"><span class="sr-only">Account</span></span></a></li>
+					<li><a href="#"><span class="icon icon-cart active"><span class="sr-only">Cart</span></span></a></li>
+				</ul>
+				@@include('quick-cart.html')
+				<!-- sep -->
+				@@include('quick-login.html')
+	        </div>
+	        <div class="medium-3 large-2 columns medium-text-left small-text-center sub-header">
+	            <a href="#"><img src="img/logo.png" alt="Elizabeth Suzann"/></a>
+	        </div>
+	        <div class="medium-6 large-8 column navigation-container">
+	        	@@include('nav.html')
+	        </div>
+	    </div>
+	    <div id="searchBar">
+	    	<form action="/search" method="get" autocomplete="off">
+            	<input type="text" name="q" id="q" placeholder="search...">
+     	    	<input type="hidden" name="type" value="product"> 
+          	</form>
+          	<div class="closer">
+          		<span class="icon icon-circle-x"></span>
+          	</div>
         </div>
     </header>

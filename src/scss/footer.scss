@@ -2,9 +2,11 @@
 @media #{$small-up} {
 	footer {
 		padding:rem-calc(20);
-		background:#333;
+		background:$white;
 		position:relative;
-		p,h1,h2,h3,h4,h5,h6,.icon {
+		border-top:1px solid $smoke!important;
+		margin-top:rem-calc(40);
+		p,h1,h2,h3,h4,h5,h6,.icon,li,a {
 			color:$footer-font-color;
 			margin-bottom:0;
 		}
@@ -20,7 +22,34 @@
 		#footerSocial {
 			margin-bottom:0;
 		}
-
+		h6 {
+			font-size:rem-calc(14);
+			text-transform: uppercase;
+			margin-bottom:rem-calc(8);
+		}
+		.footer-links {
+			ul {
+				list-style-type: none;
+				margin-left:0;
+				li {
+					font-size:rem-calc(13);
+				}
+			}
+		}
+	}
+	#mc_embed_signup {
+		input, button {
+			width:100%;
+			font-size:rem-calc(12);
+		}
+		h5 {
+			font-size:rem-calc(14);
+			text-transform: uppercase;
+			margin-bottom:rem-calc(8);
+		}
+		.button{
+			padding:rem-calc(12 20);
+		}
 	}
 	.topper {
 		position:fixed;
@@ -30,7 +59,7 @@
 		bottom:15%;
 		&,a,.icon {
 			font-size:rem-calc(50);
-			color:$primary-color;
+			color:$secondary-color;
 			text-decoration:none!important;
 		}
 		.icon:hover {
@@ -42,7 +71,14 @@
 
 @media #{$small-only} {}
 
-@media #{$medium-up} {}
+@media #{$medium-up} {
+	footer {
+		#mc_embed_signup {
+			max-width:rem-calc(300);
+			float:right;
+		}
+	}
+}
 
 @media #{$medium-only} {}
 

@@ -1,0 +1,52 @@
+@media #{$small-up} {
+	.sticky {
+      position: relative;
+      top: 0;
+      @include transition-all(0.2s);
+      padding-top:rem-calc(50);
+  	}
+  	#sidebar {
+  		h1 {
+  			font-size:rem-calc(20);
+  			text-transform: uppercase;
+			letter-spacing: 0.25em;
+			font-weight: 400;
+  		}
+  		h4 {
+  			text-transform: uppercase;
+		    padding-bottom: rem-calc(5);
+		    margin-bottom: rem-calc(5);
+		    border-bottom: 1px solid $snow;
+		    color:$jumbo;
+		    font-size: rem-calc(14);
+  		}
+  		ul {
+  			margin-left:0;
+  			list-style-type:none;
+			li {
+				font-size:rem-calc(12);
+				a {
+					text-transform: uppercase;
+				}
+			}
+  		}
+  	}
+}
+
+@media #{$small-only} {}
+
+@media #{$medium-up} {}
+
+@media #{$medium-only} {}
+
+@media #{$large-up} {}
+
+@media #{$large-only} {}
+
+@media #{$xlarge-up} {}
+
+@media #{$xlarge-only} {}
+
+@media #{$xxlarge-up} {}
+
+@media #{$xxlarge-only} {}

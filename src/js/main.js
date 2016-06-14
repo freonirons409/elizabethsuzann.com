@@ -1,3 +1,7 @@
+function clearOpenItems(t) {
+    $("#searchBar,.quick-cart-window,.quick-login-window, .main-nav-wrap").not($(t)).removeClass("toggled");
+}
+
 $(document).foundation({
     accordion: {
         callback: function(accordion) {
@@ -9,11 +13,27 @@ $(document).foundation({
         }
     }
 });
+$(window).load(function(){
+    $('.grid').masonry({
+      // options... 
+        columnWidth: '.grid-sizer',
+        itemSelector: '.grid-item',
+        percentPosition: true
+    });
+});
 
 $(document).ready(function() {
 
     $('.hero').slick({
         dots: true
+    });
+    $('#scrollimages ul').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        centerMode: true,
+        variableWidth: true
     });
 
     /* ALL THIS SCROLLING MESS */
@@ -45,7 +65,8 @@ $(document).ready(function() {
     }
     //toggle small device menu
     $(".small-menu-toggle").on("click", function() {
-        $(".main-nav-wrap").toggleClass("show-small-menu");
+        clearOpenItems(".main-nav-wrap");
+        $(".main-nav-wrap").toggleClass("toggled");
     });
     //add main nav clicks/touches for when the small menu toggle is showing
     $(".main-nav").on("click", "li", function(e) {
@@ -64,42 +85,77 @@ $(document).ready(function() {
                     //$(this).height("auto");
                     $(this).removeAttr('style');
                 });
+            } else if ($(this).children("ul")){
+                $(this).removeClass('active').children("ul").slideUp(function(){
+                    $(this).removeClass('active');
+                    $(this).removeAttr('style');
+                });
             }
         }
     });
+    //toggle Quick Cart
+    $("#adminList .icon-cart").on("click", function() {
+        clearOpenItems(".quick-cart-window");
+        $(".quick-cart-window").toggleClass("toggled");
+    });
+    //toggle Quick Login
+    $("#adminList .icon-account").on("click", function() {
+        clearOpenItems(".quick-login-window");
+        $(".quick-login-window").toggleClass("toggled");
+    });
 
-    //FOR EPISERVER
-    $(document).on("click", "a", function(e) {
-        var link = $(this).attr("href");
-        //only care if the link actually has an href and we don't need to check the eld modal
-        if (link != 'undefined' && ($(this).parents('.reveal-modal.external, .reveal-modal.email').length == 0)) {
-            //if it's a mailto link
-            if (link.indexOf('mailto:') > -1) {
-                e.preventDefault();
-                $('#continue-email').attr('href', link);
-                $('.email.reveal-modal').foundation('reveal', 'open');
-            }
-            //if the current domain is not in the link and is not a path, 
-            else if (link.indexOf(window.location.host) < 0 && link.indexOf('http') > -1) {
-                //check each whitelist domain/url against the link
-                for (i = 0; i < whiteList.length; i++) {
-                    //if the whitelist domain is in the link
-                    if (link.indexOf(whiteList[i]) > -1) {
-                        //return, no need to keep looking
-                        return;
-                    }
-                }
-                //not whitelisted, so set link and open disclaimer modal
-                e.preventDefault();
-                $('#continue-external').attr('href', link);
-                $('.external.reveal-modal').foundation('reveal', 'open');
+    //closing parent containers
+    $("body").on("click", ".closer", function(){
+        $(this).parent().removeClass("toggled");
+    });
+    $("body").on("click", ".icon-search", function(){
+        clearOpenItems("#searchBar");
+        $("#searchBar").toggleClass("toggled");
+        $("#searchBar #q").focus();
+    });
 
-            }
+    $("#forgot_password a").on("click", function(e){
+        e.preventDefault();
+        $(".flipper").addClass("flip");
+    });
+    $("#cancel_password").on("click", function(e){
+        e.preventDefault();
+        $(".flipper").removeClass("flip");
+    });
+
+    //sticky side bar functions
+        var stickySidebar = $('.sticky');
+
+        if (stickySidebar.length > 0) { 
+          var stickyHeight = stickySidebar.height(),
+              sidebarTop = stickySidebar.offset().top;
         }
-    });
-    //when you click continue, close the modal
-    $(document).on('click', '#continue-email, #continue-external', function() {
-        $('.close-reveal-modal').trigger('click');
-    });
 
+        // on scroll move the sidebar
+        $(window).scroll(function () {
+          if (stickySidebar.length > 0) { 
+            var scrollTop = $(window).scrollTop();
+                    
+            if (sidebarTop < scrollTop) {
+              stickySidebar.css('top', scrollTop - sidebarTop);
+
+              // stop the sticky sidebar at the footer to avoid overlapping
+              var sidebarBottom = stickySidebar.offset().top + stickyHeight,
+                  stickyStop = $('.main-content').offset().top + $('.main-content').height();
+              if (stickyStop < sidebarBottom) {
+                var stopPosition = $('.main-content').height() - stickyHeight;
+                stickySidebar.css('top', stopPosition);
+              }
+            }
+            else {
+              stickySidebar.css('top', '0');
+            } 
+          }
+        });
+
+        $(window).resize(function () {
+          if (stickySidebar.length > 0) { 
+            stickyHeight = stickySidebar.height();
+          }
+        });
 });

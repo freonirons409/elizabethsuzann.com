@@ -4,7 +4,8 @@
     "foundation": "latest",
     "slick-carousel": "latest",
     "jquery": "latest",
-    "parsleyjs": "latest"
+    "parsleyjs": "latest",
+    "masonry-layout": "latest"
   },
   "resolutions": {
     "jquery": "1.11.1"
