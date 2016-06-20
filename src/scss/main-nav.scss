@@ -23,12 +23,13 @@ $menu-direction: left;
       >a {
         letter-spacing: 0.5em;
         text-transform: uppercase;
+        font-size:rem-calc(15);
       }
       a {
         display: block;
         padding: .5rem;
         font-weight:200;
-        font-size:rem-calc(12);
+        font-size:rem-calc(14);
         &:hover {
           color: $text-hover;
         }

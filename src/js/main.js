@@ -24,8 +24,16 @@ $(window).load(function(){
 
 $(document).ready(function() {
 
-    $('.hero').slick({
-        dots: true
+    $('.slider').slick({
+        dots: true,
+        responsive: [
+            {
+              breakpoint: 640,
+              settings: {
+                arrows:false
+              }
+            }
+        ]
     });
     $('#scrollimages ul').slick({
         dots: false,
@@ -123,7 +131,29 @@ $(document).ready(function() {
         $(".flipper").removeClass("flip");
     });
 
+    //product variant functions
+    //=====================================================
+    $(".variant").hover(
+      function () {
+        var $parent = $(this).parent().parent();
+        var parentImg = $(this).attr("data-variant");
+        $parent.find(".variant-image").attr("src", parentImg);
+        $(this).addClass("active");
+      }, 
+      function () {
+        var $parent = $(this).parent().parent();
+        var parentDefaultImg = $parent.find(".variant-image").attr("data-holder");
+        $parent.find(".variant-image").attr("src", parentDefaultImg);
+        $(this).removeClass("active");
+      }
+    );
+
+
+
+    //-----------------------------------------------------
+
     //sticky side bar functions
+    //=====================================================
         var stickySidebar = $('.sticky');
 
         if (stickySidebar.length > 0) { 

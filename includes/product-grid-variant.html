@@ -1,0 +1,26 @@
+<li class="product-index" id="@@id" data-alpha="@@title" data-price="@@bigprice">  
+      
+	<div class="product-index-inner">@@inner</div>
+    <div class="image_hover">
+          <a href="@@url" title="@@title" style="display:block;">
+            <img class="variant-image" src="@@defaultImg" alt="@@title" data-holder="@@defaultImg">
+          </a>
+        @@if (hasVariant === 'true') {
+            <div class="variants" style="padding: 5px;">
+              <div class="variant default active" data-link="@@url?variant=17165867078" data-variant="@@variant1imgurl" title="@@variant1title" style="background: url(@@variant1thumb);"></div>
+              <div class="variant " data-link="@@url?variant=17165866758" data-variant="@@variant2imgurl" title="@@variant2title" style="background: url(@@variant2thumb);"></div>
+            </div>
+        }
+    </div>    
+  
+    <div class="product-info"> 
+      <div class="product-info-inner"> 
+        <a href="@@url"> 
+          <h3>@@title</h3>
+        </a>              
+        <div class="price">
+          <div class="prod-price">$ @@price</div>
+        </div>
+      </div>
+    </div>
+</li>
