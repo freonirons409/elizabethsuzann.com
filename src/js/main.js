@@ -43,6 +43,39 @@ $(document).ready(function() {
         centerMode: true,
         variableWidth: true
     });
+    //single product functions
+    $(".swatch-element").each(function(){
+        if($(this).hasClass("soldout")) {
+            $(this).find("input").attr("disabled", true);
+        }
+    });
+    $(".swatch-element.color").on("click", function(e) {
+        var swatchColor = $(this).attr("data-color");
+        console.log(swatchColor);
+        $(".image-toggle-container").each(function(){
+            if($(this).hasClass(swatchColor)) {
+                $(this).removeClass("hide");
+            } else {
+                $(this).addClass("hide");
+            }
+        });
+    });
+    $(".product__mainimage .zoomer").zoom();
+    //===================================================
+
+    $(".product__sideimages_list li a").on("click", function(e){
+        e.stopPropagation();
+        $(".product__sideimages_list li a").removeClass("active");
+        $(this).addClass("active");
+        var $parentContainer = $(this).parent().parent().parent().parent();
+        $parentContainer.find(".product__mainimage .zoomer").animate({"opacity": 0},200);
+        var img = $(this).attr("data-image");
+        var zoomImg = $(this).attr("data-zoom-image");
+        $parentContainer.find(".product__mainimage .zoomer img").attr("src",zoomImg);
+        $parentContainer.find(".product__mainimage .zoomer img").on("load", function(){
+            $parentContainer.find(".product__mainimage .zoomer").animate({"opacity": 1},500);
+        });
+    });
 
     /* ALL THIS SCROLLING MESS */
     $(window).scroll(function(){

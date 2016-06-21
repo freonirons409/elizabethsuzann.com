@@ -202,8 +202,17 @@
                 /* To position the sold out graphic and tooltip */
                 position:relative;
                 .crossed-out { 
-                    display:none; 
+                    position: absolute;
+                    max-width: 29px;
+                    left: 0;
+                    top: 0;
                 }
+                &.available {
+                    .crossed-out {
+                        display:none;
+                    }
+                }
+
                  label { 
                     padding:0 15px; color: #666666;
                     -webkit-transition: background .1s ease,color .1s ease, border .1s ease;
