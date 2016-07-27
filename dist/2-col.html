@@ -5,7 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elizabeth Suzann</title>
-    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="css/styles.min.css"/>
+
+    <link rel="stylesheet" href="css/fonts.min.css"/>
     
     <script src="js/modernizr.js"></script>
 </head>
@@ -16,11 +18,12 @@
 <div class="master-container">
 	<header class="full-width">
 		<div class="full-width clearfix" id="subHeader">
-			<div class="medium-3 large-2 column right-header right">
+			<div class="medium-3 large-3 column right-header right">
 	        	<ul class="inline-list right header-icons" id="adminList">
+	        		<li><a href="#"><span class="icon icon-envelope"><span class="sr-only">Mailing List</span></span></a></li>
 					<li><a href="#"><span class="icon icon-search"><span class="sr-only">Search</span></span></a></li>
 					<li><a href="#"><span class="icon icon-account"><span class="sr-only">Account</span></span></a></li>
-					<li><a href="#"><span class="icon icon-cart active"><span class="sr-only">Cart</span></span></a></li>
+					<li><a href="#"><span class="icon icon-cart active"><span class="ajax_quantity">2</span><span class="sr-only">Cart</span></span></a></li>
 				</ul>
 				<!-- Quick Cart Window -->
 			<div class="quick-cart-window">
@@ -58,6 +61,15 @@
 			<!-- END Quick Cart Window -->
 				<!-- sep -->
 				<div class="quick-login-window">
+
+    <!-- <div class="customer-details">
+        <h3>Welcome, Cynthia!</h3>
+        <ul class="no-bullet">
+          <li><a href="/account">Account Details &raquo;</a></li>
+          <li><a href="/account">Order History &raquo;</a></li>
+          <li><a href="/account/logout">Logout &raquo;</a></li>
+        </ul>
+    </div> -->
 	<form method="post" action="https://elizabethsuzann.com/account/login" id="customer_login" accept-charset="UTF-8"><input type="hidden" value="customer_login" name="form_type"><input type="hidden" name="utf8" value="✓">
         <div id="login_email" class="clearfix large_form">
             <label for="customer_email" class="login">Email Address</label>
@@ -75,17 +87,21 @@
         
         <div class="action_bottom">
         	<ul class="inline-list">
-        		<li><input class="secondary button" type="submit" value="SIGN IN"></li>
-        		<li><input class="button" type="submit" value="SIGN UP"></li>
+        		<li><button class="secondary button" type="submit">SIGN IN</button></li>
+        		<li><a class="button" href="/login">SIGN UP</a></li>
         	</ul>
         </div>
     </form>
 </div>
+				<div id="cartMessage" class="active message-error">
+					<span class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, architecto.</span>
+					<div class="closer">&times;</div>
+				</div>
 	        </div>
 	        <div class="medium-3 large-2 columns medium-text-left small-text-center sub-header">
-	            <a href="#"><img src="img/logo.png" alt="Elizabeth Suzann"/></a>
+	            <a href="#"><img src="img/logo-retina.png" alt="Elizabeth Suzann"/></a>
 	        </div>
-	        <div class="medium-6 large-8 column navigation-container">
+	        <div class="medium-6 large-7 column navigation-container">
 	        	<nav class="full-width">
         <div class="row">
             <div class="small-12 columns">
@@ -177,6 +193,41 @@
           	</div>
         </div>
     </header>
+    <div id="newsletterPopup">
+		<div class="row">
+			<div class="column medium-5">
+				<div class="image text-center">
+					<img src="http://placehold.it/300x200" alt=""/>
+				</div>
+			</div>
+			<div class="column medium-7 signup-form">
+				<div class="blurb">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis error ipsum atque saepe quaerat qui totam ipsa consectetur incidunt ut.
+				</div>
+				<div class="newsletter-container">
+					<div id="mc_embed_signup">
+    <div class="mc-embedded-subscribe-form-container">
+        <form action="//elizabethsuzann.us6.list-manage.com/subscribe/post-json?u=0313b2693fabf51dca61768b8&amp;id=3f4b4e6e94&c=?" method="get" name="mc-embedded-subscribe-form" class="validate mc-embedded-subscribe-form" target="_blank" novalidate="">
+            <h5>Subscribe to our newsletter</h5>
+        <div class="mc-field-group">
+          <input style="text-align:left; padding-left: 1em; padding-right:1em;" type="email" value="" name="EMAIL" placeholder="ENTER YOUR EMAIL ADDRESS" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ENTER YOUR EMAIL ADDRESS'" class="required email" id="mce-EMAIL"><img src="img/ajax-loader.gif" class="loading" style="display:none;">
+        </div>
+            <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;"><input type="text" name="b_0313b2693fabf51dca61768b8_3f4b4e6e94" tabindex="-1" value=""></div>
+            <div><button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">SIGN ME UP!</button></div>
+            <div class="error" style="display:none;">There was an error subscribing to the list</div>
+        </form>
+    </div>
+    <div class="mc-embedded-subscribe-form-success"></div>
+</div>
+				</div>
+			</div>
+		</div>
+		<div class="closer"><span class="icon icon-circle-x"></span></div>
+    </div>
 <!-- sep -->
 
 <!-- 2 col start -->
@@ -409,19 +460,23 @@
         <div class="row">
             <div class="column small-12 medium-6 medium-push-6 right-col">
                 <div id="mc_embed_signup">
-                    <form action="http://elizabethsuzann.us6.list-manage.com/subscribe/post?u=0313b2693fabf51dca61768b8&amp;id=3f4b4e6e94" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
-                        <h5>Subscribe to our newsletter</h5>
-                    <div class="mc-field-group">
-                      <input style="text-align:left; padding-left: 1em; padding-right:1em;" type="email" value="" name="EMAIL" placeholder="ENTER YOUR EMAIL ADDRESS" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ENTER YOUR EMAIL ADDRESS'" class="required email" id="mce-EMAIL">
-                    </div>
-                        <div id="mce-responses" class="clear">
-                            <div class="response" id="mce-error-response" style="display:none"></div>
-                            <div class="response" id="mce-success-response" style="display:none"></div>
-                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                        <div style="position: absolute; left: -5000px;"><input type="text" name="b_0313b2693fabf51dca61768b8_3f4b4e6e94" tabindex="-1" value=""></div>
-                        <div><input type="submit" value="SIGN ME UP!" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-                    </form>
-                </div>
+    <div class="mc-embedded-subscribe-form-container">
+        <form action="//elizabethsuzann.us6.list-manage.com/subscribe/post-json?u=0313b2693fabf51dca61768b8&amp;id=3f4b4e6e94&c=?" method="get" name="mc-embedded-subscribe-form" class="validate mc-embedded-subscribe-form" target="_blank" novalidate="">
+            <h5>Subscribe to our newsletter</h5>
+        <div class="mc-field-group">
+          <input style="text-align:left; padding-left: 1em; padding-right:1em;" type="email" value="" name="EMAIL" placeholder="ENTER YOUR EMAIL ADDRESS" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ENTER YOUR EMAIL ADDRESS'" class="required email" id="mce-EMAIL"><img src="img/ajax-loader.gif" class="loading" style="display:none;">
+        </div>
+            <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;"><input type="text" name="b_0313b2693fabf51dca61768b8_3f4b4e6e94" tabindex="-1" value=""></div>
+            <div><button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">SIGN ME UP!</button></div>
+            <div class="error" style="display:none;">There was an error subscribing to the list</div>
+        </form>
+    </div>
+    <div class="mc-embedded-subscribe-form-success"></div>
+</div>
             </div>
             <div class="column small-12 medium-6 medium-pull-6 left-col">
                     <div class="row">

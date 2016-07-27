@@ -860,38 +860,7 @@
   <span class="current">1</span>
   <a href="/search?page=2&amp;q=tunic&amp;type=product" title="">2</a>
   <a href="/search?page=2&amp;q=tunic&amp;type=product" title="">&gt;</a>
-</div>
-
-
-
-
-
-
-<script>
-  // Four Column Collection Masonry
-  $(window).load(function () {
-      var columns = 4,
-          setColumns = function () {
-              columns = $(window).width() > 980 ? 4 : $(window).width() > 740 ? 3 : $(window).width() > 500 ? 2 : 1;
-          };
-
-      setColumns();
-      $(window).resize(setColumns);
-
-      $('#product-loop').masonry({
-          itemSelector: '.product-index',
-          columnWidth: function (containerWidth) {
-              return containerWidth / columns;
-          },
-          isAnimated: true,
-          animationOptions: {
-              duration: 150,
-              easing: 'linear',
-              queue: false
-          }
-      });
-  });
-</script>  
+</div> 
     </div>
 <!-- 2 col end -->
 @@include('./includes/footer.html')

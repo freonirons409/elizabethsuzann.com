@@ -1,4 +1,13 @@
 <div class="quick-login-window">
+
+    <!-- <div class="customer-details">
+        <h3>Welcome, Cynthia!</h3>
+        <ul class="no-bullet">
+          <li><a href="/account">Account Details &raquo;</a></li>
+          <li><a href="/account">Order History &raquo;</a></li>
+          <li><a href="/account/logout">Logout &raquo;</a></li>
+        </ul>
+    </div> -->
 	<form method="post" action="https://elizabethsuzann.com/account/login" id="customer_login" accept-charset="UTF-8"><input type="hidden" value="customer_login" name="form_type"><input type="hidden" name="utf8" value="✓">
         <div id="login_email" class="clearfix large_form">
             <label for="customer_email" class="login">Email Address</label>
@@ -16,8 +25,8 @@
         
         <div class="action_bottom">
         	<ul class="inline-list">
-        		<li><input class="secondary button" type="submit" value="SIGN IN"></li>
-        		<li><input class="button" type="submit" value="SIGN UP"></li>
+        		<li><button class="secondary button" type="submit">SIGN IN</button></li>
+        		<li><a class="button" href="/login">SIGN UP</a></li>
         	</ul>
         </div>
     </form>

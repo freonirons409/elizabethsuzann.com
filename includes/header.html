@@ -1,19 +1,24 @@
 	<header class="full-width">
 		<div class="full-width clearfix" id="subHeader">
-			<div class="medium-3 large-2 column right-header right">
+			<div class="medium-3 large-3 column right-header right">
 	        	<ul class="inline-list right header-icons" id="adminList">
+	        		<li><a href="#"><span class="icon icon-envelope"><span class="sr-only">Mailing List</span></span></a></li>
 					<li><a href="#"><span class="icon icon-search"><span class="sr-only">Search</span></span></a></li>
 					<li><a href="#"><span class="icon icon-account"><span class="sr-only">Account</span></span></a></li>
-					<li><a href="#"><span class="icon icon-cart active"><span class="sr-only">Cart</span></span></a></li>
+					<li><a href="#"><span class="icon icon-cart active"><span class="ajax_quantity">2</span><span class="sr-only">Cart</span></span></a></li>
 				</ul>
 				@@include('quick-cart.html')
 				<!-- sep -->
 				@@include('quick-login.html')
+				<div id="cartMessage" class="active message-error">
+					<span class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, architecto.</span>
+					<div class="closer">&times;</div>
+				</div>
 	        </div>
 	        <div class="medium-3 large-2 columns medium-text-left small-text-center sub-header">
-	            <a href="#"><img src="img/logo.png" alt="Elizabeth Suzann"/></a>
+	            <a href="#"><img src="img/logo-retina.png" alt="Elizabeth Suzann"/></a>
 	        </div>
-	        <div class="medium-6 large-8 column navigation-container">
+	        <div class="medium-6 large-7 column navigation-container">
 	        	@@include('nav.html')
 	        </div>
 	    </div>
@@ -27,3 +32,21 @@
           	</div>
         </div>
     </header>
+    <div id="newsletterPopup">
+		<div class="row">
+			<div class="column medium-5">
+				<div class="image text-center">
+					<img src="http://placehold.it/300x200" alt=""/>
+				</div>
+			</div>
+			<div class="column medium-7 signup-form">
+				<div class="blurb">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis error ipsum atque saepe quaerat qui totam ipsa consectetur incidunt ut.
+				</div>
+				<div class="newsletter-container">
+					@@include('newsletter.html')
+				</div>
+			</div>
+		</div>
+		<div class="closer"><span class="icon icon-circle-x"></span></div>
+    </div>

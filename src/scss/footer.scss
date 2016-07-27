@@ -44,11 +44,20 @@
 		}
 		h5 {
 			font-size:rem-calc(11);
+			font-family:$font-family-sans-serif;
 			text-transform: uppercase;
 			margin-bottom:rem-calc(8);
 		}
 		.button{
 			padding:rem-calc(12 20);
+		}
+	}
+	.mc-field-group {
+		position:relative;
+		.loading {
+			position:absolute;
+			right:5px;
+			top:3px;
 		}
 	}
 	.topper {

@@ -1,0 +1,105 @@
+@@include('./includes/head.html', {"class":"interior"})
+<!-- sep -->
+<div class="master-container">
+    <style>
+      label[for="product-select-option-0"] { display: none; }
+      #product-select-option-0 { display: none; }
+      #product-select-option-0 + .custom-style-select-box { display: none !important; }
+    </style>
+@@include('./includes/header.html')
+<!-- sep -->
+
+<!-- Product Single start -->
+<div id="content">     
+    <div id="page">
+		<div class="row clearfix">
+			<div class="column medium-6 large-5 product__description right">
+				<form action="/cart/add" method="post" data-money-format="$ {{ shop.money_format }}" id="product-form-{{ product.id }}">
+					<h1 class="product__title text-center">{{ product.title }}</h1>
+					<h3 class="product__price text-center">{{ product.price | money }}</h3>
+					<hr>
+					<div class="row">
+                      	{% if product.available and product.variants.size > 1 %}
+                          {% for option in product.options %}
+                                <div class="product__{{option | downcase}}picker text-center column small-6">
+                                    <div class="swatch {{option | downcase}}s">
+                                        <a data-dropdown="{{option | downcase}}s" aria-controls="{{option | downcase}}s" aria-expanded="false" class="button">{{option}}s</a>
+                                        <ul id="{{option | downcase}}s" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+                                          	{% for variants in option.variants %}
+                                          		{{variants.title}}
+                                              <li>
+                                                  <div data-value="{{variants.title}}" data-color="{{ variants.title | replace: ' ', '-' | downcase}}" class="swatch-element {{option | downcase}} {{ variant.title | replace: ' ', '-' | downcase}} available">
+                                                      <!-- <div class="tooltip">{{variant.title}}</div> -->
+                                                      <input id="swatch-0-{{ variant.title | replace: ' ', '-' | downcase}}" type="radio" name="{{variant.sku}}" value="{{variant.title}}" checked="">
+                                                      <label for="swatch-0-{{ variant.title | replace: ' ', '-' | downcase}}">
+                                                          <div class="square" style="background-color: twill; background-image: url(//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/flax-hemp-twill.png?5168250499117285353)">
+                                                              <img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353">
+                                                          </div>
+                                                          <span class="text">{{variant.title}}</span>
+                                                      </label>
+                                                  </div>
+                                              </li>
+                                           {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                          {% endfor %}
+                        {% endif %}
+					</div>
+					<div class="product__add text-center">
+						<input type="submit" name="button" class="preorder button secondary" value="Add to Cart">
+						<div class="product__messages">
+							<p style="color: #333333;"><b><i>{{ settings.product_message }}</i></b></p>
+						</div>
+					</div>
+				</form>
+					<div class="product__accordions text-editor">
+						{{ product.description }}
+					</div>
+
+					<div class="product__modals">
+						<ul class="inline-list">
+							<li><a href="#" data-reveal-id="sizeChart">Size Chart</a></li>
+							<li><a href="#" data-reveal-id="returnPolicy">Return Policy</a></li>
+							<li><a href="#" data-reveal-id="question">Ask A Question</a></li>
+						</ul>
+					</div>
+			</div>
+			<div class="column medium-6 large-7 product__images left">
+				<div class="row image-toggle-container flax-hemp-twill">
+					<div class="product__mainimage column medium-10">
+						<div class="zoomer">
+							<img src="{{ product.featured_image.src | product_img_url: 'original'}}" alt="{{ product.featured_image.alt }}"/>
+						</div>
+					</div>
+					<div class="product__sideimages column medium-2">
+						<ul class="no-bullet product__sideimages_list">
+							{% for image in product.images %}
+								<li>
+									<a href="#" data-image-alt="{{ image.alt | replace: ' ', '-' | downcase}}" data-image="{{ image.src | product_img_url: 'original' }}" data-image-id="{{ image.product_id }}" data-zoom-image="{{ image.src | product_img_url: 'original'}}" class="active">
+                                      <img class="thumbnail desktop-2" src="{{ image.src | product_img_url: 'medium' }}" data-image-id="{{ image.product_id }}" alt="{{ image.alt }}" data-image-id="{{ image.product_id }}" />
+                                  	</a>
+							    </li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+<div class="product-single-extras">
+	<!-- Product Single end -->
+	@@include('./includes/blocks-full-width.html')
+
+	<!-- Upsell Widget -->
+	@@include('./includes/widget-product-upsell.html')
+	<!-- sep -->
+</div>
+@@include('./includes/footer.html')
+<!-- sep -->
+</div>
+@@include('./includes/scripts.html')
+
+</body>
+</html>

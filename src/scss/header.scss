@@ -19,6 +19,7 @@
 		}
 		.right-header {
 			padding-top:rem-calc(12);
+			padding-right:0;
 		}
 		.sub-header {
 			background:$white;
@@ -26,15 +27,21 @@
 		}
 		.header-icons {
 			margin-bottom:0;
+			@media(max-width:rem-calc(840)) {
+				li {
+					margin-left:rem-calc(10);
+				}
+			}
 			.icon {
 				font-size: rem-calc(26);
 				opacity:0.5;
+				color:$primary-color;
 				@include transition-all(0.5s);
 				&:hover {
 					opacity:0.8;
 				}
 			}
-			.icon-cart.active {
+			.icon.active {
 				color:$bold-blue;
 			}
 		}
@@ -51,7 +58,7 @@
 		max-width:rem-calc(1700);
 		padding:rem-calc(10 50 0 50);
 		position:relative;
-		.column,.columns {
+		.column:not(.right-header),.columns {
 			position:static!important;
 		}
 	}
@@ -104,20 +111,47 @@
 		&.toggled {
 			display:block;
 		}
+		.customer-details {
+			padding:rem-calc(10 5);
+			min-width:rem-calc(240);
+			h3 {
+				font-size:rem-calc(14);
+				text-transform: capitalize;
+				letter-spacing: 1px;
+				margin-bottom:rem-calc(5);
+				border-bottom:1px solid $smoke;
+				padding-bottom:rem-calc(5);
+			}
+			ul {
+				margin-bottom:0;
+				li {
+					font-size:rem-calc(15);
+					padding:rem-calc(6 0);
+					a {
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
 		position:absolute;
 		z-index:9;
 		max-width:rem-calc(320);
 		right:rem-calc(30);
-		top:75px;
+		top:rem-calc(75);
 		background:$white;
 		padding:rem-calc(15);
 		#forgot_password {
 			font-size:rem-calc(13);
-			margin-bottom:5px;
+			margin-bottom:rem-calc(5);
 		}
 		.button {
 			width:100%;
 			margin:0;
+			height:rem-calc(45);
+			padding:rem-calc(10);
+			line-height:rem-calc(28);
 		}
 		.inline-list {
 			margin:0;
@@ -128,22 +162,88 @@
 			}
 		}
 	}
+	#newsletterPopup {
+		position:fixed;
+		background:rgba($white,0.94);
+		z-index:999;
+		bottom:-999px;
+		width:100%;
+		padding:rem-calc(30 40);
+		-webkit-box-shadow: 0px -5px 10px 0px rgba(50, 50, 50, 0.23);
+		-moz-box-shadow:    0px -5px 10px 0px rgba(50, 50, 50, 0.23);
+		box-shadow:         0px -5px 10px 0px rgba(50, 50, 50, 0.23);
+		@include transition-all(0.8s);
+		&.toggled {
+			bottom:0;
+			top:auto!important;
+		}
+		.signup-form {
+			.blurb {
+				font-size:rem-calc(13);
+				margin-bottom:rem-calc(25);
+			}
+		}
+		.newsletter-container {
+			max-width:rem-calc(450);
+			margin:0 auto;
+		}
+		.closer {
+			position:absolute;
+			right:rem-calc(15);
+			top:rem-calc(15);
+			cursor:pointer;
+			.icon {
+				font-size: rem-calc(30);
+				color:$primary-color;
+			}
+			&:hover {
+				.icon {
+					color:$secondary-color;
+				}
+			}
+			&:active {
+				.icon {
+					color:scale-color($secondary-color, 10%, 35%);
+				}
+			}
+		}
+	}
 }
 
 @media #{$small-only} {
 	.sub-header {
 		margin:rem-calc(20 0);
+		img {
+			max-width:300px;
+		}
 	}
 	header .right-header {
 		padding-right: 0;
+		position:relative!important;
+		right:rem-calc(-28);
+
+	}
+	#newsletterPopup {
+		.image {
+			margin-bottom: rem-calc(20);
+		}
 	}
 }
 
-@media #{$medium-up} {}
+@media #{$medium-up} {
+	.quick-login-window,.quick-cart-window {
+		min-width:340px;
+		margin-right:-20px;
+	}
+}
 
 @media #{$medium-only} {}
 
-@media #{$large-up} {}
+@media #{$large-up} {
+	header.full-width {
+		margin-bottom: rem-calc(14);
+	} 
+}
 
 @media #{$large-only} {}
 

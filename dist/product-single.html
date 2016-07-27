@@ -5,7 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elizabeth Suzann</title>
-    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="css/styles.min.css"/>
+
+    <link rel="stylesheet" href="css/fonts.min.css"/>
     
     <script src="js/modernizr.js"></script>
 </head>
@@ -21,11 +23,12 @@
     </style>
 	<header class="full-width">
 		<div class="full-width clearfix" id="subHeader">
-			<div class="medium-3 large-2 column right-header right">
+			<div class="medium-3 large-3 column right-header right">
 	        	<ul class="inline-list right header-icons" id="adminList">
+	        		<li><a href="#"><span class="icon icon-envelope"><span class="sr-only">Mailing List</span></span></a></li>
 					<li><a href="#"><span class="icon icon-search"><span class="sr-only">Search</span></span></a></li>
 					<li><a href="#"><span class="icon icon-account"><span class="sr-only">Account</span></span></a></li>
-					<li><a href="#"><span class="icon icon-cart active"><span class="sr-only">Cart</span></span></a></li>
+					<li><a href="#"><span class="icon icon-cart active"><span class="ajax_quantity">2</span><span class="sr-only">Cart</span></span></a></li>
 				</ul>
 				<!-- Quick Cart Window -->
 			<div class="quick-cart-window">
@@ -63,6 +66,15 @@
 			<!-- END Quick Cart Window -->
 				<!-- sep -->
 				<div class="quick-login-window">
+
+    <!-- <div class="customer-details">
+        <h3>Welcome, Cynthia!</h3>
+        <ul class="no-bullet">
+          <li><a href="/account">Account Details &raquo;</a></li>
+          <li><a href="/account">Order History &raquo;</a></li>
+          <li><a href="/account/logout">Logout &raquo;</a></li>
+        </ul>
+    </div> -->
 	<form method="post" action="https://elizabethsuzann.com/account/login" id="customer_login" accept-charset="UTF-8"><input type="hidden" value="customer_login" name="form_type"><input type="hidden" name="utf8" value="✓">
         <div id="login_email" class="clearfix large_form">
             <label for="customer_email" class="login">Email Address</label>
@@ -80,17 +92,21 @@
         
         <div class="action_bottom">
         	<ul class="inline-list">
-        		<li><input class="secondary button" type="submit" value="SIGN IN"></li>
-        		<li><input class="button" type="submit" value="SIGN UP"></li>
+        		<li><button class="secondary button" type="submit">SIGN IN</button></li>
+        		<li><a class="button" href="/login">SIGN UP</a></li>
         	</ul>
         </div>
     </form>
 </div>
+				<div id="cartMessage" class="active message-error">
+					<span class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, architecto.</span>
+					<div class="closer">&times;</div>
+				</div>
 	        </div>
 	        <div class="medium-3 large-2 columns medium-text-left small-text-center sub-header">
-	            <a href="#"><img src="img/logo.png" alt="Elizabeth Suzann"/></a>
+	            <a href="#"><img src="img/logo-retina.png" alt="Elizabeth Suzann"/></a>
 	        </div>
-	        <div class="medium-6 large-8 column navigation-container">
+	        <div class="medium-6 large-7 column navigation-container">
 	        	<nav class="full-width">
         <div class="row">
             <div class="small-12 columns">
@@ -182,6 +198,41 @@
           	</div>
         </div>
     </header>
+    <div id="newsletterPopup">
+		<div class="row">
+			<div class="column medium-5">
+				<div class="image text-center">
+					<img src="http://placehold.it/300x200" alt=""/>
+				</div>
+			</div>
+			<div class="column medium-7 signup-form">
+				<div class="blurb">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis error ipsum atque saepe quaerat qui totam ipsa consectetur incidunt ut.
+				</div>
+				<div class="newsletter-container">
+					<div id="mc_embed_signup">
+    <div class="mc-embedded-subscribe-form-container">
+        <form action="//elizabethsuzann.us6.list-manage.com/subscribe/post-json?u=0313b2693fabf51dca61768b8&amp;id=3f4b4e6e94&c=?" method="get" name="mc-embedded-subscribe-form" class="validate mc-embedded-subscribe-form" target="_blank" novalidate="">
+            <h5>Subscribe to our newsletter</h5>
+        <div class="mc-field-group">
+          <input style="text-align:left; padding-left: 1em; padding-right:1em;" type="email" value="" name="EMAIL" placeholder="ENTER YOUR EMAIL ADDRESS" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ENTER YOUR EMAIL ADDRESS'" class="required email" id="mce-EMAIL"><img src="img/ajax-loader.gif" class="loading" style="display:none;">
+        </div>
+            <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;"><input type="text" name="b_0313b2693fabf51dca61768b8_3f4b4e6e94" tabindex="-1" value=""></div>
+            <div><button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">SIGN ME UP!</button></div>
+            <div class="error" style="display:none;">There was an error subscribing to the list</div>
+        </form>
+    </div>
+    <div class="mc-embedded-subscribe-form-success"></div>
+</div>
+				</div>
+			</div>
+		</div>
+		<div class="closer"><span class="icon icon-circle-x"></span></div>
+    </div>
 <!-- sep -->
 
 <!-- Product Single start -->
@@ -193,57 +244,93 @@
 					<h1 class="product__title text-center">Petra Crop Top In Hemp Twill</h1>
 					<h3 class="product__price text-center">$145.00</h3>
 					<hr>
-					<div class="product__colorpicker text-center">
-						<h4>Select Color</h4>
-						<div class="swatch colors">
-							<div data-value="Flax Hemp Twill" data-color="flax-hemp-twill" class="swatch-element color flax-hemp-twill available">
-								<div class="tooltip">Flax Hemp Twill</div>
-								<input id="swatch-0-flax-hemp-twill" type="radio" name="option-0" value="Flax Hemp Twill" checked="">
-								<label for="swatch-0-flax-hemp-twill" style="background-color: twill; background-image: url(//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/flax-hemp-twill.png?5168250499117285353)">
-									<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353">
-								</label>
-							</div>
-							<div data-value="Ivory Hemp Twill" data-color="ivory-hemp-twill" class="swatch-element color ivory-hemp-twill soldout">
-								<div class="tooltip">Ivory Hemp Twill</div>
-								<input id="swatch-0-ivory-hemp-twill" type="radio" name="option-0" value="Ivory Hemp Twill">
-								<label for="swatch-0-ivory-hemp-twill" style="background-color: twill; background-image: url(//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/ivory-hemp-twill.png?5168250499117285353)">
-									<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353">
-								</label>
+					<div class="row">
+						<div class="product__colorpicker text-center column small-6">
+							<div class="swatch colors">
+								<a data-dropdown="colors" aria-controls="colors" aria-expanded="false" class="button">Colors</a>
+								<ul id="colors" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+									<li>
+										<div data-value="Flax Hemp Twill" data-color="flax-hemp-twill" class="swatch-element color flax-hemp-twill available">
+											<!-- <div class="tooltip">Flax Hemp Twill</div> -->
+											<input id="swatch-0-flax-hemp-twill" type="radio" name="option-0" value="Flax Hemp Twill" checked="">
+											<label for="swatch-0-flax-hemp-twill">
+												<div class="square" style="background-color: twill; background-image: url(//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/flax-hemp-twill.png?5168250499117285353)">
+													<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353">
+												</div>
+												<span class="text">Flax Hemp Twill</span>
+											</label>
+										</div>
+									</li>
+									<li>
+										<div data-value="Ivory Hemp Twill" data-color="ivory-hemp-twill" class="swatch-element color ivory-hemp-twill soldout">
+											<!-- <div class="tooltip">Ivory Hemp Twill</div> -->
+											<input id="swatch-0-ivory-hemp-twill" type="radio" name="option-0" value="Ivory Hemp Twill">
+											<label for="swatch-0-ivory-hemp-twill">
+												<div class="square" style="background-color: twill; background-image: url(//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/ivory-hemp-twill.png?5168250499117285353)">
+													<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353">
+												</div>
+												<span class="text">Ivory Hemp Twill</span>
+											</label>
+										</div>
+									</li>
+								</ul>
 							</div>
 						</div>
-					</div>
-					<div class="product__sizepicker text-center">
-						<h4>Select Size</h4>
-						<div class="swatch size">
-							<div data-value="XS" class="swatch-element xs available">
-								<input id="swatch-1-xs" type="radio" name="option-1" value="XS" checked="">
-								<label for="swatch-1-xs">XS
-									<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353">
-								</label>
-							</div>
-							<div data-value="S" class="swatch-element s available">
-								<input id="swatch-1-s" type="radio" name="option-1" value="S">
-								<label for="swatch-1-s">S
-									<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353">
-								</label>
-							</div>
-							<div data-value="M" class="swatch-element m available">
-								<input id="swatch-1-m" type="radio" name="option-1" value="M">
-								<label for="swatch-1-m">M
-									<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353">
-								</label>
-							</div>
-							<div data-value="L" class="swatch-element l available">
-								<input id="swatch-1-l" type="radio" name="option-1" value="L">
-								<label for="swatch-1-l">L
-									<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353">
-								</label>
-							</div>
-							<div data-value="XL" class="swatch-element xl available">
-								<input id="swatch-1-xl" type="radio" name="option-1" value="XL">
-								<label for="swatch-1-xl">XL
-									<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353">
-								</label>
+						<div class="product__sizepicker text-center column small-6">
+							<div class="swatch size">
+								<a data-dropdown="sizes" aria-controls="sizes" aria-expanded="false" class="button">Sizes</a>
+								<ul id="sizes" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+									<li>
+										<div data-value="XS" class="swatch-element xs available">
+											<input id="swatch-1-xs" type="radio" name="option-1" value="XS" checked="">
+											<label for="swatch-1-xs">
+												<span class="circle">XS
+												<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353"></span>
+												<span class="text">Extra Small</span>
+											</label>
+										</div>
+									</li>
+									<li>
+										<div data-value="S" class="swatch-element s available">
+											<input id="swatch-1-s" type="radio" name="option-1" value="S">
+											<label for="swatch-1-s">
+												<span class="circle">S
+												<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353"></span>
+												<span class="text">Small</span>
+											</label>
+										</div>
+									</li>
+									<li>
+										<div data-value="M" class="swatch-element m available">
+											<input id="swatch-1-m" type="radio" name="option-1" value="M">
+											<label for="swatch-1-m">
+												<span class="circle">M
+												<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353"></span>
+												<span class="text">Medium</span>
+											</label>
+										</div>
+									</li>
+									<li>
+										<div data-value="L" class="swatch-element l available">
+											<input id="swatch-1-l" type="radio" name="option-1" value="L">
+											<label for="swatch-1-l">
+												<span class="circle">L
+												<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353"></span>
+												<span class="text">Large</span>
+											</label>
+										</div>
+									</li>
+									<li>
+										<div data-value="XL" class="swatch-element xl available">
+											<input id="swatch-1-xl" type="radio" name="option-1" value="XL">
+											<label for="swatch-1-xl">
+												<span class="circle">XL
+												<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353"></span>
+												<span class="text">Extra Large</span>
+											</label>
+										</div>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -255,72 +342,30 @@
 					</div>
 				</form>
 					<div class="product__accordions text-editor">
-						<ul class="accordion" data-accordion>
-							<li class="accordion-navigation">
-								<a href="#panel1a">Details</a>
-								<div id="panel1a" class="content">
-								<p>The Petra Crop is a reincarnation of one of our earliest styles (The Lee Crop, a favorite from several Springs ago). A simple, classic crop top meant for summertime. The textural fabric and slim fitting silhouette make this the perfect topper for high-waisted skirts, your favorite pair of old jeans, or straight-leg trousers. Weekend getaways to Cape Cod - wear this paired with the matching Nadeen for afternoon oceanside walks or over a soft, flowing skirt for dinner and drinks.</p>
-
-								<p>Cut from a sturdy, durable but soft hemp twill that can be pressed to a neat, crisp finish, or left rumpled for a perfectly lived-in look. The perfect complement to our Signature linen fabric - it has luxurious body and the undefinable quality of possessing weight and lightness simultaneously. Textured with a beautiful grid-like pattern, almost like a dobby cloth. It will only soften and improve with age, a beautiful benefit of clothing meant for a life fully-lived.</p>
-
-								<p>Simple, easy silhouette. High, boat neck, slim-fitting in the chest with bust darts, stands away from the body at the waist. Generous 2" hem provides structure and balance. Carefully cut armholes hit right at the most flattering part of the shoulder - shows everything you want to show and nothing you don't. Cropped length hits at the natural waist and pairs perfectly with high-rise pants and skirts, layers well over slip-dresses.</p>
-
-								<p>- Simple, sleeveless crop top
-								<br>- Bust darts, boat neck
-								<br>- Cropped length, hits at natural waist
-								<br>- 100% hemp twill
-								<br>- Available in XS-XL
-								<br>- Cut and sewn to order just for you in our Nashville studio</p>
-								</div>
-							</li>
-							<li class="accordion-navigation">
-								<a href="#panel2a">Fit &amp; Material</a>
-								<div id="panel2a" class="content">
-								<h5>INTENDED FIT</h5>
-
-								<p>Intended to have a slim but not tight fit. Fitted in the shoulder and bust and stands away from the body at waist. Available in XS-XL.</p>
-
-								<h5>MODEL SPECS</h5>
-
-								<p>Renee is 5’ 9.5” tall, and has a 33” bust, 25” waist, and 35” hips. She is wearing the XS.</p>
-
-								<h5>MATERIAL</h5>
-
-								<p>100% washed hemp twill. Durable, sturdy, and long-wearing.</p>
-
-								<p>Two light, versatile colors:
-								<br>- Soft ivory
-								<br>- Natural flax</p>
-
-								<h5>CARE</h5>
-
-								<p>Hand or machine wash on gentle cycle with cold water. Tumble dry low. Leave unpressed for a beautifully rumpled look, or press on medium heat with steam to remove wrinkles, straighten neckline, sleeves and hem. Will press to a crisp, smooth finish.</p>
-								</div>
-							</li>
-							<li class="accordion-navigation">
-								<a href="#panel3a">Shipping &amp; Returns</a>
-								<div id="panel3a" class="content">
-								<p>**Every garment we sell is proudly cut and sewn to order in our Nashville studio and ships within approximately 2-3 weeks unless otherwise noted, e.g., backorders. Keep in mind that this is an estimate of how long it will take our team to cut, sew, package, and ship your garments. Given the nature of made to order production, lead time may vary, and we cannot guarantee delivery dates. If you would like to receive your order by a certain date, please plan on allowing at least 2-3 weeks for production, taking account for delivery time.**</p>
-
-								<h5>SHIPPING</h5>
-
-								<p>- Orders within the US ship via USPS Priority Mail, include tracking, and typically arrive in 2-3 business days after production.
-								<br>- International orders ship via First Class Mail, typically include tracking, and arrive in 7-14 days after production for most countries but can take up to 3 weeks.
-								<br>- Customs and import duties are levied by the receiving country and are therefore the buyer's responsibility. We will not mark an item as a “gift” or reduce the stated value of the package.
-								<br>- We are not responsible for packages that are lost or damaged in transit. Standard shipping does NOT include insurance.</p>
-
-								<h5>RETURNS/CANCELLATIONS</h5>
-
-								<p>- If for any reason an item does not work out for you, we gladly offer free returns for store credit within 14 days of receiving your package. We do NOT offer cash refunds at this time.
-								<br>- Since each garment is made to order, we cannot cancel an order for a refund after it is placed and working its way through our production process.
-								<br>- It is our goal that you love your purchase, so feel free to contact us with any questions you have before ordering, and we’ll be happy to help!</p>
-
-								<p>Please see our FAQ and Shipping &amp; Returns page for our complete policy.</p>
-								</div>
-							</li>
-						</ul>
+						<ul class="accordion" data-accordion="" id="productAccordion">
+                          	<li class="accordion-navigation">
+                              	<a href="#panel1a" aria-expanded="true">Details</a>
+                                <div id="panel1a" class="content">
+                                    <p>Every woman knows there's something indescribably perfect about throwing on a man's oversized button down shirt. The loose comfort, casually rolled sleeve, the soft, high quality fabric, the way the curved hem highlights just the right part of your leg. I've been intrigued at length by this classic garment, and the Annie Shirtdress is my conceptual interpretation of it. Very pared down with no buttons, plackets, or collar - a high jewel neck to make the silhouette a little more interesting, generous dropped sleeves for that perfect oversized look, back yolk and center front and back seams to elongate the body, and topstitching on all seams for durability. The shaped shirttail hem hits at the perfect shirtdress length - short enough to wear easily over pants, but long enough to comfortably wear as a dress.</p>
+									<p>Cut from a lightweight, thin - but strong - hemp/silk/cotton blend. Floats and drapes like air, but has beautiful body and volume. Semi-sheer with a dynamic horizontal slub and bubbly, organic texture. An extremely comfortable and easy to wear fabric.</p>
+									<p>You can wear this dress quite literally anywhere - lounging in the apartment on Sunday mornings, padding around with bare legs and feet to grab coffee and the newspaper, over torn up denim and birks with the Elodie Work Belt holding your pencils while you sketch outdoors, or over pin-straight black trousers to a gallery opening. True comfort and ease - so light and airy you'll forget what you're wearing.</p>
+									<p>- Simple shirtdress<br> - Long sleeves, topstitched seam<br> - Hits just past the knee<br> - 42% hemp, 35% silk, 23% organic cotton gauze<br> - Available in OS-, OS, and OS+<br> - Cut and sewn to order just for you in our Nashville studio</p>
+									<h5>Fit &amp; Material</h5>
+									<h3>Intended Fit</h3>
+									<p>Intended to have a relaxed, oversized fit. OS fits most, but we offer OS- for smaller-framed, petite customers, and OS+ for larger-framed, broader folks. The OS- is recommended for those 5'3" and shorter, or those who prefer a slimmer, narrower fit. OS+ is recommended for sizes 12 and above, or those who have broader shoulders or prefer a more oversized fit. See our size chart for more details on selecting the correct size for your fit preference.</p>
+									<h3>Model Specs</h3>
+									<p>Renee is 5’ 9.5” tall, and has a 33” bust, 25” waist, and 35” hips. She is wearing the OS.</p>
+									<h3>Material</h3>
+									<p>42% Hemp, 35% Silk, 23% Organic Cotton. Soft, lightweight, and sheer with a visible horizontal slub and lots of texture.</p>
+									<p>Two classic colors:<br> - Soft black<br> - Warm ivory</p>
+									<h3>Care</h3>
+									<p>Hand or machine wash on gentle cycle with cold water. Tumble dry low. Leave unpressed for a beautifully rumpled look, or press on medium heat with steam to remove wrinkles, straighten neckline, sleeves and hem. Will press to a crisp, smooth finish.</p>
+									<h5>Testing something</h5>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt velit nostrum natus sapiente omnis, facilis corporis est aliquam. Modi deleniti quasi rem impedit magni dolorum, earum sunt vitae beatae placeat optio porro recusandae aliquid, ab ex in quidem velit sequi. Molestias doloribus accusamus asperiores possimus et optio rem ullam delectus.
+                                </div>
+                          	</li>
+                      	</ul>
 					</div>
-
 					<div class="product__modals">
 						<ul class="inline-list">
 							<li><a href="#" data-reveal-id="sizeChart">Size Chart</a></li>
@@ -367,7 +412,7 @@
 				<div class="row image-toggle-container ivory-hemp-twill hide">
 					<div class="product__mainimage column medium-10">
 						<div class="zoomer">
-							<img src="//cdn.shopify.com/s/files/1/0474/8573/products/KE3A0014.jpg?v=1458833355" alt="PETRA CROP TOP IN HEMP TWILL">
+							<img src="https://cdn.shopify.com/s/files/1/0474/8573/products/IMG_1043.jpg?v=1458833328" alt="PETRA CROP TOP IN HEMP TWILL"/>
 						</div>
 					</div>
 					<div class="product__sideimages column medium-2">
@@ -488,19 +533,23 @@
         <div class="row">
             <div class="column small-12 medium-6 medium-push-6 right-col">
                 <div id="mc_embed_signup">
-                    <form action="http://elizabethsuzann.us6.list-manage.com/subscribe/post?u=0313b2693fabf51dca61768b8&amp;id=3f4b4e6e94" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
-                        <h5>Subscribe to our newsletter</h5>
-                    <div class="mc-field-group">
-                      <input style="text-align:left; padding-left: 1em; padding-right:1em;" type="email" value="" name="EMAIL" placeholder="ENTER YOUR EMAIL ADDRESS" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ENTER YOUR EMAIL ADDRESS'" class="required email" id="mce-EMAIL">
-                    </div>
-                        <div id="mce-responses" class="clear">
-                            <div class="response" id="mce-error-response" style="display:none"></div>
-                            <div class="response" id="mce-success-response" style="display:none"></div>
-                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                        <div style="position: absolute; left: -5000px;"><input type="text" name="b_0313b2693fabf51dca61768b8_3f4b4e6e94" tabindex="-1" value=""></div>
-                        <div><input type="submit" value="SIGN ME UP!" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-                    </form>
-                </div>
+    <div class="mc-embedded-subscribe-form-container">
+        <form action="//elizabethsuzann.us6.list-manage.com/subscribe/post-json?u=0313b2693fabf51dca61768b8&amp;id=3f4b4e6e94&c=?" method="get" name="mc-embedded-subscribe-form" class="validate mc-embedded-subscribe-form" target="_blank" novalidate="">
+            <h5>Subscribe to our newsletter</h5>
+        <div class="mc-field-group">
+          <input style="text-align:left; padding-left: 1em; padding-right:1em;" type="email" value="" name="EMAIL" placeholder="ENTER YOUR EMAIL ADDRESS" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ENTER YOUR EMAIL ADDRESS'" class="required email" id="mce-EMAIL"><img src="img/ajax-loader.gif" class="loading" style="display:none;">
+        </div>
+            <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;"><input type="text" name="b_0313b2693fabf51dca61768b8_3f4b4e6e94" tabindex="-1" value=""></div>
+            <div><button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">SIGN ME UP!</button></div>
+            <div class="error" style="display:none;">There was an error subscribing to the list</div>
+        </form>
+    </div>
+    <div class="mc-embedded-subscribe-form-success"></div>
+</div>
             </div>
             <div class="column small-12 medium-6 medium-pull-6 left-col">
                     <div class="row">

@@ -1,15 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,300,100);
+@import url("//hello.myfonts.net/count/30861a");
 @import "settings";
 @import "normalize";
+@import "icons";
 
 //@import "foundation";
 
-@function font-url($url) {
-  @return url("../fonts/" + $url);
-}
-@function image-url($url, $nada, $nada2) {
-  @return url("../img/" + $url);
-}
+@function image-url($url, $nada, $nada2) { @return url("../img/" + $url); }
 
 // selectively include foundation components 
 @import "foundation/components/accordion";
@@ -19,12 +16,11 @@
 //  @import "foundation/components/button-groups";
 @import "foundation/components/buttons";
 @import "foundation/components/clearing";
-//  @import "foundation/components/dropdown";
+@import "foundation/components/dropdown";
 //  @import "foundation/components/dropdown-buttons";
-  @import "foundation/components/flex-video";
+@import "foundation/components/flex-video";
 @import "foundation/components/forms";
 @import "foundation/components/grid";
-
 @import "foundation/components/inline-lists";
 //  @import "foundation/components/joyride";
 //  @import "foundation/components/keystrokes";
@@ -46,13 +42,10 @@
 //  @import "foundation/components/tooltips";
 //  @import "foundation/components/top-bar";
 @import "foundation/components/type";
-
 //  @import "foundation/components/offcanvas";
 @import "foundation/components/visibility";
 @import "mixins";
-@import "slick";
 @import "main-nav";
-@import "_icons";
 
 /* split file here */
 @import "header";
@@ -85,6 +78,44 @@
      color: $iron;
      font-weight:200;  
   }
+  //controls the hovering of images based on alt text
+  .hover-image {
+    display:inline-block;
+    position:relative;
+    cursor:pointer;
+    .caption {
+      position:absolute;
+      width:100%;
+      text-align:center;
+      opacity:0;
+      top:0;
+      bottom:0;
+      background:rgba(255,255,255,0.6);
+      border-radius:6px;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      .text {
+        display:block;
+          max-width:100%;
+          position:absolute;
+          top: 50%;
+          width:100%;
+          padding:10px 0;
+          background:rgba(255,255,255,0.7);
+          transform: translateY(-50%);
+          -webkit-transform: translateY(-50%);
+          -moz-transition: translateY(-50%);
+          -o-transition: translateY(-50%);
+      }
+    }
+    &:hover {
+      .caption {
+        opacity:1;
+      }
+    }
+  }
   #page {
     z-index:8;
     margin-top:rem-calc(50);
@@ -99,6 +130,17 @@
         color: $jumbo;
         font-size:rem-calc(20);
     }
+  }
+  .panel {
+    border-radius:rem-calc(10);
+    -moz-border-radius:rem-calc(10);
+    p,small {
+      line-height:1.56;
+      font-size:rem-calc(14);
+    }
+  }
+  #content {
+    min-height: 400px;
   }
   ul.grid {
     list-style-type: none;
@@ -148,6 +190,20 @@
   }
   hr {
     border-color:$snow;
+  }
+  form .errors {
+     text-align:center;
+     padding:rem-calc(10);
+     border-radius:rem-calc(10);
+     -moz-border-radius:rem-calc(10);
+     background:$oil;
+     margin-bottom: rem-calc(20);
+     ul {
+      list-style-type:none;
+      padding:0;
+      margin:0;
+      margin-bottom:0;
+     }
   }
 
   .row.blocks {
@@ -209,6 +265,9 @@
       padding-top:rem-calc(30);
     }
   }
+  body.fixed {
+    overflow:hidden;
+  }
 }
 
 @media #{$medium-up} {
@@ -251,6 +310,7 @@
 @media #{$xxlarge-only} {}
 
 @import "blog";
+@import "slick";
 @import "cart";
 @import "type";
 @import "footer";

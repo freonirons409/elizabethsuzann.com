@@ -64,10 +64,6 @@ $slick-opacity-not-active: .25 !default;
         outline: none;
     }
 
-    .slick-loading & {
-        background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
-    }
-
     &.dragging {
         cursor: pointer;
         cursor: hand;
@@ -140,19 +136,6 @@ $slick-opacity-not-active: .25 !default;
 }
 
 /* Icons */
-@if $slick-font-family == "slick" {
-  @font-face {
-      font-family:"slick";
-      src:    slick-font-url("slick.eot");
-      src:    slick-font-url("slick.eot?#iefix") format("embedded-opentype"),
-              slick-font-url("slick.woff") format("woff"),
-              slick-font-url("slick.ttf") format("truetype"),
-              slick-font-url("slick.svg#slick") format("svg");
-      font-weight: normal;
-      font-style: normal;
-  }
-}
-
 /* Arrows */
 .slick-prev,
 .slick-next {
@@ -188,8 +171,8 @@ $slick-opacity-not-active: .25 !default;
     }
 }
 .slick-prev:before, .slick-next:before {
-    font-family: $slick-font-family;
-    font-size: 60px;
+    font-family: "Icons";
+    font-size: 30px;
     line-height: 1;
     color: $slick-arrow-color;
     opacity: $slick-opacity-default;
@@ -203,10 +186,7 @@ $slick-opacity-not-active: .25 !default;
         right: 0;
     }
     &:before {
-        content: $slick-prev-character;
-        [dir="rtl"] & {
-            content: $slick-next-character;
-        }
+        @extend .icon-arrow-left:before;
     }
 }
 .slick-next {
@@ -216,10 +196,7 @@ $slick-opacity-not-active: .25 !default;
         right: auto;
     }
     &:before {
-        content: $slick-next-character;
-        [dir="rtl"] & {
-            content: $slick-prev-character;
-        }
+        @extend .icon-arrow-right:before;
     }
 }
 
@@ -287,6 +264,15 @@ $slick-opacity-not-active: .25 !default;
         &.slick-active button:before {
             color: $slick-dot-color-active;
             opacity: $slick-opacity-default;
+        }
+    }
+}
+.autoSlider {
+    max-height:700px;
+    .slick-slide {
+        img {
+            max-height:700px;
+            width:auto!important;
         }
     }
 }
