@@ -1,11 +1,11 @@
 
 @media #{$small-up} {
 	footer {
-		padding:rem-calc(20);
+		padding:rem-calc(50 20 20 20);
 		background:$white;
 		position:relative;
+		z-index: 30;
 		border-top:1px solid $smoke!important;
-		margin-top:rem-calc(40);
 		p,h1,h2,h3,h4,h5,h6,.icon,li,a {
 			color:$footer-font-color;
 			margin-bottom:0;

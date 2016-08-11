@@ -171,6 +171,42 @@ $menu-direction: left;
       }
     }
   }
+  .account-mobile {
+    text-transform: uppercase;
+    display: block;
+    padding: 0.5rem;
+    font-weight: 200;
+    font-size: rem-calc(14);
+    letter-spacing:0.5rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid $snow;
+    a {
+      padding:rem-calc(10);
+      display:block;
+    }
+  }
+  .account-mobile,.search-mobile {
+    text-align:center;
+  }
+  .search-mobile {
+    font-size:16px;
+    font-style:italic;
+    margin-top:30px;
+    form {
+      position:relative;
+      margin:0 auto;
+      width:80%;
+      button {
+        color:$oil;
+        font-size:28px;
+      }
+    }
+    input {
+      text-align:center;
+      
+    }
+  }
 }
 
 //medium up
@@ -188,7 +224,7 @@ $menu-direction: left;
     > li {
       width: 33%;
       >a {
-        padding: rem-calc(26 0 20 0);
+        padding: rem-calc(26 0 30 0);
       }
       float: left;
       > ul {
@@ -206,7 +242,7 @@ $menu-direction: left;
       }
     }
     .mega-menu {
-      padding:rem-calc(20);
+      padding:rem-calc(20 40);
       left:0;
     }
   }

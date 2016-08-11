@@ -22,13 +22,36 @@
       #product-select-option-0 + .custom-style-select-box { display: none !important; }
     </style>
 	<header class="full-width">
+		<div class="alert-bar show-for-medium-up">
+			<div class="row">
+				<div class="column text-center">
+					<div class="newsletter-toggle"><p>Sign up for our newsletter</p></div>
+				</div>
+				<div class="header-menu">
+					<ul class="inline-list">
+						<li><a href="#" class="account-toggle">My Account</a></li>
+						<li> | </li>
+						<li class="cart-container"><div class="cart-toggle"><span class="icon icon-bag active"></span><span class="ajax_quantity">2</span></div></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 		<div class="full-width clearfix" id="subHeader">
 			<div class="medium-3 large-3 column right-header right">
 	        	<ul class="inline-list right header-icons" id="adminList">
-	        		<li><a href="#"><span class="icon icon-envelope"><span class="sr-only">Mailing List</span></span></a></li>
-					<li><a href="#"><span class="icon icon-search"><span class="sr-only">Search</span></span></a></li>
-					<li><a href="#"><span class="icon icon-account"><span class="sr-only">Account</span></span></a></li>
-					<li><a href="#"><span class="icon icon-cart active"><span class="ajax_quantity">2</span><span class="sr-only">Cart</span></span></a></li>
+	        		<!-- <li><a href="#"><span class="icon icon-envelope"><span class="sr-only">Mailing List</span></span></a></li> -->
+					<li class="search-container show-for-medium-up">
+						<form action="/search" method="get" autocomplete="off">
+	            			<input type="text" name="q" id="q" placeholder="search...">
+	     	    			<input type="hidden" name="type" value="product"> 
+	     	    			<button type="submit" class="search-button"><span class="icon icon-search"><span class="sr-only">Search</span></span></button>
+	          			</form>
+          			</li>
+          			<li class="show-for-small-only cart-container">
+          				<div class="cart-toggle"><span class="icon icon-bag active"></span><span class="ajax_quantity">2</span></div>
+          			</li>
+					<!-- <li><a href="#"><span class="icon icon-account"><span class="sr-only">Account</span></span></a></li>
+					<li><a href="#"><span class="icon icon-cart active"><span class="ajax_quantity">2</span><span class="sr-only">Cart</span></span></a></li> -->
 				</ul>
 				<!-- Quick Cart Window -->
 			<div class="quick-cart-window">
@@ -104,7 +127,7 @@
 				</div>
 	        </div>
 	        <div class="medium-3 large-2 columns medium-text-left small-text-center sub-header">
-	            <a href="#"><img src="img/logo-retina.png" alt="Elizabeth Suzann"/></a>
+	            <a href="#"><img src="img/logo-retina.png" alt="Elizabeth Suzann" class="logo"/></a>
 	        </div>
 	        <div class="medium-6 large-7 column navigation-container">
 	        	<nav class="full-width">
@@ -158,16 +181,42 @@
                             </ul>
                         </li>
                         <li><a href="#">Story</a>
-                            <!-- <ul>
-                                <li><a href="#">Sub Item 1</a>
+                            <ul class="small-block-grid-1 medium-block-grid-4 mega-menu">
+                                <li>
+                                    <h3>Headline 1</h3>
+                                    <ul>
+                                        <li><a href="#">Option 1</a></li>
+                                        <li><a href="#">Option 2</a></li>
+                                        <li><a href="#">Option 3</a></li>
+                                        <li><a href="#">Option 4</a></li>
+                                    </ul>
                                 </li>
-                                <li><a href="#">Sub Item 2</a>
+                                <li>
+                                    <h3>Headline 2</h3>
+                                    <ul>
+                                        <li><a href="#">Option 1</a></li>
+                                        <li><a href="#">Option 2</a></li>
+                                        <li><a href="#">Option 3</a></li>
+                                        <li><a href="#">Option 4</a></li>
+                                    </ul>
                                 </li>
-                                <li><a href="#">Sub Item 3</a>
+                                <li>
+                                    <h3>Headline 3</h3>
+                                    <ul>
+                                        <li><a href="#">Option 1</a></li>
+                                        <li><a href="#">Option 2</a></li>
+                                        <li><a href="#">Option 3</a></li>
+                                        <li><a href="#">Option 4</a></li>
+                                    </ul>
                                 </li>
-                                <li><a href="#">Sub Item 4</a>
+                                <li>
+                                    <div class="header-quote">
+                                        <blockquote>
+                                            <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum sit ipsam modi quidem sint.</a>
+                                        </blockquote>
+                                    </div>
                                 </li>
-                            </ul> -->
+                            </ul>
                         </li>
                         <li><a href="#">Studio</a>
                            <!--  <ul>
@@ -182,13 +231,26 @@
                             </ul> -->
                         </li>
                     </ul>
+                    <div class="show-for-small-only">
+                        <div class="account-mobile"><a href="#" class="account-toggle">My Account</a></div>
+                        <div class="search-mobile search-container">
+                            <form action="/search" method="get" autocomplete="off">
+                                <input type="text" name="q" id="q" placeholder="search...">
+                                <input type="hidden" name="type" value="product"> 
+                                <button type="submit" class="search-button"><span class="icon icon-search"><span class="sr-only">Search</span></span></button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
 	        </div>
 	    </div>
-	    <div id="searchBar">
+	    <div class="show-for-small-only mobile-alert-bar text-center">
+			<div class="newsletter-toggle"><p>Sign up for our newsletter</p></div>
+	    </div>
+	    <!-- <div id="searchBar" class="show-for-small-only">
 	    	<form action="/search" method="get" autocomplete="off">
             	<input type="text" name="q" id="q" placeholder="search...">
      	    	<input type="hidden" name="type" value="product"> 
@@ -196,7 +258,7 @@
           	<div class="closer">
           		<span class="icon icon-circle-x"></span>
           	</div>
-        </div>
+        </div> -->
     </header>
     <div id="newsletterPopup">
 		<div class="row">
@@ -238,222 +300,395 @@
 <!-- Product Single start -->
 <div id="content">     
     <div id="page">
-		<div class="row clearfix">
-			<div class="column medium-6 large-5 product__description right">
-				<form action="/cart/add" method="post" data-money-format="$ {{amount}}" id="product-form-5486717638">
-					<h1 class="product__title text-center">Petra Crop Top In Hemp Twill</h1>
-					<h3 class="product__price text-center">$145.00</h3>
-					<hr>
-					<div class="row">
-						<div class="product__colorpicker text-center column small-6">
-							<div class="swatch colors">
-								<a data-dropdown="colors" aria-controls="colors" aria-expanded="false" class="button">Colors</a>
-								<ul id="colors" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
-									<li>
-										<div data-value="Flax Hemp Twill" data-color="flax-hemp-twill" class="swatch-element color flax-hemp-twill available">
-											<!-- <div class="tooltip">Flax Hemp Twill</div> -->
-											<input id="swatch-0-flax-hemp-twill" type="radio" name="option-0" value="Flax Hemp Twill" checked="">
-											<label for="swatch-0-flax-hemp-twill">
-												<div class="square" style="background-color: twill; background-image: url(//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/flax-hemp-twill.png?5168250499117285353)">
-													<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353">
-												</div>
-												<span class="text">Flax Hemp Twill</span>
-											</label>
-										</div>
-									</li>
-									<li>
-										<div data-value="Ivory Hemp Twill" data-color="ivory-hemp-twill" class="swatch-element color ivory-hemp-twill soldout">
-											<!-- <div class="tooltip">Ivory Hemp Twill</div> -->
-											<input id="swatch-0-ivory-hemp-twill" type="radio" name="option-0" value="Ivory Hemp Twill">
-											<label for="swatch-0-ivory-hemp-twill">
-												<div class="square" style="background-color: twill; background-image: url(//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/ivory-hemp-twill.png?5168250499117285353)">
-													<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353">
-												</div>
-												<span class="text">Ivory Hemp Twill</span>
-											</label>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="product__sizepicker text-center column small-6">
-							<div class="swatch size">
-								<a data-dropdown="sizes" aria-controls="sizes" aria-expanded="false" class="button">Sizes</a>
-								<ul id="sizes" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
-									<li>
-										<div data-value="XS" class="swatch-element xs available">
-											<input id="swatch-1-xs" type="radio" name="option-1" value="XS" checked="">
-											<label for="swatch-1-xs">
-												<span class="circle">XS
-												<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353"></span>
-												<span class="text">Extra Small</span>
-											</label>
-										</div>
-									</li>
-									<li>
-										<div data-value="S" class="swatch-element s available">
-											<input id="swatch-1-s" type="radio" name="option-1" value="S">
-											<label for="swatch-1-s">
-												<span class="circle">S
-												<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353"></span>
-												<span class="text">Small</span>
-											</label>
-										</div>
-									</li>
-									<li>
-										<div data-value="M" class="swatch-element m available">
-											<input id="swatch-1-m" type="radio" name="option-1" value="M">
-											<label for="swatch-1-m">
-												<span class="circle">M
-												<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353"></span>
-												<span class="text">Medium</span>
-											</label>
-										</div>
-									</li>
-									<li>
-										<div data-value="L" class="swatch-element l available">
-											<input id="swatch-1-l" type="radio" name="option-1" value="L">
-											<label for="swatch-1-l">
-												<span class="circle">L
-												<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353"></span>
-												<span class="text">Large</span>
-											</label>
-										</div>
-									</li>
-									<li>
-										<div data-value="XL" class="swatch-element xl available">
-											<input id="swatch-1-xl" type="radio" name="option-1" value="XL">
-											<label for="swatch-1-xl">
-												<span class="circle">XL
-												<img class="crossed-out" src="//cdn.shopify.com/s/files/1/0474/8573/t/7/assets/soldout.png?5168250499117285353"></span>
-												<span class="text">Extra Large</span>
-											</label>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="product__add text-center">
-						<input type="submit" name="button" class="preorder button secondary" value="Add to Cart">
-						<div class="product__messages">
-							<p style="color: #333333;"><b><i>This product is currently on backorder and has a lead time of 6-8 weeks</i></b></p>
-						</div>
-					</div>
-				</form>
-					<div class="product__accordions text-editor">
-						<ul class="accordion" data-accordion="" id="productAccordion">
-                          	<li class="accordion-navigation">
-                              	<a href="#panel1a" aria-expanded="true">Details</a>
-                                <div id="panel1a" class="content">
-                                    <p>Every woman knows there's something indescribably perfect about throwing on a man's oversized button down shirt. The loose comfort, casually rolled sleeve, the soft, high quality fabric, the way the curved hem highlights just the right part of your leg. I've been intrigued at length by this classic garment, and the Annie Shirtdress is my conceptual interpretation of it. Very pared down with no buttons, plackets, or collar - a high jewel neck to make the silhouette a little more interesting, generous dropped sleeves for that perfect oversized look, back yolk and center front and back seams to elongate the body, and topstitching on all seams for durability. The shaped shirttail hem hits at the perfect shirtdress length - short enough to wear easily over pants, but long enough to comfortably wear as a dress.</p>
-									<p>Cut from a lightweight, thin - but strong - hemp/silk/cotton blend. Floats and drapes like air, but has beautiful body and volume. Semi-sheer with a dynamic horizontal slub and bubbly, organic texture. An extremely comfortable and easy to wear fabric.</p>
-									<p>You can wear this dress quite literally anywhere - lounging in the apartment on Sunday mornings, padding around with bare legs and feet to grab coffee and the newspaper, over torn up denim and birks with the Elodie Work Belt holding your pencils while you sketch outdoors, or over pin-straight black trousers to a gallery opening. True comfort and ease - so light and airy you'll forget what you're wearing.</p>
-									<p>- Simple shirtdress<br> - Long sleeves, topstitched seam<br> - Hits just past the knee<br> - 42% hemp, 35% silk, 23% organic cotton gauze<br> - Available in OS-, OS, and OS+<br> - Cut and sewn to order just for you in our Nashville studio</p>
-									<h5>Fit &amp; Material</h5>
-									<h3>Intended Fit</h3>
-									<p>Intended to have a relaxed, oversized fit. OS fits most, but we offer OS- for smaller-framed, petite customers, and OS+ for larger-framed, broader folks. The OS- is recommended for those 5'3" and shorter, or those who prefer a slimmer, narrower fit. OS+ is recommended for sizes 12 and above, or those who have broader shoulders or prefer a more oversized fit. See our size chart for more details on selecting the correct size for your fit preference.</p>
-									<h3>Model Specs</h3>
-									<p>Renee is 5’ 9.5” tall, and has a 33” bust, 25” waist, and 35” hips. She is wearing the OS.</p>
-									<h3>Material</h3>
-									<p>42% Hemp, 35% Silk, 23% Organic Cotton. Soft, lightweight, and sheer with a visible horizontal slub and lots of texture.</p>
-									<p>Two classic colors:<br> - Soft black<br> - Warm ivory</p>
-									<h3>Care</h3>
-									<p>Hand or machine wash on gentle cycle with cold water. Tumble dry low. Leave unpressed for a beautifully rumpled look, or press on medium heat with steam to remove wrinkles, straighten neckline, sleeves and hem. Will press to a crisp, smooth finish.</p>
-									<h5>Testing something</h5>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt velit nostrum natus sapiente omnis, facilis corporis est aliquam. Modi deleniti quasi rem impedit magni dolorum, earum sunt vitae beatae placeat optio porro recusandae aliquid, ab ex in quidem velit sequi. Molestias doloribus accusamus asperiores possimus et optio rem ullam delectus.
-                                </div>
-                          	</li>
-                      	</ul>
-					</div>
-					<div class="product__modals">
-						<ul class="inline-list">
-							<li><a href="#" data-reveal-id="sizeChart">Size Chart</a></li>
-							<li><a href="#" data-reveal-id="returnPolicy">Return Policy</a></li>
-							<li><a href="#" data-reveal-id="question">Ask A Question</a></li>
-						</ul>
-					</div>
-			</div>
-			<div class="column medium-6 large-7 product__images left">
-				<div class="row image-toggle-container flax-hemp-twill">
-					<div class="product__mainimage column medium-10">
-						<div class="zoomer">
-							<img src="https://cdn.shopify.com/s/files/1/0474/8573/products/IMG_1043.jpg?v=1458833328" alt="PETRA CROP TOP IN HEMP TWILL"/>
-						</div>
-					</div>
-					<div class="product__sideimages column medium-2">
-						<ul class="no-bullet product__sideimages_list">
-							<li><a href="#" data-image-alt="petra-crop-top-in-hemp-twill-flax-hemp-twill" data-image="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1043_1024x1024.jpg?v=1458833328" data-image-id="10473491846" data-zoom-image="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1043.jpg?v=1458833328" class="active">
-								<img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1043_compact.jpg?v=1458833328" data-image-id="10473491846" alt="Petra Crop Top in Hemp Twill Flax Hemp Twill" data-image-id="10473491846" />
-							</a></li>
+    <div class="row clearfix">
+      <div id="product-7531550982">
+            <div class="column medium-6 large-6 product__description right" id="product-right">
+            <div id="product-description">
+              
+                <h1 class="product__title text-center">Annie Shirt Dress in Hemp Gauze</h1>
+                              
+                        
+                            
+                                <h3 class="product-price product__price text-center" itemprop="price">$245.00</h3>
+                            
+                        
+                
+                        <form action="/cart/add" method="post" data-money-format="${{amount}}" id="product-form-7531550982">
+  
+  <div class="select">
+    <select id="product-select-7531550982" name='id'>
+      
+      <option value="24123558598" selected>Black Hemp Gauze / OS MINUS</option>
+      
+      <option value="24123558662">Black Hemp Gauze / OS</option>
+      
+      <option value="24123558726">Black Hemp Gauze / OS PLUS</option>
+      
+      <option value="24123558790">Ivory Hemp Gauze / OS MINUS</option>
+      
+      <option value="24123558854">Ivory Hemp Gauze / OS</option>
+      
+      <option value="24123558918">Ivory Hemp Gauze / OS PLUS</option>
+      
+    </select>
+  </div>
+  
+    
 
-							<li><a href="#" data-image-alt="petra-crop-top-in-hemp-twill-flax-hemp-twill" data-image="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1039_1024x1024.jpg?v=1458833333" data-image-id="10473491078" data-zoom-image="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1039.jpg?v=1458833333">
-								<img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1039_compact.jpg?v=1458833333" data-image-id="10473491078" alt="Petra Crop Top in Hemp Twill Flax Hemp Twill" data-image-id="10473491078" />
-							</a></li>
 
-							<li><a href="#" data-image-alt="petra-crop-top-in-hemp-twill-flax-hemp-twill" data-image="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1048_1024x1024.jpg?v=1458833336" data-image-id="10473492358" data-zoom-image="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1048.jpg?v=1458833336">
-								<img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1048_compact.jpg?v=1458833336" data-image-id="10473492358" alt="Petra Crop Top in Hemp Twill Flax Hemp Twill" data-image-id="10473492358" />
-							</a></li>
 
-							<li><a href="#" data-image-alt="petra-crop-top-in-hemp-twill-flax-hemp-twill" data-image="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1062_1024x1024.jpg?v=1458833340" data-image-id="10473493254" data-zoom-image="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1062.jpg?v=1458833340">
-								<img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1062_compact.jpg?v=1458833340" data-image-id="10473493254" alt="Petra Crop Top in Hemp Twill Flax Hemp Twill" data-image-id="10473493254" />
-							</a></li>
 
-							<li><a href="#" data-image-alt="petra-crop-top-in-hemp-twill-flax-hemp-twill" data-image="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1069_25170f72-cc6c-4289-8f3e-f505bb50b6b6_1024x1024.jpg?v=1458833343" data-image-id="10473494086" data-zoom-image="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1069_25170f72-cc6c-4289-8f3e-f505bb50b6b6.jpg?v=1458833343">
-								<img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1069_25170f72-cc6c-4289-8f3e-f505bb50b6b6_compact.jpg?v=1458833343" data-image-id="10473494086" alt="Petra Crop Top in Hemp Twill Flax Hemp Twill" data-image-id="10473494086" />
-							</a></li>
 
-							<li><a href="#" data-image-alt="petra-crop-top-in-hemp-twill-flax-hemp-twill" data-image="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1034_1024x1024.jpg?v=1458833347" data-image-id="10473490630" data-zoom-image="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1034.jpg?v=1458833347">
-								<img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1034_compact.jpg?v=1458833347" data-image-id="10473490630" alt="Petra Crop Top in Hemp Twill Flax Hemp Twill" data-image-id="10473490630" />
-							</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="row image-toggle-container ivory-hemp-twill hide">
-					<div class="product__mainimage column medium-10">
-						<div class="zoomer">
-							<img src="https://cdn.shopify.com/s/files/1/0474/8573/products/IMG_1043.jpg?v=1458833328" alt="PETRA CROP TOP IN HEMP TWILL"/>
-						</div>
-					</div>
-					<div class="product__sideimages column medium-2">
-						<ul class="no-bullet product__sideimages_list">
-							<li>
-								<a href="#" data-image-alt="petra-crop-top-in-hemp-twill-ivory-hemp-twill" data-image="//cdn.shopify.com/s/files/1/0474/8573/products/KE3A0014_1024x1024.jpg?v=1458833355" data-image-id="10473497670" data-zoom-image="//cdn.shopify.com/s/files/1/0474/8573/products/KE3A0014.jpg?v=1458833355">
-								<img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/0474/8573/products/KE3A0014_compact.jpg?v=1458833355" data-image-id="10473497670" alt="Petra Crop Top in Hemp Twill Ivory Hemp Twill" data-image-id="10473497670" />
-								</a>
-							</li>
-							<li>
-								<a href="#" data-image-alt="petra-crop-top-in-hemp-twill-ivory-hemp-twill" data-image="//cdn.shopify.com/s/files/1/0474/8573/products/KE3A0008_1024x1024.jpg?v=1458833359" data-image-id="10473497094" data-zoom-image="//cdn.shopify.com/s/files/1/0474/8573/products/KE3A0008.jpg?v=1458833359">
-								<img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/0474/8573/products/KE3A0008_compact.jpg?v=1458833359" data-image-id="10473497094" alt="Petra Crop Top in Hemp Twill Ivory Hemp Twill" data-image-id="10473497094" />
-								</a>
-							</li>
-							<li>
-								<a href="#" data-image-alt="petra-crop-top-in-hemp-twill-ivory-hemp-twill" data-image="//cdn.shopify.com/s/files/1/0474/8573/products/KE3A0018_1024x1024.jpg?v=1458833362" data-image-id="10473498118" data-zoom-image="//cdn.shopify.com/s/files/1/0474/8573/products/KE3A0018.jpg?v=1458833362">
-								<img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/0474/8573/products/KE3A0018_compact.jpg?v=1458833362" data-image-id="10473498118" alt="Petra Crop Top in Hemp Twill Ivory Hemp Twill" data-image-id="10473498118" />
-								</a>
-							</li>
-							<li>
-								<a href="#" data-image-alt="petra-crop-top-in-hemp-twill-ivory-hemp-twill" data-image="//cdn.shopify.com/s/files/1/0474/8573/products/KE3A9997_1024x1024.jpg?v=1458833365" data-image-id="10473499718" data-zoom-image="//cdn.shopify.com/s/files/1/0474/8573/products/KE3A9997.jpg?v=1458833365">
-								<img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/0474/8573/products/KE3A9997_compact.jpg?v=1458833365" data-image-id="10473499718" alt="Petra Crop Top in Hemp Twill Ivory Hemp Twill" data-image-id="10473499718" />
-								</a>
-							</li>
-							<li>
-								<a href="#" data-image-alt="petra-crop-top-in-hemp-twill-ivory-hemp-twill" data-image="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_0747_1024x1024.jpg?v=1458833368" data-image-id="10473495494" data-zoom-image="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_0747.jpg?v=1458833368">
-								<img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_0747_compact.jpg?v=1458833368" data-image-id="10473495494" alt="Petra Crop Top in Hemp Twill Ivory Hemp Twill" data-image-id="10473495494" />
-								</a>
-							</li>
-							<li>
-								<a href="#" data-image-alt="petra-crop-top-in-hemp-twill-ivory-hemp-twill" data-image="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_0759_1024x1024.jpg?v=1458833372" data-image-id="10473496006" data-zoom-image="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_0759.jpg?v=1458833372">
-								<img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_0759_compact.jpg?v=1458833372" data-image-id="10473496006" alt="Petra Crop Top in Hemp Twill Ivory Hemp Twill" data-image-id="10473496006" />
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+
+
+
+
+
+
+
+
+
+
+  <div class="product__colorpicker text-center column small-6">
+    <div class="swatch colors" data-option-index="0">
+        <a data-dropdown="colors" aria-controls="colors" aria-expanded="false" class="button">Colors</a>
+            <ul id="colors" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+
+
+  
+  
+    
+    
+      <li>
+      
+       
+      
+      <div data-value="Black Hemp Gauze" data-color="black-hemp-gauze" class="swatch-element color black-hemp-gauze available">
+        <input id="swatch-0-black-hemp-gauze" type="radio" name="option-0" value="Black Hemp Gauze"  />
+        
+        <label for="swatch-0-black-hemp-gauze">
+          <div class="square" style="background-color: gauze; background-image: url('//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/black-hemp-gauze.png?7341392017270943399')">
+            <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?7341392017270943399" />
+          </div>
+          <span class="text">Black Hemp Gauze</span>
+        </label>
+        
+      </div>
+      </li>
+    
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+      <li>
+      
+       
+      
+      <div data-value="Ivory Hemp Gauze" data-color="ivory-hemp-gauze" class="swatch-element color ivory-hemp-gauze available">
+        <input id="swatch-0-ivory-hemp-gauze" type="radio" name="option-0" value="Ivory Hemp Gauze"  />
+        
+        <label for="swatch-0-ivory-hemp-gauze">
+          <div class="square" style="background-color: gauze; background-image: url('//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/ivory-hemp-gauze.png?7341392017270943399')">
+            <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?7341392017270943399" />
+          </div>
+          <span class="text">Ivory Hemp Gauze</span>
+        </label>
+        
+      </div>
+      </li>
+    
+
+  
+    
+    
+
+  
+    
+    
+
+  
+  </ul>
+</div>
+</div>
+
+
+
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="product__sizepicker text-center column small-6">
+    <div class="swatch sizes" data-option-index="1">
+        <a data-dropdown="sizes" aria-controls="sizes" aria-expanded="false" class="button">Sizes</a>
+            <ul id="sizes" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+
+
+  
+  
+    
+    
+      <li>
+      
+       
+      
+      <div data-value="OS MINUS" class="swatch-element os-minus available">
+        <input id="swatch-1-os-minus" type="radio" name="option-1" value="OS MINUS"  />
+        
+        <label for="swatch-1-os-minus">
+          <span class="circle">OS-
+            <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?7341392017270943399" /></span>
+            <span class="text">OS MINUS</span>
+        </label>
+        
+      </div>
+      </li>
+    
+
+  
+    
+    
+      <li>
+      
+       
+      
+      <div data-value="OS" class="swatch-element os available">
+        <input id="swatch-1-os" type="radio" name="option-1" value="OS"  />
+        
+        <label for="swatch-1-os">
+          <span class="circle">OS
+            <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?7341392017270943399" /></span>
+            <span class="text">OS</span>
+        </label>
+        
+      </div>
+      </li>
+    
+
+  
+    
+    
+      <li>
+      
+       
+      
+      <div data-value="OS PLUS" class="swatch-element os-plus available">
+        <input id="swatch-1-os-plus" type="radio" name="option-1" value="OS PLUS"  />
+        
+        <label for="swatch-1-os-plus">
+          <span class="circle">OS+
+            <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?7341392017270943399" /></span>
+            <span class="text">OS PLUS</span>
+        </label>
+        
+      </div>
+      </li>
+    
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+  
+  </ul>
+</div>
+</div>
+
+
+
+
+  
+  
+  <div class="clearfix"></div>
+    
+  <div class="product-add row product__add text-center">
+    <input type="submit" name="button" class="add button secondary" value="Add to Cart" />
+  </div>
+  
+  <p class="add-to-cart-msg"></p> 
+  
+  
+</form>
+   
+      
+            <div class="clearfix"></div>
+                        <div class="product__accordions text-editor">
+                            <ul class="accordion" data-accordion id="productAccordion">
+                                <li class="accordion-navigation">
+                                  <a href="#panel1a">Details</a>
+                                  <div id="panel1a" class="content">
+                                      <p>Every woman knows there's something indescribably perfect about throwing on a man's oversized button down shirt. The loose comfort, casually rolled sleeve, the soft, high quality fabric, the way the curved hem highlights just the right part of your leg. I've been intrigued at length by this classic garment, and the Annie Shirtdress is my conceptual interpretation of it. Very pared down with no buttons, plackets, or collar - a high jewel neck to make the silhouette a little more interesting, generous dropped sleeves for that perfect oversized look, back yolk and center front and back seams to elongate the body, and topstitching on all seams for durability. The shaped shirttail hem hits at the perfect shirtdress length - short enough to wear easily over pants, but long enough to comfortably wear as a dress.</p>
+<p>Cut from a lightweight, thin - but strong - hemp/silk/cotton blend. Floats and drapes like air, but has beautiful body and volume. Semi-sheer with a dynamic horizontal slub and bubbly, organic texture. An extremely comfortable and easy to wear fabric.</p>
+<p>You can wear this dress quite literally anywhere - lounging in the apartment on Sunday mornings, padding around with bare legs and feet to grab coffee and the newspaper, over torn up denim and birks with the Elodie Work Belt holding your pencils while you sketch outdoors, or over pin-straight black trousers to a gallery opening. True comfort and ease - so light and airy you'll forget what you're wearing.</p>
+<p>- Simple shirtdress<br> - Long sleeves, topstitched seam<br> - Hits just past the knee<br> - 42% hemp, 35% silk, 23% organic cotton gauze<br> - Available in OS-, OS, and OS+<br> - Cut and sewn to order just for you in our Nashville studio</p>
+</div></li><li class="accordion-navigation"><a href="#panela">Fit &amp; Material</a><div id="panela" class="content">
+<h3>Intended Fit</h3>
+<p>Intended to have a relaxed, oversized fit. OS fits most, but we offer OS- for smaller-framed, petite customers, and OS+ for larger-framed, broader folks. The OS- is recommended for those 5'3" and shorter, or those who prefer a slimmer, narrower fit. OS+ is recommended for sizes 12 and above, or those who have broader shoulders or prefer a more oversized fit. See our size chart for more details on selecting the correct size for your fit preference.</p>
+<h3>Model Specs</h3>
+<p>Renee is 5’ 9.5” tall, and has a 33” bust, 25” waist, and 35” hips. She is wearing the OS.</p>
+<h3>Material</h3>
+<p>42% Hemp, 35% Silk, 23% Organic Cotton. Soft, lightweight, and sheer with a visible horizontal slub and lots of texture.</p>
+<p>Two classic colors:<br> - Soft black<br> - Warm ivory</p>
+<h3>Care</h3>
+<p>Hand or machine wash on gentle cycle with cold water. Tumble dry low. Leave unpressed for a beautifully rumpled look, or press on medium heat with steam to remove wrinkles, straighten neckline, sleeves and hem. Will press to a crisp, smooth finish.</p>
+                                  </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                          <div class="product__modals">
+                              <ul class="inline-list">
+                                  <li><a href="#" data-reveal-id="sizeChart">Size Chart</a></li>
+                                  <li><a href="#" data-reveal-id="returnPolicy">Return Policy</a></li>
+                                  <li><a href="#" data-reveal-id="question">Ask A Question</a></li>
+                              </ul>
+                          </div>
+                        
+                   </div>
+        </div>
+          <div class="column medium-6 large-6 product-photos product__images left">
+                  
+                  
+              
+                      
+              
+                      <div class="row image-toggle-container black-hemp-gauze">
+                            
+                                  
+                                  
+                
+                                  
+                                    <div class="product__mainimage column medium-10">
+                                        <div class="zoomer">
+                                            <img src="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1957.jpg?v=1468281903" alt='Annie Shirt Dress in Hemp Gauze Black Hemp Gauze' title="Annie Shirt Dress in Hemp Gauze"/>
+                                        </div>
+                                    </div>
+                                    <div class="product__sideimages column medium-2">
+                                        <ul class="no-bullet product__sideimages_list">
+                                          <li>
+                                              <a href="#" data-image-alt="annie-shirt-dress-in-hemp-gauze-black-hemp-gauze" data-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1957_1024x1024.jpg?v=1468281903" data-image-id="15165228230" data-zoom-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1957.jpg?v=1468281903">
+                                                <img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1957_compact.jpg?v=1468281903" data-image-id="15165228230" alt="Annie Shirt Dress in Hemp Gauze Black Hemp Gauze" data-image-id="15165228230" />
+                                              </a>
+                                          </li>
+                                          <li>
+                                              <a href="#" data-image-alt="annie-shirt-dress-in-hemp-gauze-black-hemp-gauze" data-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1972_1024x1024.jpg?v=1468281903" data-image-id="15165228358" data-zoom-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1972.jpg?v=1468281903">
+                                                <img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1972_compact.jpg?v=1468281903" data-image-id="15165228358" alt="Annie Shirt Dress in Hemp Gauze Black Hemp Gauze" data-image-id="15165228358" />
+                                              </a>
+                                          </li>
+                                          <li>
+                                              <a href="#" data-image-alt="annie-shirt-dress-in-hemp-gauze-black-hemp-gauze" data-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1978_1024x1024.jpg?v=1468281903" data-image-id="15165228422" data-zoom-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1978.jpg?v=1468281903">
+                                                <img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1978_compact.jpg?v=1468281903" data-image-id="15165228422" alt="Annie Shirt Dress in Hemp Gauze Black Hemp Gauze" data-image-id="15165228422" />
+                                              </a>
+                                          </li>
+
+                                          <li>
+                                              <a href="#" data-image-alt="annie-shirt-dress-in-hemp-gauze-black-hemp-gauze" data-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1966_1024x1024.jpg?v=1468281903" data-image-id="15165228486" data-zoom-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1966.jpg?v=1468281903">
+                                                <img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1966_compact.jpg?v=1468281903" data-image-id="15165228486" alt="Annie Shirt Dress in Hemp Gauze Black Hemp Gauze" data-image-id="15165228486" />
+                                              </a>
+                                          </li>
+                                          <li>
+                                              <a href="#" data-image-alt="annie-shirt-dress-in-hemp-gauze-black-hemp-gauze" data-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1145_1024x1024.jpg?v=1468281903" data-image-id="15165228614" data-zoom-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1145.jpg?v=1468281903">
+                                                <img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1145_compact.jpg?v=1468281903" data-image-id="15165228614" alt="Annie Shirt Dress in Hemp Gauze Black Hemp Gauze" data-image-id="15165228614" />
+                                              </a>
+                                          </li>
+                                  </ul>
+                              </div>
+                         </div>
+                    
+                  
+              
+                      
+                  
+              
+                      
+                  
+              
+                      
+              
+                      <div class="row image-toggle-container ivory-hemp-gauze hide">
+                            
+                                  
+                                  
+                
+                                  
+                                    <div class="product__mainimage column medium-10">
+                                        <div class="zoomer">
+                                            <img id="7531550982" src="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1957.jpg?v=1468281903" alt='Annie Shirt Dress in Hemp Gauze Black Hemp Gauze' title="Annie Shirt Dress in Hemp Gauze"/>
+                                        </div>
+                                    </div>
+                                    <div class="product__sideimages column medium-2">
+                                        <ul class="no-bullet product__sideimages_list">
+                                          <li>
+                                              <a href="#" data-image-alt="annie-shirt-dress-in-hemp-gauze-ivory-hemp-gauze" data-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1350_1024x1024.jpg?v=1468281903" data-image-id="15165228550" data-zoom-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1350.jpg?v=1468281903">
+                                                <img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1350_compact.jpg?v=1468281903" data-image-id="15165228550" alt="Annie Shirt Dress in Hemp Gauze Ivory Hemp Gauze" data-image-id="15165228550" />
+                                              </a>
+                                          </li>
+                                          <li>
+                                              <a href="#" data-image-alt="annie-shirt-dress-in-hemp-gauze-ivory-hemp-gauze" data-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_0539_1024x1024.jpg?v=1468281903" data-image-id="15165228742" data-zoom-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_0539.jpg?v=1468281903">
+                                                <img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_0539_compact.jpg?v=1468281903" data-image-id="15165228742" alt="Annie Shirt Dress in Hemp Gauze Ivory Hemp Gauze" data-image-id="15165228742" />
+                                              </a>
+                                          </li>
+                                          <li>
+                                              <a href="#" data-image-alt="annie-shirt-dress-in-hemp-gauze-ivory-hemp-gauze" data-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_0547_1024x1024.jpg?v=1468281903" data-image-id="15165228806" data-zoom-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_0547.jpg?v=1468281903">
+                                                <img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_0547_compact.jpg?v=1468281903" data-image-id="15165228806" alt="Annie Shirt Dress in Hemp Gauze Ivory Hemp Gauze" data-image-id="15165228806" />
+                                              </a>
+                                          </li>
+                                          <li>
+                                              <a href="#" data-image-alt="annie-shirt-dress-in-hemp-gauze-ivory-hemp-gauze" data-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_0560_1024x1024.jpg?v=1468281904" data-image-id="15165228870" data-zoom-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_0560.jpg?v=1468281904">
+                                                <img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_0560_compact.jpg?v=1468281904" data-image-id="15165228870" alt="Annie Shirt Dress in Hemp Gauze Ivory Hemp Gauze" data-image-id="15165228870" />
+                                              </a>
+                                          </li>
+                                          <li>
+                                              <a href="#" data-image-alt="annie-shirt-dress-in-hemp-gauze-ivory-hemp-gauze" data-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1355_1024x1024.jpg?v=1468281904" data-image-id="15165228934" data-zoom-image="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1355.jpg?v=1468281904">
+                                                <img class="thumbnail desktop-2" src="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1355_compact.jpg?v=1468281904" data-image-id="15165228934" alt="Annie Shirt Dress in Hemp Gauze Ivory Hemp Gauze" data-image-id="15165228934" />
+                                              </a>
+                                          </li>
+                                  </ul>
+                              </div>
+                         </div>
+                    
+                  
+              
+                      
+                  
+              
+                      
+                  
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+<div class="clear"></div>
 <div class="product-single-extras">
 	<!-- Product Single end -->
 	<div class="full-width row collapse image-slideshow">

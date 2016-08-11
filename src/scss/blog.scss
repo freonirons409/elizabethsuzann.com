@@ -1,5 +1,13 @@
 
 @media #{$small-up} {
+	.bottom-blog {
+		background: $white;
+		position:relative;
+		z-index:9;
+	}
+	.blog-sidebar {
+		position:relative;
+	}
 	.article-info {
 		max-width: rem-calc(450);
 		.article-image {
@@ -24,8 +32,7 @@
 		}
 		.short-description {
 			&,span,p {
-				color: $secondary-color;
-			    font-size: rem-calc(13);
+			    font-size: 0.85rem;
 			    line-height: 1.6em;
 			}
 		}

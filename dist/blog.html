@@ -17,13 +17,36 @@
 <!-- sep -->
 <div class="master-container">
 	<header class="full-width">
+		<div class="alert-bar show-for-medium-up">
+			<div class="row">
+				<div class="column text-center">
+					<div class="newsletter-toggle"><p>Sign up for our newsletter</p></div>
+				</div>
+				<div class="header-menu">
+					<ul class="inline-list">
+						<li><a href="#" class="account-toggle">My Account</a></li>
+						<li> | </li>
+						<li class="cart-container"><div class="cart-toggle"><span class="icon icon-bag active"></span><span class="ajax_quantity">2</span></div></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 		<div class="full-width clearfix" id="subHeader">
 			<div class="medium-3 large-3 column right-header right">
 	        	<ul class="inline-list right header-icons" id="adminList">
-	        		<li><a href="#"><span class="icon icon-envelope"><span class="sr-only">Mailing List</span></span></a></li>
-					<li><a href="#"><span class="icon icon-search"><span class="sr-only">Search</span></span></a></li>
-					<li><a href="#"><span class="icon icon-account"><span class="sr-only">Account</span></span></a></li>
-					<li><a href="#"><span class="icon icon-cart active"><span class="ajax_quantity">2</span><span class="sr-only">Cart</span></span></a></li>
+	        		<!-- <li><a href="#"><span class="icon icon-envelope"><span class="sr-only">Mailing List</span></span></a></li> -->
+					<li class="search-container show-for-medium-up">
+						<form action="/search" method="get" autocomplete="off">
+	            			<input type="text" name="q" id="q" placeholder="search...">
+	     	    			<input type="hidden" name="type" value="product"> 
+	     	    			<button type="submit" class="search-button"><span class="icon icon-search"><span class="sr-only">Search</span></span></button>
+	          			</form>
+          			</li>
+          			<li class="show-for-small-only cart-container">
+          				<div class="cart-toggle"><span class="icon icon-bag active"></span><span class="ajax_quantity">2</span></div>
+          			</li>
+					<!-- <li><a href="#"><span class="icon icon-account"><span class="sr-only">Account</span></span></a></li>
+					<li><a href="#"><span class="icon icon-cart active"><span class="ajax_quantity">2</span><span class="sr-only">Cart</span></span></a></li> -->
 				</ul>
 				<!-- Quick Cart Window -->
 			<div class="quick-cart-window">
@@ -99,7 +122,7 @@
 				</div>
 	        </div>
 	        <div class="medium-3 large-2 columns medium-text-left small-text-center sub-header">
-	            <a href="#"><img src="img/logo-retina.png" alt="Elizabeth Suzann"/></a>
+	            <a href="#"><img src="img/logo-retina.png" alt="Elizabeth Suzann" class="logo"/></a>
 	        </div>
 	        <div class="medium-6 large-7 column navigation-container">
 	        	<nav class="full-width">
@@ -153,16 +176,42 @@
                             </ul>
                         </li>
                         <li><a href="#">Story</a>
-                            <!-- <ul>
-                                <li><a href="#">Sub Item 1</a>
+                            <ul class="small-block-grid-1 medium-block-grid-4 mega-menu">
+                                <li>
+                                    <h3>Headline 1</h3>
+                                    <ul>
+                                        <li><a href="#">Option 1</a></li>
+                                        <li><a href="#">Option 2</a></li>
+                                        <li><a href="#">Option 3</a></li>
+                                        <li><a href="#">Option 4</a></li>
+                                    </ul>
                                 </li>
-                                <li><a href="#">Sub Item 2</a>
+                                <li>
+                                    <h3>Headline 2</h3>
+                                    <ul>
+                                        <li><a href="#">Option 1</a></li>
+                                        <li><a href="#">Option 2</a></li>
+                                        <li><a href="#">Option 3</a></li>
+                                        <li><a href="#">Option 4</a></li>
+                                    </ul>
                                 </li>
-                                <li><a href="#">Sub Item 3</a>
+                                <li>
+                                    <h3>Headline 3</h3>
+                                    <ul>
+                                        <li><a href="#">Option 1</a></li>
+                                        <li><a href="#">Option 2</a></li>
+                                        <li><a href="#">Option 3</a></li>
+                                        <li><a href="#">Option 4</a></li>
+                                    </ul>
                                 </li>
-                                <li><a href="#">Sub Item 4</a>
+                                <li>
+                                    <div class="header-quote">
+                                        <blockquote>
+                                            <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum sit ipsam modi quidem sint.</a>
+                                        </blockquote>
+                                    </div>
                                 </li>
-                            </ul> -->
+                            </ul>
                         </li>
                         <li><a href="#">Studio</a>
                            <!--  <ul>
@@ -177,13 +226,26 @@
                             </ul> -->
                         </li>
                     </ul>
+                    <div class="show-for-small-only">
+                        <div class="account-mobile"><a href="#" class="account-toggle">My Account</a></div>
+                        <div class="search-mobile search-container">
+                            <form action="/search" method="get" autocomplete="off">
+                                <input type="text" name="q" id="q" placeholder="search...">
+                                <input type="hidden" name="type" value="product"> 
+                                <button type="submit" class="search-button"><span class="icon icon-search"><span class="sr-only">Search</span></span></button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
 	        </div>
 	    </div>
-	    <div id="searchBar">
+	    <div class="show-for-small-only mobile-alert-bar text-center">
+			<div class="newsletter-toggle"><p>Sign up for our newsletter</p></div>
+	    </div>
+	    <!-- <div id="searchBar" class="show-for-small-only">
 	    	<form action="/search" method="get" autocomplete="off">
             	<input type="text" name="q" id="q" placeholder="search...">
      	    	<input type="hidden" name="type" value="product"> 
@@ -191,7 +253,7 @@
           	<div class="closer">
           		<span class="icon icon-circle-x"></span>
           	</div>
-        </div>
+        </div> -->
     </header>
     <div id="newsletterPopup">
 		<div class="row">
@@ -257,7 +319,7 @@
             <div class="column medium-4 large-3">
               <!-- /snippets/blog-sidebar.liquid -->
                 <div class="blog-sidebar">
-                    <div class="row">
+                    <div class="row sticky blog">
                         <div class="column small-6 medium-12">
                             <h4>Recent Articles</h4>
                             <ul class="no-bullet">
@@ -289,68 +351,70 @@
                 </div>
             </div>
         </div>
-        <hr>
-        <div class="row">
-            <div class="column">
-              <h2>More Stories</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="column">
-                <div class="blog-slider">
-                        
-                            
-                        
-                            
-                            <div class="blog-slide">
-                                <div class="article-info">
-                                    <div class="article-image">
-                                        <a href="/blogs/stories/weve-moved"><img src="//cdn.shopify.com/s/files/1/1268/1483/articles/Outdoor01_dade1656-ddca-476d-89f5-0f8ce5b87fae_large.jpg?v=1469106911" alt="WE'VE MOVED!"></a>
-                                    </div>
-                                    <h3 class="title"><a href="/blogs/stories/weve-moved">WE'VE MOVED!</a></h3>
-                                    <div class="short-description">
-                                      <span>
-                                      <p><span>The first week of November last year,&nbsp;my husband and I found ourselves in a massive, black warehouse in the middle of the night, bundled in sweaters and gloves because there was no heat, surrounded by haphazard piles of our company’s belongings, listening to the train whine by in the distance, and feeling generally overwhelmed and terrified at what we had done...</span></p>
-                                      </span>
-                                    </div>
+        <div class="bottom-blog">
+          <hr>
+          <div class="row">
+              <div class="column">
+                <h2>More Stories</h2>
+              </div>
+          </div>
+          <div class="row">
+              <div class="column">
+                  <div class="blog-slider">
+                          
+                              
+                          
+                              
+                              <div class="blog-slide">
+                                  <div class="article-info">
+                                      <div class="article-image">
+                                          <a href="/blogs/stories/weve-moved"><img src="//cdn.shopify.com/s/files/1/1268/1483/articles/Outdoor01_dade1656-ddca-476d-89f5-0f8ce5b87fae_large.jpg?v=1469106911" alt="WE'VE MOVED!"></a>
+                                      </div>
+                                      <h3 class="title"><a href="/blogs/stories/weve-moved">WE'VE MOVED!</a></h3>
+                                      <div class="short-description">
+                                        <span>
+                                        <p><span>The first week of November last year,&nbsp;my husband and I found ourselves in a massive, black warehouse in the middle of the night, bundled in sweaters and gloves because there was no heat, surrounded by haphazard piles of our company’s belongings, listening to the train whine by in the distance, and feeling generally overwhelmed and terrified at what we had done...</span></p>
+                                        </span>
+                                      </div>
 
-                                    
-                                    <p class="post-tags"><a href="/blogs/stories/tagged/behind-the-scenes">behind the scenes</a> / <a href="/blogs/stories/tagged/process">process</a></p>
-                                    
+                                      
+                                      <p class="post-tags"><a href="/blogs/stories/tagged/behind-the-scenes">behind the scenes</a> / <a href="/blogs/stories/tagged/process">process</a></p>
+                                      
 
-                                    <!--<div class="readmore">
-                                      <a href="/blogs/stories/weve-moved">View Story</a>
-                                    </div>-->
-                                   <!--Liquid error: Could not find asset snippets/social.liquid-->        
-                                </div>
-                            </div>
-                            
-                        
-                            
-                            <div class="blog-slide">
-                                <div class="article-info">
-                                    <div class="article-image">
-                                        <a href="/blogs/stories/meant-for-keeps"><img src="//cdn.shopify.com/s/files/1/1268/1483/articles/MaryMooney01_large.jpg?v=1469107037" alt="MEANT FOR KEEPS"></a>
-                                    </div>
-                                    <h3 class="title"><a href="/blogs/stories/meant-for-keeps">MEANT FOR KEEPS</a></h3>
-                                    <div class="short-description">
-                                      <span>
-                                      <p class="p1">Picturing a woman opening up a package from <a href="https://elizabethsuzann.com/" target="_blank">Elizabeth Suzann</a> is something I do often. A package she’s curated with intention, purchasing her favorite pieces, waiting for them <a href="https://cdn.shopify.com/s/files/1/0474/8573/files/Shipping12.jpg?5812183682253228944" target="_blank">to be sewn and shipped</a> - I hope it’s an experience that is anticipated, a moment that is enjoyed and savored. We aren’t able to meet every customer face to face and tell <a href="https://elizabethsuzann.com/blogs/stories" target="_blank">our story</a> in person, so this act of receiving our product is something I have tried to make as rich an experience as possible. I want the fashion in which our garments arrive to live up to the same standards we hold the products to themselves...</p>
-                                      </span>
-                                    </div>
+                                      <!--<div class="readmore">
+                                        <a href="/blogs/stories/weve-moved">View Story</a>
+                                      </div>-->
+                                     <!--Liquid error: Could not find asset snippets/social.liquid-->        
+                                  </div>
+                              </div>
+                              
+                          
+                              
+                              <div class="blog-slide">
+                                  <div class="article-info">
+                                      <div class="article-image">
+                                          <a href="/blogs/stories/meant-for-keeps"><img src="//cdn.shopify.com/s/files/1/1268/1483/articles/MaryMooney01_large.jpg?v=1469107037" alt="MEANT FOR KEEPS"></a>
+                                      </div>
+                                      <h3 class="title"><a href="/blogs/stories/meant-for-keeps">MEANT FOR KEEPS</a></h3>
+                                      <div class="short-description">
+                                        <span>
+                                        <p class="p1">Picturing a woman opening up a package from <a href="https://elizabethsuzann.com/" target="_blank">Elizabeth Suzann</a> is something I do often. A package she’s curated with intention, purchasing her favorite pieces, waiting for them <a href="https://cdn.shopify.com/s/files/1/0474/8573/files/Shipping12.jpg?5812183682253228944" target="_blank">to be sewn and shipped</a> - I hope it’s an experience that is anticipated, a moment that is enjoyed and savored. We aren’t able to meet every customer face to face and tell <a href="https://elizabethsuzann.com/blogs/stories" target="_blank">our story</a> in person, so this act of receiving our product is something I have tried to make as rich an experience as possible. I want the fashion in which our garments arrive to live up to the same standards we hold the products to themselves...</p>
+                                        </span>
+                                      </div>
 
-                                    
-                                    <p class="post-tags"><a href="/blogs/stories/tagged/behind-the-scenes">behind the scenes</a> / <a href="/blogs/stories/tagged/process">process</a></p>
-                                    
+                                      
+                                      <p class="post-tags"><a href="/blogs/stories/tagged/behind-the-scenes">behind the scenes</a> / <a href="/blogs/stories/tagged/process">process</a></p>
+                                      
 
-                                    <!--<div class="readmore">
-                                      <a href="/blogs/stories/meant-for-keeps">View Story</a>
-                                    </div>-->
-                                   <!--Liquid error: Could not find asset snippets/social.liquid-->        
-                                </div>
-                            </div>
-                </div>
-            </div>
+                                      <!--<div class="readmore">
+                                        <a href="/blogs/stories/meant-for-keeps">View Story</a>
+                                      </div>-->
+                                     <!--Liquid error: Could not find asset snippets/social.liquid-->        
+                                  </div>
+                              </div>
+                  </div>
+              </div>
+          </div>
         </div>
 
   </div>

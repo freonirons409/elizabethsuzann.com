@@ -3,6 +3,9 @@
       position:relative;
       @include transition-all(0.2s);
       padding-top:rem-calc(50);
+      &.blog {
+        top:220px;
+      }
   	}
   #sidebarToggle {
     display:none;

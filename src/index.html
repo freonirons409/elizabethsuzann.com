@@ -23,13 +23,36 @@
 <!-- sep -->
 <div class="master-container">
 	<header class="full-width">
+		<div class="alert-bar show-for-medium-up">
+			<div class="row">
+				<div class="column text-center">
+					<div class="newsletter-toggle"><p>Sign up for our newsletter</p></div>
+				</div>
+				<div class="header-menu">
+					<ul class="inline-list">
+						<li><a href="#" class="account-toggle">My Account</a></li>
+						<li> | </li>
+						<li class="cart-container"><div class="cart-toggle"><span class="icon icon-bag active"></span><span class="ajax_quantity">2</span></div></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 		<div class="full-width clearfix" id="subHeader">
 			<div class="medium-3 large-3 column right-header right">
 	        	<ul class="inline-list right header-icons" id="adminList">
-	        		<li><a href="#"><span class="icon icon-envelope"><span class="sr-only">Mailing List</span></span></a></li>
-					<li><a href="#"><span class="icon icon-search"><span class="sr-only">Search</span></span></a></li>
-					<li><a href="#"><span class="icon icon-account"><span class="sr-only">Account</span></span></a></li>
-					<li><a href="#"><span class="icon icon-cart active"><span class="ajax_quantity">2</span><span class="sr-only">Cart</span></span></a></li>
+	        		<!-- <li><a href="#"><span class="icon icon-envelope"><span class="sr-only">Mailing List</span></span></a></li> -->
+					<li class="search-container show-for-medium-up">
+						<form action="/search" method="get" autocomplete="off">
+	            			<input type="text" name="q" id="q" placeholder="search...">
+	     	    			<input type="hidden" name="type" value="product"> 
+	     	    			<button type="submit" class="search-button"><span class="icon icon-search"><span class="sr-only">Search</span></span></button>
+	          			</form>
+          			</li>
+          			<li class="show-for-small-only cart-container">
+          				<div class="cart-toggle"><span class="icon icon-bag active"></span><span class="ajax_quantity">2</span></div>
+          			</li>
+					<!-- <li><a href="#"><span class="icon icon-account"><span class="sr-only">Account</span></span></a></li>
+					<li><a href="#"><span class="icon icon-cart active"><span class="ajax_quantity">2</span><span class="sr-only">Cart</span></span></a></li> -->
 				</ul>
 				<!-- Quick Cart Window -->
 			<div class="quick-cart-window">
@@ -105,7 +128,7 @@
 				</div>
 	        </div>
 	        <div class="medium-3 large-2 columns medium-text-left small-text-center sub-header">
-	            <a href="#"><img src="img/logo-retina.png" alt="Elizabeth Suzann"/></a>
+	            <a href="#"><img src="img/logo-retina.png" alt="Elizabeth Suzann" class="logo"/></a>
 	        </div>
 	        <div class="medium-6 large-7 column navigation-container">
 	        	<nav class="full-width">
@@ -159,16 +182,42 @@
                             </ul>
                         </li>
                         <li><a href="#">Story</a>
-                            <!-- <ul>
-                                <li><a href="#">Sub Item 1</a>
+                            <ul class="small-block-grid-1 medium-block-grid-4 mega-menu">
+                                <li>
+                                    <h3>Headline 1</h3>
+                                    <ul>
+                                        <li><a href="#">Option 1</a></li>
+                                        <li><a href="#">Option 2</a></li>
+                                        <li><a href="#">Option 3</a></li>
+                                        <li><a href="#">Option 4</a></li>
+                                    </ul>
                                 </li>
-                                <li><a href="#">Sub Item 2</a>
+                                <li>
+                                    <h3>Headline 2</h3>
+                                    <ul>
+                                        <li><a href="#">Option 1</a></li>
+                                        <li><a href="#">Option 2</a></li>
+                                        <li><a href="#">Option 3</a></li>
+                                        <li><a href="#">Option 4</a></li>
+                                    </ul>
                                 </li>
-                                <li><a href="#">Sub Item 3</a>
+                                <li>
+                                    <h3>Headline 3</h3>
+                                    <ul>
+                                        <li><a href="#">Option 1</a></li>
+                                        <li><a href="#">Option 2</a></li>
+                                        <li><a href="#">Option 3</a></li>
+                                        <li><a href="#">Option 4</a></li>
+                                    </ul>
                                 </li>
-                                <li><a href="#">Sub Item 4</a>
+                                <li>
+                                    <div class="header-quote">
+                                        <blockquote>
+                                            <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum sit ipsam modi quidem sint.</a>
+                                        </blockquote>
+                                    </div>
                                 </li>
-                            </ul> -->
+                            </ul>
                         </li>
                         <li><a href="#">Studio</a>
                            <!--  <ul>
@@ -183,13 +232,26 @@
                             </ul> -->
                         </li>
                     </ul>
+                    <div class="show-for-small-only">
+                        <div class="account-mobile"><a href="#" class="account-toggle">My Account</a></div>
+                        <div class="search-mobile search-container">
+                            <form action="/search" method="get" autocomplete="off">
+                                <input type="text" name="q" id="q" placeholder="search...">
+                                <input type="hidden" name="type" value="product"> 
+                                <button type="submit" class="search-button"><span class="icon icon-search"><span class="sr-only">Search</span></span></button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
 	        </div>
 	    </div>
-	    <div id="searchBar">
+	    <div class="show-for-small-only mobile-alert-bar text-center">
+			<div class="newsletter-toggle"><p>Sign up for our newsletter</p></div>
+	    </div>
+	    <!-- <div id="searchBar" class="show-for-small-only">
 	    	<form action="/search" method="get" autocomplete="off">
             	<input type="text" name="q" id="q" placeholder="search...">
      	    	<input type="hidden" name="type" value="product"> 
@@ -197,7 +259,7 @@
           	<div class="closer">
           		<span class="icon icon-circle-x"></span>
           	</div>
-        </div>
+        </div> -->
     </header>
     <div id="newsletterPopup">
 		<div class="row">
@@ -236,23 +298,27 @@
     </div>
 <!-- sep -->
 
-<div class="full-width row collapse image-slideshow">
-	<div class="small-12 columns">
-		<div class="slider">
-			<div>
+<div class="loader">
+	<div class="load-watch">
+		<div class="full-width row collapse image-slideshow">
+			<div class="small-12 columns">
+				<div class="slider">
+					<div>
     <img src="img/slide1.jpg">
 </div>
 
-			<!-- sep -->
-			<div>
+					<!-- sep -->
+					<div>
     <img src="img/slide2.jpg">
 </div>
 
-			<!-- sep -->
-			<div>
+					<!-- sep -->
+					<div>
     <img src="img/slide3.jpg">
 </div>
 
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

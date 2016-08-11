@@ -2,6 +2,39 @@
 @media #{$small-up} {
 	header {
 		padding:rem-calc(0);
+		.alert-bar {
+			background:$ghost;
+			padding:15px;
+			overflow:visible;
+			font-family:$font-family-serif;
+			.row {
+				position:relative;
+			}
+			p {
+				margin:0;
+				font-family:$font-family-serif;
+			}
+			.header-menu {
+				position:absolute;
+				overflow:visible;
+				right:0;
+				li {
+					a {
+						&:hover {
+							text-decoration:underline;
+						}
+					}
+				}
+				.icon {
+					font-size:22px;
+					overflow:visible;
+					cursor:pointer;
+					position:relative;
+					line-height: 1.8;
+					top:-8px;
+				}
+			}
+		}
 		.notice {
 			font-weight:300;
 			font-size:rem-calc(13);
@@ -23,7 +56,24 @@
 		}
 		.sub-header {
 			background:$white;
-			padding: rem-calc(12 0 0 0);
+			padding: rem-calc(12 0 15 0);
+			img {
+				max-width:100%;
+			}
+		}
+		.search-container {
+			position:relative;
+			input {
+				margin-bottom:0;
+			}
+			.search-button {
+				border:0;
+				background:transparent;
+				position:absolute;
+				right:5px;
+				top:5px;
+				padding:0;
+			}
 		}
 		.header-icons {
 			margin-bottom:0;
@@ -52,7 +102,11 @@
 		}
 	}
 	#adminList {
-
+		.cart-container {
+			.icon {
+				color:$oil;
+			}
+		}
 	}
 	#subHeader {
 		max-width:rem-calc(1700);
@@ -102,6 +156,9 @@
 				font-size:rem-calc(35);
 			}
 		}
+	}
+	.cart-toggle,.newsletter-toggle {
+		cursor:pointer;
 	}
 	.quick-login-window {
 		display:none;
@@ -211,11 +268,34 @@
 }
 
 @media #{$small-only} {
-	.sub-header {
-		margin:rem-calc(20 0);
-		img {
-			max-width:300px;
+	header {
+		position:fixed;
+		background:$white;
+		z-index: 999;
+	}
+	.mobile-alert-bar {
+		background:$ghost;
+		padding:10px;
+		overflow:visible;
+		font-family:$font-family-serif;
+		p {
+			margin:0;
 		}
+	}
+	#subHeader {
+		padding-top:0;
+	}
+	.small-menu-toggle {
+		background:transparent!important;
+	}
+	.sub-header {
+		margin:rem-calc(0);
+		img {
+			max-width:250px!important;
+		}
+	}
+	.main-content {
+    	margin-top:217px!important;
 	}
 	header .right-header {
 		padding-right: 0;
@@ -234,6 +314,7 @@
 	.quick-login-window,.quick-cart-window {
 		min-width:340px;
 		margin-right:-20px;
+		top:rem-calc(-10)!important;
 	}
 }
 
