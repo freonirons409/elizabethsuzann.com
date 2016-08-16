@@ -2,7 +2,26 @@
 
 
 @media #{$small-up} {
-	
+	#question .error {
+	    padding: 10px;
+	    color: #ffffff;
+	    background: #f46e6e;
+	    border-radius: 10px;
+	    margin-bottom: 20px;
+	}
+	#question {
+		.ajax-success {
+		    padding: 20px 10px;
+		    background: #8bc982;
+		    color: #fff;
+		    margin-top: 90px;
+		    margin-bottom: 90px;
+		    border-radius: 10px;
+		    p {
+		    	margin-bottom:0!important;
+		    }
+		}
+	}
 	#customerForms {
 		margin-top:rem-calc(20);
 		margin-bottom:rem-calc(60);

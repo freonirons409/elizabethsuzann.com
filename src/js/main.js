@@ -42,8 +42,7 @@ $(window).load(function(){
     $('.grid').masonry({
       // options... 
         columnWidth: '.grid-sizer',
-        itemSelector: '.grid-item',
-        percentPosition: true
+        itemSelector: '.grid-item'
     });
     openRecoveryWindow();
 });
@@ -58,6 +57,25 @@ $(document).ready(function() {
               breakpoint: 640,
               settings: {
                 arrows:false
+              }
+            }
+        ]
+    });
+    $('.user-image-slider').slick({
+        dots: false,
+        arrows: true,
+        centerMode:true,
+        slidesToShow:3,
+        draggable:true,
+        variableWidth:true,
+        adaptiveHeight:true,
+        infinite:true,
+        responsive: [
+            {
+              breakpoint: 640,
+              settings: {
+                centerMode:false,
+                slidesToShow:1,
               }
             }
         ]
@@ -163,8 +181,13 @@ $(document).ready(function() {
             $(".product__mainimage .zoomer").zoom({on: 'grab'});
         });
     });
+        // show selected swatch
+        //=====================
+        $(".swatch-element input[type='radio']").on("change", function(){
+            $(this).parent().parent().parent().parent().find(".selected-swatch").html($(this).parent().find(".square,.circle").clone());
+        });
 
-    //single product functions
+    // more single product functions
     $(".swatch-element").each(function(){
         if($(this).hasClass("soldout")) {
             $(this).find("input").attr("disabled", true);
@@ -192,12 +215,22 @@ $(document).ready(function() {
     function switchOption(x,y,z) {
         var searchOption = x + " / " + y;
         if(z) { searchOption += " / " + z; }
+        $("div.select option").removeAttr("selected");
         $("div.select option").each(function(){
           if($(this).text()===searchOption) {
               $(this).attr("selected", true);
           }
         });
     }
+    //make user images grid layout
+    //==================
+        if($(".user-grid-container img")){
+            $(".user-grid-container").html("<ul class=\"grid user-grid-layout small-block-grid-1 medium-block-grid-2 large-block-grid-3\">\n<li class=\"grid-sizer\"></li>\n"+$(".user-grid-container").html()+"</ul>");
+            $(".user-grid-container img").each(function(){
+                $(this).wrap("<li class=\"grid-item\"></li>");
+            });
+        }
+
     //loader animation while slideshows load
     //==================
     $(".loader").each(function(){
@@ -441,6 +474,46 @@ $(document).ready(function() {
                 });
             } else {
                 alert("Please enter your email address");
+            }
+        });
+
+        $('#question form').submit(function(e) {
+          var submittableForm;
+          e.preventDefault();
+            submittableForm = $(this);
+            var validationFlag = false;
+            $(this).find("input.input-full").each(function(){
+                if($(this).val().length<1) {
+                    validationFlag = true;
+                }
+            });
+            if(validationFlag===false) {
+                actionUrl = $(this).attr("action");
+                return $.ajax({
+                  type: 'POST',
+                  url: actionUrl,
+                  data: submittableForm.serialize(),
+                  // cache       : false,
+                  // dataType    : 'json',
+                  // contentType: "application/json; charset=utf-8",
+                  success: function() {
+                    $('#question .form-container').hide();
+                    $('#question .ajax-success').fadeIn();
+                  },
+                  beforeSend: function() {
+                    submittableForm.find('input.button').attr('disabled', 'disabled');
+                    //submittableForm.find('img.loading').fadeIn();
+                    return submittableForm.find('div.error').hide().attr('aria-hidden', 'true');
+                  },
+                  error: function(data) {
+                    console.log(data);
+                    submittableForm.find('button[type=submit]').removeAttr('disabled');
+                    //submittableForm.find('img.loading').fadeOut('500');
+                    return submittableForm.find('div.error').delay('600').fadeIn().removeAttr('aria-hidden');
+                  }
+                });
+            } else {
+                $("#question .error").removeClass("hide");
             }
         });
 

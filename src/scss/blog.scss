@@ -8,6 +8,17 @@
 	.blog-sidebar {
 		position:relative;
 	}
+	.blog-slider {
+		.slick-dots {
+			li {
+				button {
+					&:before {
+						color:$oil;
+					}
+				}
+			}
+		}
+	}
 	.article-info {
 		max-width: rem-calc(450);
 		.article-image {

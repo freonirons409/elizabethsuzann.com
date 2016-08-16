@@ -174,7 +174,7 @@ gulp.task('move-to-dist', ['fontsImages'], function() {
             //css: [], /* for use when compiling shopify fonts file */
             // css: [ rev ],
             /*html: [ function () {return minifyHtml({ empty: true });} ],*/
-            js: [ uglify ],
+            js: [ ],
             jsmain: [ ],
             inlinejs: [ uglify ],
             inlinecss: [ minifyCss(), 'concat' ]

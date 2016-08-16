@@ -232,6 +232,7 @@
   p.small {
     font-size:75%;
   }
+  //comments section stuff
   .button {
     background:$white;
     border:1px solid $primary-color;
@@ -249,6 +250,21 @@
     &:hover {
       background:$primary-color;
       color:$white;
+    }
+  }
+  .user-grid-container {
+    max-width:1000px;
+    margin:0 auto;
+    .grid-item{
+      img {
+        width:100%;
+        border:10px solid $white;
+        border-bottom:48px solid $white;
+        margin-bottom:10px;
+        -webkit-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.35);
+        -moz-box-shadow:    2px 2px 5px 0px rgba(50, 50, 50, 0.35);
+        box-shadow:         2px 2px 5px 0px rgba(50, 50, 50, 0.35);
+      }
     }
   }
 }
@@ -331,6 +347,7 @@
 @media #{$xxlarge-only} {}
 
 @import "blog";
+@import "comments";
 @import "slick";
 @import "cart";
 @import "type";

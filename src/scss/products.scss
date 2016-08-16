@@ -1,4 +1,11 @@
 @media #{$small-up} {
+    .user-image-slider {
+        .slick-slide {
+            img {
+                border:4px solid $white;
+            }
+        }
+    }
     #product-navigation{
         .section-title.lines {
             position: relative;
@@ -189,6 +196,56 @@
                 .circle {
                     font-size:rem-calc(11.5);
                 }
+            }
+        }
+        .selected-swatch {
+            position:absolute;
+            top:8px;
+            left:10px;
+            .crossed-out {
+                display:none;
+            }
+            .square,.circle {
+              border:$charcoal 1px solid !important;
+              background: $oil;
+              color: $white;
+              display:-moz-inline-stack;
+              display:inline-block;
+              zoom:1;
+              width: 30px;
+              height: 30px;
+              border-radius:100%;
+              margin-right: 6px;
+              margin-bottom:2px!important;
+              *display:inline;
+              /* Content must stretch all the way to borders */
+              padding:0;
+              /* Background color */
+              background-color: $white;
+              /* Spacing between buttons */
+              margin:2px 5px 15px;
+              /* Fake that those are buttons, i.e. clicky */
+              cursor:pointer;
+              /* The border when the button is not selected */
+              border: $gainsboro 1px solid !important;
+              /* To position the sold out graphic and tooltip */
+              position:relative;
+              /* Text styling */
+              text-transform:uppercase;
+              font-size:13px;
+              min-width:30px !important; 
+              height:30px !important;
+              line-height:28px;
+              white-space:nowrap;
+              text-transform:uppercase;
+              text-align: center;
+              font-weight: 400;
+            }
+            .circle {
+                color:$oil;
+                font-size:10px;
+                letter-spacing: 1px;
+                line-height:30px;
             }
         }
         .swatch {
@@ -452,7 +509,7 @@
     }
     #length {
         .swatch-element label .text {
-            top:-11px;
+            //top:-11px;
         }
     }
     //widget-product-upsell -RELATED PRODUCTS
