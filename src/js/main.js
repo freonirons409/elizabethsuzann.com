@@ -49,6 +49,11 @@ $(window).load(function(){
 
 $(document).ready(function() {
     //get recovery password hashtag for error returns
+    if($("body").hasClass("newsletter-promo")){
+        setTimeout(function(){
+            $("#newsletterPopup").addClass("toggled");
+        },10000);
+    }
     resizeSingleProductImages();
     $('.slider').slick({
         dots: true,
@@ -93,6 +98,7 @@ $(document).ready(function() {
             }
         ]
     });
+
     $('#scrollimages ul').slick({
         dots: false,
         infinite: true,
@@ -141,8 +147,32 @@ $(document).ready(function() {
         });
     }
 
+    //Diversity image details
+    //---------------------------------------------------
+    if($(".diversity-panel-container img").length>0) {
+        var divAlt = $(".diversity-panel-container img").attr("alt");
+        var $personContainer = $(".diversity-panel-details");
+        var listHTML = "";
+        var personCount = 0;
+        var personArray = divAlt.match(/\[person\](.*?)\[\/person\]/ig);
+        for (i = 0; i < personArray.length; i++) {
+            //console.log(personArray[i]);
+            var userURL = personArray[i].match(/\[(person\-name)\](.*)\[\/(person\-name)\]/i);
+            var userSlug = userURL[0].replace("[person-name]","").replace("[/person-name]","").replace(/\s/ig,"-").toLowerCase();
+            console.log(userSlug);
+            listHTML += personArray[i].replace("[person]","<li><a href=\"/collections/"+userSlug+"\">")
+                .replace("[/person]","</a></li>")
+                .replace("[person-weight]","<div class=\"person-weight\">")
+                .replace("[person-height]","<div class=\"person-height\">")
+                .replace("[person-name]","<div class=\"person-name\">")
+                .replace(/\[\/person\-(.*?)\]/ig,"</div>");
+            personCount++
+        }
+        $personContainer.addClass("small-block-grid-"+personCount).html(listHTML);
+    }
 
-    $(".product__mainimage .zoomer").zoom({on: 'grab'});
+
+    $(".product__mainimage .zoomer").zoom({on: 'click'});
     //===================================================
     //Image hover functions - based on ALT text for caption
     $("img").each(function(){
@@ -167,6 +197,7 @@ $(document).ready(function() {
     //===================================================
     // Single Product functions
     $(".product__sideimages_list li a").on("click", function(e){
+        e.preventDefault();
         e.stopPropagation();
         $(".product__sideimages_list li a").removeClass("active");
         $('.product__mainimage .zoomer').trigger('zoom.destroy');
@@ -178,13 +209,31 @@ $(document).ready(function() {
         $parentContainer.find(".product__mainimage .zoomer img").attr("src",zoomImg);
         $parentContainer.find(".product__mainimage .zoomer img").on("load", function(){
             $parentContainer.find(".product__mainimage .zoomer").animate({"opacity": 1},500);
-            $(".product__mainimage .zoomer").zoom({on: 'grab'});
+            $(".product__mainimage .zoomer").zoom({on: 'click'});
+            resizeSingleProductImages();
         });
     });
+    function checkSwatches() {
+        var swatchFlag = "true";
+        $(".swatch").each(function(index){
+            if(!$(this).find("input[name='option-"+index+"']:checked").val()){
+               //console.log("required swatches not selected");
+               swatchFlag = "false";
+            }
+        });
+        return swatchFlag;
+    }
+
         // show selected swatch
         //=====================
         $(".swatch-element input[type='radio']").on("change", function(){
             $(this).parent().parent().parent().parent().find(".selected-swatch").html($(this).parent().find(".square,.circle").clone());
+            $(this).parent().parent().parent().parent().find(".selected-text").text($(this).parent().find(".text").text());
+            console.log(checkSwatches());
+            var swatchFlag = checkSwatches();
+            if(swatchFlag==="true") {
+                $(".product__add .button").removeClass("disabled").removeAttr("disabled");
+            }
         });
 
     // more single product functions
@@ -240,7 +289,7 @@ $(document).ready(function() {
         var $container = $loader.find(".load-watch");
         imgs.each(function() { if ($(this.complete)) ++loaded; });
         if (imgs.length == loaded) {
-            console.log("loaded");
+            //console.log("loaded");
             $container.animate({"opacity": 1},600);
         }
     });
@@ -365,13 +414,37 @@ $(document).ready(function() {
 
     //product variant functions
     //=====================================================
-    $("div.variant").on("click", function(e){
+    function changeProductVariant(action, x, e) {
         e.stopPropagation();
-        var $parent = $(this).parent().parent();
-        var parentImg = $(this).attr("data-variant");
+        var $child = $(x);
+        var $parent = $child.parent().parent();
+        var parentImg = $child.attr("data-variant");
+        var parentUrl = $child.attr("data-link");
         $parent.find(".variant-image").attr("src", parentImg);
-        $parent.find(".variant").removeClass("active");
-        $(this).addClass("active");
+        if(action === "click") {
+            $parent.find(".variant").removeClass("active").removeClass("toggled");
+            $parent.find(".variant-image").parent().attr("href",parentUrl);
+            $child.addClass("active toggled");
+            $parent.find(".variant-image").attr("data-holder",parentImg);
+        } else {
+            //$parent.find(".variant").removeClass("active");
+            //$child.addClass("active");
+        }
+    }
+    $("div.variant").on("click", function(e){
+        changeProductVariant("click", this, e);
+    });
+    $("div.variant").on("mouseover", function(e){
+        changeProductVariant("mouseover", this, e);
+    });
+    $("div.variant").on("mouseout", function(e){
+        if($(this).hasClass("toggled")===false) {
+            var $parent = $(this).parent().parent();
+            var original = $parent.find(".variant-image").attr("data-holder");
+            $parent.find(".variant-image").attr("src", original);
+            //$parent.find(".variant").removeClass("active");
+            //$(this).addClass("active");
+        }
     });
 
     //make product detail accordions
@@ -403,27 +476,27 @@ $(document).ready(function() {
               sidebarTop = stickySidebar.offset().top;
         }
 
-        // on scroll move the sidebar
-        // $(window).scroll(function () {
-        //   if (stickySidebar.length > 0) { 
-        //     var scrollTop = $(window).scrollTop();
+        //on scroll move the sidebar
+        $(window).scroll(function () {
+          if (stickySidebar.length > 0) { 
+            var scrollTop = $(window).scrollTop();
                     
-        //     if (sidebarTop < scrollTop) {
-        //       stickySidebar.css('top', scrollTop - sidebarTop);
+            if (sidebarTop < scrollTop) {
+              stickySidebar.animate({'top': scrollTop - sidebarTop},{ duration: 200, easing:'swing' });
 
-        //       // stop the sticky sidebar at the footer to avoid overlapping
-        //       var sidebarBottom = stickySidebar.offset().top + stickyHeight,
-        //           stickyStop = $('.main-content').offset().top + $('.main-content').height();
-        //       if (stickyStop < sidebarBottom) {
-        //         var stopPosition = $('.main-content').height() - stickyHeight;
-        //         stickySidebar.css('top', stopPosition);
-        //       }
-        //     }
-        //     else {
-        //       stickySidebar.css('top', '0');
-        //     } 
-        //   }
-        // });
+              // stop the sticky sidebar at the footer to avoid overlapping
+              var sidebarBottom = stickySidebar.offset().top + stickyHeight,
+                  stickyStop = $('.main-content').offset().top + $('.main-content').height();
+              if (stickyStop < sidebarBottom) {
+                var stopPosition = $('.main-content').height() - stickyHeight;
+                stickySidebar.animate({'top': stopPosition},{ duration: 200, easing:'swing' });
+              }
+            }
+            else {
+              stickySidebar.animate({'top': '0'},{ duration: 200, easing:'swing' });
+            } 
+          }
+        });
 
         $(window).resize(function () {
           if (stickySidebar.length > 0) { 
@@ -521,7 +594,8 @@ $(document).ready(function() {
         //=============================
         $('.product__add .add').click(function(e) {
             e.preventDefault();
-            var id = $(this).parent().parent().find(".select select option:selected").val();
+            var id = $(this).parent().parent().parent().parent().find(".select select option:selected").val();
+            console.log(id);
             var errorFlag = false;
             if($(".product__colorpicker").length>0){
                 if($("#colors").find("input[type='radio']:checked").length<=0) {

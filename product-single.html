@@ -1,4 +1,4 @@
-@@include('./includes/head.html', {"class":"interior"})
+@@include('./includes/head.html', {"class":"template-product"})
 <!-- sep -->
 <div class="master-container">
     <style>
@@ -12,95 +12,108 @@
 <!-- Product Single start -->
 <div id="content" class="main-content">     
     <div id="page">
-        <div class="row clearfix">
+        <div class="row full-width clearfix">
             <div id="product-7531550982">
-                  <div class="column medium-6 large-6 product__description right" id="product-right">
+                  <div class="column medium-6 large-5 product__description right" id="product-right">
                       <div id="product-description">
-                          <h1 class="product__title text-center">Annie Shirt Dress in Hemp Gauze</h1>
-                          <h3 class="product-price product__price text-center" itemprop="price">$245.00</h3>
+                          <div class="row">
+                            <div class="column medium-9">
+                                <h1 class="product__title medium-text-left small-text-center">Annie Shirt Dress</h1>
+                                <h2 class="product__fabric medium-text-left small-text-center"><a href="#">Hemp Twill</a></h2>
+                            </div>
+                            <div class="column medium-3">
+                                <h3 class="product-price product__price medium-text-right small-text-center" itemprop="price">$245.00</h3>
+                            </div>
+                          </div>
                           <form action="/cart/add" method="post" data-money-format="${{amount}}" id="product-form-7531550982">  
-                            <div class="select">
-                              <select id="product-select-7531550982" name='id'>
-                                <option value="24123558598" selected>Black Hemp Gauze / OS MINUS</option>
-                                <option value="24123558662">Black Hemp Gauze / OS</option>
-                                <option value="24123558726">Black Hemp Gauze / OS PLUS</option>
-                                <option value="24123558790">Ivory Hemp Gauze / OS MINUS</option>
-                                <option value="24123558854">Ivory Hemp Gauze / OS</option>
-                                <option value="24123558918">Ivory Hemp Gauze / OS PLUS</option>
-                              </select>
-                            </div>
-                            <div class="product__colorpicker text-center column small-6">
-                              <div class="swatch colors" data-option-index="0">
-                                  <a data-dropdown="colors" aria-controls="colors" aria-expanded="false" class="button"><div class="selected-swatch"></div>Colors</a>
-                                    <ul id="colors" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
-                                      <li>
-                                          <div data-value="Black Hemp Gauze" data-color="black-hemp-gauze" class="swatch-element color black-hemp-gauze available">
-                                            <input id="swatch-0-black-hemp-gauze" type="radio" name="option-0" value="Black Hemp Gauze"  />
-                                            <label for="swatch-0-black-hemp-gauze">
-                                              <div class="square" style="background-color: gauze; background-image: url('//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/black-hemp-gauze.png?7341392017270943399')">
-                                                <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?7341392017270943399" />
-                                              </div>
-                                              <span class="text">Black Hemp Gauze</span>
-                                            </label>
-                                          </div>
-                                      </li>
-                                      <li>
-                                          <div data-value="Ivory Hemp Gauze" data-color="ivory-hemp-gauze" class="swatch-element color ivory-hemp-gauze available">
-                                            <input id="swatch-0-ivory-hemp-gauze" type="radio" name="option-0" value="Ivory Hemp Gauze"  />
-                                            
-                                            <label for="swatch-0-ivory-hemp-gauze">
-                                              <div class="square" style="background-color: gauze; background-image: url('//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/ivory-hemp-gauze.png?7341392017270943399')">
-                                                <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?7341392017270943399" />
-                                              </div>
-                                              <span class="text">Ivory Hemp Gauze</span>
-                                            </label>
-                                          </div>
-                                      </li>
-                                    </ul>
-                              </div>
-                            </div>
-                            <div class="product__sizepicker text-center column small-6">
-                                <div class="swatch sizes" data-option-index="1">
-                                      <a data-dropdown="sizes" aria-controls="sizes" aria-expanded="false" class="button"><div class="selected-swatch"></div>Sizes</a>
-                                      <ul id="sizes" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
-                                          <li>
-                                            <div data-value="OS MINUS" class="swatch-element os-minus available">
-                                              <input id="swatch-1-os-minus" type="radio" name="option-1" value="OS MINUS"  />
-                                              <label for="swatch-1-os-minus">
-                                                <span class="circle">OS-
-                                                  <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?7341392017270943399" /></span>
-                                                  <span class="text">OS MINUS</span>
-                                              </label>
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div data-value="OS" class="swatch-element os available">
-                                              <input id="swatch-1-os" type="radio" name="option-1" value="OS"  />
-                                              <label for="swatch-1-os">
-                                                <span class="circle">OS
-                                                  <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?7341392017270943399" /></span>
-                                                  <span class="text">OS</span>
-                                              </label>
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div data-value="OS PLUS" class="swatch-element os-plus available">
-                                              <input id="swatch-1-os-plus" type="radio" name="option-1" value="OS PLUS"  />
-                                              <label for="swatch-1-os-plus">
-                                                <span class="circle">OS+
-                                                  <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?7341392017270943399" /></span>
-                                                  <span class="text">OS PLUS</span>
-                                              </label>
-                                            </div>
-                                          </li>
-                                      </ul>
+                            <div class="row">
+                                <div class="column medium-7 large-6">
+                                  <div class="select">
+                                    <select id="product-select-7531550982" name='id'>
+                                      <option value="24123558598" selected>Black Hemp Gauze / OS MINUS</option>
+                                      <option value="24123558662">Black Hemp Gauze / OS</option>
+                                      <option value="24123558726">Black Hemp Gauze / OS PLUS</option>
+                                      <option value="24123558790">Ivory Hemp Gauze / OS MINUS</option>
+                                      <option value="24123558854">Ivory Hemp Gauze / OS</option>
+                                      <option value="24123558918">Ivory Hemp Gauze / OS PLUS</option>
+                                    </select>
+                                  </div>
+                                  <div class="product__colorpicker text-center">
+                                    <div class="swatch colors" data-option-index="0">
+                                        <a data-dropdown="colors" aria-controls="colors" aria-expanded="false" class="button"><div class="selected-swatch"></div><div class="selected-text">Colors</div></a>
+                                          <ul id="colors" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+                                            <li>
+                                                <div data-value="Black Hemp Gauze" data-color="black-hemp-gauze" class="swatch-element color black-hemp-gauze available">
+                                                  <input id="swatch-0-black-hemp-gauze" type="radio" name="option-0" value="Black Hemp Gauze"  />
+                                                  <label for="swatch-0-black-hemp-gauze">
+                                                    <div class="square" style="background-color: gauze; background-image: url('//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/black-hemp-gauze.png?7341392017270943399')">
+                                                      <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?7341392017270943399" />
+                                                    </div>
+                                                    <span class="text">Black Hemp Gauze</span>
+                                                  </label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div data-value="Ivory Hemp Gauze" data-color="ivory-hemp-gauze" class="swatch-element color ivory-hemp-gauze available">
+                                                  <input id="swatch-0-ivory-hemp-gauze" type="radio" name="option-0" value="Ivory Hemp Gauze"  />
+                                                  
+                                                  <label for="swatch-0-ivory-hemp-gauze">
+                                                    <div class="square" style="background-color: gauze; background-image: url('//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/ivory-hemp-gauze.png?7341392017270943399')">
+                                                      <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?7341392017270943399" />
+                                                    </div>
+                                                    <span class="text">Ivory Hemp Gauze</span>
+                                                  </label>
+                                                </div>
+                                            </li>
+                                          </ul>
+                                    </div>
+                                  </div>
+                                  <div class="product__sizepicker text-center">
+                                      <div class="swatch sizes" data-option-index="1">
+                                            <a data-dropdown="sizes" aria-controls="sizes" aria-expanded="false" class="button"><div class="selected-swatch"></div><div class="selected-text">Sizes</div></a>
+                                            <ul id="sizes" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+                                                <li>
+                                                  <div data-value="OS MINUS" class="swatch-element os-minus available">
+                                                    <input id="swatch-1-os-minus" type="radio" name="option-1" value="OS MINUS"  />
+                                                    <label for="swatch-1-os-minus">
+                                                      <span class="square">OS-
+                                                        <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?7341392017270943399" /></span>
+                                                        <span class="text">OS MINUS</span>
+                                                    </label>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                  <div data-value="OS" class="swatch-element os available">
+                                                    <input id="swatch-1-os" type="radio" name="option-1" value="OS"  />
+                                                    <label for="swatch-1-os">
+                                                      <span class="square">OS
+                                                        <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?7341392017270943399" /></span>
+                                                        <span class="text">OS</span>
+                                                    </label>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                  <div data-value="OS PLUS" class="swatch-element os-plus available">
+                                                    <input id="swatch-1-os-plus" type="radio" name="option-1" value="OS PLUS"  />
+                                                    <label for="swatch-1-os-plus">
+                                                      <span class="square">OS+
+                                                        <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?7341392017270943399" /></span>
+                                                        <span class="text">OS PLUS</span>
+                                                    </label>
+                                                  </div>
+                                                </li>
+                                            </ul>
+                                      </div>
+                                  </div>
+                                  <div class="clearfix"></div>
+                                </div>
+                                <div class="column medium-5 large-6 medium-text-right small-text-center">
+                                    <div class="product-add row product__add">
+                                      <input type="submit" name="button" class="add button secondary disabled" value="Add to Cart" disabled/>
+                                    </div>
+                                    <p><a href="#" data-reveal-id="question" class="ask-a-question-product">Ask A Question</a></p>
                                 </div>
                             </div>
-                            <div class="clearfix"></div>
-                            <div class="product-add row product__add text-center">
-                              <input type="submit" name="button" class="add button secondary" value="Add to Cart" />
-                            </div>
-                            <p class="add-to-cart-msg"></p> 
                           </form>
                           <div class="clearfix"></div>
                           <div class="product__accordions text-editor">
@@ -135,7 +148,7 @@
                           </div>
                       </div>
                   </div>
-                  <div class="column medium-6 large-6 product-photos product__images left">
+                  <div class="column medium-6 large-7 product-photos product__images left">
                       <div class="row image-toggle-container black-hemp-gauze">
                           <div class="product__mainimage column medium-10">
                               <div class="zoomer">
@@ -239,6 +252,9 @@
 </div>
 <div class="clear"></div>
 <div class="product-single-extras">
+  <!-- Diversity Campaign Slider end -->
+  @@include('./includes/blocks-diversity.html')
+  
 	<!-- Product Single end -->
 	@@include('./includes/blocks-full-width.html')
 

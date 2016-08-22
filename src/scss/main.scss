@@ -54,6 +54,19 @@
 @import "products";
 @import "sidebar";
 
+.hover-image {
+  position:relative;
+  &:before {
+    position:absolute;
+    bottom:0;
+    right:20px;
+    @extend .icon;
+    @extend .icon-tap:before;
+    font-size:35px;
+    display:none;
+    text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.58);
+  }
+}
 
 @media #{$small-up} {
   //stuff here
@@ -80,6 +93,14 @@
   .shake {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
     transform: translate3d(0, 0, 0);
+  }
+  #pagination {
+      margin-bottom: rem-calc(50);
+      font-family: "Didot", serif;
+      .count {
+        display:block;
+        margin-bottom:rem-calc(5);
+      }
   }
   //controls the hovering of images based on alt text
   .hover-image {
@@ -274,22 +295,24 @@
     .accordion-navigation {
       margin-bottom: 4px;
       position:relative;
+      >a {
+        padding:rem-calc(8 8 8 20);
+        font-size:rem-calc(14);
+      }
       a {
         &:after {
           @extend .icon:before;
-          @extend .icon-plus:before;
+          @extend .icon-down-arrow:before;
           position:absolute;
-          right:rem-calc(20);
-          font-size:rem-calc(20);
-          top:rem-calc(10);
+          right:rem-calc(17);
+          font-size:rem-calc(17);
+          top:rem-calc(4);
         }
       }
       &.active {
         a {
           &:after {
-            @extend .icon-minus:before;
-            font-size:rem-calc(24.5);
-            right:rem-calc(17);
+            @extend .icon-up-arrow:before;
           }
         }
       }
@@ -304,6 +327,11 @@
   }
   body.fixed {
     overflow:hidden;
+  }
+  .hover-image {
+      &:before {
+        display:block;
+      }
   }
 }
 

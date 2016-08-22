@@ -91,7 +91,11 @@
 
 @media #{$medium-only} {}
 
-@media #{$large-up} {}
+@media #{$large-up} {
+	.topper {
+		display:none!important;
+	}
+}
 
 @media #{$large-only} {}
 

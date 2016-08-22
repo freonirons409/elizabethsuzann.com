@@ -225,13 +225,14 @@ $menu-direction: left;
       width: 33%;
       >a {
         padding: rem-calc(26 0 30 0);
+        outline:0;
       }
       float: left;
       > ul {
         position: absolute;
         width: 100%;
         margin: 0;
-        top:100%;
+        top:94%;
         z-index: 9;
         > li {
 

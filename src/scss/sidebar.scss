@@ -1,8 +1,8 @@
 @media #{$small-up} {
 	.sticky {
       position:relative;
-      @include transition-all(0.2s);
-      padding-top:rem-calc(50);
+      @include transition-all(0s);
+      //padding-top:rem-calc(50);
   	}
   #sidebarToggle {
     display:none;
@@ -49,6 +49,7 @@
     border:1px solid $smoke;
     height:rem-calc(125);
     z-index:100;
+    top: 50%;
     &:hover {
       background:$snow;
     }
@@ -77,7 +78,7 @@
     position: fixed;
     background-color: rgba($aluminum,0.9)!important;
     display: block;
-    z-index: 99;
+    z-index: 999!important;
     padding:0;
     top: 90px;
     overflow: scroll;
@@ -139,12 +140,12 @@
 
 @media #{$medium-up} {
   .sticky {
-      position:fixed;
-      top:145px;
-      max-width:240px;
-      &.blog {
-        top:207px!important;
-      }
+      // position:fixed;
+      // top:145px;
+      // max-width:240px;
+      // &.blog {
+      //   top:207px!important;
+      // }
     }
 }
 
