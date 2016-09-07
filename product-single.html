@@ -14,12 +14,17 @@
     <div id="page">
         <div class="row full-width clearfix">
             <div id="product-7531550982">
-                  <div class="column medium-6 large-5 product__description right" id="product-right">
+
+                  <div class="column medium-6 large-6 product__description right" id="product-right">
                       <div id="product-description">
-                          <div class="row">
+                          <div class="row product__details">
                             <div class="column medium-9">
                                 <h1 class="product__title medium-text-left small-text-center">Annie Shirt Dress</h1>
-                                <h2 class="product__fabric medium-text-left small-text-center"><a href="#">Hemp Twill</a></h2>
+                                <h2 class="product__fabric medium-text-left small-text-center">
+                                    <a href="/collections/materials/cotton">Cotton</a>
+                                    <a href="/collections/materials/hemp">Hemp</a>
+                                    <a href="/collections/materials/silk">Silk</a>
+                                </h2>
                             </div>
                             <div class="column medium-3">
                                 <h3 class="product-price product__price medium-text-right small-text-center" itemprop="price">$245.00</h3>
@@ -27,7 +32,7 @@
                           </div>
                           <form action="/cart/add" method="post" data-money-format="${{amount}}" id="product-form-7531550982">  
                             <div class="row">
-                                <div class="column medium-7 large-6">
+                                <div class="column medium-7 large-5">
                                   <div class="select">
                                     <select id="product-select-7531550982" name='id'>
                                       <option value="24123558598" selected>Black Hemp Gauze / OS MINUS</option>
@@ -40,8 +45,8 @@
                                   </div>
                                   <div class="product__colorpicker text-center">
                                     <div class="swatch colors" data-option-index="0">
-                                        <a data-dropdown="colors" aria-controls="colors" aria-expanded="false" class="button"><div class="selected-swatch"></div><div class="selected-text">Colors</div></a>
-                                          <ul id="colors" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+                                        <h3><div class="selected-swatch"></div><div class="selected-text">Color</div></h3>
+                                          <ul id="colors" class="no-bullet">
                                             <li>
                                                 <div data-value="Black Hemp Gauze" data-color="black-hemp-gauze" class="swatch-element color black-hemp-gauze available">
                                                   <input id="swatch-0-black-hemp-gauze" type="radio" name="option-0" value="Black Hemp Gauze"  />
@@ -70,48 +75,159 @@
                                   </div>
                                   <div class="product__sizepicker text-center">
                                       <div class="swatch sizes" data-option-index="1">
-                                            <a data-dropdown="sizes" aria-controls="sizes" aria-expanded="false" class="button"><div class="selected-swatch"></div><div class="selected-text">Sizes</div></a>
-                                            <ul id="sizes" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
-                                                <li>
-                                                  <div data-value="OS MINUS" class="swatch-element os-minus available">
-                                                    <input id="swatch-1-os-minus" type="radio" name="option-1" value="OS MINUS"  />
-                                                    <label for="swatch-1-os-minus">
-                                                      <span class="square">OS-
-                                                        <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?7341392017270943399" /></span>
-                                                        <span class="text">OS MINUS</span>
+                                            <h3><div class="selected-swatch"></div><div class="selected-text">Size</div></h3>
+                                            <ul id="sizes" class="no-bullet small-block-grid-2">
+                                                  <li>
+
+                                                  <div data-value="00" class="swatch-element 00">
+                                                    <input id="swatch-1-00" type="radio" name="option-1" value="00">
+                                                    
+                                                    <label for="swatch-1-00">
+                                                      <span class="square">
+                                                        <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?17880591483108430616"></span>
+                                                        <span class="text">Size 00</span>
                                                     </label>
+                                                    
                                                   </div>
-                                                </li>
-                                                <li>
-                                                  <div data-value="OS" class="swatch-element os available">
-                                                    <input id="swatch-1-os" type="radio" name="option-1" value="OS"  />
-                                                    <label for="swatch-1-os">
-                                                      <span class="square">OS
-                                                        <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?7341392017270943399" /></span>
-                                                        <span class="text">OS</span>
+                                                  </li>
+
+                                                  <li>
+
+                                                  <div data-value="0" class="swatch-element 0">
+                                                    <input id="swatch-1-0" type="radio" name="option-1" value="0">
+                                                    
+                                                    <label for="swatch-1-0">
+                                                      <span class="square">
+                                                        <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?17880591483108430616"></span>
+                                                        <span class="text">Size 0</span>
                                                     </label>
+                                                    
                                                   </div>
-                                                </li>
-                                                <li>
-                                                  <div data-value="OS PLUS" class="swatch-element os-plus available">
-                                                    <input id="swatch-1-os-plus" type="radio" name="option-1" value="OS PLUS"  />
-                                                    <label for="swatch-1-os-plus">
-                                                      <span class="square">OS+
-                                                        <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?7341392017270943399" /></span>
-                                                        <span class="text">OS PLUS</span>
+                                                  </li>
+
+                                                  <li>
+
+                                                  <div data-value="2" class="swatch-element 2">
+                                                    <input id="swatch-1-2" type="radio" name="option-1" value="2">
+                                                    
+                                                    <label for="swatch-1-2">
+                                                      <span class="square">
+                                                        <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?17880591483108430616"></span>
+                                                        <span class="text">Size 2</span>
                                                     </label>
+                                                    
                                                   </div>
-                                                </li>
-                                            </ul>
+                                                  </li>
+
+                                                  <li>
+
+                                                  <div data-value="4" class="swatch-element 4">
+                                                    <input id="swatch-1-4" type="radio" name="option-1" value="4">
+                                                    
+                                                    <label for="swatch-1-4">
+                                                      <span class="square">
+                                                        <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?17880591483108430616"></span>
+                                                        <span class="text">Size 4</span>
+                                                    </label>
+                                                    
+                                                  </div>
+                                                  </li>
+
+                                                  <li>
+
+                                                  <div data-value="6" class="swatch-element 6">
+                                                    <input id="swatch-1-6" type="radio" name="option-1" value="6">
+                                                    
+                                                    <label for="swatch-1-6">
+                                                      <span class="square">
+                                                        <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?17880591483108430616"></span>
+                                                        <span class="text">Size 6</span>
+                                                    </label>
+                                                    
+                                                  </div>
+                                                  </li>
+
+                                                  <li>
+
+                                                  <div data-value="8" class="swatch-element 8">
+                                                    <input id="swatch-1-8" type="radio" name="option-1" value="8">
+                                                    
+                                                    <label for="swatch-1-8">
+                                                      <span class="square">
+                                                        <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?17880591483108430616"></span>
+                                                        <span class="text">Size 8</span>
+                                                    </label>
+                                                    
+                                                  </div>
+                                                  </li>
+
+                                                  <li>
+
+                                                  <div data-value="10" class="swatch-element 10">
+                                                    <input id="swatch-1-10" type="radio" name="option-1" value="10">
+                                                    
+                                                    <label for="swatch-1-10">
+                                                      <span class="square">
+                                                        <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?17880591483108430616"></span>
+                                                        <span class="text">Size 10</span>
+                                                    </label>
+                                                    
+                                                  </div>
+                                                  </li>
+
+                                                  <li>
+
+                                                  <div data-value="12" class="swatch-element 12">
+                                                    <input id="swatch-1-12" type="radio" name="option-1" value="12">
+                                                    
+                                                    <label for="swatch-1-12">
+                                                      <span class="square">
+                                                        <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?17880591483108430616"></span>
+                                                        <span class="text">Size 12</span>
+                                                    </label>
+                                                    
+                                                  </div>
+                                                  </li>
+
+                                                  <li>
+
+                                                  <div data-value="14" class="swatch-element 14">
+                                                    <input id="swatch-1-14" type="radio" name="option-1" value="14">
+                                                    
+                                                    <label for="swatch-1-14">
+                                                      <span class="square">
+                                                        <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?17880591483108430616"></span>
+                                                        <span class="text">Size 14</span>
+                                                    </label>
+                                                    
+                                                  </div>
+                                                  </li>
+                                                  <li>
+
+                                                  <div data-value="16" class="swatch-element 16">
+                                                    <input id="swatch-1-16" type="radio" name="option-1" value="16">
+                                                    
+                                                    <label for="swatch-1-16">
+                                                      <span class="square">
+                                                        <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1268/1483/t/3/assets/soldout.png?17880591483108430616"></span>
+                                                        <span class="text">Size 16</span>
+                                                    </label>
+                                                    
+                                                  </div>
+                                                  </li>
+                                              </ul>
                                       </div>
                                   </div>
                                   <div class="clearfix"></div>
                                 </div>
-                                <div class="column medium-5 large-6 medium-text-right small-text-center">
-                                    <div class="product-add row product__add">
-                                      <input type="submit" name="button" class="add button secondary disabled" value="Add to Cart" disabled/>
+                                <div class="column medium-5 large-7 medium-text-right small-text-center">
+                                    <div class="product__add">
+                                    <div class="text-center">
+                                      <input type="submit" name="button" class="add button secondary disabled" value="Add to Cart">
+                                      <p><a href="#" data-reveal-id="question" class="ask-a-question-product">Ask A Question</a></p>
+                                      <p class="ask-a-question-product" style="max-width:220px;margin:0 auto; line-height:1.2;">This product is currently on backorder and has a lead time of 6-8 weeks</p>
                                     </div>
-                                    <p><a href="#" data-reveal-id="question" class="ask-a-question-product">Ask A Question</a></p>
+                                  </div>
                                 </div>
                             </div>
                           </form>
@@ -120,7 +236,7 @@
                               <ul class="accordion" data-accordion id="productAccordion">
                                   <li class="accordion-navigation">
                                     <a href="#panel1a">Details</a>
-                                    <div id="panel1a" class="content">
+                                    <div id="panel1a" class="content active">
                                         <p>Every woman knows there's something indescribably perfect about throwing on a man's oversized button down shirt. The loose comfort, casually rolled sleeve, the soft, high quality fabric, the way the curved hem highlights just the right part of your leg. I've been intrigued at length by this classic garment, and the Annie Shirtdress is my conceptual interpretation of it. Very pared down with no buttons, plackets, or collar - a high jewel neck to make the silhouette a little more interesting, generous dropped sleeves for that perfect oversized look, back yolk and center front and back seams to elongate the body, and topstitching on all seams for durability. The shaped shirttail hem hits at the perfect shirtdress length - short enough to wear easily over pants, but long enough to comfortably wear as a dress.</p>
                                         <p>Cut from a lightweight, thin - but strong - hemp/silk/cotton blend. Floats and drapes like air, but has beautiful body and volume. Semi-sheer with a dynamic horizontal slub and bubbly, organic texture. An extremely comfortable and easy to wear fabric.</p>
                                         <p>You can wear this dress quite literally anywhere - lounging in the apartment on Sunday mornings, padding around with bare legs and feet to grab coffee and the newspaper, over torn up denim and birks with the Elodie Work Belt holding your pencils while you sketch outdoors, or over pin-straight black trousers to a gallery opening. True comfort and ease - so light and airy you'll forget what you're wearing.</p>
@@ -148,11 +264,16 @@
                           </div>
                       </div>
                   </div>
-                  <div class="column medium-6 large-7 product-photos product__images left">
+                  <div class="column show-for-large-up large-1 right">&nbsp;</div>
+                  <div class="column medium-6 show-for-small-up large-6 product-photos product__images left">
                       <div class="row image-toggle-container black-hemp-gauze">
                           <div class="product__mainimage column medium-10">
-                              <div class="zoomer">
-                                  <img src="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1957.jpg?v=1468281903" alt='Annie Shirt Dress in Hemp Gauze Black Hemp Gauze' title="Annie Shirt Dress in Hemp Gauze"/>
+                              <div class="loader">
+                                <div class="load-watch">
+                                  <div class="zoomer">
+                                      <img src="//cdn.shopify.com/s/files/1/1268/1483/products/IMG_1957.jpg?v=1468281903" alt='Annie Shirt Dress in Hemp Gauze Black Hemp Gauze' title="Annie Shirt Dress in Hemp Gauze"/>
+                                  </div>
+                                </div>
                               </div>
                           </div>
                           <div class="product__sideimages column medium-2">
@@ -230,20 +351,19 @@
                               <div class="user-image-slider">
                                    
                                   <div>
-                                      <img src="//cdn.shopify.com/s/files/1/1268/1483/products/nick-cage01_300x.jpg?v=1470980354" alt="HOVER_this is a hover caption"/>
+                                      <img src="//cdn.shopify.com/s/files/1/1268/1483/products/nick-cage01_300x.jpg?v=1470980354" alt="[linkthis]http://www.google.com[/linkthis]"/>
                                   </div> 
                                   <div>
-                                      <img src="//cdn.shopify.com/s/files/1/1268/1483/products/nick-cage2_300x.jpeg?v=1470980365" alt="HOVER_this is a hover caption"/>
+                                      <img src="//cdn.shopify.com/s/files/1/1268/1483/products/nick-cage2_300x.jpeg?v=1470980365" alt="HOVER_this is a hover caption" class="lightbox"/>
                                   </div> 
                                   <div>
-                                      <img src="//cdn.shopify.com/s/files/1/1268/1483/products/nick-cage3_300x.jpeg?v=1470980375" alt="HOVER_this is a hover caption"/>
+                                      <img src="//cdn.shopify.com/s/files/1/1268/1483/products/nick-cage3_300x.jpeg?v=1470980375" alt="HOVER_this is a hover caption" class="lightbox"/>
                                   </div> 
                                   <div>
-                                      <img src="//cdn.shopify.com/s/files/1/1268/1483/products/nick-cage4_300x.png?v=1470980384" alt="HOVER_this is a hover caption"/>
+                                      <img src="//cdn.shopify.com/s/files/1/1268/1483/products/nick-cage4_300x.png?v=1470980384" alt="HOVER_this is a hover caption" class="lightbox"/>
                                   </div>
                               </div>
                         </div>
-                    </div>
                       </div>
                   </div>
             </div>

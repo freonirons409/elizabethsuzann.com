@@ -1,0 +1,90 @@
+.person-generator-container {
+	margin-bottom:rem-calc(30);
+	.adder,.remover {
+		font-size:rem-calc(30);
+		cursor:pointer;
+		&:after {
+			font-size:rem-calc(12);
+			line-height:rem-calc(30);
+			position:relative;
+			top:rem-calc(-6);
+			margin-left:rem-calc(5);
+		}
+		&:hover {
+			&:after {
+				border-bottom:1px solid $primary-color;
+				color:$primary-color!important;
+			}	
+			color:$aluminum;
+		}
+		&:active {
+			color:$smoke;
+		}
+	}
+	.adder {
+		&:after {
+			content:"Add Person ";
+
+		}
+		
+	}
+	.remover {
+		cursor: pointer;
+		&:after {
+			content: "Remove";
+
+		}
+		position:absolute;
+		top:rem-calc(3);
+		right:rem-calc(15);
+	}
+	.generator__person  {
+		position:relative;
+		padding:rem-calc(50 10 10 10);
+		margin:rem-calc(10);
+		border:1px solid $snow;
+	}
+}
+	.person-generator-code-container {
+		margin-top:rem-calc(30);
+		position:relative;
+		.copy-code-button {
+			position:absolute;
+			opacity:0;
+			top:0;
+			font-size:rem-calc(12);
+			right:0;
+			padding:rem-calc(6);
+			border:1px solid $primary-color;
+			&:hover {
+				background:$primary-color;
+				color:$white;
+				cursor:pointer;
+			}
+			&:active {
+				background:$white;
+				color:$primary-color;
+			}
+		}
+		&:hover {
+			.copy-code-button {
+				opacity:1;
+			}
+		}
+	}
+	#person-generator_outputCode {
+		font-family:"Courier New", monospace!important;
+	}
+#toolsList {
+	.tabs.vertical {
+		width:100%;
+		max-width:none;
+		.tab-title.active a {
+			background:$primary-color;
+			color:$white;
+			&:after {
+				content:" >";
+			}
+		}
+	}
+}

@@ -1,0 +1,168 @@
+@@include('./includes/head.html', {"class":"interior"})
+<!-- sep -->
+<div class="master-container">
+@@include('./includes/header.html')
+<!-- sep -->
+
+<!-- 2 col start -->
+<div id="content" class="row">
+	<div class="spacer-50"></div>
+	<div class="column medium-4 large-3" id="toolsList">
+		<ul class="tabs vertical" data-tab role="tablist">
+		  <li class="tab-title" role="presentation"><a href="#panel2-2" role="tab" tabindex="0" aria-selected="false" aria-controls="panel2-2">Tutorials</a></li>
+		  <li class="tab-title" role="presentation"><a href="#panel2-1" role="tab" tabindex="0" aria-selected="true" aria-controls="panel2-1">Code Generators</a></li>
+		  <li class="tab-title" role="presentation"><a href="#panel2-3" role="tab" tabindex="0" aria-selected="false" aria-controls="panel2-3">Shopify</a></li>
+		</ul>
+	</div>	
+	<div id="page" class="column medium-8 large-9">
+		<div class="tabs-content">
+			<section role="tabpanel" aria-hidden="false" class="content" id="panel2-1">
+				<div class="person-generator-container">
+					<h2>Diversity Campaign People Generator</h2>
+					<div class="adder" data-count="1">&plus;</div>
+					<div class="adder-target">
+						<div class="generator__person" id="person1">
+							<input type="text" placeholder="Name" name="person1_name" id="person1_name"/>
+							<input type="text" placeholder="Size" name="person1_size" id="person1_size"/>
+							<!-- <input type="text" placeholder="Age" name="person1_age" id="person1_age"/> -->
+							<input type="text" placeholder="Height" name="person1_height" id="person1_height"/>
+							<input type="text" placeholder="Weight" name="person1_weight" id="person1_weight"/>
+							<div class="remover">&times;</div>
+						</div>
+					</div>
+					<button class="button generate-code">Generate Code</button>
+				</div>
+				<div class="person-generator-code-container">
+					<div class="copy-code-button">Copy Code</div>
+					<textarea id="person-generator_outputCode" name="person-generator_outputCode"></textarea>
+				</div>
+			</section>
+			<section role="tabpanel" aria-hidden="true" class="content" id="panel2-2">
+				<h2>How To...</h2>
+				<ul class="accordion" data-accordion>
+				  <li class="accordion-navigation">
+				    <a href="#panel1a">Create image slider in content areas on pages and blog posts</a>
+				    <div id="panel1a" class="content">
+				      To create a slideshow out of a group of images on one of your pages or blog posts you simple need to upload the images to the content editor, and then make sure all of the images you want in the slideshow are wrapped in <code>&lt;p&gt;&lt;/p&gt;</code> tags.
+
+				      To do so, click the little &lt; &gt; icon in the top right of the content editor to open the code view, and then make sure your images look something like this:
+				      <div class="panel">
+							<code>
+								&lt;p&gt;
+									&lt;img src=&quot;http://placehold.it/200x200&quot; alt=&quot;image alt text&quot;/&gt;
+									&lt;img src=&quot;http://placehold.it/200x200&quot; alt=&quot;image alt text&quot;/&gt;
+									&lt;img src=&quot;http://placehold.it/200x200&quot; alt=&quot;image alt text&quot;/&gt;
+									&lt;img src=&quot;http://placehold.it/200x200&quot; alt=&quot;image alt text&quot;/&gt;
+									&lt;img src=&quot;http://placehold.it/200x200&quot; alt=&quot;image alt text&quot;/&gt;
+								&lt;/p&gt;
+							</code>
+						</div>
+						<strong>Note:</strong> make sure your images do not have any other tags wrapped around them and do not contain and <code>style=""</code> attributes. These can be added by Shopify without you noticing and can cause adverse effects.
+				    </div>
+				  </li>
+				  <li class="accordion-navigation">
+				    <a href="#panel2a">Add hover captions to images</a>
+				    <div id="panel2a" class="content">
+				      Inside the ALT text of any image, you can place the following code to generate a hovering caption that overlays on your image, complete with code and button links:
+				      <p><strong>Basic syntax</strong>
+				      <br><code>HOVER_This is a caption that will show up when hovering</code></p>
+				      <p><strong>Alternate Syntax</strong>
+				      <br><code>HOVER2_This is a caption that will show up when hovering and is a darkened version.</code></p>
+				      <p><strong>Accepted HTML tags</strong>
+				      <br>HTML tags can be used inside your caption but using a slightly different syntax. See below for equivalents:</p>
+				      <ul class="no-bullet">
+				      	<li>Heading &lt;h1&gt;:  <code>[h1]Heading[/h1]</code></li>
+				      	<li>Heading &lt;h2&gt;:  <code>[h2]Heading[/h2]</code></li>
+				      	<li>Heading &lt;h3&gt;:  <code>[h3]Heading[/h3]</code></li>
+				      	<li>Heading &lt;h4&gt;:  <code>[h4]Heading[/h4]</code></li>
+				      	<li>Heading &lt;h5&gt;:  <code>[h5]Heading[/h5]</code></li>
+				      	<li>Heading &lt;h6&gt;:  <code>[h6]Heading[/h6]</code></li>
+				      	<li>Paragraph &lt;p&gt;:  <code>[p]paragraph text[/p]</code></li>
+				      	<li>Line Break &lt;br&gt;:  <code>[br]</code></li>
+				      	<li>Button &lt;button&gt;: <code>[button]button text[/button]</code></li>
+				      	<li>Link &lt;a&gt;: <code>[a href=|<strong>http://www.yourlink.com</strong>|]this is a link[/a]</code></li>
+				      </ul>
+				    </div>
+				  </li>
+				  <li class="accordion-navigation">
+				    <a href="#panel3a">Create tab blocks in product descriptions</a>
+				    <div id="panel3a" class="content">
+				      	<p>The product description will be default contain everything in one tab called "Description" without any further markup. But if you want to make new tabs, simply create a section using <code>&lt;h5&gt;</code> as the defintion for the start of a new tab, and whatever is wrapped in the <code>&lt;h5&gt;</code> will become the accordion header.</p>
+
+				      	<p><strong>Example:</strong></p>
+				      	<div class="panel">
+				      		<code>
+				      		&lt;p&gt;This content will be in tab 1 and the toggle header will default to &quot;Desription&quot;. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae debitis corrupti nesciunt, sed itaque placeat possimus, adipisci delectus temporibus ullam!&lt;/p&gt;
+
+				      		&lt;h5&gt;Second Accordion Header&lt;/h5&gt;
+
+				      		&lt;p&gt;This will be accordion 2 content and the header will be &quot;Second Accordion Header&quot;&lt;/p&gt;
+				      		</code>
+				      	</div>
+
+				    </div>
+				  </li>
+				  <li class="accordion-navigation">
+				    <a href="#panel4a">Add slideshow to product page</a>
+				    <div id="panel4a" class="content">
+				      	To create a slideshow that shows at the bottom of your product page, upload product images like you normally would and use the image editor to edit the ALT text of the image. In the ALT text use the prefix <code>SLIDESHOW_</code> and the page will automatically know where to put your image.  You can also use this in addition with the <code>HOVER_</code>feature,  but make sure you put the <code>HOVER_</code><strong> after</strong> the <code>SLIDESHOW_</code>
+				    </div>
+				  </li>
+				  <li class="accordion-navigation">
+				    <a href="#panel5a">Add diversity campaign block to product page</a>
+				    <div id="panel5a" class="content">
+				      	To set an image as the diversity campaign block image (this cannot be a slideshow) use the prefix <code>DIVERSITY_</code> in the ALT text of the product image you want to use. To make it even easier, use the People Generator to your left under the "Code Generators" tab to auto generate the code for you that is needed to display the details for each person featured in the diversity image. This generator will also include the <code>DIVERSITY_</code> prefix so all you will need to do is copy and paste.
+				    </div>
+				  </li>
+				  <li class="accordion-navigation">
+				    <a href="#panel6a">Add fabric types to products</a>
+				    <div id="panel6a" class="content">
+				      	To make a product feature the fabric it is made of on the product and collections pages, simple go to your products edit page and under tags add the fabric or fabrics you want it to be categorized under. Accept fabrics are currently:
+				      	<ul class="no-bullet">
+				      		<li>Silk</li>
+				      		<li>Cotton</li>
+				      		<li>Hemp</li>
+				      		<li>Linen</li>
+				      		<li>Wool</li>
+				      		<li>Leather</li>
+				      	</ul>
+				      	<p>If more types need to be added, contact your developer or you can do it yourself by editing the <code>tag-looper.liquid</code> snippet and you will see the list of types there.</p>
+				    </div>
+				  </li>
+				  <li class="accordion-navigation">
+				    <a href="#panel7a">Make images open in lightbox</a>
+				    <div id="panel7a" class="content">
+				        <p>Any image you want to open in a lightbox simply add "lightbox" to the alt text of that image.</p>
+				    </div>
+				  </li>
+				  <li class="accordion-navigation">
+				    <a href="#panel8a">Make diversity images filterable</a>
+				    <div id="panel8a" class="content">
+				      
+				    </div>
+				  </li>
+				  <li class="accordion-navigation">
+				    <a href="#panel8a">Create a new customer profile collection</a>
+				    <div id="panel8a" class="content">
+				      
+				    </div>
+				  </li>
+				</ul>
+			</section>
+			<section role="tabpanel" aria-hidden="true" class="content" id="panel2-3">
+				<h2>Third panel content goes here...</h2>
+			</section>
+			<section role="tabpanel" aria-hidden="true" class="content" id="panel2-4">
+				<h2>Fourth panel content goes here...</h2>
+			</section>
+		</div>
+	</div> 
+</div>
+<!-- 2 col end -->
+@@include('./includes/footer.html')
+<!-- sep -->
+</div>
+@@include('./includes/scripts.html')
+
+</body>
+</html>

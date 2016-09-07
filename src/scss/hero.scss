@@ -60,6 +60,26 @@ $hero-caption-text: scale-color($hero-caption-background, $lightness: -65%);
 			}
 		}
 	}
+	.image-slideshow {
+		.slick-slide {
+			.caption,.hover-image {
+				max-width:100%;
+			}
+			img {
+
+			}
+		}
+	}
+	.hero-image {
+		max-width:100%;
+		overflow:hidden;
+		.caption,.hover-image-alt,.hover-image {
+			max-width:100%;
+		}
+		img {
+
+		}
+	}
 	.hero {
 		.caption {
 			position:static;
@@ -95,7 +115,9 @@ $hero-caption-text: scale-color($hero-caption-background, $lightness: -65%);
 
 @media #{$medium-only} {}
 
-@media #{$large-up} {}
+@media #{$large-up} {
+
+}
 
 @media #{$large-only} {}
 

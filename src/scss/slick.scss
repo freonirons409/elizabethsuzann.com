@@ -11,7 +11,7 @@ $slick-dot-color-active: scale-color($slick-dot-color, $lightness: -15%) !defaul
 $slick-prev-character: '\2190' !default;
 $slick-next-character: '\2192' !default;
 $slick-dot-character: '\2022' !default;
-$slick-dot-size: 10px !default;
+$slick-dot-size: rem-calc(10) !default;
 $slick-opacity-default: .75 !default;
 $slick-opacity-on-hover: 1 !default;
 $slick-opacity-not-active: .25 !default;
@@ -99,7 +99,7 @@ $slick-opacity-not-active: .25 !default;
 .slick-slide {
     float: left;
     height: 100%;
-    min-height: 1px;
+    min-height: rem-calc(1);
     outline:0;
     [dir="rtl"] & {
         float: right;
@@ -109,7 +109,7 @@ $slick-opacity-not-active: .25 !default;
         margin:0 auto;
         width:100%;
         outline:0;
-        max-width:2000px;
+        max-width:rem-calc(2200);
     }
     &.slick-loading img {
         display: none;
@@ -142,8 +142,8 @@ $slick-opacity-not-active: .25 !default;
 .slick-next {
     position: absolute;
     display: block;
-    height: 60px;
-    width: 60px;
+    height: rem-calc(60);
+    width: rem-calc(60);
     line-height: 0;
     font-size: 0;
     z-index: 9;
@@ -154,7 +154,7 @@ $slick-opacity-not-active: .25 !default;
     background: transparent;
     color: transparent;
     top: 50%;
-    margin-top: -10px;
+    margin-top: rem-calc(-30);
     padding: 0;
     border: none;
     outline: none;
@@ -173,12 +173,17 @@ $slick-opacity-not-active: .25 !default;
 }
 .slick-prev:before, .slick-next:before {
     font-family: "Icons";
-    font-size: 30px;
+    font-size: rem-calc(30);
     line-height: 1;
     color: $slick-arrow-color;
     opacity: $slick-opacity-default;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+.collection-profile-slider {
+    .slick-prev:before, .slick-next:before {
+        color: $primary-color;
+    }
 }
 .slick-prev {
     left: 0;
@@ -200,29 +205,42 @@ $slick-opacity-not-active: .25 !default;
         @extend .icon-right-arrow:before;
     }
 }
+.blog-slider,.product-slider {
+    .slick-prev,.slick-next{
+        &:before {
+            color:$primary-color;
+        }
+    }
+    .slick-prev {
+        left:-6%;
+    }
+    .slick-next {
+        right:-6%;
+    }
+}
 
 /* Dots */
 
 .slick-slider {
-    margin-bottom: 30px;
+    margin-bottom: rem-calc(30);
 }
 .slick-dots {
     position: relative;
-    bottom: 38px;
+    bottom: rem-calc(38);
     list-style: none;
     display: block;
     text-align: center;
     padding: 0;
-    width: 300px;
+    width: rem-calc(300);
     max-width: 100%;
     margin: 0 auto;
 
     li {
         position: relative;
         display: inline-block;
-        height: 20px;
-        width: 20px;
-        margin: 0 5px;
+        height: rem-calc(20);
+        width: rem-calc(20);
+        margin: rem-calc(0 5);
         padding: 0;
         cursor: pointer;
 
@@ -230,13 +248,13 @@ $slick-opacity-not-active: .25 !default;
             border: 0;
             background: transparent;
             display: block;
-            height: 20px;
-            width: 20px;
+            height: rem-calc(20);
+            width: rem-calc(20);
             outline: none;
             line-height: 0;
             font-size: 0;
             color: transparent;
-            padding: 5px;
+            padding: rem-calc(5);
             cursor: pointer;
             &:hover, &:focus {
                 outline: none;
@@ -250,11 +268,11 @@ $slick-opacity-not-active: .25 !default;
                 top: 0;
                 left: 0;
                 content: $slick-dot-character;
-                width: 20px;
-                height: 20px;
+                width: rem-calc(20);
+                height: rem-calc(20);
                 font-family: $slick-font-family;
                 font-size: $slick-dot-size;
-                line-height: 20px;
+                line-height: rem-calc(20);
                 text-align: center;
                 color: $slick-dot-color;
                 opacity: $slick-opacity-not-active;
@@ -271,11 +289,31 @@ $slick-opacity-not-active: .25 !default;
     }
 }
 .autoSlider {
-    max-height:700px;
+    max-height:rem-calc(700);
     .slick-slide {
+        position:relative;
         img {
-            max-height:700px;
+            max-height:rem-calc(500);
             width:auto!important;
+        }
+    }
+}
+@media #{$small-only} {
+    .autoSlider {
+        max-height:rem-calc(300);
+        .slick-slide {
+            position:relative;
+            img {
+                max-height:rem-calc(300);
+                max-width:100%;
+            }
+        }
+    }
+}
+@media #{$medium-up} {
+    body.template-index {
+        .slick-slider {
+            margin-bottom:0;
         }
     }
 }

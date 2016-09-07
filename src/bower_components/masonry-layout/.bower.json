@@ -36,7 +36,6 @@
     "commit": "b9d27ed4abb6ae450414b019dd51430f0091e8e7"
   },
   "_source": "https://github.com/blmarket/masonry-layout.git",
-  "_target": "^1.0.4",
-  "_originalSource": "masonry-layout",
-  "_direct": true
+  "_target": "*",
+  "_originalSource": "masonry-layout"
 }

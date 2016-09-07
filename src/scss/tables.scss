@@ -1,7 +1,7 @@
 body.interior {
 	table {
 		width:100%;
-		border:1px solid $oil;
+		border:1px solid $primary-color;
 		thead {
 			background:$steel;
 			th {
@@ -9,7 +9,7 @@ body.interior {
 			}
 		}
 		th,td {
-			border:1px solid $oil;
+			border:1px solid $primary-color;
 		}
 	}
 }

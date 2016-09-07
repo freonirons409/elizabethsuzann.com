@@ -1,0 +1,51 @@
+{
+  "name": "isinviewport",
+  "version": "1.0.0",
+  "description": "Checks to see if an element is visible in the users viewport, without any dependencies required.",
+  "main": "isInViewport.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Josh-Miller/isInViewport.git"
+  },
+  "keywords": [
+    "viewport",
+    "viewheight",
+    "viewwidth",
+    "vw",
+    "vh"
+  ],
+  "author": {
+    "name": "Josh Miller",
+    "url": "http://josh-miller.me"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Josh-Miller/isInViewport/issues"
+  },
+  "homepage": "https://github.com/Josh-Miller/isInViewport",
+  "gitHead": "d69d56db42b6c7ffdfd626560a17cf3dd3fc9e59",
+  "_id": "isinviewport@1.0.0",
+  "_shasum": "f53e836c59992b0deac62f93618131e8cb55bd79",
+  "_from": "isinviewport@latest",
+  "_npmVersion": "2.2.0",
+  "_nodeVersion": "0.10.29",
+  "_npmUser": {
+    "name": "joshmili",
+    "email": "archierocks183@hotmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "joshmili",
+      "email": "archierocks183@hotmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "f53e836c59992b0deac62f93618131e8cb55bd79",
+    "tarball": "https://registry.npmjs.org/isinviewport/-/isinviewport-1.0.0.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/isinviewport/-/isinviewport-1.0.0.tgz"
+}

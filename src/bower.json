@@ -5,9 +5,15 @@
     "slick-carousel": "latest",
     "jquery": "latest",
     "parsleyjs": "latest",
-    "masonry-layout": "latest"
+    "masonry-layout": "latest",
+    "imagesloaded": "^4.1.1"
   },
   "resolutions": {
     "jquery": "1.11.1"
+  },
+  "devDependencies": {
+    "jquery-sticky": "latest",
+    "jquery.cookie": "latest",
+    "masonry": "latest"
   }
 }

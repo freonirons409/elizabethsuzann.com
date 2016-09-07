@@ -1,0 +1,339 @@
+.swatch {
+    .button {
+        &:after {
+            @extend .icon:before;
+            @extend .icon-down-arrow:before;
+        }
+        &.open {
+            &:after {
+                @extend .icon-up-arrow:before;
+            }
+        }
+    }
+}
+.product__sizepicker,.product__lengthpicker,.product__colorpicker {
+  max-width:rem-calc(220);
+}
+.product__description {
+        .swatch-element {
+            label {
+                margin-left:0!important;
+            }
+            &.os,&.os-minus,&.os-plus {
+                .circle {
+                    font-size:rem-calc(11.5);
+                }
+            }
+        }
+        .selected-swatch {
+            position:absolute;
+            top:rem-calc(3);
+            left:rem-calc(10);
+            .crossed-out {
+                display:none;
+            }
+            .square,.circle {
+              border:$charcoal 1px solid !important;
+              background: $primary-color;
+              color: $white;
+              display:-moz-inline-stack;
+              display:inline-block;
+              zoom:1;
+              width: rem-calc(20);
+              height: rem-calc(20);
+              //border-radius:100%;
+              margin-right: rem-calc(6);
+              margin-left: rem-calc(0);
+              margin-bottom:rem-calc(2)!important;
+              *display:inline;
+              /* Content must stretch all the way to borders */
+              padding:0;
+              /* Background color */
+              background-color: $white;
+              /* Spacing between buttons */
+              margin:rem-calc(2 5 15);
+              /* Fake that those are buttons, i.e. clicky */
+              cursor:pointer;
+              /* The border when the button is not selected */
+              border: $gainsboro 1px solid !important;
+              /* To position the sold out graphic and tooltip */
+              position:relative;
+              /* Text styling */
+              text-transform:uppercase;
+              font-size:rem-calc(13);
+              min-width:rem-calc(20) !important; 
+              height:rem-calc(20) !important;
+              line-height:rem-calc(20);
+              white-space:nowrap;
+              text-transform:uppercase;
+              text-align: center;
+              font-weight: 400;
+            }
+            .circle {
+                color:$primary-color;
+                font-size:rem-calc(10);
+                letter-spacing: rem-calc(1);
+                line-height:rem-calc(20);
+            }
+        }
+        .swatch {
+            margin:0 auto;
+            position:relative;
+            .f-dropdown {
+                left:0!important;
+                max-width:none;
+            }
+            input:checked + label {
+                display:block;
+                background:$snow!important;
+                .circle {
+                  border:$charcoal 1px solid !important;
+                  background: $primary-color;
+                  color: $white;
+                }
+            }
+            input:checked + label .square {
+              border:$charcoal 1px solid !important;
+              background: $primary-color;
+              color: $white;
+            }
+            &.sizes, &.length {
+                .circle,.square {
+                    display:none!important;
+                }
+                .soldout .text {
+                    text-decoration: line-through;
+                }
+            }
+            label {
+                margin-right:0;
+                margin-bottom:0!important;
+                min-height: rem-calc(30);
+                line-height:rem-calc(30);
+                .text {
+                    color:$primary-color;
+                    font-weight:300;
+                    position: relative;
+                    top: rem-calc(0);
+                }
+                .circle {
+                  /* Cross-browser inline-block */
+                  display:-moz-inline-stack;
+                  display:inline-block;
+                  zoom:1;
+                  width: rem-calc(30);
+                  height: rem-calc(30);
+                  margin-right: rem-calc(6);
+                  margin-bottom:rem-calc(2)!important;
+                  *display:inline;
+                  /* Content must stretch all the way to borders */
+                  padding:0;
+                  /* Background color */
+                  background-color: $white;
+                  /* Spacing between buttons */
+                  margin:rem-calc(2 5 15);
+                  /* Fake that those are buttons, i.e. clicky */
+                  cursor:pointer;
+                  /* The border when the button is not selected */
+                  border: $gainsboro 1px solid !important;
+                  /* To position the sold out graphic and tooltip */
+                  position:relative;
+                  /* Text styling */
+                  text-transform:uppercase;
+                  font-size:rem-calc(13);
+                  min-width:rem-calc(30) !important; 
+                  height:rem-calc(30) !important;
+                  line-height:rem-calc(28);
+                  white-space:nowrap;
+                  text-transform:uppercase;
+                  text-align: center;
+                  font-weight: 400;
+                }
+            }
+            &.colors {
+                .square {
+                    display:-moz-inline-stack;
+                    display:inline-block;
+                    zoom:1;
+                    margin-right: rem-calc(6);
+                    display:inline-block;
+                    /* Content must stretch all the way to borders */
+                    padding:0;
+                    /* Background color */
+                    background-color: $white;
+                    /* Spacing between buttons */
+                    margin:rem-calc(2 5 15);
+                    /* Fake that those are buttons, i.e. clicky */
+                    cursor:pointer;
+                    /* The border when the button is not selected */
+                    border: $gainsboro 1px solid !important;
+                    /* To position the sold out graphic and tooltip */
+                    position:relative;
+                    /* Text styling */
+                    text-transform:uppercase;
+                    font-size:rem-calc(13);
+                    min-width:rem-calc(20) !important; 
+                    height:rem-calc(20) !important;
+                    line-height:rem-calc(18);
+                    white-space:nowrap;
+                    text-transform:uppercase;
+                    text-align: center;
+                    font-weight: 400;
+                }
+            }
+            .swatch-element {
+                width: 100%;
+                display: inline-block;
+                -webkit-transform:translateZ(0); /* webkit flicker fix */
+                -webkit-font-smoothing:antialiased; /* webkit text rendering fix */
+                /* To position the sold out graphic and tooltip */
+                position:relative;
+                &.color {
+                    label {
+                        margin-bottom:8px;  
+                    }
+                    .square {
+                        display:inline-block;
+                        padding:rem-calc(0 5); 
+                        color: $steel;
+                        margin-bottom:0;
+                        -webkit-transition: background .1s ease,color .1s ease, border .1s ease;
+                        -moz-transition: background .1s ease,color .1s ease, border .1s ease;
+                        -o-transition: background .1s ease,color .1s ease, border .1s ease;
+                        transition: background .1s ease,color .1s ease, border .1s ease;
+                        position:relative;
+                        top:rem-calc(5);
+                        margin-left:0;
+                        //border-radius:100%;
+                    }
+                    .text {
+                        position:relative;
+                        display:inline-block;
+                        //top:rem-calc(-5);
+                    }
+                }
+                .crossed-out { 
+                    position: absolute;
+                    max-width: rem-calc(17);
+                    left: 0;
+                    top: 0;
+                }
+                &.available {
+                    .crossed-out {
+                        display:none;
+                    }
+                }
+
+                 label { 
+                    .circle {
+                        display:inline-block;
+                        padding:rem-calc(0 5); color: $steel;
+                        -webkit-transition: background .1s ease,color .1s ease, border .1s ease;
+                        -moz-transition: background .1s ease,color .1s ease, border .1s ease;
+                        -o-transition: background .1s ease,color .1s ease, border .1s ease;
+                        transition: background .1s ease,color .1s ease, border .1s ease;
+                        border-radius:100%;
+                    }
+                }
+                label:hover {
+                    .circle {
+                        border:$charcoal 1px solid !important;
+                    }
+                }
+                &.soldout {
+                    .crossed-out { 
+                        display:block; 
+                    }
+                    label {
+                        filter: alpha(opacity=60); /* internet explorer */
+                        -khtml-opacity: 0.6;      /* khtml, old safari */
+                        -moz-opacity: 0.6;       /* mozilla, netscape */
+                        opacity: 0.6;           /* fx, safari, opera */
+                    }
+                }
+                &.available {
+                    .crossed-out {
+                        visibility: hidden;
+                    }
+                }
+                input {
+                    display:none;
+                }
+            }
+        
+            .button {
+                width:100%;
+                padding:rem-calc(8);
+                font-size:rem-calc(10);
+                &:after {
+                    position:absolute;
+                    right:rem-calc(10);
+                    top:rem-calc(10);
+                }
+            }
+            .f-dropdown {
+                outline:0;
+                padding:rem-calc(10);
+                margin-top:0;
+                border-top:0;
+                &:after,&:before {
+                    display:none;
+                }
+                li {
+                    text-align:left;
+                    margin-bottom:rem-calc(8);
+                }
+            }
+            h3 {
+              margin-bottom: rem-calc(8);
+              border-bottom:1px solid $secondary-color;
+              font-weight:500;
+              font-size:rem-calc(14);
+            }
+        }
+    }
+    .selected-text {
+      text-align: left;
+    }
+    #length, #colors, #sizes {
+        max-width:rem-calc(320);
+        margin-bottom: 1.25rem;
+        &.small-block-grid-2 {
+          margin-bottom: 1.25rem;
+          li {
+            &:nth-of-type(odd) {
+              padding-right:rem-calc(3);
+            }
+          }
+        }
+        li {
+            padding:0;
+            margin-bottom:rem-calc(3);
+            text-align: left;
+            .swatch-element {
+                label {
+                    padding:rem-calc(0 6);
+                    //border:1px solid $primary-color;
+                    border:0;
+                    display:block;
+                }
+            }
+            div {
+                padding:0;
+            }
+        }
+    }
+    #length {
+        .swatch-element label .text {
+            //top:-11px;
+        }
+    }
+@media #{$small-only} {
+  #length, #colors, #sizes {
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .swatch .selected-text {
+    text-align:center;
+  }
+}

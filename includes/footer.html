@@ -1,31 +1,43 @@
 <footer class="full-width">
-        <div class="row">
-            <div class="column small-12 medium-6 medium-push-6 right-col">
-                @@include('newsletter.html')
+        <div class="full-width row">
+            <div class="column small-12 medium-6 large-4 medium-only-push-6 large-push-8 right-col">
+                <div id="mc_embed_signup_footer">
+                  <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button newsletter-toggle">JOIN OUR MAILING LIST</button>
+              </div>
             </div>
-            <div class="column small-12 medium-6 medium-pull-6 left-col">
-                    <div class="row">
-                        <div class="column small-6 footer-links">
-                            <h6>Help</h6>
-                            <ul>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">Shipping &amp; Returns</a></li>
-                                <li><a href="#">Freqently Asked Questions</a></li>
-                                <li><a href="#" data-reveal-id="sizeChart">Sizing</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                            </ul>
-                        </div>
-                        <div class="column small-6 footer-links">
-                            <h6>Company</h6>
-                            <ul>
-                                <li><a href="#">Vision</a></li>
-                                <li><a href="#">Team</a></li>
-                                <li><a href="#">Studio</a></li>
-                                <li><a href="#">Stories</a></li>
-                                <li><a href="#">Jobs</a></li>
-                            </ul>
-                        </div>
-                    </div>
+            <div class="column small-12 medium-6 large-8 medium-only-pull-6 large-pull-4 left-col">
+                        <ul class="small-block-grid-2 medium-block-grid-2 large-block-grid-3 full-width">
+                            <li class="footer-links">
+                                <h6>Help</h6>
+                                <ul>
+                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">Shipping &amp; Returns</a></li>
+                                    <li><a href="#">Freqently Asked Questions</a></li>
+                                    <li><a href="#" data-reveal-id="sizeChart">Sizing</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul>
+                            </li>
+                            <li class="footer-links">
+                                <h6>Company</h6>
+                                <ul>
+                                    <li><a href="#">Vision</a></li>
+                                    <li><a href="#">Team</a></li>
+                                    <li><a href="#">Studio</a></li>
+                                    <li><a href="#">Stories</a></li>
+                                    <li><a href="#">Jobs</a></li>
+                                </ul>
+                            </li>
+                            <li class="footer-links">
+                                <h6>Story</h6>
+                                <ul>
+                                    <li><a href="#">Vision</a></li>
+                                    <li><a href="#">Team</a></li>
+                                    <li><a href="#">Studio</a></li>
+                                    <li><a href="#">Stories</a></li>
+                                    <li><a href="#">Jobs</a></li>
+                                </ul>
+                            </li>
+                        </ul>
             </div>
         </div>
 <!--         <div class="row">
@@ -45,9 +57,10 @@
                 </ul>
             </div>
         </div> -->
-    <div class="topper"><a href="#top" title="back to top"><span class="icon icon-arrow-up1"></span></a></div>
+    <div class="topper"><a href="#top" title="back to top"><span class="icon icon-up-arrow"></span></a></div>
 </footer>
-
+@@include('modal-lightbox.html')
 @@include('modal-sizechart.html')
 @@include('modal-returns.html')
 @@include('modal-question.html')
+<span class="screen-size clearfix"></span>

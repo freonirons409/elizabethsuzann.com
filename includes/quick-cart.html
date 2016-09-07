@@ -1,34 +1,76 @@
-<!-- Quick Cart Window -->
-			<div class="quick-cart-window">
-				<div id="crt">
-					<div class="quick-cart-item">
-					  <div class="quick-cart-image">
-					      <a href="/products/harper-tunic-linen" title="Harper Tunic in Linen">
-					        <img src="//cdn.shopify.com/s/files/1/0474/8573/products/Q10A9236_small.jpg?v=1462564624" alt="Harper Tunic in Linen - Flax Linen / OS MINUS">      
-					      </a>
-					  </div>
-					  <div class="quick-cart-details">
-					      <p><a href="/products/harper-tunic-linen">Harper Tunic in Linen - Flax Linen / OS MINUS
-					        <br>
-					        $ 185.00</a></p>        
-					        <a class="remove_item" href="#" data-id="15823456134">Remove</a>
-					  </div>
-					</div>
-					<div class="clearfix"></div>
-					<div class="quick-cart-item">
-					  <div class="quick-cart-image">
-					      <a href="/products/annie-shirt-dress-hemp-gauze" title="Annie Shirt Dress in Hemp Gauze">
-					        <img src="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1957_small.jpg?v=1458834133" alt="Annie Shirt Dress in Hemp Gauze - Black Hemp Gauze / OS MINUS">
-					      </a>
-					  </div>
-					  <div class="quick-cart-details">
-					      <p><a href="/products/annie-shirt-dress-hemp-gauze">Annie Shirt Dress in Hemp Gauze - Black Hemp Gauze / OS MINUS
-					        <br>
-					        $ 245.00</a></p>        
-					        <a class="remove_item" href="#" data-id="17165867078">Remove</a>
-					  </div>
-					</div>
-              		<a class="checkout-link button secondary" href="/cart">view cart</a>
-            	</div>
-			</div>
-			<!-- END Quick Cart Window -->
+      <div class="quick-cart-window">
+        <div class="inner-cart">
+            <div id="crt" data-cart-view="data-cart-view">
+                  <!-- rivets: each-item -->
+                  <div class="quick-cart-item">
+                      <div class="quick-cart-image">
+                          <a rv-href="item.url" href="/products/annie-shirt-dress-hemp-gauze?variant=17165867142">
+                            <img rv-src="item.image | productImageSize 'medium'" rv-alt="item.title" src="https://cdn.shopify.com/s/files/1/0474/8573/products/IMG_1957.jpg?v=1473140228" alt="Annie Shirt Dress in Hemp/Silk/Cotton Gauze - Black / OS">          
+                          </a>
+                      </div>
+                      <div class="quick-cart-details">
+                        <p style="margin-top:0;">
+                          <a rv-href="item.url" href="/products/annie-shirt-dress-hemp-gauze?variant=17165867142"><span rv-text="item.title">Annie Shirt Dress in Hemp/Silk/Cotton Gauze - Black / OS</span></a>
+                          <br><strong rv-html="item.line_price | money Currency.currentCurrency" class="cart-price">$245.00</strong>
+                        </p>
+                        <p>QTY: <span rv-text="item.quantity">1</span>
+                        <br>
+                          <a href="#" rv-data-cart-remove="index | plus 1" class="remove_item" data-cart-remove="1">Remove</a></p>
+                      </div>
+                  </div>
+                  <div class="quick-cart-item">
+                      <div class="quick-cart-image">
+                          <a rv-href="item.url" href="/products/annie-shirt-dress-hemp-gauze?variant=17165866886">
+                            <img rv-src="item.image | productImageSize 'medium'" rv-alt="item.title" src="https://cdn.shopify.com/s/files/1/0474/8573/products/IMG_1350.jpg?v=1473140228" alt="Annie Shirt Dress in Hemp/Silk/Cotton Gauze - Ivory / OS">          
+                          </a>
+                      </div>
+                      <div class="quick-cart-details">
+                        <p style="margin-top:0;">
+                          <a rv-href="item.url" href="/products/annie-shirt-dress-hemp-gauze?variant=17165866886"><span rv-text="item.title">Annie Shirt Dress in Hemp/Silk/Cotton Gauze - Ivory / OS</span></a>
+                          <br><strong rv-html="item.line_price | money Currency.currentCurrency" class="cart-price">$245.00</strong>
+                        </p>
+                        <p>QTY: <span rv-text="item.quantity">1</span>
+                          <br>
+                          <a href="#" rv-data-cart-remove="index | plus 1" class="remove_item" data-cart-remove="2">Remove</a></p>
+                      </div>
+                  </div>
+                  <div class="quick-cart-item">
+                      <div class="quick-cart-image">
+                          <a rv-href="item.url" href="/products/annie-shirt-dress-hemp-gauze?variant=17165866758">
+                            <img rv-src="item.image | productImageSize 'medium'" rv-alt="item.title" src="https://cdn.shopify.com/s/files/1/0474/8573/products/IMG_1350.jpg?v=1473140228" alt="Annie Shirt Dress in Hemp/Silk/Cotton Gauze - Ivory / OS MINUS">          
+                          </a>
+                      </div>
+                      <div class="quick-cart-details">
+                        <p style="margin-top:0;">
+                          <a rv-href="item.url" href="/products/annie-shirt-dress-hemp-gauze?variant=17165866758"><span rv-text="item.title">Annie Shirt Dress in Hemp/Silk/Cotton Gauze - Ivory / OS MINUS</span></a>
+                          <br><strong rv-html="item.line_price | money Currency.currentCurrency" class="cart-price">$245.00</strong>
+                        </p>
+                        <p>QTY: <span rv-text="item.quantity">1</span>
+                           <br>
+                          <a href="#" rv-data-cart-remove="index | plus 1" class="remove_item" data-cart-remove="3">Remove</a></p>
+                      </div>
+                  </div>
+                  <div class="quick-cart-item">
+                      <div class="quick-cart-image">
+                          <a rv-href="item.url" href="/products/stevie-tie-top-silk-crepe?variant=17165876358">
+                            <img rv-src="item.image | productImageSize 'medium'" rv-alt="item.title" src="https://cdn.shopify.com/s/files/1/0474/8573/products/KE3A9880.jpg?v=1473174655" alt="Stevie Tie Top in Silk Crepe - Moss / OS MINUS">          
+                          </a>
+                      </div>
+                      <div class="quick-cart-details">
+                        <p style="margin-top:0;">
+                          <a rv-href="item.url" href="/products/stevie-tie-top-silk-crepe?variant=17165876358"><span rv-text="item.title">Stevie Tie Top in Silk Crepe - Moss / OS MINUS</span></a>
+                          <br><strong rv-html="item.line_price | money Currency.currentCurrency" class="cart-price">$185.00</strong>
+                        </p>
+                        <p>QTY: <span rv-text="item.quantity">1</span>
+                          <br>
+                          <a href="#" rv-data-cart-remove="index | plus 1" class="remove_item" data-cart-remove="4">Remove</a></p>
+                      </div>
+                  </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="cart-bottom">
+              <a class="checkout-link button secondary" href="/cart" rv-show="cart.item_count | gt 0">view cart</a>
+              <p rv-show="cart.item_count | lt 1" style="display: none;">There are no items in your shopping cart</p>
+            </div>
+        </div>
+    </div>

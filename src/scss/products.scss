@@ -1,19 +1,15 @@
-.swatch {
-    .button {
-        &:after {
-            @extend .icon:before;
-            @extend .icon-down-arrow:before;
-        }
-        &.open {
-            &:after {
-                @extend .icon-up-arrow:before;
-            }
-        }
-    }
-}
+@import "swatches";
 @media #{$small-up} {
+    .diversity-panel-container {
+     img {width:100%;}
+    }
+    #product-description {
+        max-width:rem-calc(650);
+        margin:0 auto;
+    }
     .diversity-panel {
         background:$secondary-color;
+        margin-bottom:rem-calc(40);
         .diversity-panel-details {
             max-width:90%;
             margin:0 auto;
@@ -23,7 +19,7 @@
                 }
                 text-align:center;
                 &,p,h1,h2,h3,h4,h5,h6 {
-                    color:$oil;
+                    color:$primary-color;
                 }
                 border-right:1px solid rgba($smoke,0.2);
                 &:last-of-type {
@@ -31,19 +27,33 @@
                 }
             }
             .person-height,.person-weight {
-                font-size:15px;
+                font-size:rem-calc(15);
             }
             .person-name {
                 font-family:$font-family-serif;
-                font-size:20px!important;
+                font-size:rem-calc(20)!important;
             }
             .person-weight {}
+        }
+    }
+    .product__fabric {
+        a {
+            &:after {
+                content: " / ";
+            }
+            &:last-of-type {
+                &:after {
+                    content:"";
+                }
+            }
         }
     }
     .user-image-slider {
         .slick-slide {
             img {
                 border:4px solid $white;
+                max-height: rem-calc(200);
+                width: auto;
             }
         }
     }
@@ -99,9 +109,13 @@
     .ask-a-question-product {
         font-size:rem-calc(12);
         position:relative;
-        top:rem-calc(-10);
+        top:0;
+        padding-bottom: rem-calc(12);
     }
-
+    .product-price {
+        letter-spacing: rem-calc(1);
+        font-style:italic;
+    }
     .icn {
         -webkit-transition: opacity 2s ease-out;
         width: rem-calc(10);
@@ -111,6 +125,7 @@
         border-radius: 0px;
         position: absolute;
         top: rem-calc(10);
+        min-width:rem-calc(80);
         right: rem-calc(10);
         text-align: center;
         line-height: rem-calc(50);
@@ -120,66 +135,7 @@
     .so {
         z-index: 3;
         color: $white;
-        background: $jumbo;
-    }
-    .product-index {
-        max-width: rem-calc(400);
-    }
-    .product-index {
-        .product-info {
-            padding-bottom: rem-calc(30);
-        }
-        .image_hover {
-            position:relative;
-            .variants {
-                width: 100%;
-                height: auto;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                background: rgba($white, 0.5);
-                display: inline-flex;
-                .variant {
-                    width: rem-calc(25);
-                    cursor:pointer;
-                    height: rem-calc(25);
-                    //border-radius:100%;
-                    -moz-border-radius:100%;
-                    display: inline-block;
-                    border: 1px solid $gainsboro;
-                    &.active {
-                       border: 1px solid $oil; 
-                    }
-                }
-            }
-        }
-    }
-    .product-info {
-        text-align: center;
-        background: $white;
-        padding-top: rem-calc(20);
-        padding-bottom: rem-calc(15);
-        position: relative;
-        h3 {
-            letter-spacing: 0.2em;
-            margin-bottom: rem-calc(10);
-            font-size: rem-calc(11);
-        }
-        a {
-            text-decoration: none! important;
-            text-transform: uppercase;
-        }
-        .onsale {
-            display: inline;
-            color: $alert-color;
-        }
-        .was {
-            display: inline;
-            margin-left: rem-calc(5);
-        }
-        .was, .product-compare-price, .compare-price {
-            text-decoration: line-through;
-        }
+        background: $primary-color;
     }
     #product-loop li {
         @include transition-all(0.5s);
@@ -208,7 +164,7 @@
                     content:" ";
                     left:0;
                     width:100%;
-                    border:3px solid $white;
+                    border:rem-calc(3) solid $white;
                     bottom:rem-calc(-1);
                     z-index:3;
                 }
@@ -226,17 +182,24 @@
     }
     .product__mainimage {
         cursor:-webkit-zoom-in;
+        img:not(.zoomImg) {
+            max-height:rem-calc(900);
+        }
+    }
+    .product__details {
+        border-bottom:$snow 1px solid;
+        margin-bottom:rem-calc(20)!important;
     }
     .product__description {
         padding:rem-calc(30);
         .product__title{
             margin-bottom:0;
+            font-weight:500;
         }
         .product__fabric {
             text-transform: capitalize;
             font-size:rem-calc(15);
             letter-spacing: rem-calc(1);
-            margin-bottom:rem-calc(40);
         }
         .product__price{}
         .product__sizepicker,.product__colorpicker {
@@ -247,281 +210,30 @@
         .product__colorpicker{}
         .product__sizepicker{}
         .product__add{
-            .disabled {
-                background:$silver!important;
-                color:$white;
-                cursor:not-allowed;
-            }
-        }
-        .swatch-element {
-            label {
-                margin-left:0!important;
-            }
-            &.os,&.os-minus,&.os-plus {
-                .circle {
-                    font-size:rem-calc(11.5);
-                }
-            }
-        }
-        .selected-swatch {
-            position:absolute;
-            top:rem-calc(3);
-            left:rem-calc(10);
-            .crossed-out {
-                display:none;
-            }
-            .square,.circle {
-              border:$charcoal 1px solid !important;
-              background: $oil;
-              color: $white;
-              display:-moz-inline-stack;
-              display:inline-block;
-              zoom:1;
-              width: rem-calc(20);
-              height: rem-calc(20);
-              //border-radius:100%;
-              margin-right: rem-calc(6);
-              margin-bottom:rem-calc(2)!important;
-              *display:inline;
-              /* Content must stretch all the way to borders */
-              padding:0;
-              /* Background color */
-              background-color: $white;
-              /* Spacing between buttons */
-              margin:2px 5px 15px;
-              /* Fake that those are buttons, i.e. clicky */
-              cursor:pointer;
-              /* The border when the button is not selected */
-              border: $gainsboro 1px solid !important;
-              /* To position the sold out graphic and tooltip */
-              position:relative;
-              /* Text styling */
-              text-transform:uppercase;
-              font-size:rem-calc(13);
-              min-width:rem-calc(20) !important; 
-              height:rem-calc(20) !important;
-              line-height:rem-calc(20);
-              white-space:nowrap;
-              text-transform:uppercase;
-              text-align: center;
-              font-weight: 400;
-            }
-            .circle {
-                color:$oil;
-                font-size:rem-calc(10);
-                letter-spacing: rem-calc(1);
-                line-height:rem-calc(20);
-            }
-        }
-        .swatch {
-            margin:0 auto;
-            position:relative;
-            .f-dropdown {
-                left:0!important;
-                max-width:none;
-            }
-            input:checked + label {
-                border:1px solid $iron;
-                display:block;
-                .circle {
-                  border:$charcoal 1px solid !important;
-                  background: $oil;
-                  color: $white;
-                }
-            }
-            input:checked + label .square {
-              border:$charcoal 1px solid !important;
-              background: $oil;
-              color: $white;
-            }
-            &.sizes, &.length {
-                .circle,.square {
-                    display:none!important;
-                }
-                .soldout .text {
-                    text-decoration: line-through;
-                }
-            }
-            label {
-                margin-right:0;
-                margin-bottom:0!important;
-                .text {
-                    color:$oil;
-                    font-weight:300;
-                    position: relative;
-                    top: rem-calc(2);
-                }
-                .circle {
-                  /* Cross-browser inline-block */
-                  display:-moz-inline-stack;
-                  display:inline-block;
-                  zoom:1;
-                  width: rem-calc(30);
-                  height: rem-calc(30);
-                  margin-right: rem-calc(6);
-                  margin-bottom:rem-calc(2)!important;
-                  *display:inline;
-                  /* Content must stretch all the way to borders */
-                  padding:0;
-                  /* Background color */
-                  background-color: $white;
-                  /* Spacing between buttons */
-                  margin:rem-calc(2 5 15);
-                  /* Fake that those are buttons, i.e. clicky */
-                  cursor:pointer;
-                  /* The border when the button is not selected */
-                  border: $gainsboro 1px solid !important;
-                  /* To position the sold out graphic and tooltip */
-                  position:relative;
-                  /* Text styling */
-                  text-transform:uppercase;
-                  font-size:rem-calc(13);
-                  min-width:rem-calc(30) !important; 
-                  height:rem-calc(30) !important;
-                  line-height:rem-calc(28);
-                  white-space:nowrap;
-                  text-transform:uppercase;
-                  text-align: center;
-                  font-weight: 400;
-                }
-            }
-            &.colors {
-                .square {
-                    display:-moz-inline-stack;
-                    display:inline-block;
-                    zoom:1;
-                    margin-right: rem-calc(6);
-                    display:inline-block;
-                    /* Content must stretch all the way to borders */
-                    padding:0;
-                    /* Background color */
-                    background-color: $white;
-                    /* Spacing between buttons */
-                    margin:rem-calc(2 5 15);
-                    /* Fake that those are buttons, i.e. clicky */
-                    cursor:pointer;
-                    /* The border when the button is not selected */
-                    border: $gainsboro 1px solid !important;
-                    /* To position the sold out graphic and tooltip */
-                    position:relative;
-                    /* Text styling */
-                    text-transform:uppercase;
-                    font-size:rem-calc(13);
-                    min-width:rem-calc(20) !important; 
-                    height:rem-calc(20) !important;
-                    line-height:rem-calc(18);
-                    white-space:nowrap;
-                    text-transform:uppercase;
-                    text-align: center;
-                    font-weight: 400;
-                }
-            }
-            .swatch-element {
-                width: 100%;
-                display: inline-block;
-                -webkit-transform:translateZ(0); /* webkit flicker fix */
-                -webkit-font-smoothing:antialiased; /* webkit text rendering fix */
-                /* To position the sold out graphic and tooltip */
-                position:relative;
-                &.color {
-                    label {
-                        margin-bottom:8px;  
-                    }
-                    .square {
-                        display:inline-block;
-                        padding:rem-calc(0 5); 
-                        color: $steel;
-                        margin-bottom:0;
-                        -webkit-transition: background .1s ease,color .1s ease, border .1s ease;
-                        -moz-transition: background .1s ease,color .1s ease, border .1s ease;
-                        -o-transition: background .1s ease,color .1s ease, border .1s ease;
-                        transition: background .1s ease,color .1s ease, border .1s ease;
-                        //border-radius:100%;
-                    }
-                    .text {
-                        position:relative;
-                        display:inline-block;
-                        top:rem-calc(-5);
-                    }
-                }
-                .crossed-out { 
-                    position: absolute;
-                    max-width: rem-calc(17);
-                    left: 0;
-                    top: 0;
-                }
-                &.available {
-                    .crossed-out {
-                        display:none;
-                    }
-                }
-
-                 label { 
-                    .circle {
-                        display:inline-block;
-                        padding:rem-calc(0 5); color: $steel;
-                        -webkit-transition: background .1s ease,color .1s ease, border .1s ease;
-                        -moz-transition: background .1s ease,color .1s ease, border .1s ease;
-                        -o-transition: background .1s ease,color .1s ease, border .1s ease;
-                        transition: background .1s ease,color .1s ease, border .1s ease;
-                        border-radius:100%;
-                    }
-                }
-                label:hover {
-                    .circle {
-                        border:$charcoal 1px solid !important;
-                    }
-                }
-                &.soldout {
-                    .crossed-out { 
-                        display:block; 
-                    }
-                    label {
-                        filter: alpha(opacity=60); /* internet explorer */
-                        -khtml-opacity: 0.6;      /* khtml, old safari */
-                        -moz-opacity: 0.6;       /* mozilla, netscape */
-                        opacity: 0.6;           /* fx, safari, opera */
-                    }
-                }
-                &.available {
-                    .crossed-out {
-                        visibility: hidden;
-                    }
-                }
-                input {
-                    display:none;
-                }
-            }
-        }
-        .swatch {
+            padding-bottom:rem-calc(10);
             .button {
                 width:100%;
-                padding:rem-calc(8);
-                font-size:rem-calc(10);
-                &:after {
-                    position:absolute;
-                    right:rem-calc(10);
-                    top:rem-calc(10);
-                }
+                max-width:rem-calc(250);
+                padding-top:rem-calc(22)!important;
+                padding-bottom:rem-calc(20)!important;
+                line-height:1;
+                height: auto;
+                border:1px solid transparent;
+                margin-bottom:0;
+                background:$primary-color;
+                color:$white;
             }
-            .f-dropdown {
-                outline:0;
-                padding:rem-calc(10);
-                margin-top:0;
-                border-top:0;
-                &:after,&:before {
-                    display:none;
-                }
-                li {
-                    text-align:left;
-                    margin-bottom:rem-calc(8);
+            .disabled {
+                background:$white!important;
+                color:$primary-color;
+                border:1px solid $primary-color;
+                &:hover,&:active,&:focus {
+                    color:$primary-color!important;
                 }
             }
         }
-    }
-    #length {
-        .swatch-element label .text {
-            //top:-11px;
+        .ask-a-question-product {
+            font-style:italic;
         }
     }
     //widget-product-upsell -RELATED PRODUCTS
@@ -567,9 +279,15 @@
     }
     .product-single-extras {
         .full-width.image-slideshow {
-            margin-bottom:rem-calc(40);
+            margin-bottom:rem-calc(20);
             margin-top:rem-calc(0);
+            .slick-sider {
+                margin-bottom:0!important;
+            }
         }
+    }
+    .image-slideshow .slider.slick-initialized.slick-slider.slick-dotted {
+        margin-bottom: 0;
     }
     .product__modals {
         ul {
@@ -583,7 +301,7 @@
                 position:relative;
                 &:after {
                     content:"|";
-                    color:$black;
+                    color:$primary-color;
                     position:absolute;
                     right:rem-calc(-12);
                     top:0;
@@ -598,6 +316,12 @@
     }
     div#product-collection {
         min-height: rem-calc(500);
+    }
+    .related-products.product-slider{
+        img {
+            max-width:rem-calc(300);
+            margin:0 auto;
+        }
     }
 }
 
@@ -617,6 +341,13 @@
             }
         }
     }
+
+    .image-slideshow {
+        margin-bottom:0!important;
+        .slider {
+            margin-bottom:rem-calc(0)!important;
+        }
+    }
     div#product-collection {
         text-align:center;
         .small-block-grid-1 {
@@ -624,9 +355,32 @@
             margin: 0 auto;
         }
     }
+    .product__sideimages,.product__mainimage {
+        text-align:center;
+    }
+    .product__sideimages ul li:after {
+        display:none;
+    }
+    .user-imageslider-container {
+        padding-right:rem-calc(30);
+        padding-left:rem-calc(30);
+        .user-image-slider {
+            margin-bottom:0;
+        }
+    }
 }
 
-@media #{$medium-up} {}
+@media #{$medium-up} {
+    .product__add{ 
+        margin-top:rem-calc(41.4)!important;
+    }
+    .product__fabric {
+        margin-bottom:rem-calc(10);
+    }
+    .product__mainimage {
+        padding-right: rem-calc(6);
+    }
+}
 
 @media #{$medium-only} {}
 
@@ -634,7 +388,13 @@
 
 @media #{$large-only} {}
 
-@media #{$xlarge-up} {}
+@media #{$xlarge-up} {
+    
+    .image-toggle-container {
+        max-width: rem-calc(773)!important;
+        margin: 0 auto!important;
+    }
+}
 
 @media #{$xlarge-only} {}
 

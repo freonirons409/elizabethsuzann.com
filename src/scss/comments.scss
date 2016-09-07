@@ -1,7 +1,35 @@
   #comment-form .notice {
-      padding: 19px 30px;
+      padding: rem-calc(19 30);
       background: #c8fbbe;
-      margin-bottom: 20px;
-      border-radius: 20px;
-      -moz-border-radius:20px;
+      margin-bottom: rem-calc(20);
+      border-radius: rem-calc(20);
+      -moz-border-radius:rem-calc(20);
+  }
+  #comments {
+  	margin:1.25rem 0 0 0;
+  	max-width:rem-calc(900);
+    padding:rem-calc(20);
+  	.section-title {
+  		border:0;
+  	}
+  	.comment-list {
+  		li {
+  			padding:rem-calc(15 30);
+  			border:1px $snow solid;
+  			@extend .clearfix;
+  			p {
+  				margin:0;
+  			}
+  			.gravatar {
+  				display:inline-block;
+  				border-radius:100%;
+  				float:left;
+  				overflow:hidden;
+  			}
+  			.comment {
+  				font-style:italic;
+  				padding:rem-calc(23 20 20 103);
+  			}
+  		}
+  	}
   }

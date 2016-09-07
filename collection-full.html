@@ -1,30 +1,32 @@
-@@include('./includes/head.html', {"class":"interior"})
+@@include('./includes/head.html', {"class":"interior template-collection"})
 <!-- sep -->
 <div class="master-container">
 @@include('./includes/header.html')
 <!-- sep -->
 
 <!-- 2 col start -->
-<div id="page" class="row">  
-        <div class="clear"></div>  
+<div id="page" class="row full-width">  
+        @@include('./includes/blocks-header-full-width.html')
+        <div class="clear"></div>
+        <div id="content" class="full-width">
     <!-- Sidebar -->
-        @@include('./includes/sidebar.html')
+        @@include('./includes/sidebar.html', {"class":"collection"})
     <!-- END Sidebar -->
 
-        <div class="column medium-9 main-content" id="product-collection">
+        <div class="column medium-9 large-10 main-content" id="product-collection">
             <div class="collection-description text-editor">
-                <h3 style="text-align: center;">SS16 COLLECTION</h3>
+<!--                 <h3 style="text-align: center;">SS16 COLLECTION</h3>
                 I’ve never been a warm weather person. I’ve written before about how I prefer fall and winter - I’m uncomfortable with my skin exposed, I am much more at home swathed and wrapped in protective layers. And yet, despite all that, my most fond memories are of times spent in the sun and heat. It seems, in my mind, that there is simply more real living to be done in the bright, warm, light of day. How can I make myself, and other women like me, feel at home in their own skin and able to freely enjoy the incredible experiences these warm seasons have to offer? What are we lacking, what have I longed to dress in on those days I remember so fondly?
                 <center>
                 <br>
                 <p style="letter-spacing: .1em; font-size: 13px;"><a href="http://elizabethsuzann.com/blogs/stories/100871942-ss16" class="button">READ THE STORY BEHIND THE COLLECTION </a></p>
-                </center>  
+                </center>   -->
             </div>
 
-            <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+            <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 xxlarge-block-grid-4">
                 @@include('includes/product-grid-variant.html',{
                     "id":"prod-5486717382",
-                    "title":"Darby Work Dress in Hemp Twill", 
+                    "title":"Darby Work Dress", 
                     "url":"/collections/ss16/products/darby-work-dress-hemp-twill", 
                     "defaultImg":"//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1260_grande.jpg?v=1458831714", 
                     "variant1imgurl":"//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1260_1024x1024.jpg?v=1458831714", 
@@ -43,7 +45,7 @@
                 <!-- sep -->
                 @@include('includes/product-grid-variant.html',{
                     "id":"prod-5486718790",
-                    "title":"Stevie Tie Top in Silk Crepe", 
+                    "title":"Stevie Tie Top", 
                     "url":"//collections/ss16/products/stevie-tie-top-silk-crepe", 
                     "defaultImg":"https://cdn.shopify.com/s/files/1/0474/8573/products/IMG_2197_grande.jpg?v=1458834759", 
                     "variant1imgurl":"//cdn.shopify.com/s/files/1/0474/8573/products/IMG_2197_1024x1024.jpg?v=1458834759", 
@@ -62,7 +64,7 @@
                 <!-- sep -->
                 @@include('includes/product-grid-variant.html',{
                     "id":"prod-5486716422",
-                    "title":"Nadeen Trouser in Hemp Twill", 
+                    "title":"Nadeen Trouser", 
                     "url":"/collections/ss16/products/nadeen-trouser-hemp-twill", 
                     "defaultImg":"https://cdn.shopify.com/s/files/1/0474/8573/products/IMG_1044_grande.jpg?v=1459875968", 
                     "variant1imgurl":"", 
@@ -81,7 +83,7 @@
                 <!-- sep -->
                 @@include('includes/product-grid-variant.html',{
                     "id":"prod-5486717382",
-                    "title":"Darby Work Dress in Hemp Twill", 
+                    "title":"Darby Work Dress", 
                     "url":"/collections/ss16/products/darby-work-dress-hemp-twill", 
                     "defaultImg":"//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1260_grande.jpg?v=1458831714", 
                     "variant1imgurl":"//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1260_1024x1024.jpg?v=1458831714", 
@@ -100,7 +102,7 @@
                 <!-- sep -->
                 @@include('includes/product-grid-variant.html',{
                     "id":"prod-5486717382",
-                    "title":"Darby Work Dress in Hemp Twill", 
+                    "title":"Darby Work Dress", 
                     "url":"/collections/ss16/products/darby-work-dress-hemp-twill", 
                     "defaultImg":"//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1260_grande.jpg?v=1458831714", 
                     "variant1imgurl":"//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1260_1024x1024.jpg?v=1458831714", 
@@ -119,7 +121,7 @@
                 <!-- sep -->
                 @@include('includes/product-grid-variant.html',{
                     "id":"prod-5486717382",
-                    "title":"Darby Work Dress in Hemp Twill", 
+                    "title":"Darby Work Dress", 
                     "url":"/collections/ss16/products/darby-work-dress-hemp-twill", 
                     "defaultImg":"//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1260_grande.jpg?v=1458831714", 
                     "variant1imgurl":"//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1260_1024x1024.jpg?v=1458831714", 
@@ -138,7 +140,7 @@
                 <!-- sep -->
                 @@include('includes/product-grid-variant.html',{
                     "id":"prod-5486717382",
-                    "title":"Darby Work Dress in Hemp Twill", 
+                    "title":"Darby Work Dress", 
                     "url":"/collections/ss16/products/darby-work-dress-hemp-twill", 
                     "defaultImg":"//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1260_grande.jpg?v=1458831714", 
                     "variant1imgurl":"//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1260_1024x1024.jpg?v=1458831714", 
@@ -157,7 +159,7 @@
                 <!-- sep -->
                 @@include('includes/product-grid-variant.html',{
                     "id":"prod-5486717382",
-                    "title":"Darby Work Dress in Hemp Twill", 
+                    "title":"Darby Work Dress", 
                     "url":"/collections/ss16/products/darby-work-dress-hemp-twill", 
                     "defaultImg":"//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1260_grande.jpg?v=1458831714", 
                     "variant1imgurl":"//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1260_1024x1024.jpg?v=1458831714", 
@@ -176,7 +178,7 @@
                 <!-- sep -->
                 @@include('includes/product-grid-variant.html',{
                     "id":"prod-5486717382",
-                    "title":"Darby Work Dress in Hemp Twill", 
+                    "title":"Darby Work Dress", 
                     "url":"/collections/ss16/products/darby-work-dress-hemp-twill", 
                     "defaultImg":"//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1260_grande.jpg?v=1458831714", 
                     "variant1imgurl":"//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1260_1024x1024.jpg?v=1458831714", 
@@ -196,18 +198,18 @@
             </ul>
            
             <div class="column text-center">
-            <!-- Pagination -->
-            <div id="pagination">
-              <span class="count">Showing items 1-21 of 31.</span>
-              <span class="current">1</span>
-              <a href="/collections/ss16?page=2" title="">2</a>
-              <a href="/collections/ss16?page=2" title="">&gt;</a>
+                <!-- Pagination -->
+                <div id="pagination">
+                  <span class="count">Showing items 1-21 of 31.</span>
+                  <span class="current">1</span>
+                  <a href="/collections/ss16?page=2" title="">2</a>
+                  <a href="/collections/ss16?page=2" title="">&gt;</a>
+                </div>
+                <!-- END Pagination -->
             </div>
-            <!-- END Pagination -->
         </div>
         </div>
 </div>
-
 <!-- 2 col end -->
 @@include('./includes/footer.html')
 <!-- sep -->

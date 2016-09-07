@@ -2,13 +2,13 @@
 		<div class="alert-bar show-for-medium-up">
 			<div class="row full-width">
 				<div class="column text-center">
-					<div><p>Sign up for our newsletter</p></div>
+					<div class="newsletter-toggle"><p>SHOP OUR SIGNATURE COLLECTION // FREE WORLDWIDE SHIPPING</p></div>
 				</div>
 				<div class="header-menu">
 					<ul class="inline-list">
 						<li><a href="#" class="account-toggle">My Account</a></li>
 						<li> | </li>
-						<li class="cart-container"><div class="cart-toggle"><span class="icon icon-bag active"></span><span class="ajax_quantity">2</span></div></li>
+						<li class="cart-container"><div class="cart-toggle"><span class="icon icon-bag active"></span><span class="ajax_quantity active">2</span></div></li>
 					</ul>
 				</div>
 			</div>
@@ -19,13 +19,13 @@
 	        		<!-- <li><a href="#"><span class="icon icon-envelope"><span class="sr-only">Mailing List</span></span></a></li> -->
 					<li class="search-container show-for-medium-up">
 						<form action="/search" method="get" autocomplete="off">
-	            			<input type="text" name="q" id="q" placeholder="search...">
+	            			<input type="text" name="q">
 	     	    			<input type="hidden" name="type" value="product"> 
 	     	    			<button type="submit" class="search-button"><span class="icon icon-search"><span class="sr-only">Search</span></span></button>
 	          			</form>
           			</li>
           			<li class="show-for-small-only cart-container">
-          				<div class="cart-toggle"><span class="icon icon-bag active"></span><span class="ajax_quantity">2</span></div>
+          				<div class="cart-toggle"><span class="icon icon-bag active"></span><span class="ajax_quantity active">2</span></div>
           			</li>
 					<!-- <li><a href="#"><span class="icon icon-account"><span class="sr-only">Account</span></span></a></li>
 					<li><a href="#"><span class="icon icon-cart active"><span class="ajax_quantity">2</span><span class="sr-only">Cart</span></span></a></li> -->
@@ -39,15 +39,15 @@
 				</div>
 	        </div>
 	        <div class="medium-3 large-2 columns medium-text-left small-text-center sub-header">
-	            <a href="#"><img src="img/logo-retina.png" alt="Elizabeth Suzann" class="logo"/></a>
+	            <a href="#"><img src="img/logo-retina.png" alt="Elizabeth Suzann" class="logo" style="max-width:225px;"/></a>
 	        </div>
 	        <div class="medium-6 large-7 column navigation-container">
 	        	@@include('nav.html')
 	        </div>
 	    </div>
-	    <div class="show-for-small-only mobile-alert-bar text-center">
-			<div class="newsletter-toggle"><p>Sign up for our newsletter</p></div>
-	    </div>
+<!-- 	    <div class="show-for-small-only mobile-alert-bar text-center">
+			<div class="newsletter-toggle"><p>SHOP OUR SIGNATURE COLLECTION // FREE WORLDWIDE SHIPPING</p></div>
+	    </div> -->
 	    <!-- <div id="searchBar" class="show-for-small-only">
 	    	<form action="/search" method="get" autocomplete="off">
             	<input type="text" name="q" id="q" placeholder="search...">
@@ -74,5 +74,5 @@
 				</div>
 			</div>
 		</div>
-		<div class="closer"><span class="icon icon-circle-x"></span></div>
+		<div class="closer"><span class="icon icon-cross"></span></div>
     </div>

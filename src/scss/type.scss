@@ -3,23 +3,66 @@ h1,h2,h3,h4,h5,h6,.button {
   text-transform: uppercase;
   letter-spacing: 0.35em;
 }
-.button.secondary {
-  color:$smoke;
+.didot {
+  font-family:$font-family-serif;
 }
-button {
+.brandon {
+  font-family:$font-family-sans-serif;
+}
+.uppercase {
+  text-transform: uppercase!important;
+}
+.lowercase {
+  text-transform: lowercase!important;
+}
+.capitalize {
+  text-transform: capitalize!important;
+}
+.xlarge {
+  font-size:rem-calc(40);
+}
+.large {
+  font-size:rem-calc(30);
+}
+.medium {
+  font-size:rem-calc(25);
+}
+.small {
+  font-size:rem-calc(15);
+}
+.smallest {
+  font-size:rem-calc(11);
+}
+
+#frequently-asked-questions {
+  .text-editor{
+    h1,h2,h3,h4,h5,h6 {
+      text-transform: none;
+      letter-spacing: rem-calc(1);
+    }
+  }
+}
+button,.button {
   border:1px solid $primary-color;
   background:transparent;
+  text-transform: uppercase!important;
+  line-height:1;
   a {
     color:$primary-color;
   }
   &:hover {
+    background:$primary-color;
     a {
       color:$white;
     }
   }
+  &.secondary {
+    border:1px solid $secondary-color;
+  }
 }
 h1,h2,h3,h4,h5,h6 {
   color:$primary-color;
+  font-family: $font-family-sans-serif;
 }
 h1 {
   font-size:rem-calc(18);
@@ -40,6 +83,14 @@ h6 {
   font-size:rem-calc(13);
 }
 .text-editor {
+    a {
+      color:$link-color;
+      opacity:1;
+      &:hover {
+        color:$link-color!important;
+        opacity:1;
+      }
+    }
     .button,h1,h2,h3,h4,h5,h6 {
       margin-bottom: rem-calc(25)!important;
     }
@@ -50,12 +101,38 @@ h6 {
     }
     p,li,td,th,tr,span {
       a {
-        opacity:0.7;
-        @include transition-all(0.5s);
+        opacity:0.8!important;
+        //@include transition-all(0.5s);
         display:inline-block;
         &:hover {
-          opacity:0.5;
+          //opacity:0.5;
         }
       }
     }
+    h6 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+        margin-bottom: .5rem;
+        font-weight: 500;
+    }
+}
+
+@media #{$small-only} {
+  .xlarge {
+    font-size:rem-calc(35);
+  }
+  .large {
+    font-size:rem-calc(20);
+  }
+  .medium {
+    font-size:rem-calc(20);
+  }
+  .small {
+    font-size:rem-calc(14);
+  }
+  .smallest {
+    font-size:rem-calc(11);
+  }
+
 }

@@ -18,7 +18,7 @@
     <!-- endbuild -->
 </head>
 
-<body class="interior">
+<body id="@@id" class="interior">
     
 <!-- sep -->
 <div class="master-container">
@@ -26,13 +26,13 @@
 		<div class="alert-bar show-for-medium-up">
 			<div class="row full-width">
 				<div class="column text-center">
-					<div><p>Sign up for our newsletter</p></div>
+					<div class="newsletter-toggle"><p>SHOP OUR SIGNATURE COLLECTION // FREE WORLDWIDE SHIPPING</p></div>
 				</div>
 				<div class="header-menu">
 					<ul class="inline-list">
 						<li><a href="#" class="account-toggle">My Account</a></li>
 						<li> | </li>
-						<li class="cart-container"><div class="cart-toggle"><span class="icon icon-bag active"></span><span class="ajax_quantity">2</span></div></li>
+						<li class="cart-container"><div class="cart-toggle"><span class="icon icon-bag active"></span><span class="ajax_quantity active">2</span></div></li>
 					</ul>
 				</div>
 			</div>
@@ -43,51 +43,93 @@
 	        		<!-- <li><a href="#"><span class="icon icon-envelope"><span class="sr-only">Mailing List</span></span></a></li> -->
 					<li class="search-container show-for-medium-up">
 						<form action="/search" method="get" autocomplete="off">
-	            			<input type="text" name="q" id="q" placeholder="search...">
+	            			<input type="text" name="q">
 	     	    			<input type="hidden" name="type" value="product"> 
 	     	    			<button type="submit" class="search-button"><span class="icon icon-search"><span class="sr-only">Search</span></span></button>
 	          			</form>
           			</li>
           			<li class="show-for-small-only cart-container">
-          				<div class="cart-toggle"><span class="icon icon-bag active"></span><span class="ajax_quantity">2</span></div>
+          				<div class="cart-toggle"><span class="icon icon-bag active"></span><span class="ajax_quantity active">2</span></div>
           			</li>
 					<!-- <li><a href="#"><span class="icon icon-account"><span class="sr-only">Account</span></span></a></li>
 					<li><a href="#"><span class="icon icon-cart active"><span class="ajax_quantity">2</span><span class="sr-only">Cart</span></span></a></li> -->
 				</ul>
-				<!-- Quick Cart Window -->
-			<div class="quick-cart-window">
-				<div id="crt">
-					<div class="quick-cart-item">
-					  <div class="quick-cart-image">
-					      <a href="/products/harper-tunic-linen" title="Harper Tunic in Linen">
-					        <img src="//cdn.shopify.com/s/files/1/0474/8573/products/Q10A9236_small.jpg?v=1462564624" alt="Harper Tunic in Linen - Flax Linen / OS MINUS">      
-					      </a>
-					  </div>
-					  <div class="quick-cart-details">
-					      <p><a href="/products/harper-tunic-linen">Harper Tunic in Linen - Flax Linen / OS MINUS
-					        <br>
-					        $ 185.00</a></p>        
-					        <a class="remove_item" href="#" data-id="15823456134">Remove</a>
-					  </div>
-					</div>
-					<div class="clearfix"></div>
-					<div class="quick-cart-item">
-					  <div class="quick-cart-image">
-					      <a href="/products/annie-shirt-dress-hemp-gauze" title="Annie Shirt Dress in Hemp Gauze">
-					        <img src="//cdn.shopify.com/s/files/1/0474/8573/products/IMG_1957_small.jpg?v=1458834133" alt="Annie Shirt Dress in Hemp Gauze - Black Hemp Gauze / OS MINUS">
-					      </a>
-					  </div>
-					  <div class="quick-cart-details">
-					      <p><a href="/products/annie-shirt-dress-hemp-gauze">Annie Shirt Dress in Hemp Gauze - Black Hemp Gauze / OS MINUS
-					        <br>
-					        $ 245.00</a></p>        
-					        <a class="remove_item" href="#" data-id="17165867078">Remove</a>
-					  </div>
-					</div>
-              		<a class="checkout-link button secondary" href="/cart">view cart</a>
-            	</div>
-			</div>
-			<!-- END Quick Cart Window -->
+				      <div class="quick-cart-window">
+        <div class="inner-cart">
+            <div id="crt" data-cart-view="data-cart-view">
+                  <!-- rivets: each-item -->
+                  <div class="quick-cart-item">
+                      <div class="quick-cart-image">
+                          <a rv-href="item.url" href="/products/annie-shirt-dress-hemp-gauze?variant=17165867142">
+                            <img rv-src="item.image | productImageSize 'medium'" rv-alt="item.title" src="https://cdn.shopify.com/s/files/1/0474/8573/products/IMG_1957.jpg?v=1473140228" alt="Annie Shirt Dress in Hemp/Silk/Cotton Gauze - Black / OS">          
+                          </a>
+                      </div>
+                      <div class="quick-cart-details">
+                        <p style="margin-top:0;">
+                          <a rv-href="item.url" href="/products/annie-shirt-dress-hemp-gauze?variant=17165867142"><span rv-text="item.title">Annie Shirt Dress in Hemp/Silk/Cotton Gauze - Black / OS</span></a>
+                          <br><strong rv-html="item.line_price | money Currency.currentCurrency" class="cart-price">$245.00</strong>
+                        </p>
+                        <p>QTY: <span rv-text="item.quantity">1</span>
+                        <br>
+                          <a href="#" rv-data-cart-remove="index | plus 1" class="remove_item" data-cart-remove="1">Remove</a></p>
+                      </div>
+                  </div>
+                  <div class="quick-cart-item">
+                      <div class="quick-cart-image">
+                          <a rv-href="item.url" href="/products/annie-shirt-dress-hemp-gauze?variant=17165866886">
+                            <img rv-src="item.image | productImageSize 'medium'" rv-alt="item.title" src="https://cdn.shopify.com/s/files/1/0474/8573/products/IMG_1350.jpg?v=1473140228" alt="Annie Shirt Dress in Hemp/Silk/Cotton Gauze - Ivory / OS">          
+                          </a>
+                      </div>
+                      <div class="quick-cart-details">
+                        <p style="margin-top:0;">
+                          <a rv-href="item.url" href="/products/annie-shirt-dress-hemp-gauze?variant=17165866886"><span rv-text="item.title">Annie Shirt Dress in Hemp/Silk/Cotton Gauze - Ivory / OS</span></a>
+                          <br><strong rv-html="item.line_price | money Currency.currentCurrency" class="cart-price">$245.00</strong>
+                        </p>
+                        <p>QTY: <span rv-text="item.quantity">1</span>
+                          <br>
+                          <a href="#" rv-data-cart-remove="index | plus 1" class="remove_item" data-cart-remove="2">Remove</a></p>
+                      </div>
+                  </div>
+                  <div class="quick-cart-item">
+                      <div class="quick-cart-image">
+                          <a rv-href="item.url" href="/products/annie-shirt-dress-hemp-gauze?variant=17165866758">
+                            <img rv-src="item.image | productImageSize 'medium'" rv-alt="item.title" src="https://cdn.shopify.com/s/files/1/0474/8573/products/IMG_1350.jpg?v=1473140228" alt="Annie Shirt Dress in Hemp/Silk/Cotton Gauze - Ivory / OS MINUS">          
+                          </a>
+                      </div>
+                      <div class="quick-cart-details">
+                        <p style="margin-top:0;">
+                          <a rv-href="item.url" href="/products/annie-shirt-dress-hemp-gauze?variant=17165866758"><span rv-text="item.title">Annie Shirt Dress in Hemp/Silk/Cotton Gauze - Ivory / OS MINUS</span></a>
+                          <br><strong rv-html="item.line_price | money Currency.currentCurrency" class="cart-price">$245.00</strong>
+                        </p>
+                        <p>QTY: <span rv-text="item.quantity">1</span>
+                           <br>
+                          <a href="#" rv-data-cart-remove="index | plus 1" class="remove_item" data-cart-remove="3">Remove</a></p>
+                      </div>
+                  </div>
+                  <div class="quick-cart-item">
+                      <div class="quick-cart-image">
+                          <a rv-href="item.url" href="/products/stevie-tie-top-silk-crepe?variant=17165876358">
+                            <img rv-src="item.image | productImageSize 'medium'" rv-alt="item.title" src="https://cdn.shopify.com/s/files/1/0474/8573/products/KE3A9880.jpg?v=1473174655" alt="Stevie Tie Top in Silk Crepe - Moss / OS MINUS">          
+                          </a>
+                      </div>
+                      <div class="quick-cart-details">
+                        <p style="margin-top:0;">
+                          <a rv-href="item.url" href="/products/stevie-tie-top-silk-crepe?variant=17165876358"><span rv-text="item.title">Stevie Tie Top in Silk Crepe - Moss / OS MINUS</span></a>
+                          <br><strong rv-html="item.line_price | money Currency.currentCurrency" class="cart-price">$185.00</strong>
+                        </p>
+                        <p>QTY: <span rv-text="item.quantity">1</span>
+                          <br>
+                          <a href="#" rv-data-cart-remove="index | plus 1" class="remove_item" data-cart-remove="4">Remove</a></p>
+                      </div>
+                  </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="cart-bottom">
+              <a class="checkout-link button secondary" href="/cart" rv-show="cart.item_count | gt 0">view cart</a>
+              <p rv-show="cart.item_count | lt 1" style="display: none;">There are no items in your shopping cart</p>
+            </div>
+        </div>
+    </div>
 				<!-- sep -->
 				<div class="quick-login-window">
 
@@ -109,7 +151,7 @@
         <div id="login_password" class="clearfix large_form">
             <label for="customer_password" class="login">Password</label>
             <input type="password" value="" name="customer[password]" id="customer_password" class="large password" size="16">
-            <div id="forgot_password">
+            <div id="forgot_password_header">
                 <a href="#">Forgot your password?</a>
             </div>
         </div>
@@ -128,18 +170,18 @@
 				</div>
 	        </div>
 	        <div class="medium-3 large-2 columns medium-text-left small-text-center sub-header">
-	            <a href="#"><img src="img/logo-retina.png" alt="Elizabeth Suzann" class="logo"/></a>
+	            <a href="#"><img src="img/logo-retina.png" alt="Elizabeth Suzann" class="logo" style="max-width:225px;"/></a>
 	        </div>
 	        <div class="medium-6 large-7 column navigation-container">
 	        	<nav class="full-width">
         <div class="row">
             <div class="small-12 columns">
                 <div class="small-menu-toggle show-for-small-only">
-                    <span class="icon icon-hamburger"></span><span class="text">Menu</span>
+                    <span class="icon icon-hamburger"></span>
                 </div>
                 <div class="main-nav-wrap">
                     <ul class="main-nav clearfix">
-                        <li><a href="#">Shop</a>
+                        <li><a href="#" class="noclick">Shop</a>
                             <ul class="small-block-grid-1 medium-block-grid-4 mega-menu">
                                 <li>
                                     <h3>Category</h3>
@@ -181,7 +223,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="#">Story</a>
+                        <li><a href="#" class="noclick">Story</a>
                             <ul class="small-block-grid-1 medium-block-grid-4 mega-menu">
                                 <li>
                                     <h3>Headline 1</h3>
@@ -219,24 +261,12 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="#">Studio</a>
-                           <!--  <ul>
-                                <li><a href="#">Sub Item 1</a>
-                                </li>
-                                <li><a href="#">Sub Item 2</a>
-                                </li>
-                                <li><a href="#">Sub Item 3</a>
-                                </li>
-                                <li><a href="#">Sub Item 4</a>
-                                </li>
-                            </ul> -->
-                        </li>
                     </ul>
                     <div class="show-for-small-only">
                         <div class="account-mobile"><a href="#" class="account-toggle">My Account</a></div>
                         <div class="search-mobile search-container">
                             <form action="/search" method="get" autocomplete="off">
-                                <input type="text" name="q" id="q" placeholder="search...">
+                                <input type="text" name="q" id="q">
                                 <input type="hidden" name="type" value="product"> 
                                 <button type="submit" class="search-button"><span class="icon icon-search"><span class="sr-only">Search</span></span></button>
                             </form>
@@ -248,9 +278,9 @@
     </nav>
 	        </div>
 	    </div>
-	    <div class="show-for-small-only mobile-alert-bar text-center">
-			<div class="newsletter-toggle"><p>Sign up for our newsletter</p></div>
-	    </div>
+<!-- 	    <div class="show-for-small-only mobile-alert-bar text-center">
+			<div class="newsletter-toggle"><p>SHOP OUR SIGNATURE COLLECTION // FREE WORLDWIDE SHIPPING</p></div>
+	    </div> -->
 	    <!-- <div id="searchBar" class="show-for-small-only">
 	    	<form action="/search" method="get" autocomplete="off">
             	<input type="text" name="q" id="q" placeholder="search...">
@@ -294,7 +324,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="closer"><span class="icon icon-circle-x"></span></div>
+		<div class="closer"><span class="icon icon-cross"></span></div>
     </div>
 <!-- sep -->
 
@@ -525,50 +555,45 @@
 </div>
 <!-- 2 col end -->
 <footer class="full-width">
-        <div class="row">
-            <div class="column small-12 medium-6 medium-push-6 right-col">
-                <div id="mc_embed_signup">
-    <div class="mc-embedded-subscribe-form-container">
-        <form action="//elizabethsuzann.us6.list-manage.com/subscribe/post-json?u=0313b2693fabf51dca61768b8&amp;id=3f4b4e6e94&c=?" method="get" name="mc-embedded-subscribe-form" class="validate mc-embedded-subscribe-form" target="_blank" novalidate="">
-            <h5>Subscribe to our newsletter</h5>
-        <div class="mc-field-group">
-          <input style="text-align:left; padding-left: 1em; padding-right:1em;" type="email" value="" name="EMAIL" placeholder="ENTER YOUR EMAIL ADDRESS" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ENTER YOUR EMAIL ADDRESS'" class="required email" id="mce-EMAIL"><img src="img/ajax-loader.gif" class="loading" style="display:none;">
-        </div>
-            <div id="mce-responses" class="clear">
-                <div class="response" id="mce-error-response" style="display:none"></div>
-                <div class="response" id="mce-success-response" style="display:none"></div>
-            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-            <div style="position: absolute; left: -5000px;"><input type="text" name="b_0313b2693fabf51dca61768b8_3f4b4e6e94" tabindex="-1" value=""></div>
-            <div><button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">SIGN ME UP!</button></div>
-            <div class="error" style="display:none;">There was an error subscribing to the list</div>
-        </form>
-    </div>
-    <div class="mc-embedded-subscribe-form-success"></div>
-</div>
+        <div class="full-width row">
+            <div class="column small-12 medium-6 large-4 medium-only-push-6 large-push-8 right-col">
+                <div id="mc_embed_signup_footer">
+                  <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button newsletter-toggle">JOIN OUR MAILING LIST</button>
+              </div>
             </div>
-            <div class="column small-12 medium-6 medium-pull-6 left-col">
-                    <div class="row">
-                        <div class="column small-6 footer-links">
-                            <h6>Help</h6>
-                            <ul>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">Shipping &amp; Returns</a></li>
-                                <li><a href="#">Freqently Asked Questions</a></li>
-                                <li><a href="#" data-reveal-id="sizeChart">Sizing</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                            </ul>
-                        </div>
-                        <div class="column small-6 footer-links">
-                            <h6>Company</h6>
-                            <ul>
-                                <li><a href="#">Vision</a></li>
-                                <li><a href="#">Team</a></li>
-                                <li><a href="#">Studio</a></li>
-                                <li><a href="#">Stories</a></li>
-                                <li><a href="#">Jobs</a></li>
-                            </ul>
-                        </div>
-                    </div>
+            <div class="column small-12 medium-6 large-8 medium-only-pull-6 large-pull-4 left-col">
+                        <ul class="small-block-grid-2 medium-block-grid-2 large-block-grid-3 full-width">
+                            <li class="footer-links">
+                                <h6>Help</h6>
+                                <ul>
+                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">Shipping &amp; Returns</a></li>
+                                    <li><a href="#">Freqently Asked Questions</a></li>
+                                    <li><a href="#" data-reveal-id="sizeChart">Sizing</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul>
+                            </li>
+                            <li class="footer-links">
+                                <h6>Company</h6>
+                                <ul>
+                                    <li><a href="#">Vision</a></li>
+                                    <li><a href="#">Team</a></li>
+                                    <li><a href="#">Studio</a></li>
+                                    <li><a href="#">Stories</a></li>
+                                    <li><a href="#">Jobs</a></li>
+                                </ul>
+                            </li>
+                            <li class="footer-links">
+                                <h6>Story</h6>
+                                <ul>
+                                    <li><a href="#">Vision</a></li>
+                                    <li><a href="#">Team</a></li>
+                                    <li><a href="#">Studio</a></li>
+                                    <li><a href="#">Stories</a></li>
+                                    <li><a href="#">Jobs</a></li>
+                                </ul>
+                            </li>
+                        </ul>
             </div>
         </div>
 <!--         <div class="row">
@@ -588,9 +613,14 @@
                 </ul>
             </div>
         </div> -->
-    <div class="topper"><a href="#top" title="back to top"><span class="icon icon-arrow-up1"></span></a></div>
+    <div class="topper"><a href="#top" title="back to top"><span class="icon icon-up-arrow"></span></a></div>
 </footer>
-
+<div id="lightbox" class="reveal-modal" data-reveal>
+		<div class="inner-content">
+			<div class="image"></div>
+		</div>
+  <a class="close-reveal-modal"><span class="icon icon-cross"></span></a>
+</div>
 <div id="sizeChart" class="reveal-modal" data-reveal>
 		<div class="inner-content">
 			<h2 style="text-align: center; margin-bottom: 1em;">Size Chart</h2>
@@ -828,16 +858,17 @@
 			<h3>If something doesn’t fit?</h3>
 			<p>When ordering online, some items may fit differently than expected when tried on, which is why we offer free returns for store credit&nbsp;within 14 days of receiving your package. For details, see our <a href="http://elizabethsuzann.com/pages/shipping-returns">Shipping &amp; Returns</a> policy.</p>
 		</div>
-  <a class="close-reveal-modal">&#215;</a>
+  <a class="close-reveal-modal"><span class="icon icon-cross"></span></a>
 </div>
 <div id="returnPolicy" class="reveal-modal" data-reveal>
 		<div class="inner-content"></div>
-  <a class="close-reveal-modal">&#215;</a>
+  <a class="close-reveal-modal"><span class="icon icon-cross"></span></a>
 </div>
 <div id="question" class="reveal-modal" data-reveal>
 		<div class="inner-content"></div>
-  <a class="close-reveal-modal">&#215;</a>
+  <a class="close-reveal-modal"><span class="icon icon-cross"></span></a>
 </div>
+<span class="screen-size clearfix"></span>
 
 <!-- sep -->
 </div>
@@ -854,8 +885,12 @@
     <script src="bower_components/foundation/js/foundation/foundation.tab.js"></script>
     <script src="js/polyfills.min.js"></script>
     <script src="bower_components/parsleyjs/dist/parsley.min.js"></script>
+    <script src="bower_components/isinviewport/isInViewport.js"></script>
     <script src="bower_components/cart-js/cart.min.js"></script>
     <script src="bower_components/cart-js/rivets-cart.min.js"></script>
+    <script src="bower_components/jquery-sticky/jquery.sticky.js"></script>
+    <script src="bower_components/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="bower_components/jquery.visible/jquery.visible.min.js"></script>
     <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
     <script src="bower_components/masonry/dist/masonry.pkgd.min.js"></script>
     <script src="bower_components/jquery-zoom/jquery.zoom.min.js"></script>

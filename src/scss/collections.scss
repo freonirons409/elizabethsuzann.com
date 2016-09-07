@@ -1,0 +1,108 @@
+
+@media #{$small-up} {
+	.collection-header-image {
+	    margin-bottom:rem-calc(20)!important;
+	    margin-top:rem-calc(0)!important;
+	    img {
+	        width:100%;
+	    }
+	}
+    .collection-profile-slider {
+        .slick-track {
+            max-height:25rem;
+        }
+        .slick-slide {
+            max-height: 500px;
+            width:auto;
+        }
+    }
+	.prod-price {
+		font-size: rem-calc(12)!important;
+	    font-style: italic;
+	    letter-spacing: rem-calc(1);
+	}
+	.product-index {
+        max-width: rem-calc(400);
+        .product-info {
+            padding-bottom: rem-calc(30);
+        }
+        .image_hover {
+            position:relative;
+            .variants {
+                width: 100%;
+                height: auto;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background: rgba($white, 0.5);
+                display: inline-flex;
+                .variant {
+                    width: rem-calc(25);
+                    cursor:pointer;
+                    height: rem-calc(25);
+                    //border-radius:100%;
+                    -moz-border-radius:100%;
+                    display: inline-block;
+                    border: 1px solid $gainsboro;
+                    &.active {
+                       border: 1px solid $primary-color; 
+                    }
+                }
+            }
+        }
+    }
+    .product-info {
+        text-align: center;
+        background: $white;
+        padding-top: rem-calc(20);
+        padding-bottom: rem-calc(15);
+        position: relative;
+        h3 {
+            letter-spacing: 0.2em;
+            margin-bottom: rem-calc(6);
+            font-size: rem-calc(11);
+        }
+        a {
+            text-decoration: none! important;
+            text-transform: uppercase;
+        }
+        .product__fabric {
+            font-size:rem-calc(9.5);
+            letter-spacing: rem-calc(1);
+            a {
+                text-transform: capitalize!important;
+            }
+        }
+        .onsale {
+            display: inline;
+            color: $alert-color;
+        }
+        .was {
+            display: inline;
+            margin-left: rem-calc(5);
+        }
+        .was, .product-compare-price, .compare-price {
+            text-decoration: line-through;
+        }
+    }
+}
+
+@media #{$small-only} {
+
+}
+
+@media #{$medium-up} {}
+
+@media #{$medium-only} {}
+
+@media #{$large-up} {}
+
+@media #{$large-only} {}
+
+@media #{$xlarge-up} {}
+
+@media #{$xlarge-only} {}
+
+@media #{$xxlarge-up} {}
+
+@media #{$xxlarge-only} {}

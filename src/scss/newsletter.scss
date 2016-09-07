@@ -1,0 +1,77 @@
+
+@media #{$small-up} {
+	#newsletterPopup {
+		position:fixed;
+		background:rgba($white,0.94);
+		z-index:999;
+		bottom:-999px;
+		width:100%;
+		padding:rem-calc(30 40);
+		-webkit-box-shadow: 0px -5px 10px 0px rgba(50, 50, 50, 0.23);
+		-moz-box-shadow:    0px -5px 10px 0px rgba(50, 50, 50, 0.23);
+		box-shadow:         0px -5px 10px 0px rgba(50, 50, 50, 0.23);
+		@include transition-all(0.8s);
+		&.toggled {
+			bottom:0;
+			top:auto!important;
+		}
+		.signup-form {
+			.blurb {
+				font-size:rem-calc(13);
+				margin-bottom:rem-calc(25);
+			}
+		}
+		.newsletter-container {
+			//max-width:rem-calc(450);
+			margin:0 auto;
+		}
+		.closer {
+			position:absolute;
+			right:rem-calc(15);
+			top:rem-calc(15);
+			cursor:pointer;
+			.icon {
+				font-size: rem-calc(30);
+				color:$primary-color;
+			}
+			&:hover {
+				.icon {
+					color:$secondary-color;
+				}
+			}
+			&:active {
+				.icon {
+					color:scale-color($secondary-color, 10%, 35%);
+				}
+			}
+		}
+	}
+}
+
+@media #{$small-only} {
+	#newsletterPopup {
+		.image {
+			margin-bottom: rem-calc(20);
+		}
+	}
+}
+
+@media #{$medium-up} {
+	.signup-form {
+		padding-top:rem-calc(15);
+	}
+}
+
+@media #{$medium-only} {}
+
+@media #{$large-up} {}
+
+@media #{$large-only} {}
+
+@media #{$xlarge-up} {}
+
+@media #{$xlarge-only} {}
+
+@media #{$xxlarge-up} {}
+
+@media #{$xxlarge-only} {}

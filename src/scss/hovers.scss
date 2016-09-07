@@ -1,0 +1,175 @@
+  //controls the hovering of images based on alt text
+  .hover-image,.hover-image-alt {
+    position:relative;
+    &:before {
+      position:absolute;
+      bottom:0;
+      right:rem-calc(20);
+      color:$oil;
+      @extend .icon;
+      @extend .icon-tap:before;
+      font-size:rem-calc(35);
+      display:none;
+      text-shadow: rem-calc(1 1 10) rgba($white, 0.58);
+    }
+  }
+  // .hover-image-alt:before {
+  //     color:$white!important;
+  // }
+  .hover-image,.hover-image-alt,.hover-image-alt-2,.hover-image-alt-3 {
+    display:inline-block;
+    position:relative;
+    cursor:pointer;
+    button {
+      padding:0!important;
+      a {
+        padding:1rem 2rem 1.0625rem 2rem;
+        display:block;
+      }
+    }
+    .caption {
+      position:absolute;
+      width:100%;
+      text-align:center;
+      opacity:0;
+      top:0;
+      bottom:rem-calc(-0.5);
+      background:rgba($white,0.6);
+      border-radius:0;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      .text {
+        display:block;
+          max-width:100%;
+          position:absolute;
+          top: 50%;
+          width:100%;
+          padding:rem-calc(10 30);
+          background:rgba($white,0.7);
+          transform: translateY(-50%);
+          -webkit-transform: translateY(-50%);
+          -moz-transition: translateY(-50%);
+          -o-transition: translateY(-50%);
+          &,a,p,h1,h2,h3,h4,h5,h6 {
+            font-weight:100;
+          }
+      }
+    }
+    &:hover {
+      .caption {
+        opacity:1;
+        display:block;
+      }
+    }
+  }
+  .hover-image-alt,.hover-image-alt-3 {
+    .caption { 
+      background:rgba($primary-color,0.8); 
+        .text{ 
+          background:rgba($primary-color,0);
+          &,a,p,h1,h2,h3,h4,h5,h6 {
+            color:$white;
+          }
+          .button,button {
+            background:transparent!important;
+            border-color:$white!important;
+            &,a {
+              color:$white!important;
+            }
+            &:hover,&:focus,&:active {
+              background:$white!important;
+              &,a,a:hover,a:active,a:focus {
+                color:$primary-color!important;
+              }
+            }
+          }
+        }
+      }
+  }
+  .hover-image-alt-3 {
+    .caption {
+      background:$primary-color!important; 
+    }
+  }
+  .hover-image-alt-2{
+    .caption{
+      background:rgba($white,0.9);
+      .text {
+        background:transparent!important;
+        .button,button {
+          a:hover,a:active,a:focus {
+            color:$white!important;
+          }
+        }
+      }
+    }
+  }
+@media (min-width:800px) and (max-width:1100px){
+    .hover-image-alt {
+      .caption {
+        .text {
+          padding:rem-calc(10);
+          &,a,p,h1,h2,h3,h4,h5,h6 {
+            font-size:rem-calc(9);
+            line-height: 1.5;
+          }
+          button,.button {
+            padding:rem-calc(7)!important;
+            width:100%;
+          }
+        }
+      }
+    }
+}
+@media #{$small-only} {
+  .hover-image,.hover-image-alt,.hover-image-alt-2,.hover-image-alt-3 {
+      &:before {
+        display:block;
+      }
+  }
+  .hover-image-alt,.hover-image,.hover-image-alt-2,.hover-image-alt-3 {
+      .caption {
+        .text {
+          &,a,p,h1,h2,h3,h4,h5,h6 {
+            font-size:rem-calc(10);
+            font-weight:200;
+            line-height: 1.4;
+          }
+          button,.button {
+            padding:rem-calc(7)!important;
+            width:100%;
+            max-width:320px;
+            a {
+              padding:0;
+            }
+          }
+        }
+      }
+    }
+  .hover-image,.hover-image-alt,.hover-image-alt-2,.hover-image-alt-3 {
+    .caption {
+       .closer {
+            font-size:rem-calc(50);
+            font-weight:100;
+            position:absolute;
+            right:50%;
+            margin-right:-15px;
+            bottom:rem-calc(-13);
+           &:before {
+               content: "\00D7";
+           }
+           &:hover,&:focus {
+              color:$secondary-color;
+           }
+         }
+     }
+  }
+  .hover-image .closer {
+      color:$primary-color;
+  }
+  .hover-image-alt .closer {
+      color:$white;
+  }
+}

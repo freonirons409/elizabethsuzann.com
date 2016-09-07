@@ -174,7 +174,7 @@ gulp.task('move-to-dist', ['fontsImages'], function() {
             //css: [], /* for use when compiling shopify fonts file */
             // css: [ rev ],
             /*html: [ function () {return minifyHtml({ empty: true });} ],*/
-            js: [ ],
+            js: [ uglify ],
             jsmain: [ ],
             inlinejs: [ uglify ],
             inlinecss: [ minifyCss(), 'concat' ]
@@ -187,6 +187,19 @@ gulp.task('fontsImages', ['images'], function(){
         .pipe(gulp.dest('dist/fonts/'));
     gulp.src('src/img/**')
         .pipe(gulp.dest('dist/img/'));
+});
+/* ====================================================== */
+gulp.task('shopify', ['build'], function(){
+    gulp.src('dist/fonts/**')
+        .pipe(gulp.dest('shopify/assets/'));
+    gulp.src('dist/img/**')
+        .pipe(gulp.dest('shopify/assets/'));
+    gulp.src('dist/js/**')
+        .pipe(gulp.dest('shopify/assets/'));
+    gulp.src('dist/css/**')
+        .pipe(gulp.dest('shopify/assets/'));
+    gulp.src('dist/*.html')
+        .pipe(gulp.dest('shopify/templates/'));
 });
 /* ====================================================== */
 //run once after project has been created
