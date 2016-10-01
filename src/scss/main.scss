@@ -1,4 +1,17 @@
 @import url("//hello.myfonts.net/count/30861a");
+@mixin buttonStyle(){
+    width:100%;
+    max-width:rem-calc(250);
+    padding-top:rem-calc(22)!important;
+    padding-bottom:rem-calc(20)!important;
+    line-height:1;
+    height: auto;
+    border:1px solid transparent;
+    margin-bottom:0;
+    background:$primary-color;
+    color:$white;
+
+}
 @import "settings";
 @import "normalize";
 @import "icons";
@@ -58,6 +71,42 @@
 @import "tools";
 @import "newsletter";
 @import "collections";
+
+.square,.variant {
+    &.black {
+      background-color:#000!important;
+    }
+    &.ivory {
+      background-color:#fafafa!important;
+    }
+    &.navy {
+      background-color:#122535!important;
+    }
+    &.nude {
+      background-color:#f0d6bd!important;
+    }
+    &.moss {
+      background-color:#94693c!important;
+    }
+    &.natural {
+      background-color:#eee7e1!important;
+    }
+    &.olive {
+      background-color:#6a542e!important;
+    }
+    &.flax {
+      background-color:#ebe0d7!important;
+    }
+    &.graphite {
+      background-color:#494441!important;
+    }
+    &.limestone {
+      background-color:#bd9c8b!important;
+    }
+    &.sandstone {
+      background-color:#f5c996!important;
+    }
+}
 
 div,img,a,button,input {
   outline:0!important;

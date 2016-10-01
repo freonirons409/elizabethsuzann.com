@@ -11,6 +11,11 @@
         }
     }
 }
+.swatch-element.unavailable {
+  .text {
+    text-decoration:line-through;
+  }
+}
 .product__sizepicker,.product__lengthpicker,.product__colorpicker {
   max-width:rem-calc(220);
 }

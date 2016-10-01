@@ -84,13 +84,13 @@
 	    border-bottom: 1px solid $snow;
 	    color:$primary-color;
 	    font-size: rem-calc(14);
-      max-width: rem-calc(150);
 		}
 		ul {
 			margin-left:0;
 			list-style-type:none;
 		li {
 			font-size:rem-calc(12);
+      text-transform: capitalize;
 			a {
 				text-transform: capitalize;
 			}
@@ -256,7 +256,7 @@ body.template-blog,body.template-article {
       top:0;
       padding-top:0;
       position:static;
-      border-top:$snow 1px solid;
+      //border-top:$snow 1px solid;
       padding-top:rem-calc(40);
       padding-left:rem-calc(20);
       padding-right:rem-calc(20);

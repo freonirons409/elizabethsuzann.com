@@ -340,7 +340,11 @@
                     <div class="article">
                         <div class="row collapse">
                           <div class="column large-8"><h3 class="article-title"><a href="/blogs/stories/our-muse-lisa-przystup">Our Muse: Lisa Przystup</a></h3></div>
-                          <div class="column large-4"><div class="meta"><p class="posted small-text-left medium-text-left large-text-right">Published: July 25, 2016 • <em><a href="/blogs/stories/tagged/editorial">Editorial</a></em> / <em><a href="/blogs/stories/tagged/muse">Muse</a></em></p></div></div>
+                          <div class="column large-4">
+                          <div class="meta"><p class="posted small-text-left medium-text-left large-text-right">Published: July 25, 2016 • <em><a href="/blogs/stories/tagged/editorial">Editorial</a></em> / <em><a href="/blogs/stories/tagged/muse">Muse</a></em></p>
+                          </div>
+
+                          </div>
                         </div>
                         <div class="article-body text-editor">
                             <p><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth01.jpg?6850384815489751128" alt=""><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth02.jpg?15615942219594529561" alt="HOVER_Caption caption caption"><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth03A.jpg?15318002370703603829" alt="HOVER_Caption caption caption"><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth04.jpg?6409740428913401873" alt="HOVER_Caption caption caption"><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth05A.jpg?8237597538196771382" alt="HOVER_Caption caption caption"><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth06.jpg?11946365872129242473" alt="HOVER_Caption caption caption"><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth7.jpg?3841255124786731262" alt="HOVER_Caption caption caption"><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth8.jpg?14088272446789504667" alt="HOVER_Caption caption caption"><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth9.jpg?17177599365952288098" alt="HOVER_Caption caption caption"><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth10.jpg?15217354390298186523" alt=""><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth11X.jpg?6521696778668189861" alt=""><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth12X.jpg?6371798407486992986" alt="HOVER2_Caption caption caption"><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth13X.jpg?14998638072932410294" alt="HOVER2_Caption caption caption"><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth26.jpg?15756904037430438938" alt="HOVER2_Caption caption caption"><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth27A.jpg?15868819978933727555" alt="HOVER2_Caption caption caption"><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth22X.jpg?13871563934506765097" alt="HOVER2_Caption caption caption"><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth23X.jpg?4721451909343074569" alt="HOVER2_Caption caption caption"><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth24.jpg?13748437028863020472" alt="HOVER2_Caption caption caption"><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth14X.jpg?8060619158368966970" alt=""><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth15X.jpg?3035692802951383938" alt=""><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth16.jpg?3737044387754224043" alt=""><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth17.jpg?11099758720883844657" alt=""><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth18.jpg?8906734467424150940" alt=""><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth27B.jpg?944187647424213579" alt=""><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth29A.jpg?11321682468110770536" alt=""><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth30.jpg?6441216096507784755" alt=""><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth35.jpg?3051635200945066724" alt=""><img src="//cdn.shopify.com/s/files/1/0474/8573/files/Harpeth32.jpg?2079195570984554200" alt=""></p>
@@ -358,9 +362,12 @@
             </div>
             <div class="column medium-4 large-3">
               <!-- /snippets/blog-sidebar.liquid -->
-                <div class="blog-sidebar">
+                <div class="blog-sidebar" id="sidebar">
+                        <div class="toggler">
+                            <span class="icon icon-cross" style="font-size:15px;"></span>
+                        </div>
                     <div class="row medium-collapse small-uncollapse blog sticky">
-                        <div class="column small-6 medium-12">
+                        <div class="column medium-12">
                             <h2>Recent Posts</h2>
                             <ul class="no-bullet">
                                 <li>
@@ -379,7 +386,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="column small-6 medium-12">
+                        <div class="column medium-12">
                             <h2>Categories</h2>
                             <ul class="no-bullet">
                               <li><a title="Show articles tagged behind the scenes" href="/blogs/stories/tagged/behind-the-scenes">behind the scenes</a></li>
@@ -388,6 +395,9 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+                <div id="sidebarToggle" class="toggler">
+                  <span class="icon icon-right-arrow"></span>
                 </div>
             </div>
         </div>
