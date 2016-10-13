@@ -142,15 +142,13 @@ function loadProductSlider() {
 }
 $(document).foundation({
     accordion: {
-        multi_expand: true,
+        multi_expand: false,
         callback: function(accordion) {
             if (accordion.hasClass("active")) {
                 if(accordion.parent().parent().hasClass("no-jump")===false ) {
-                    if($(".screen-size").css("float") != "right") {
                         $('html,body').animate({
-                            scrollTop: (accordion.siblings("a[href=#" + accordion.attr("id") + "]").offset().top)
+                            scrollTop: (accordion.siblings("a[href=#" + accordion.attr("id") + "]").offset().top-90)
                         }, 800);
-                    }
                 } else {
                     $(".user-grid-container").css({"min-height": $(".sidebar-track").outerHeight() });
                 }
@@ -390,6 +388,10 @@ $(document).ready(function() {
         }
     }
 
+    //fixing button clicks in hover captions 
+
+
+
     //Diversity image details
     //---------------------------------------------------
     if($(".diversity-panel-container img").length>0) {
@@ -502,6 +504,14 @@ $(document).ready(function() {
     //     }
     // });
     //Image hover functions - based on ALT text for caption
+    $("body").on("click", ".caption button", function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            var linkedUrl = $(this).find("a").attr("href");
+            if(linkedUrl) {
+                window.location = linkedUrl;
+            }
+    });
       var patt = new RegExp("HOVER");
       var altPatt = new RegExp("HOVER2");
       var alt2Patt = new RegExp("HOVER3");
@@ -535,7 +545,7 @@ $(document).ready(function() {
           }
         });
         $(".hover-image-alt-2,.hover-image-alt-3, .hover-image-alt, .hover-image").on("click", function(e){
-                //console.log(e.target.nodeName);
+                console.log(e.target.nodeName);
                 if(e.target.nodeName != "A" && e.target.nodeName != "BUTTON") {
                     e.preventDefault();
                 }
@@ -884,7 +894,14 @@ $(document).ready(function() {
       //       console.log(accordion);
       //   });
     if($("#productAccordion").length>0){
-            $("#productAccordion").html().replace('<h5>','</div></li><li class="accordion-navigation"><a href="#panela">').replace('</h5>','</a></a><div id="panela" class="content">');
+            //console.log($("#productAccordion").html());
+            $("#productAccordion").html($("#productAccordion").html().replace(/\<h5\>/ig,'</div></li><li class="accordion-navigation"><a href="#panela" class="accordion-toggle">').replace(/\<\/h5\>/ig,'</a><div id="panela" class="content">'));
+            $("#productAccordion .accordion-navigation >a").each(function(i){
+                $(this).attr("href", "#panela"+i);
+            });
+            $("#productAccordion .accordion-navigation div.content").each(function(i){
+                $(this).attr("id", "panela"+i);
+            });
     }
 
     //Toggle Address functions in account settings 

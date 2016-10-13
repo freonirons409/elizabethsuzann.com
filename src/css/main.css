@@ -5921,7 +5921,8 @@ body.template-blog #sidebarToggle:before, body.template-article #sidebarToggle:b
     border: 1px solid #EEEEEE;
     height: 7.8125rem;
     z-index: 100;
-    top: 50%; }
+    top: 50%;
+    left: 0; }
     #sidebarToggle .icon-right-arrow:before, #sidebarToggle .customer-filters .filter-list .active:before, .customer-filters .filter-list #sidebarToggle .active:before, #sidebarToggle #sidebar ul li a.active:before, #sidebar ul li #sidebarToggle a.active:before, #sidebarToggle .slick-next:before {
       position: relative;
       right: -0.3125rem; }
@@ -5948,6 +5949,7 @@ body.template-blog #sidebarToggle:before, body.template-article #sidebarToggle:b
     display: block;
     z-index: 999 !important;
     padding: 0;
+    left: 0;
     top: 4.8125rem;
     overflow: scroll;
     bottom: 0;

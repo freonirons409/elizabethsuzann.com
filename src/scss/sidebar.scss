@@ -160,6 +160,7 @@ body.template-blog,body.template-article {
     height:rem-calc(125);
     z-index:100;
     top: 50%;
+    left:0;
     .icon-right-arrow {
       &:before {
         position: relative;
@@ -195,6 +196,7 @@ body.template-blog,body.template-article {
     display: block;
     z-index: 999!important;
     padding:0;
+    left:0;
     top: rem-calc(77);
     overflow: scroll;
     bottom:rem-calc(0);
