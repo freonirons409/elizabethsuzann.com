@@ -5942,6 +5942,8 @@ body.template-blog #sidebarToggle:before, body.template-article #sidebarToggle:b
       -ms-transform: rotate(-90deg);
       -o-transform: rotate(-90deg);
       filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); }
+  div#sticky-wrapper {
+    height: auto !important; }
   #sidebar {
     overflow: hidden;
     position: fixed;
@@ -7336,7 +7338,7 @@ h6 {
     position: absolute;
     bottom: 0;
     width: 100%;
-    z-index: 30; }
+    z-index: 2; }
     footer p, footer h1, footer h2, footer h3, footer h4, footer h5, footer h6, footer .icon, footer .hover-image:before, footer .hover-image-alt:before, footer .hover-image-alt-2:before, footer .hover-image-alt-3:before, footer li, footer a {
       color: #888888;
       margin-bottom: 0; }

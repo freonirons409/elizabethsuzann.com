@@ -189,6 +189,9 @@ body.template-blog,body.template-article {
       filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     }
   }
+  div#sticky-wrapper {
+    height:auto!important;
+  }
   #sidebar {
     overflow: hidden;
     position: fixed;
