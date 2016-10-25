@@ -226,14 +226,16 @@ $slick-opacity-not-active: .25 !default;
 }
 .slick-dots {
     position: relative;
-    bottom: rem-calc(38);
+    margin-bottom: rem-calc(-38);
+    bottom:rem-calc(38);
     list-style: none;
     display: block;
     text-align: center;
     padding: 0;
     width: rem-calc(300);
     max-width: 100%;
-    margin: 0 auto;
+    margin-left:auto;
+    margin-right:auto;
 
     li {
         position: relative;

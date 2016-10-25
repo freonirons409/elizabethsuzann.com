@@ -6456,7 +6456,7 @@ div, img, a, button, input {
       -ms-transform: translateY(-50%);
       transform: translateY(-50%); }
   .cta-section {
-    padding: 2.5rem 1.25rem; }
+    padding: 3.125rem 1.25rem 1.875rem 1.25rem; }
     .cta-section h1, .cta-section h2, .cta-section h3, .cta-section h4, .cta-section h5, .cta-section h6 {
       text-transform: none;
       letter-spacing: 0.15625rem; }
@@ -6820,6 +6820,7 @@ div, img, a, button, input {
 
 .slick-dots {
   position: relative;
+  margin-bottom: -2.375rem;
   bottom: 2.375rem;
   list-style: none;
   display: block;
@@ -6827,7 +6828,8 @@ div, img, a, button, input {
   padding: 0;
   width: 18.75rem;
   max-width: 100%;
-  margin: 0 auto; }
+  margin-left: auto;
+  margin-right: auto; }
   .slick-dots li {
     position: relative;
     display: inline-block;
