@@ -45,7 +45,11 @@ function resizeSingleProductImages() {
     }
 }
 function makeFooterStayDown() {
-    $(".master-container").css({"padding-bottom": $("footer").height()+80});
+    if($("body").hasClass("template-index")) {
+        $(".master-container").css({"padding-bottom": $("footer").height()+36});
+    } else {
+        $(".master-container").css({"padding-bottom": $("footer").height()+80});
+    }
 }
 function formatCartPrices() {
     $(".quick-cart-details .cart-price").each(function(){
@@ -183,6 +187,12 @@ $(window).load(function(){
             $("#forgot_password a").trigger("click");
         }
     }
+    $('.product-slider').on('init', function(event, slick){
+        //console.log("product slider loaded, fading in");
+        setTimeout(function(){
+          $("ul.related-products").animate({"opacity": 1},500);
+        }, 800);
+    });
     loadProductSlider();
     
 });

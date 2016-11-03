@@ -31,7 +31,7 @@
             }
             .person-name {
                 font-family:$font-family-sans-serif;
-                font-size:rem-calc(20)!important;
+                font-size:rem-calc(20);
             }
             .person-weight {}
         }
@@ -358,6 +358,28 @@
         .user-image-slider {
             margin-bottom:0;
         }
+    }
+    .diversity-panel-details {
+        //margin:0!important;
+        margin:rem-calc(15) auto 0 auto!important;
+        li {
+            // padding-left:rem-calc(3)!important;
+            // padding-right:rem-calc(3)!important;
+        }
+        a {
+            display:block;
+            padding:rem-calc(2)!important;
+        }
+        .person-name {
+            font-size:rem-calc(12)!important;
+            line-height:1;
+            margin-bottom:rem-calc(5);
+        }
+        .person-height,.person-weight,.person-size {
+            font-size:rem-calc(10)!important;
+            line-height:1;
+        }
+
     }
 }
 

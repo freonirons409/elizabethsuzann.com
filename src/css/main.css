@@ -5567,7 +5567,7 @@ body.interior table {
         font-size: 0.9375rem; }
       .diversity-panel .diversity-panel-details .person-name {
         font-family: "Brandon", sans-serif;
-        font-size: 1.25rem !important; }
+        font-size: 1.25rem; }
   .product__fabric a:after {
     content: " / "; }
   .product__fabric a:last-of-type:after {
@@ -5802,7 +5802,19 @@ body.interior table {
     padding-right: 1.875rem;
     padding-left: 1.875rem; }
     .user-imageslider-container .user-image-slider {
-      margin-bottom: 0; } }
+      margin-bottom: 0; }
+  .diversity-panel-details {
+    margin: 0.9375rem auto 0 auto !important; }
+    .diversity-panel-details a {
+      display: block;
+      padding: 0.125rem !important; }
+    .diversity-panel-details .person-name {
+      font-size: 0.75rem !important;
+      line-height: 1;
+      margin-bottom: 0.3125rem; }
+    .diversity-panel-details .person-height, .diversity-panel-details .person-weight, .diversity-panel-details .person-size {
+      font-size: 0.625rem !important;
+      line-height: 1; } }
 
 @media only screen and (min-width: 50.063em) {
   .product__add {
@@ -6250,6 +6262,12 @@ div, img, a, button, input {
   body.template-collection #content {
     padding: 0 1.25rem; } }
 
+.master-container {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+
 @media only screen {
   ::-webkit-input-placeholder {
     color: #CCCCCC;
@@ -6423,7 +6441,26 @@ div, img, a, button, input {
 
 @media only screen and (max-width: 50em) {
   .cta-section {
-    padding: 1.875rem 1.25rem 1.25rem 1.25rem; }
+    padding: 1.875rem 1.25rem 0.125rem 1.25rem; }
+    .cta-section h1, .cta-section h2, .cta-section h3, .cta-section h4, .cta-section h5, .cta-section h6 {
+      text-transform: none;
+      letter-spacing: 0.09375rem;
+      line-height: 1.3; }
+    .cta-section h1 {
+      font-size: 1.125rem; }
+    .cta-section h2 {
+      font-size: 0.9375rem; }
+    .cta-section h3 {
+      font-size: 0.75rem; }
+    .cta-section h4 {
+      font-size: 0.6875rem; }
+    .cta-section h5 {
+      font-size: 0.625rem; }
+    .cta-section h6 {
+      font-size: 0.5625rem; }
+    .cta-section .large {
+      font-size: 1rem !important;
+      line-height: 1.3; }
   .row.blocks .column, .row.blocks .columns {
     padding-top: 1.875rem; }
   .column-blocks .column {
