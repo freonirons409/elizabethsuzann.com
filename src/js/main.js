@@ -101,6 +101,26 @@ function checkAvailability(x) {
         }
     });
 }
+function autoSelectFirstColor() {
+    var colorOption = $(".swatch.colors").attr("data-option-index");
+    var selectedVariant = false;
+    $(".image-toggle-container").each(function(){
+        if($(this).hasClass("hide")==false) {
+            selectedVariant = $(this).attr("class").replace("row image-toggle-container ","");
+        }
+    });
+    if(selectedVariant) {
+        $(".swatch-element.color").each(function(){
+            if($(this).attr("data-color") == selectedVariant) {
+                $(this).find("input[name='option-"+colorOption+"']").attr('checked',true).trigger("change").trigger("click");
+            }
+        });
+    } else {
+        if(colorOption) {
+            $("input[name='option-"+colorOption+"']").first().attr('checked',true).trigger("change").trigger("click");
+        }
+    }
+}
 
 function eraseCookie(name) {
     createCookie(name, "", -1);
@@ -173,6 +193,7 @@ $(window).load(function(){
     });
     makeFooterStayDown();
     openRecoveryWindow();
+    autoSelectFirstColor();
     resizeSingleProductImages();
     if($("body").hasClass("newsletter-promo")){
         if(readCookie('newsletterOption')!=1) {
@@ -213,9 +234,11 @@ $(document).ready(function() {
     //         $(this).find("a").trigger("click");
     //     }
     // });
+    
     $(".swatch-element.color input").change(function(){
         checkAvailability($(this).val());
     })
+
     if($(".screen-size").css("float")!="right" && $(".bottom-blog").length <= 0 ){
         $(".sticky").sticky({topSpacing:64,bottomSpacing:250});
     }

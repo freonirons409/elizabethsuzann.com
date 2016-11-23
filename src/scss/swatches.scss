@@ -329,6 +329,9 @@
         }
     }
     #length {
+        .swatch-element label .square {
+          border:0!important;
+        }
         .swatch-element label .text {
             //top:-11px;
         }
