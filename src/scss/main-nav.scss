@@ -14,6 +14,9 @@ $menu-direction: left;
     margin: 0 auto;
     a {
       color: $text-color;
+      &.no-click {
+
+      }
     }
     li {
       list-style: none;
@@ -23,6 +26,9 @@ $menu-direction: left;
       >a {
         letter-spacing: 0.5em;
         text-transform: uppercase;
+        &:hover {
+          text-decoration: none;
+        }
         font-size:rem-calc(15);
       }
       a {
@@ -267,8 +273,13 @@ $menu-direction: left;
 
         }
       }
-      &:hover ul {
-        display: block;
+      &:hover {
+        >a {
+          font-weight:bold;
+        }
+        ul {
+          display: block;
+        }
       }
     }
     .mega-menu {

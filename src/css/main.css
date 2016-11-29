@@ -4666,6 +4666,8 @@ th.hide-for-touch {
         letter-spacing: 0.5em;
         text-transform: uppercase;
         font-size: 0.9375rem; }
+        .main-nav > li > a:hover {
+          text-decoration: none; }
       .main-nav > li a {
         display: block;
         padding: .5rem;
@@ -4839,6 +4841,8 @@ th.hide-for-touch {
         margin: 0;
         top: 94%;
         z-index: 9; }
+      .main-nav > li:hover > a {
+        font-weight: bold; }
       .main-nav > li:hover ul {
         display: block; }
     .main-nav .mega-menu {
