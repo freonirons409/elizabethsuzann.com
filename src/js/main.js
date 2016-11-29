@@ -787,7 +787,18 @@ $(document).ready(function() {
         $(this).removeClass("toggled");
     });
     //toggle Quick Cart
-    $(".cart-toggle").on("click", function(e) {
+    $(".quick-cart-window").hover(function(e){
+        e.stopPropagation();
+    });
+    $(".master-cart-toggle").on("mouseover click", function(e) {
+        e.preventDefault();
+        clearOpenItems(".quick-cart-window");
+        $(".quick-cart-window").addClass("toggled");
+        setQuickCartHeader();
+        formatCartPrices();
+    });
+    
+    $(".show-for-small-only .cart-toggle").on("click", function(e) {
         e.preventDefault();
         e.stopPropagation();
         clearOpenItems(".quick-cart-window");

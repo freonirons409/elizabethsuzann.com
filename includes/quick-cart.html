@@ -68,9 +68,10 @@
                   </div>
             </div>
             <div class="clearfix"></div>
-            <div class="cart-bottom">
-              <a class="checkout-link button secondary" href="/cart" rv-show="cart.item_count | gt 0">view cart</a>
-              <p rv-show="cart.item_count | lt 1" style="display: none;">There are no items in your shopping cart</p>
-            </div>
+            <div class="cart-bottom text-center">
+          <a rv-show="cart.item_count | gt 0" class="checkout-link button" href="/cart">Continue to Checkout</a>
+          <p rv-show="cart.item_count | gt 0"><a href="/cart" class="view-bag-link">View Your Bag</a></p>
+          <p rv-show="cart.item_count | lt 1" style="margin-bottom: 10px; display: none;">There are no items in your shopping cart</p>
+        </div>
         </div>
     </div>

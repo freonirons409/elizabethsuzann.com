@@ -227,7 +227,7 @@ $header-bottom-margin: rem-calc(16);
 
 // We use these to style anchors
 // $anchor-text-decoration: none;
-// $anchor-text-decoration-hover: none;
+$anchor-text-decoration-hover: underline;
 $anchor-font-color: $link-color;
 $anchor-font-color-hover: $link-color;
 
