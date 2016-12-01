@@ -160,12 +160,15 @@
 			margin:0 auto;
 			margin-bottom:rem-calc(10);
 			width:100%;
+			line-height:1.2;
+			padding-left:rem-calc(10);
+			padding-right:rem-calc(10);
 			background:$primary-color;
 			color:$white;
 			padding-top:rem-calc(20);
 			&:hover {
-				background:$smoke;
-				color:$primary-color;
+				background:$primary-color;
+				color:$white;
 			}
 		}
 		.view-bag-link{
@@ -252,9 +255,20 @@
 	}
 	.quick-cart-window {
 		max-height: 80vh;
-    	overflow: scroll;
+    	overflow: hidden;
+    	.inner-cart {
+			position:static;
+    	}
     	#crt {
-    		max-height:none;
+    		position:relative;
+    		overflow:scroll;
+    		padding-bottom:rem-calc(240);
+    	}
+    	.cart-bottom {
+    		position:absolute;
+    		padding:rem-calc(8);
+    		bottom:rem-calc(0);
+    		background:$white;
     	}
 	}
 }

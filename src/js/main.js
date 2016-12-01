@@ -790,6 +790,9 @@ $(document).ready(function() {
     $(".quick-cart-window").hover(function(e){
         e.stopPropagation();
     });
+    $(".quick-cart-window").on("mouseleave", function(e){
+        $(".quick-cart-window").removeClass("toggled");
+    });
     $(".master-cart-toggle").on("mouseover click", function(e) {
         e.preventDefault();
         clearOpenItems(".quick-cart-window");

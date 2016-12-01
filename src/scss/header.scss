@@ -5,6 +5,11 @@
 			margin-bottom:0!important;
 		}
 		padding:rem-calc(0);
+		.header-quote {
+			a:hover {
+				text-decoration: none!important;
+			}
+		}
 		.alert-bar {
 			background:rgba($ghost,0.89);
 			padding:10px;

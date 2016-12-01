@@ -4867,6 +4867,8 @@ th.hide-for-touch {
     padding: 0; }
     header.full-width {
       margin-bottom: 0 !important; }
+    header .header-quote a:hover {
+      text-decoration: none !important; }
     header .alert-bar {
       background: rgba(239, 239, 237, 0.89);
       padding: 10px;
@@ -7072,12 +7074,15 @@ div, img, a, button, input {
       margin: 0 auto;
       margin-bottom: 0.625rem;
       width: 100%;
+      line-height: 1.2;
+      padding-left: 0.625rem;
+      padding-right: 0.625rem;
       background: #231F20;
       color: #FFFFFF;
       padding-top: 1.25rem; }
       .quick-cart-window .button.checkout-link:hover {
-        background: #EEEEEE;
-        color: #231F20; }
+        background: #231F20;
+        color: #FFFFFF; }
     .quick-cart-window .view-bag-link {
       font-size: 0.875rem; }
   #shopping-cart {
@@ -7143,9 +7148,18 @@ div, img, a, button, input {
     opacity: 1 !important; }
   .quick-cart-window {
     max-height: 80vh;
-    overflow: scroll; }
+    overflow: hidden; }
+    .quick-cart-window .inner-cart {
+      position: static; }
     .quick-cart-window #crt {
-      max-height: none; } }
+      position: relative;
+      overflow: scroll;
+      padding-bottom: 15rem; }
+    .quick-cart-window .cart-bottom {
+      position: absolute;
+      padding: 0.5rem;
+      bottom: 0;
+      background: #FFFFFF; } }
 
 @media only screen and (min-width: 50.063em) {
   #cartMessage {
