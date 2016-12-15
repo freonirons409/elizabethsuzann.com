@@ -4835,7 +4835,7 @@ th.hide-for-touch {
           content: " ";
           border-right: 1px solid #231F20;
           position: absolute;
-          right: -0.75rem;
+          right: -0.8125rem;
           top: 1.25rem;
           height: 1.875rem; }
       .main-nav > li:last-of-type > a {
