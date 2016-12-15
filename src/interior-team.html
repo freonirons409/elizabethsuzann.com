@@ -31,7 +31,15 @@
 				<div class="header-menu">
 					<ul class="inline-list">
 						<li><a href="#" class="account-toggle">My Account</a></li>
-						<li> | </li>
+						<li> 
+							<div class="search-container">
+								<form action="/search" method="get" autocomplete="off">
+			            			<input type="text" name="q">
+			     	    			<input type="hidden" name="type" value="product"> 
+			     	    			<button type="submit" class="search-button"><span class="icon icon-search"><span class="sr-only">Search</span></span></button>
+			          			</form>
+		          			</div>
+						</li>
 						<li class="cart-container"><div class="cart-toggle"><span class="icon icon-bag active"></span><span class="ajax_quantity active">2</span></div></li>
 					</ul>
 					<div class="master-cart-toggle"></div>
@@ -39,23 +47,7 @@
 			</div>
 		</div>
 		<div class="full-width clearfix" id="subHeader">
-			<div class="medium-3 large-3 column right-header right">
-	        	<ul class="inline-list right header-icons" id="adminList">
-	        		<!-- <li><a href="#"><span class="icon icon-envelope"><span class="sr-only">Mailing List</span></span></a></li> -->
-					<li class="search-container show-for-medium-up">
-						<form action="/search" method="get" autocomplete="off">
-	            			<input type="text" name="q">
-	     	    			<input type="hidden" name="type" value="product"> 
-	     	    			<button type="submit" class="search-button"><span class="icon icon-search"><span class="sr-only">Search</span></span></button>
-	          			</form>
-          			</li>
-          			<li class="show-for-small-only cart-container">
-          				<div class="cart-toggle"><span class="icon icon-bag active"></span><span class="ajax_quantity active">2</span></div>
-          			</li>
-					<!-- <li><a href="#"><span class="icon icon-account"><span class="sr-only">Account</span></span></a></li>
-					<li><a href="#"><span class="icon icon-cart active"><span class="ajax_quantity">2</span><span class="sr-only">Cart</span></span></a></li> -->
-				</ul>
-				      <div class="quick-cart-window">
+			      <div class="quick-cart-window">
         <div class="inner-cart">
             <div id="crt" data-cart-view="data-cart-view">
                   <!-- rivets: each-item -->
@@ -133,7 +125,7 @@
         </div>
     </div>
 				<!-- sep -->
-				<div class="quick-login-window">
+			<div class="quick-login-window">
 
     <!-- <div class="customer-details">
         <h3>Welcome, Cynthia!</h3>
@@ -166,6 +158,22 @@
         </div>
     </form>
 </div>
+			<div class="medium-3 large-3 column right-header hide-for-medium-up right">
+	        	<ul class="inline-list right header-icons" id="adminList">
+	        		<!-- <li><a href="#"><span class="icon icon-envelope"><span class="sr-only">Mailing List</span></span></a></li> -->
+					<!-- <li class="search-container show-for-medium-up">
+						<form action="/search" method="get" autocomplete="off">
+	            			<input type="text" name="q">
+	     	    			<input type="hidden" name="type" value="product"> 
+	     	    			<button type="submit" class="search-button"><span class="icon icon-search"><span class="sr-only">Search</span></span></button>
+	          			</form>
+          			</li> -->
+          			<li class="show-for-small-only cart-container">
+          				<div class="cart-toggle"><span class="icon icon-bag active"></span><span class="ajax_quantity active">2</span></div>
+          			</li>
+					<!-- <li><a href="#"><span class="icon icon-account"><span class="sr-only">Account</span></span></a></li>
+					<li><a href="#"><span class="icon icon-cart active"><span class="ajax_quantity">2</span><span class="sr-only">Cart</span></span></a></li> -->
+				</ul>
 				<div id="cartMessage" class="active message-error">
 					<span class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, architecto.</span>
 					<div class="closer">&times;</div>

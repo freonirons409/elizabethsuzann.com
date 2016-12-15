@@ -99,6 +99,9 @@ $menu-direction: left;
     box-shadow: none;
     padding-left: rem-calc(47);
     max-height: 74vh;
+    @media (orientation:landscape) {
+      max-height:rem-calc(200);
+    }
     overflow: scroll;
   }
   nav > .row > .columns {
@@ -230,6 +233,9 @@ $menu-direction: left;
     .small-12.columns {
       position:static;
     }
+    &.full-width {
+      margin-left:rem-calc(-50);
+    }
   }
   .header-quote {
     @include vertical-align(absolute);
@@ -243,6 +249,7 @@ $menu-direction: left;
         >a {
           position:relative;
           padding-left:rem-calc(45);
+          text-decoration: none!important;
           &:after {
             content:" ";
             border-right:1px solid $primary-color;
@@ -275,7 +282,7 @@ $menu-direction: left;
       }
       &:hover {
         >a {
-          font-weight:bold;
+          text-shadow: rem-calc(0 0.5 0) $primary-color;
         }
         ul {
           display: block;
@@ -292,17 +299,26 @@ $menu-direction: left;
 @media #{$large-up} {
   nav {
     &.full-width {
-      margin-left: -2%;
+      //margin-left: -2%;
     }
   }
 }
 
 @media #{$xlarge-up} {
     nav {
-    &.full-width {
-      margin-left: -4%;
+      &.full-width {
+        margin-left: 0px;
+      }
     }
-  }
+    .medium-block-grid-4 >li {
+        padding-left:10%;
+    }
+    .main-nav {
+      .mega-menu {
+        padding-left:20%!important;
+        padding-right:20%;
+      }
+    }
 }
 
 @media #{$xxlarge-up} {
@@ -311,4 +327,11 @@ $menu-direction: left;
       margin-left: -10%;
     }
   }
+}
+@media (min-width:1922px) {
+    nav {
+      &.full-width {
+        margin-left: 2%;
+      }
+    }
 }

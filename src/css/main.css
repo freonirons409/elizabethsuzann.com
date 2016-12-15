@@ -4714,7 +4714,12 @@ th.hide-for-touch {
     box-shadow: none;
     padding-left: 2.9375rem;
     max-height: 74vh;
-    overflow: scroll; }
+    overflow: scroll; } }
+  @media only screen and (max-width: 50em) and (orientation: landscape) {
+    .main-nav .mega-menu {
+      max-height: 12.5rem; } }
+
+@media only screen and (max-width: 50em) {
   nav > .row > .columns {
     padding: 0; }
   .small-menu-toggle {
@@ -4808,6 +4813,8 @@ th.hide-for-touch {
 @media only screen and (min-width: 50.063em) {
   nav .small-12.columns {
     position: static; }
+  nav.full-width {
+    margin-left: -3.125rem; }
   .header-quote {
     position: absolute;
     top: 50%;
@@ -4822,7 +4829,8 @@ th.hide-for-touch {
       float: left; }
       .main-nav > li:first-of-type > a {
         position: relative;
-        padding-left: 2.8125rem; }
+        padding-left: 2.8125rem;
+        text-decoration: none !important; }
         .main-nav > li:first-of-type > a:after {
           content: " ";
           border-right: 1px solid #231F20;
@@ -4842,24 +4850,29 @@ th.hide-for-touch {
         top: 94%;
         z-index: 9; }
       .main-nav > li:hover > a {
-        font-weight: bold; }
+        text-shadow: 0 0.03125rem 0 #231F20; }
       .main-nav > li:hover ul {
         display: block; }
     .main-nav .mega-menu {
       padding: 1.25rem 2.5rem;
       left: 0; } }
 
-@media only screen and (min-width: 64.0625em) {
-  nav.full-width {
-    margin-left: -2%; } }
-
 @media only screen and (min-width: 90.0625em) {
   nav.full-width {
-    margin-left: -4%; } }
+    margin-left: 0px; }
+  .medium-block-grid-4 > li {
+    padding-left: 10%; }
+  .main-nav .mega-menu {
+    padding-left: 20% !important;
+    padding-right: 20%; } }
 
 @media only screen and (min-width: 120.0625em) {
   nav.full-width {
     margin-left: -10%; } }
+
+@media (min-width: 1922px) {
+  nav.full-width {
+    margin-left: 2%; } }
 
 /* split file here */
 @media only screen {
@@ -4921,19 +4934,21 @@ th.hide-for-touch {
       header .sub-header img {
         width: 100%; }
     header .search-container {
-      position: relative; }
+      position: relative;
+      top: -0.25rem; }
       header .search-container input {
         margin-bottom: 0;
-        margin-top: 0.625rem;
-        padding: 0.375rem 0.625rem !important;
-        max-height: 1.875rem;
+        margin-top: 0;
+        padding: 0.3125rem 0.625rem !important;
+        max-height: 1.5625rem;
+        background: transparent;
         border-color: #231F20; }
       header .search-container .search-button {
         border: 0;
         background: transparent;
         position: absolute;
         right: 0.5rem;
-        top: 1rem;
+        top: 0.625rem;
         padding: 0; }
         header .search-container .search-button .icon, header .search-container .search-button .hover-image:before, header .search-container .search-button .hover-image-alt:before, header .search-container .search-button .hover-image-alt-2:before, header .search-container .search-button .hover-image-alt-3:before {
           font-size: 1rem;
@@ -5085,11 +5100,15 @@ th.hide-for-touch {
   .search-mobile.search-container input {
     max-height: none; }
   .search-mobile.search-container .search-button {
-    top: 0.0625rem; }
+    top: 0.25rem; }
   .sub-header {
     margin: -2.5rem 0 1.25rem 0; }
     .sub-header .logo {
       max-width: 30% !important; } }
+
+@media (max-width: 1060px) {
+  .alert-bar .text-center {
+    text-align: left !important; } }
 
 @media only screen and (min-width: 50.063em) {
   .quick-login-window, .quick-cart-window {
@@ -7154,7 +7173,13 @@ div, img, a, button, input {
     .quick-cart-window #crt {
       position: relative;
       overflow: scroll;
-      padding-bottom: 15rem; }
+      padding-bottom: 15rem;
+      clear: both; } }
+    @media only screen and (max-width: 50em) and (orientation: landscape) {
+      .quick-cart-window #crt {
+        max-height: 400px; } }
+
+@media only screen and (max-width: 50em) {
     .quick-cart-window .cart-bottom {
       position: absolute;
       padding: 0.5rem;
