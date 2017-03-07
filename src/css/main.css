@@ -5562,7 +5562,8 @@ body.interior table {
       padding: 0; }
 
 #length .swatch-element label .square {
-  border: 0 !important; }
+  border: 0 !important;
+  display: none; }
 
 @media only screen and (max-width: 50em) {
   #length, #colors, #sizes {
