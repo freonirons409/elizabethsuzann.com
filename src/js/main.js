@@ -88,12 +88,12 @@ function readCookie(name) {
     return null;
 }
 function changeSwatchStatus(x,y,z){
-    console.log(x.text());
+    //console.log(x.text());
     if(y==="color") {
         var unavailableItem = x.text().split(" / ")[1];
         $(".swatch-element[data-value='"+unavailableItem+"']").removeClass("available").addClass("unavailable").find("input").removeAttr("checked").attr("disabled", true);
     } else {
-        console.log("dfjdf");
+        //console.log("dfjdf");
         if($("#length").length <= 0) {
             $("#sizes .swatch-element").each(function(){
                 $(this).removeClass("unavailable").addClass("available").find("input").removeAttr("disabled");
@@ -130,7 +130,7 @@ function checkAvailability(x) {
         var $swatch = $(this);
         if($swatch.attr("data-available")==="unavailable") {
             var soldOutString = $swatch.text().split("/");
-            console.log(soldOutString);
+            //console.log(soldOutString);
             if(selectedColor === soldOutString[0].trim()) {
                 if($("#length").length <= 0) {
                     $(".product__sizepicker .swatch-element[data-value='"+soldOutString[1].trim()+"']")
