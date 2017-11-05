@@ -12,4 +12,19 @@ body.interior {
 			border:1px solid $primary-color;
 		}
 	}
+	.responsive-table table {
+		min-width:400px;
+	}
+	.responsive-table {
+		padding-top:50px;
+		position:relative;
+	}
+	.swiper {
+		display:none;
+		position: absolute;
+	    bottom: -9px;
+	    width: 100%;
+	    left: 0;
+	    right: 0;
+	}
 }

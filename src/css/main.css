@@ -5307,6 +5307,21 @@ body.interior table {
   body.interior table th, body.interior table td {
     border: 1px solid #231F20; }
 
+body.interior .responsive-table table {
+  min-width: 400px; }
+
+body.interior .responsive-table {
+  padding-top: 50px;
+  position: relative; }
+
+body.interior .swiper {
+  display: none;
+  position: absolute;
+  bottom: -9px;
+  width: 100%;
+  left: 0;
+  right: 0; }
+
 .swatch-element.unavailable .text {
   text-decoration: line-through; }
 
