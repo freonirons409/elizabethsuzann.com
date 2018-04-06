@@ -12,6 +12,41 @@
     color:$white;
 
 }
+@font-face {
+  font-family: 'Didot';
+  src: url('../fonts/30861A_0_0.eot');
+  src: url('../fonts/30861A_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/30861A_0_0.woff2') format('woff2'),url('../fonts/30861A_0_0.woff') format('woff'),url('../fonts/30861A_0_0.ttf') format('truetype');
+  font-weight:normal;
+  font-style:normal;
+}
+@font-face {
+  font-family: 'Didot';
+  src: url('../fonts/30861A_1_0.eot');
+  src: url('../fonts/30861A_1_0.eot?#iefix') format('embedded-opentype'),url('../fonts/30861A_1_0.woff2') format('woff2'),url('../fonts/30861A_1_0.woff') format('woff'),url('../fonts/30861A_1_0.ttf') format('truetype');
+  font-weight:normal;
+  font-style:italic;
+}
+@font-face {
+  font-family: 'Brandon';
+  src: url('../fonts/30861A_2_0.eot');
+  src: url('../fonts/30861A_2_0.eot?#iefix') format('embedded-opentype'),url('../fonts/30861A_2_0.woff2') format('woff2'),url('../fonts/30861A_2_0.woff') format('woff'),url('../fonts/30861A_2_0.ttf') format('truetype');
+  font-weight:normal;
+  font-style:italic;
+}
+@font-face {
+  font-family: 'Brandon';
+  src: url('../fonts/30861A_3_0.eot');
+  src: url('../fonts/30861A_3_0.eot?#iefix') format('embedded-opentype'),url('../fonts/30861A_3_0.woff2') format('woff2'),url('../fonts/30861A_3_0.woff') format('woff'),url('../fonts/30861A_3_0.ttf') format('truetype');
+  font-weight:normal;
+  font-style:normal;
+}
+@font-face {
+  font-family: 'Brandon';
+  src: url('../fonts/30861A_4_0.eot');
+  src: url('../fonts/30861A_4_0.eot?#iefix') format('embedded-opentype'),url('../fonts/30861A_4_0.woff2') format('woff2'),url('../fonts/30861A_4_0.woff') format('woff'),url('../fonts/30861A_4_0.ttf') format('truetype');
+  font-weight:500;
+  font-style:normal;
+}
 @import "settings";
 @import "normalize";
 @import "icons";

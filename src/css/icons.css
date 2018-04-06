@@ -1,52 +1,58 @@
 .slick-loading .slick-list {
-  background: #fff url("{{ 'ajax-loader.gif' | asset_url }}") center center no-repeat; }
+  background: #ffffff url("../img/ajax-loader.gif") center center no-repeat;
+  min-height: 300px; }
 
 @font-face {
   font-family: "Icons";
-  src: url("{{ 'Icons.eot' | asset_url }}");
-  src: url("{{ 'Icons.eot' | asset_url }}&#iefix") format("eot"), url("{{ 'Icons.woff' | asset_url }}") format("woff"), url("{{ 'Icons.ttf' | asset_url }}") format("truetype"), url("{{ 'Icons.svg' | asset_url }}#Icons") format("svg"); }
+  src: url("../fonts/Icons.eot");
+  src: url("../fonts/Icons.eot?#iefix") format("eot"), url("../fonts/Icons.woff") format("woff"), url("../fonts/Icons.ttf") format("truetype"), url("../fonts/Icons.svg#Icons") format("svg"); }
 
 @font-face {
   font-family: "slick";
-  src: url("{{ 'slick.eot' | asset_url }}");
-  src: url("{{ 'slick.eot' | asset_url }}&#iefix") format("embedded-opentype"), url("{{ 'slick.woff' | asset_url }}") format("woff"), url("{{ 'slick.ttf' | asset_url }}") format("truetype"), url("{{ 'slick.svg' | asset_url }}#slick") format("svg");
+  src: url("../fonts/slick.eot");
+  src: url("../fonts/slick.eot&#iefix") format("embedded-opentype"), url("../fonts/slick.woff") format("woff"), url("../fonts/slick.ttf") format("truetype"), url("../fonts/slick.svg#slick") format("svg");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
-  font-family: "Didot";
-  src: url("{{ '30861A_0_0.eot' | asset_url }}");
-  src: url("{{ '30861A_0_0.eot' | asset_url }}&#iefix") format("embedded-opentype"), url("{{ '30861A_0_0.woff2' | asset_url }}") format("woff2"), url("{{ '30861A_0_0.woff' | asset_url }}") format("woff"), url("{{ '30861A_0_0.ttf' | asset_url }}") format("truetype");
+  font-family: 'Didot';
+  src: url("../fonts/30861A_0_0.eot");
+  src: url("../fonts/30861A_0_0.eot?#iefix") format("embedded-opentype"), url("../fonts/30861A_0_0.woff2") format("woff2"), url("../fonts/30861A_0_0.woff") format("woff"), url("../fonts/30861A_0_0.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
-  font-family: "Didot";
-  src: url("{{ '30861A_1_0.eot' | asset_url }}");
-  src: url("{{ '30861A_1_0.eot' | asset_url }}&#iefix") format("embedded-opentype"), url("{{ '30861A_1_0.woff2' | asset_url }}") format("woff2"), url("{{ '30861A_1_0.woff' | asset_url }}") format("woff"), url("{{ '30861A_1_0.ttf' | asset_url }}") format("truetype");
+  font-family: 'Didot';
+  src: url("../fonts/30861A_1_0.eot");
+  src: url("../fonts/30861A_1_0.eot?#iefix") format("embedded-opentype"), url("../fonts/30861A_1_0.woff2") format("woff2"), url("../fonts/30861A_1_0.woff") format("woff"), url("../fonts/30861A_1_0.ttf") format("truetype");
   font-weight: normal;
   font-style: italic; }
 
 @font-face {
-  font-family: "Brandon";
-  src: url("{{ '30861A_2_0.eot' | asset_url }}");
-  src: url("{{ '30861A_2_0.eot' | asset_url }}&#iefix") format("embedded-opentype"), url("{{ '30861A_2_0.woff2' | asset_url }}") format("woff2"), url("{{ '30861A_2_0.woff' | asset_url }}") format("woff"), url("{{ '30861A_2_0.ttf' | asset_url }}") format("truetype");
+  font-family: 'Brandon';
+  src: url("../fonts/30861A_2_0.eot");
+  src: url("../fonts/30861A_2_0.eot?#iefix") format("embedded-opentype"), url("../fonts/30861A_2_0.woff2") format("woff2"), url("../fonts/30861A_2_0.woff") format("woff"), url("../fonts/30861A_2_0.ttf") format("truetype");
   font-weight: normal;
   font-style: italic; }
 
 @font-face {
-  font-family: "Brandon";
-  src: url("{{ '30861A_3_0.eot' | asset_url }}");
-  src: url("{{ '30861A_3_0.eot?#iefix' | asset_url }}") format("embedded-opentype"), url("{{ '30861A_3_0.woff2' | asset_url }}") format("woff2"), url("{{ '30861A_3_0.woff' | asset_url }}") format("woff"), url("{{ '30861A_3_0.ttf' | asset_url }}") format("truetype");
+  font-family: 'Brandon';
+  src: url("../fonts/30861A_3_0.eot");
+  src: url("../fonts/30861A_3_0.eot?#iefix") format("embedded-opentype"), url("../fonts/30861A_3_0.woff2") format("woff2"), url("../fonts/30861A_3_0.woff") format("woff"), url("../fonts/30861A_3_0.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
-  font-family: "Brandon";
-  src: url("{{ '30861A_4_0.eot' | asset_url }}");
-  src: url("{{ '30861A_4_0.eot' | asset_url }}&#iefix") format("embedded-opentype"), url("{{ '30861A_4_0.woff2' | asset_url }}") format("woff2"), url("{{ '30861A_4_0.woff' | asset_url }}") format("woff"), url("{{ '30861A_4_0.ttf' | asset_url }}") format("truetype");
+  font-family: 'Brandon';
+  src: url("../fonts/30861A_4_0.eot");
+  src: url("../fonts/30861A_4_0.eot?#iefix") format("embedded-opentype"), url("../fonts/30861A_4_0.woff2") format("woff2"), url("../fonts/30861A_4_0.woff") format("woff"), url("../fonts/30861A_4_0.ttf") format("truetype");
   font-weight: 500;
   font-style: normal; }
+
+@font-face {
+  font-family: "Icons";
+  src: url("../fonts/Icons.eot");
+  src: url("../fonts/Icons.eot?#iefix") format("eot"), url("../fonts/Icons.woff") format("woff"), url("../fonts/Icons.ttf") format("truetype"), url("../fonts/Icons.svg#Icons") format("svg"); }
 
 .icon:before {
   font-family: "Icons";

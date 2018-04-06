@@ -18,12 +18,14 @@ var minifyCss = require('gulp-cssnano');
 var fs = require('fs');
 var fileinclude = require('gulp-file-include');
 var path = require('path');
+var replace = require('gulp-replace');
 var rev = require('gulp-rev');
 var del = del = require('del');
 var preprocess = require('gulp-preprocess');
 var cache = require('gulp-cache');
 var reload  = browserSync.reload;
 var sourcemaps = require('gulp-sourcemaps');
+var runSequence = require('run-sequence');
 // var newer = require('gulp-newer');
 var imagemin = require('gulp-imagemin');
 var gutil = require( 'gulp-util' );
@@ -53,19 +55,19 @@ gulp.task('default', function() {
     gulp.watch(['*.html', 'includes/*.html'], ['fileinclude']);
     //compile css on sass changes
     gulp.watch(['src/scss/*.scss'], ["build-css","build-font-css"]);
-    gulp.watch(['src/scss/snips/local.scss'], ["build-css","build-font-css"]);
+    //gulp.watch(['src/scss/snips/local.scss'], ["build-css","build-font-css"]);
 });
 /* ====================================================== */
-//clean out that mothafuckin' dist folder
+//clean out that mothafuckin' shopify folder
 gulp.task('clean', function() {
-    return del(['dist/css', 'dist/js', 'dist/img']);
+    return del(['shopify/css', 'shopify/js', 'shopify/img']);
 });
 /* ====================================================== */
 // Image compression
 gulp.task('images',['clean'], function() {
   return gulp.src('src/img/*')
     //.pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('dist/img'));
+    .pipe(gulp.dest('shopify/img'));
 });
 /* ====================================================== */
 //build bower/foundation scss files
@@ -99,34 +101,34 @@ gulp.task("build-css-prod", function() {
 });
 /* ====================================================== */
 gulp.task("build-font-css", function() {
-    return gulp.src(['src/scss/snips/local.scss','src/scss/icons.scss'])
-        .pipe(preprocess({ context: { NODE_ENV: 'development', DEBUG: false }}))
-        .pipe(concat('icons.css'))
-        .on('data', processWinPath)
-        // .pipe(sourcemaps.init())
-        .pipe(sass())
-        .on('error', function logError(error) {
-            console.log(error);
-            this.emit('end');
-        })
-        //.pipe(sourcemaps.write())
-        .pipe(prefix())
-        .pipe(gulp.dest('src/css/'));
+    // return gulp.src(['src/scss/snips/local.scss','src/scss/icons.scss'])
+    //     .pipe(preprocess({ context: { NODE_ENV: 'development', DEBUG: false }}))
+    //     .pipe(concat('icons.css'))
+    //     .on('data', processWinPath)
+    //     // .pipe(sourcemaps.init())
+    //     .pipe(sass())
+    //     .on('error', function logError(error) {
+    //         console.log(error);
+    //         this.emit('end');
+    //     })
+    //     //.pipe(sourcemaps.write())
+    //     .pipe(prefix())
+    //     .pipe(gulp.dest('src/css/'));
 });
 gulp.task("build-font-css-prod", function() {
-    return gulp.src(['src/scss/snips/shopify.scss','src/scss/icons.scss'])
-        .pipe(preprocess({ context: { NODE_ENV: 'production', DEBUG: false }}))
-        .pipe(concat('icons.css'))
-        .on('data', processWinPath)
-        // .pipe(sourcemaps.init())
-        .pipe(sass())
-        .on('error', function logError(error) {
-            console.log(error);
-            this.emit('end');
-        })
-        //.pipe(sourcemaps.write())
-        .pipe(prefix())
-        .pipe(gulp.dest('src/css/'));
+    // return gulp.src(['src/scss/snips/shopify.scss','src/scss/icons.scss'])
+    //     .pipe(preprocess({ context: { NODE_ENV: 'production', DEBUG: false }}))
+    //     .pipe(concat('icons.css'))
+    //     .on('data', processWinPath)
+    //     // .pipe(sourcemaps.init())
+    //     .pipe(sass())
+    //     .on('error', function logError(error) {
+    //         console.log(error);
+    //         this.emit('end');
+    //     })
+    //     //.pipe(sourcemaps.write())
+    //     .pipe(prefix())
+    //     .pipe(gulp.dest('src/css/'));
 });
 /* ====================================================== */
 gulp.task("build-css-no-source", function() {
@@ -162,8 +164,17 @@ gulp.task('fileinclude-prod', function() {
         .pipe(gulp.dest('./src'));
 });
 /* ====================================================== */
-gulp.task('build', ['clean','actualBuild']);
-gulp.task('actualBuild', ['fileinclude-prod','build-css-prod','build-font-css-prod','move-to-dist']);
+gulp.task('build', ['clean'], function(){
+    runSequence(
+        'fileinclude-prod',
+        'build-css-prod', 
+        'build-font-css-prod',
+        'move-to-dist', 
+        'shopify'
+    );
+});
+
+//gulp.task('actualBuild', ['fileinclude-prod','build-css-prod','build-font-css-prod','move-to-dist']);
 
 /* ====================================================== */
 gulp.task('move-to-dist', ['fontsImages'], function() {
@@ -179,36 +190,72 @@ gulp.task('move-to-dist', ['fontsImages'], function() {
             inlinejs: [ uglify ],
             inlinecss: [ minifyCss(), 'concat' ]
         }))
-        .pipe(gulp.dest('dist/'));
+        .pipe(gulp.dest('shopify/'));
 });
 /* ====================================================== */
 gulp.task('fontsImages', ['images'], function(){
     gulp.src('src/fonts/**')
-        .pipe(gulp.dest('dist/fonts/'));
+        .pipe(gulp.dest('shopify/fonts/'));
     gulp.src('src/img/**')
-        .pipe(gulp.dest('dist/img/'));
+        .pipe(gulp.dest('shopify/img/'));
 });
 /* ====================================================== */
-gulp.task('shopify', ['build'], function(){
-    gulp.src('dist/fonts/**')
-        .pipe(gulp.dest('shopify/assets/'));
-    gulp.src('dist/img/**')
-        .pipe(gulp.dest('shopify/assets/'));
-    gulp.src('dist/js/**')
-        .pipe(gulp.dest('shopify/assets/'));
-    gulp.src('dist/css/**')
-        .pipe(gulp.dest('shopify/assets/'));
-    gulp.src('dist/*.html')
-        .pipe(gulp.dest('shopify/templates/'));
+gulp.task('shopify', function(){
+  gulp.src(['./shopify/css/*.css'])
+    .pipe(replace(/\.\.\/img\/ajax\-loader\.gif/ig, "{{ 'ajax-loader.gif' | file_url }}"))
+    .pipe(replace(/\.\.\/fonts\//g, ''))
+    .pipe(replace(/((\'|\"){0,1}Icons\.[a-zA-Z\#\?]*(\'|\"){0,1})/ig, '{{\'$1\' | asset_url}}'))
+    .pipe(replace(/{{\'\'/g, '{{\''))
+    .pipe(replace(/\'\'\s\|/g, '\' \|'))
+    .pipe(replace(/\{\{\'Icons\.eot\?\#iefix\' \| asset_url\}\}/g, '\{\{\'Icons\.eot\' \| asset_url\}\}\&\#iefix' ))
+    .pipe(replace(/\{\{\'Icons\.svg\#Icons\' \| asset_url\}\}/g, '\{\{\'Icons\.svg\' \| asset_url\}\}\#Icons' ))
+    .pipe(replace(/\.\.\/fonts\//g, ''))
+    .pipe(replace(/((\'|\"){0,1}slick\.[a-zA-Z\#\?]*(\'|\"){0,1})/ig, '{{\'$1\' | asset_url}}'))
+    .pipe(replace(/{{\'\'/g, '{{\''))
+    .pipe(replace(/\'\'\s\|/g, '\' \|'))
+    .pipe(replace(/\{\{\'slick\.eot\?\#iefix\' \| asset_url\}\}/g, '\{\{\'slick\.eot\' \| asset_url\}\}\&\#iefix' ))
+    .pipe(replace(/\{\{\'slick\.svg\#slick\' \| asset_url\}\}/g, '\{\{\'slick\.svg\' \| asset_url\}\}\#slick' ))
+    
+    .pipe(replace(/30861A_0_0\.eot\)/g, '\{\{\'30861A_0_0\.eot\' \| asset_url\}\}\)' ))
+    .pipe(replace(/30861A_0_0\.eot\?\#iefix/g, '\{\{\'30861A_0_0\.eot\' \| asset_url\}\}\&\#iefix' ))
+    .pipe(replace(/30861A_0_0\.woff2\)/g, '\{\{\'30861A_0_0\.woff2\' \| asset_url\}\}\)' ))
+    .pipe(replace(/30861A_0_0\.woff\)/g, '\{\{\'30861A_0_0\.woff\' \| asset_url\}\}\)' ))
+    .pipe(replace(/30861A_0_0\.ttf/g, '\{\{\'30861A_0_0\.ttf\' \| asset_url\}\}' ))
+    
+    .pipe(replace(/30861A_1_0\.eot\)/g, '\{\{\'30861A_1_0\.eot\' \| asset_url\}\}\)' ))
+    .pipe(replace(/30861A_1_0\.eot\?\#iefix/g, '\{\{\'30861A_1_0\.eot\' \| asset_url\}\}\&\#iefix' ))
+    .pipe(replace(/30861A_1_0\.woff2\)/g, '\{\{\'30861A_1_0\.woff2\' \| asset_url\}\}\)' ))
+    .pipe(replace(/30861A_1_0\.woff\)/g, '\{\{\'30861A_1_0\.woff\' \| asset_url\}\}\)' ))
+    .pipe(replace(/30861A_1_0\.ttf/g, '\{\{\'30861A_1_0\.ttf\' \| asset_url\}\}' ))
+
+    .pipe(replace(/30861A_2_0\.eot\)/g, '\{\{\'30861A_2_0\.eot\' \| asset_url\}\}\)' ))
+    .pipe(replace(/30861A_2_0\.eot\?\#iefix/g, '\{\{\'30861A_2_0\.eot\' \| asset_url\}\}\&\#iefix' ))
+    .pipe(replace(/30861A_2_0\.woff2\)/g, '\{\{\'30861A_2_0\.woff2\' \| asset_url\}\}\)' ))
+    .pipe(replace(/30861A_2_0\.woff\)/g, '\{\{\'30861A_2_0\.woff\' \| asset_url\}\}\)' ))
+    .pipe(replace(/30861A_2_0\.ttf/g, '\{\{\'30861A_2_0\.ttf\' \| asset_url\}\}' ))
+
+    .pipe(replace(/30861A_3_0\.eot\)/g, '\{\{\'30861A_3_0\.eot\' \| asset_url\}\}\)' ))
+    .pipe(replace(/30861A_3_0\.eot\?\#iefix/g, '\{\{\'30861A_3_0\.eot\' \| asset_url\}\}\&\#iefix' ))
+    .pipe(replace(/30861A_3_0\.woff2\)/g, '\{\{\'30861A_3_0\.woff2\' \| asset_url\}\}\)' ))
+    .pipe(replace(/30861A_3_0\.woff\)/g, '\{\{\'30861A_3_0\.woff\' \| asset_url\}\}\)' ))
+    .pipe(replace(/30861A_3_0\.ttf/g, '\{\{\'30861A_3_0\.ttf\' \| asset_url\}\}' ))
+
+    .pipe(replace(/30861A_4_0\.eot\)/g, '\{\{\'30861A_4_0\.eot\' \| asset_url\}\}\)' ))
+    .pipe(replace(/30861A_4_0\.eot\?\#iefix/g, '\{\{\'30861A_4_0\.eot\' \| asset_url\}\}\&\#iefix' ))
+    .pipe(replace(/30861A_4_0\.woff2\)/g, '\{\{\'30861A_4_0\.woff2\' \| asset_url\}\}\)' ))
+    .pipe(replace(/30861A_4_0\.woff\)/g, '\{\{\'30861A_4_0\.woff\' \| asset_url\}\}\)' ))
+    .pipe(replace(/30861A_4_0\.ttf/g, '\{\{\'30861A_4_0\.ttf\' \| asset_url\}\}' ))
+    .pipe(gulp.dest('./shopify/css/'));
 });
 /* ====================================================== */
 //run once after project has been created
-gulp.task('init', function() {
+gulp.task('init', ['make-iconfont','build-font-css'], function() {
     //move slick from bower components into project
     gulp.src('.src/bower_components/slick-carousel/slick/slick.scss')
         .pipe(gulp.dest('src/scss'));
     gulp.src('.src/bower_components/foundation/scss/foundation/_settings.scss')
         .pipe(gulp.dest('src/scss'));
+
 });
 /* ====================================================== */
 gulp.task('icons', ['clean','make-iconfont','view-iconfont','build-font-css']);
@@ -250,29 +297,29 @@ var generateIconImport = function(inputfile) {
 }
 /* ====================================================== */
  
-gulp.task( 'deploy', function () {
+// gulp.task( 'deploy', function () {
  
-    var conn = ftp.create( {
-        host:     'aaronirons.com',
-        user:     'aaroniro',
-        password: '@PX1094z',
-        parallel: 3,
-        log:      gutil.log
-    } );
-    // var globs = [
-    //     'dist/img/**',
-    //     'dist/css/**',
-    //     'dist/js/**',
-    //     'dist/php/**',
-    //     'dist/fonts/**',
-    //     'dist/*.php',
-    //     'dist/*.html'
-    // ];
-    // using base = '.' will transfer everything to /public_html correctly 
-    // turn off buffering in gulp.src for best performance 
+//     var conn = ftp.create( {
+//         host:     'aaronirons.com',
+//         user:     '',
+//         password: '',
+//         parallel: 3,
+//         log:      gutil.log
+//     } );
+//     // var globs = [
+//     //     'shopify/img/**',
+//     //     'shopify/css/**',
+//     //     'shopify/js/**',
+//     //     'shopify/php/**',
+//     //     'shopify/fonts/**',
+//     //     'shopify/*.php',
+//     //     'shopify/*.html'
+//     // ];
+//     // using base = '.' will transfer everything to /public_html correctly 
+//     // turn off buffering in gulp.src for best performance 
  
-    return gulp.src('dist/**', { base: 'dist/', buffer: false } )
-        .pipe( conn.newer( '/public_html/aaronirons_net/staging/elizabethsuzann.com/' ) ) // only upload newer files 
-        .pipe( conn.dest( '/public_html/aaronirons_net/staging/elizabethsuzann.com/' ) );
+//     return gulp.src('shopify/**', { base: 'shopify/', buffer: false } )
+//         .pipe( conn.newer( '/public_html/aaronirons_net/staging/elizabethsuzann.com/' ) ) // only upload newer files 
+//         .pipe( conn.dest( '/public_html/aaronirons_net/staging/elizabethsuzann.com/' ) );
  
-} );
+// } );
